@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		58A4E47919629C1A0049B7A8 /* AggregateLib */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 58A4E47C19629C1A0049B7A8 /* Build configuration list for PBXAggregateTarget "AggregateLib" */;
+			buildPhases = (
+				5838471619629C44007A6091 /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = AggregateLib;
+			productName = AggregateLib;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		582DCBAD19613A65002CC11E /* OPOutputStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 582DCBAC19613A65002CC11E /* OPOutputStreamer.m */; };
+		582DCBB319613AF2002CC11E /* OPAlgorithmDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 582DCBB019613AF2002CC11E /* OPAlgorithmDetector.m */; };
+		582DCBB819613CAF002CC11E /* OPRecordDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 582DCBB619613CAF002CC11E /* OPRecordDetector.m */; };
+		5838471C1962A55D007A6091 /* OPDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 583847191962A55D007A6091 /* OPDataService.m */; };
+		583847231962A5A9007A6091 /* OPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 583847221962A5A9007A6091 /* OPRequest.m */; };
+		583847281962A933007A6091 /* EnergyAndZeroCross.m in Sources */ = {isa = PBXBuildFile; fileRef = 583847271962A933007A6091 /* EnergyAndZeroCross.m */; };
+		58695D7D19595EFC00968439 /* OPAudioUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 58695D7419595EFC00968439 /* OPAudioUtils.c */; };
+		58695D7E19595EFC00968439 /* OPMeterTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58695D7719595EFC00968439 /* OPMeterTable.m */; };
+		58695D7F19595EFC00968439 /* OPSoundRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58695D7919595EFC00968439 /* OPSoundRecorder.m */; };
+		58695D8019595EFC00968439 /* OPSoundRecorderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58695D7B19595EFC00968439 /* OPSoundRecorderConstants.m */; };
+		58695D831959770400968439 /* OPTextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58695D821959770400968439 /* OPTextRequest.m */; };
+		58695D86195A97FB00968439 /* OPVoiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58695D85195A97FB00968439 /* OPVoiceRequest.m */; };
+		5891DF531941E14C0043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
+		5891DF611941E14C0043140B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF601941E14C0043140B /* XCTest.framework */; };
+		5891DF621941E14C0043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
+		5891DF641941E14C0043140B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF631941E14C0043140B /* UIKit.framework */; };
+		5891DF671941E14C0043140B /* libOpenAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF4F1941E14C0043140B /* libOpenAPI.a */; };
+		5891DF6D1941E14C0043140B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5891DF6B1941E14C0043140B /* InfoPlist.strings */; };
+		5891DF6F1941E14C0043140B /* OpenAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5891DF6E1941E14C0043140B /* OpenAPITests.m */; };
+		5891DFDA1941E8800043140B /* OPOpenAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5891DFD91941E8800043140B /* OPOpenAPI.m */; };
+		D90F82B44A0B42E1938AE8D5 /* libPods-OpenAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D28505148A14D63BC0B4714 /* libPods-OpenAPI.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5891DF651941E14C0043140B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5891DF471941E14C0043140B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5891DF4E1941E14C0043140B;
+			remoteInfo = OpenAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5891DF4D1941E14C0043140B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		35ACF3A9FDD34155BE8879D6 /* Pods-OpenAPI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPI.xcconfig"; path = "Pods/Pods-OpenAPI.xcconfig"; sourceTree = "<group>"; };
+		580D21ED1941F4C400085D8C /* OPConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OPConfiguration.h; sourceTree = "<group>"; };
+		582DCBAB19613A65002CC11E /* OPOutputStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPOutputStreamer.h; sourceTree = "<group>"; };
+		582DCBAC19613A65002CC11E /* OPOutputStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPOutputStreamer.m; sourceTree = "<group>"; };
+		582DCBAF19613AF2002CC11E /* OPAlgorithmDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAlgorithmDetector.h; sourceTree = "<group>"; };
+		582DCBB019613AF2002CC11E /* OPAlgorithmDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPAlgorithmDetector.m; sourceTree = "<group>"; };
+		582DCBB119613AF2002CC11E /* OPAlgorithmDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAlgorithmDetectorDelegate.h; sourceTree = "<group>"; };
+		582DCBB219613AF2002CC11E /* OPAlgorithmDetectorTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAlgorithmDetectorTypes.h; sourceTree = "<group>"; };
+		582DCBB519613CAF002CC11E /* OPRecordDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPRecordDetector.h; sourceTree = "<group>"; };
+		582DCBB619613CAF002CC11E /* OPRecordDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPRecordDetector.m; sourceTree = "<group>"; };
+		582DCBB719613CAF002CC11E /* OPRecordDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPRecordDetectorDelegate.h; sourceTree = "<group>"; };
+		583847181962A55D007A6091 /* OPDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPDataService.h; sourceTree = "<group>"; };
+		583847191962A55D007A6091 /* OPDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPDataService.m; sourceTree = "<group>"; };
+		583847211962A5A9007A6091 /* OPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPRequest.h; sourceTree = "<group>"; };
+		583847221962A5A9007A6091 /* OPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPRequest.m; sourceTree = "<group>"; };
+		583847261962A933007A6091 /* EnergyAndZeroCross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnergyAndZeroCross.h; sourceTree = "<group>"; };
+		583847271962A933007A6091 /* EnergyAndZeroCross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnergyAndZeroCross.m; sourceTree = "<group>"; };
+		58695D7419595EFC00968439 /* OPAudioUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OPAudioUtils.c; sourceTree = "<group>"; };
+		58695D7519595EFC00968439 /* OPAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAudioUtils.h; sourceTree = "<group>"; };
+		58695D7619595EFC00968439 /* OPMeterTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPMeterTable.h; sourceTree = "<group>"; };
+		58695D7719595EFC00968439 /* OPMeterTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPMeterTable.m; sourceTree = "<group>"; };
+		58695D7819595EFC00968439 /* OPSoundRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPSoundRecorder.h; sourceTree = "<group>"; };
+		58695D7919595EFC00968439 /* OPSoundRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPSoundRecorder.m; sourceTree = "<group>"; };
+		58695D7A19595EFC00968439 /* OPSoundRecorderConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPSoundRecorderConstants.h; sourceTree = "<group>"; };
+		58695D7B19595EFC00968439 /* OPSoundRecorderConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPSoundRecorderConstants.m; sourceTree = "<group>"; };
+		58695D7C19595EFC00968439 /* OPSoundRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPSoundRecorderDelegate.h; sourceTree = "<group>"; };
+		58695D811959770400968439 /* OPTextRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPTextRequest.h; sourceTree = "<group>"; };
+		58695D821959770400968439 /* OPTextRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPTextRequest.m; sourceTree = "<group>"; };
+		58695D84195A97FA00968439 /* OPVoiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPVoiceRequest.h; sourceTree = "<group>"; };
+		58695D85195A97FB00968439 /* OPVoiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPVoiceRequest.m; sourceTree = "<group>"; };
+		5891DF4F1941E14C0043140B /* libOpenAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5891DF521941E14C0043140B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5891DF561941E14C0043140B /* OpenAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenAPI-Prefix.pch"; sourceTree = "<group>"; };
+		5891DF5F1941E14C0043140B /* OpenAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5891DF601941E14C0043140B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5891DF631941E14C0043140B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5891DF6A1941E14C0043140B /* OpenAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenAPITests-Info.plist"; sourceTree = "<group>"; };
+		5891DF6C1941E14C0043140B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5891DF6E1941E14C0043140B /* OpenAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenAPITests.m; sourceTree = "<group>"; };
+		5891DFD81941E8800043140B /* OPOpenAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPOpenAPI.h; sourceTree = "<group>"; };
+		5891DFD91941E8800043140B /* OPOpenAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPOpenAPI.m; sourceTree = "<group>"; };
+		5D28505148A14D63BC0B4714 /* libPods-OpenAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5891DF4C1941E14C0043140B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5891DF531941E14C0043140B /* Foundation.framework in Frameworks */,
+				D90F82B44A0B42E1938AE8D5 /* libPods-OpenAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5891DF5C1941E14C0043140B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5891DF611941E14C0043140B /* XCTest.framework in Frameworks */,
+				5891DF641941E14C0043140B /* UIKit.framework in Frameworks */,
+				5891DF671941E14C0043140B /* libOpenAPI.a in Frameworks */,
+				5891DF621941E14C0043140B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		582DCBAA19613A65002CC11E /* Streamer */ = {
+			isa = PBXGroup;
+			children = (
+				582DCBAB19613A65002CC11E /* OPOutputStreamer.h */,
+				582DCBAC19613A65002CC11E /* OPOutputStreamer.m */,
+			);
+			path = Streamer;
+			sourceTree = "<group>";
+		};
+		582DCBAE19613AF2002CC11E /* AlgorithmDetector */ = {
+			isa = PBXGroup;
+			children = (
+				583847241962A933007A6091 /* Algorithms */,
+				582DCBAF19613AF2002CC11E /* OPAlgorithmDetector.h */,
+				582DCBB019613AF2002CC11E /* OPAlgorithmDetector.m */,
+				582DCBB119613AF2002CC11E /* OPAlgorithmDetectorDelegate.h */,
+				582DCBB219613AF2002CC11E /* OPAlgorithmDetectorTypes.h */,
+			);
+			path = AlgorithmDetector;
+			sourceTree = "<group>";
+		};
+		582DCBB419613CAF002CC11E /* RecordDetector */ = {
+			isa = PBXGroup;
+			children = (
+				582DCBB519613CAF002CC11E /* OPRecordDetector.h */,
+				582DCBB619613CAF002CC11E /* OPRecordDetector.m */,
+				582DCBB719613CAF002CC11E /* OPRecordDetectorDelegate.h */,
+			);
+			path = RecordDetector;
+			sourceTree = "<group>";
+		};
+		583847171962A55D007A6091 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				583847181962A55D007A6091 /* OPDataService.h */,
+				583847191962A55D007A6091 /* OPDataService.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		583847241962A933007A6091 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				583847251962A933007A6091 /* EnergyAndZeroCross */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
+		583847251962A933007A6091 /* EnergyAndZeroCross */ = {
+			isa = PBXGroup;
+			children = (
+				583847261962A933007A6091 /* EnergyAndZeroCross.h */,
+				583847271962A933007A6091 /* EnergyAndZeroCross.m */,
+			);
+			path = EnergyAndZeroCross;
+			sourceTree = "<group>";
+		};
+		58695D7219595EFC00968439 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				583847171962A55D007A6091 /* Network */,
+				582DCBB419613CAF002CC11E /* RecordDetector */,
+				582DCBAE19613AF2002CC11E /* AlgorithmDetector */,
+				582DCBAA19613A65002CC11E /* Streamer */,
+				58695D7319595EFC00968439 /* SoundRecorder */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		58695D7319595EFC00968439 /* SoundRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				58695D7419595EFC00968439 /* OPAudioUtils.c */,
+				58695D7519595EFC00968439 /* OPAudioUtils.h */,
+				58695D7619595EFC00968439 /* OPMeterTable.h */,
+				58695D7719595EFC00968439 /* OPMeterTable.m */,
+				58695D7819595EFC00968439 /* OPSoundRecorder.h */,
+				58695D7919595EFC00968439 /* OPSoundRecorder.m */,
+				58695D7A19595EFC00968439 /* OPSoundRecorderConstants.h */,
+				58695D7B19595EFC00968439 /* OPSoundRecorderConstants.m */,
+				58695D7C19595EFC00968439 /* OPSoundRecorderDelegate.h */,
+			);
+			path = SoundRecorder;
+			sourceTree = "<group>";
+		};
+		5891DF461941E14C0043140B = {
+			isa = PBXGroup;
+			children = (
+				5891DF541941E14C0043140B /* OpenAPI */,
+				5891DF681941E14C0043140B /* OpenAPITests */,
+				5891DF511941E14C0043140B /* Frameworks */,
+				5891DF501941E14C0043140B /* Products */,
+				35ACF3A9FDD34155BE8879D6 /* Pods-OpenAPI.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		5891DF501941E14C0043140B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5891DF4F1941E14C0043140B /* libOpenAPI.a */,
+				5891DF5F1941E14C0043140B /* OpenAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5891DF511941E14C0043140B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5891DF521941E14C0043140B /* Foundation.framework */,
+				5891DF601941E14C0043140B /* XCTest.framework */,
+				5891DF631941E14C0043140B /* UIKit.framework */,
+				5D28505148A14D63BC0B4714 /* libPods-OpenAPI.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5891DF541941E14C0043140B /* OpenAPI */ = {
+			isa = PBXGroup;
+			children = (
+				58695D7219595EFC00968439 /* Private */,
+				5891DFD71941E8800043140B /* Classes */,
+				5891DF551941E14C0043140B /* Supporting Files */,
+			);
+			path = OpenAPI;
+			sourceTree = "<group>";
+		};
+		5891DF551941E14C0043140B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5891DF561941E14C0043140B /* OpenAPI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5891DF681941E14C0043140B /* OpenAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				5891DF6E1941E14C0043140B /* OpenAPITests.m */,
+				5891DF691941E14C0043140B /* Supporting Files */,
+			);
+			path = OpenAPITests;
+			sourceTree = "<group>";
+		};
+		5891DF691941E14C0043140B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5891DF6A1941E14C0043140B /* OpenAPITests-Info.plist */,
+				5891DF6B1941E14C0043140B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5891DFD71941E8800043140B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				583847211962A5A9007A6091 /* OPRequest.h */,
+				583847221962A5A9007A6091 /* OPRequest.m */,
+				5891DFD81941E8800043140B /* OPOpenAPI.h */,
+				5891DFD91941E8800043140B /* OPOpenAPI.m */,
+				580D21ED1941F4C400085D8C /* OPConfiguration.h */,
+				58695D811959770400968439 /* OPTextRequest.h */,
+				58695D821959770400968439 /* OPTextRequest.m */,
+				58695D84195A97FA00968439 /* OPVoiceRequest.h */,
+				58695D85195A97FB00968439 /* OPVoiceRequest.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5891DF4E1941E14C0043140B /* OpenAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5891DF721941E14C0043140B /* Build configuration list for PBXNativeTarget "OpenAPI" */;
+			buildPhases = (
+				93CCBC1C61B64223A9E6DF0C /* Check Pods Manifest.lock */,
+				5891DF4B1941E14C0043140B /* Sources */,
+				5891DF4C1941E14C0043140B /* Frameworks */,
+				5891DF4D1941E14C0043140B /* CopyFiles */,
+				9C8CE9DB01A2492499059E38 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenAPI;
+			productName = OpenAPI;
+			productReference = 5891DF4F1941E14C0043140B /* libOpenAPI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5891DF5E1941E14C0043140B /* OpenAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5891DF751941E14C0043140B /* Build configuration list for PBXNativeTarget "OpenAPITests" */;
+			buildPhases = (
+				5891DF5B1941E14C0043140B /* Sources */,
+				5891DF5C1941E14C0043140B /* Frameworks */,
+				5891DF5D1941E14C0043140B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5891DF661941E14C0043140B /* PBXTargetDependency */,
+			);
+			name = OpenAPITests;
+			productName = OpenAPITests;
+			productReference = 5891DF5F1941E14C0043140B /* OpenAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5891DF471941E14C0043140B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Kuragin Dmitriy";
+			};
+			buildConfigurationList = 5891DF4A1941E14C0043140B /* Build configuration list for PBXProject "OpenAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5891DF461941E14C0043140B;
+			productRefGroup = 5891DF501941E14C0043140B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5891DF4E1941E14C0043140B /* OpenAPI */,
+				5891DF5E1941E14C0043140B /* OpenAPITests */,
+				58A4E47919629C1A0049B7A8 /* AggregateLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5891DF5D1941E14C0043140B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5891DF6D1941E14C0043140B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5838471619629C44007A6091 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "RESULT=Release\n\nxcodebuild -workspace OpenAPI.xcworkspace -scheme OpenAPI -sdk iphonesimulator -configuration $RESULT\nxcodebuild -workspace OpenAPI.xcworkspace -scheme OpenAPI -sdk iphoneos -configuration $RESULT\n\n# make a new output folder\nmkdir -p ${TARGET_BUILD_DIR}/../OpenAPI\n\n# combine lib files for various platforms into one\nlipo -create \"${TARGET_BUILD_DIR}/../${RESULT}-iphoneos/libOpenAPI.a\" \"${TARGET_BUILD_DIR}/../${RESULT}-iphonesimulator/libOpenAPI.a\" -output \"${TARGET_BUILD_DIR}/../OpenAPI/libOpenAPI-${RESULT}-${CURRENT_PROJECT_VERSION}.a\"\n\nrm \"${SRCROOT}/OpenAPI/libOpenAPI.a\"\ncp \"${TARGET_BUILD_DIR}/../OpenAPI/libOpenAPI-${RESULT}-${CURRENT_PROJECT_VERSION}.a\" \"${SRCROOT}/OpenAPI/libOpenAPI.a\"";
+		};
+		93CCBC1C61B64223A9E6DF0C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C8CE9DB01A2492499059E38 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-OpenAPI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5891DF4B1941E14C0043140B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583847231962A5A9007A6091 /* OPRequest.m in Sources */,
+				5838471C1962A55D007A6091 /* OPDataService.m in Sources */,
+				582DCBAD19613A65002CC11E /* OPOutputStreamer.m in Sources */,
+				58695D7F19595EFC00968439 /* OPSoundRecorder.m in Sources */,
+				58695D86195A97FB00968439 /* OPVoiceRequest.m in Sources */,
+				58695D8019595EFC00968439 /* OPSoundRecorderConstants.m in Sources */,
+				583847281962A933007A6091 /* EnergyAndZeroCross.m in Sources */,
+				58695D7D19595EFC00968439 /* OPAudioUtils.c in Sources */,
+				582DCBB319613AF2002CC11E /* OPAlgorithmDetector.m in Sources */,
+				58695D7E19595EFC00968439 /* OPMeterTable.m in Sources */,
+				582DCBB819613CAF002CC11E /* OPRecordDetector.m in Sources */,
+				5891DFDA1941E8800043140B /* OPOpenAPI.m in Sources */,
+				58695D831959770400968439 /* OPTextRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5891DF5B1941E14C0043140B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5891DF6F1941E14C0043140B /* OpenAPITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5891DF661941E14C0043140B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5891DF4E1941E14C0043140B /* OpenAPI */;
+			targetProxy = 5891DF651941E14C0043140B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5891DF6B1941E14C0043140B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5891DF6C1941E14C0043140B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5891DF701941E14C0043140B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5891DF711941E14C0043140B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5891DF731941E14C0043140B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35ACF3A9FDD34155BE8879D6 /* Pods-OpenAPI.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/OpenAPI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenAPI/OpenAPI-Prefix.pch";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5891DF741941E14C0043140B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35ACF3A9FDD34155BE8879D6 /* Pods-OpenAPI.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/OpenAPI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenAPI/OpenAPI-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5891DF761941E14C0043140B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenAPI/OpenAPI-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OpenAPITests/OpenAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5891DF771941E14C0043140B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenAPI/OpenAPI-Prefix.pch";
+				INFOPLIST_FILE = "OpenAPITests/OpenAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		58A4E47A19629C1A0049B7A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 0.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		58A4E47B19629C1A0049B7A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 0.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5891DF4A1941E14C0043140B /* Build configuration list for PBXProject "OpenAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5891DF701941E14C0043140B /* Debug */,
+				5891DF711941E14C0043140B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5891DF721941E14C0043140B /* Build configuration list for PBXNativeTarget "OpenAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5891DF731941E14C0043140B /* Debug */,
+				5891DF741941E14C0043140B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5891DF751941E14C0043140B /* Build configuration list for PBXNativeTarget "OpenAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5891DF761941E14C0043140B /* Debug */,
+				5891DF771941E14C0043140B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58A4E47C19629C1A0049B7A8 /* Build configuration list for PBXAggregateTarget "AggregateLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58A4E47A19629C1A0049B7A8 /* Debug */,
+				58A4E47B19629C1A0049B7A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5891DF471941E14C0043140B /* Project object */;
+}
