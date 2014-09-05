@@ -3,7 +3,8 @@ api-ai-ios-sdk
 
 iOS SDK for API.AI
 
-Пример использования:
+Usage example:
+
     <pre><code>self.openAPI = [[OPOpenAPI alloc] init];
 ...
 ///text request
