@@ -41,7 +41,7 @@
     
 }
 
-- (void)setCompletionBlockSuccess:(SuccesfullResponceBlock)succesfullBlock failure:(FailureResponceBlock)failureBlock
+- (void)setCompletionBlockSuccess:(SuccesfullResponseBlock)succesfullBlock failure:(FailureResponseBlock)failureBlock
 {
     __weak typeof(self) weakSelf = self;
     [self setCompletionBlock:^{
@@ -55,7 +55,7 @@
         } else {
             if (succesfullBlock) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    succesfullBlock(strongSelf, strongSelf.responce);
+                    succesfullBlock(strongSelf, strongSelf.response);
                 });
             }
         }
@@ -67,11 +67,11 @@
     return _finished;
 }
 
-- (void)handleResponce:(id)responce
+- (void)handleResponse:(id)response
 {
     [self willChangeValueForKey:@"isFinished"];
     
-    self.responce = responce;
+    self.response = response;
     self.finished = YES;
     
     [self didChangeValueForKey:@"isFinished"];

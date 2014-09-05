@@ -38,7 +38,7 @@
     
     self.HTTPRequestOperation = [manager HTTPRequestOperationWithRequest:request
                                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                     [seflWeak handleResponce:responseObject];
+                                                                     [seflWeak handleResponse:responseObject];
                                                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                                      [seflWeak handleError:error];
                                                                  }];

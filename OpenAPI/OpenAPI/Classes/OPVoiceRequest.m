@@ -60,9 +60,9 @@
         self.HTTPRequestOperation = [manager HTTPRequestOperationWithRequest:request
                                                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                          NSLog(@"HEADERS: %@", [operation.request allHTTPHeaderFields]);
-                                                                         [seflWeak handleResponce:responseObject];
+                                                                         [seflWeak handleResponse:responseObject];
                                                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                         NSLog(@"RESPONCE: %@", operation.responseString);
+                                                                         NSLog(@"RESPONSE: %@", operation.responseString);
                                                                          [seflWeak handleError:error];
                                                                      }];
         

@@ -12,8 +12,8 @@
 @class AFHTTPRequestOperation;
 @class OPRequest;
 
-typedef void(^SuccesfullResponceBlock)(OPRequest *request, id responce);
-typedef void(^FailureResponceBlock)(OPRequest *request, NSError *error);
+typedef void(^SuccesfullResponseBlock)(OPRequest *request, id response);
+typedef void(^FailureResponseBlock)(OPRequest *request, NSError *error);
 
 @protocol OPRequest <NSObject>
 
@@ -29,16 +29,16 @@ typedef void(^FailureResponceBlock)(OPRequest *request, NSError *error);
 }
 
 @property(nonatomic, copy) NSError *error;
-@property(nonatomic, strong) id responce;
+@property(nonatomic, strong) id response;
 
 - (instancetype)init __unavailable;
 - (instancetype)initWithDataService:(OPDataService *)dataService;
 
-- (void)setCompletionBlockSuccess:(SuccesfullResponceBlock)succesfullBlock failure:(FailureResponceBlock)failureBlock;
+- (void)setCompletionBlockSuccess:(SuccesfullResponseBlock)succesfullBlock failure:(FailureResponseBlock)failureBlock;
 
 - (void)configureHTTPRequest;
 
-- (void)handleResponce:(id)responce;
+- (void)handleResponse:(id)response;
 - (void)handleError:(NSError *)error;
 
 @end
