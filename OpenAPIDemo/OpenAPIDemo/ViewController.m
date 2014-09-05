@@ -42,8 +42,8 @@
     OPTextRequest *request = (OPTextRequest *)[_openAPI requestWithType:OPRequestTypeText];
     request.query = @[_textField.text?:@""];
     
-    [request setCompletionBlockSuccess:^(OPRequest *request, id responce) {
-        _textView.text = [responce description];
+    [request setCompletionBlockSuccess:^(OPRequest *request, id response) {
+        _textView.text = [response description];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(OPRequest *request, NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -57,8 +57,8 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     OPVoiceRequest *request = (OPVoiceRequest *)[_openAPI requestWithType:OPRequestTypeVoice];
     
-    [request setCompletionBlockSuccess:^(OPRequest *request, id responce) {
-        _textView.text = [responce description];
+    [request setCompletionBlockSuccess:^(OPRequest *request, id response) {
+        _textView.text = [response description];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(OPRequest *request, NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
