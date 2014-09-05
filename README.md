@@ -6,11 +6,10 @@ api-ai-ios-sdk
 ## Building the Demo app.
 
 1. Install (Cocoapods)[http://cocoapods.org/] if you do not have it installed. 
-2. Run
-```
-pod install
-```
-in the OpenAPIDemo folder
+2. In the OpenAPIDemo folder, run
+   ```
+   pod install
+   ```
 3. Open the project in X
 
 
