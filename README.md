@@ -3,18 +3,14 @@ api-ai-ios-sdk
 
 ## Overview
 
-## Building the Demo app.
-
-1. Install (Cocoapods)[http://cocoapods.org/] if you do not have it installed. 
-2. In the OpenAPIDemo folder, run
-  ```
-  pod install
-  ```
-3. Open the project in X
-
+## Prerequsites
+Create an [API.AI account](https://api.ai)
 
 ## API Integration
-Usage example:
+### Using CocoaPods
+pod install 
+
+### Usage example:
 
 1. Init the SDK.
   ```
@@ -48,3 +44,11 @@ Usage example:
   }];
   [_openAPI enqueue:request];
   ```
+
+## Building the Demo app.
+1. Install [CocoaPods](http://cocoapods.org/) if you do not have it installed. 
+2. In the OpenAPIDemo folder, run
+  ```
+  pod install
+  ```
+3. Open the project in X
