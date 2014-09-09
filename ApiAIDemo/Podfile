@@ -1,0 +1,9 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
+
+target "ApiAIDemo" do
+
+pod 'ApiAI', :path => '../ApiAI'
+pod 'MBProgressHUD'
+
+end
