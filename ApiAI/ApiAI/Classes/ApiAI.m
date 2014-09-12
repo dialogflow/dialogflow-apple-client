@@ -19,39 +19,41 @@
  *
  ***********************************************************************************************************************/
 
-#import <Foundation/Foundation.h>
+#import "ApiAI.h"
+#import "AIDataService.h"
+#import "AITextRequest.h"
+#import "AIVoiceRequest.h"
 
-@class AIDataService;
-@class AFHTTPRequestOperation;
-@class AIRequest;
-
-typedef void(^SuccesfullResponceBlock)(AIRequest *request, id responce);
-typedef void(^FailureResponceBlock)(AIRequest *request, NSError *error);
-
-@protocol AIRequest <NSObject>
-
-@property(nonatomic, strong) AFHTTPRequestOperation *HTTPRequestOperation;
-@property(nonatomic, weak) AIDataService *dataService;
+@interface ApiAI ()
 
 @end
 
-@interface AIRequest : NSOperation <AIRequest>
+@implementation ApiAI
+
+- (id)init
 {
-    @protected
-    AFHTTPRequestOperation *_HTTPRequestOperation;
+    self = [super init];
+    if (self) {
+        self.dataService = [[AIDataService alloc] init];
+    }
+    
+    return self;
 }
 
-@property(nonatomic, copy) NSError *error;
-@property(nonatomic, strong) id responce;
+- (AIRequest *)requestWithType:(AIRequestType)requestType
+{
+    if (requestType == AIRequestTypeText) {
+        return [[AITextRequest alloc] initWithDataService:_dataService];
+    } else {
+        return [[AIVoiceRequest alloc] initWithDataService:_dataService];
+    }
+    
+    return nil;
+}
 
-- (instancetype)init __unavailable;
-- (instancetype)initWithDataService:(AIDataService *)dataService;
-
-- (void)setCompletionBlockSuccess:(SuccesfullResponceBlock)succesfullBlock failure:(FailureResponceBlock)failureBlock;
-
-- (void)configureHTTPRequest;
-
-- (void)handleResponce:(id)responce;
-- (void)handleError:(NSError *)error;
+- (void)enqueue:(AIRequest *)request
+{
+    [_dataService enqueueRequest:request];
+}
 
 @end

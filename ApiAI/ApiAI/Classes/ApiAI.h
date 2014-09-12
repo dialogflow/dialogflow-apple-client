@@ -21,37 +21,20 @@
 
 #import <Foundation/Foundation.h>
 
-@class AIDataService;
-@class AFHTTPRequestOperation;
-@class AIRequest;
+#import "OPConfiguration.h"
+#import "AIRequest.h"
 
-typedef void(^SuccesfullResponceBlock)(AIRequest *request, id responce);
-typedef void(^FailureResponceBlock)(AIRequest *request, NSError *error);
+typedef NS_ENUM(NSUInteger, AIRequestType) {
+    AIRequestTypeText = 0,
+    AIRequestTypeVoice
+};
 
-@protocol AIRequest <NSObject>
+@interface ApiAI : NSObject
 
-@property(nonatomic, strong) AFHTTPRequestOperation *HTTPRequestOperation;
-@property(nonatomic, weak) AIDataService *dataService;
+@property(nonatomic, strong) AIDataService *dataService;
+@property(nonatomic, strong) id <AIConfiguration> configuration;
 
-@end
-
-@interface AIRequest : NSOperation <AIRequest>
-{
-    @protected
-    AFHTTPRequestOperation *_HTTPRequestOperation;
-}
-
-@property(nonatomic, copy) NSError *error;
-@property(nonatomic, strong) id responce;
-
-- (instancetype)init __unavailable;
-- (instancetype)initWithDataService:(AIDataService *)dataService;
-
-- (void)setCompletionBlockSuccess:(SuccesfullResponceBlock)succesfullBlock failure:(FailureResponceBlock)failureBlock;
-
-- (void)configureHTTPRequest;
-
-- (void)handleResponce:(id)responce;
-- (void)handleError:(NSError *)error;
+- (AIRequest *)requestWithType:(AIRequestType)requestType;
+- (void)enqueue:(AIRequest *)request;
 
 @end
