@@ -25,8 +25,8 @@
 @class AFHTTPRequestOperation;
 @class AIRequest;
 
-typedef void(^SuccesfullResponceBlock)(AIRequest *request, id responce);
-typedef void(^FailureResponceBlock)(AIRequest *request, NSError *error);
+typedef void(^SuccesfullResponseBlock)(AIRequest *request, id responce);
+typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 @protocol AIRequest <NSObject>
 
@@ -42,16 +42,16 @@ typedef void(^FailureResponceBlock)(AIRequest *request, NSError *error);
 }
 
 @property(nonatomic, copy) NSError *error;
-@property(nonatomic, strong) id responce;
+@property(nonatomic, strong) id response;
 
 - (instancetype)init __unavailable;
 - (instancetype)initWithDataService:(AIDataService *)dataService;
 
-- (void)setCompletionBlockSuccess:(SuccesfullResponceBlock)succesfullBlock failure:(FailureResponceBlock)failureBlock;
+- (void)setCompletionBlockSuccess:(SuccesfullResponseBlock)succesfullBlock failure:(FailureResponseBlock)failureBlock;
 
 - (void)configureHTTPRequest;
 
-- (void)handleResponce:(id)responce;
+- (void)handleResponse:(id)responce;
 - (void)handleError:(NSError *)error;
 
 @end
