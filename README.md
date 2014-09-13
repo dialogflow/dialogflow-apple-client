@@ -38,8 +38,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   Regular pod definitions are coming soon.
 * Run ```pod update```
 * Add code to your app:
-
-  1. Init the SDK.
+1. Init the SDK.
   ```
   @property(nonatomic, strong) ApiAI *openAPI;
   ```
