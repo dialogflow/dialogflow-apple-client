@@ -25,7 +25,7 @@
 @class AFHTTPRequestOperation;
 @class AIRequest;
 
-typedef void(^SuccesfullResponseBlock)(AIRequest *request, id responce);
+typedef void(^SuccesfullResponseBlock)(AIRequest *request, id response);
 typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 @protocol AIRequest <NSObject>
@@ -51,7 +51,7 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 - (void)configureHTTPRequest;
 
-- (void)handleResponse:(id)responce;
+- (void)handleResponse:(id)response;
 - (void)handleError:(NSError *)error;
 
 @end

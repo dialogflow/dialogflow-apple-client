@@ -65,8 +65,8 @@
     AITextRequest *request = (AITextRequest *)[_openAPI requestWithType:AIRequestTypeText];
     request.query = @[_textField.text?:@""];
     
-    [request setCompletionBlockSuccess:^(AIRequest *request, id responce) {
-        _textView.text = [responce description];
+    [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
+        _textView.text = [response description];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AIRequest *request, NSError *error) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -87,8 +87,8 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AIVoiceRequest *request = (AIVoiceRequest *)[_openAPI requestWithType:AIRequestTypeVoice];
     
-    [request setCompletionBlockSuccess:^(AIRequest *request, id responce) {
-        _textView.text = [responce description];
+    [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
+        _textView.text = [response description];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AIRequest *request, NSError *error) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
