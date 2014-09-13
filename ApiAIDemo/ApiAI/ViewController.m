@@ -45,6 +45,7 @@
     
     Configuration *configuration = [[Configuration alloc] init];
     configuration.baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
+    
     configuration.clientAccessToken = @"<your client access token>";
     configuration.subscriptionKey = @"<your subscription key>";
     
@@ -68,6 +69,13 @@
         _textView.text = [responce description];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AIRequest *request, NSError *error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
     
@@ -83,6 +91,13 @@
         _textView.text = [responce description];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AIRequest *request, NSError *error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
     
