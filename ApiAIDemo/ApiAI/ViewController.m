@@ -27,6 +27,8 @@
 
 #import <MBProgressHUD/MBProgressHUD.h>
 
+#import "Configuration.h"
+
 @interface ViewController () <UITextFieldDelegate>
 
 @property(nonatomic, strong) ApiAI *openAPI;
@@ -40,6 +42,13 @@
 {
     [super viewDidLoad];
     self.openAPI = [[ApiAI alloc] init];
+    
+    Configuration *configuration = [[Configuration alloc] init];
+    configuration.baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
+    configuration.clientAccessToken = @"<your client access token>";
+    configuration.subscriptionKey = @"<your subscription key>";
+    
+    self.openAPI.configuration = configuration;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -21,12 +21,13 @@
 
 #import "AIRequest.h"
 
-@class AFHTTPRequestOperationManager;
+@protocol AIConfiguration;
 
 @interface AIDataService : NSObject
 
-@property(nonatomic, strong) AFHTTPRequestOperationManager *manager;
-@property(nonatomic, copy) NSURL *baseURL;
+
+- (instancetype)init __unavailable;
+- (instancetype)initWithConfiguration:(id <AIConfiguration>)configuration;
 
 - (void)enqueueRequest:(AIRequest *)request;
 - (void)dequeueRequest:(AIRequest *)request;

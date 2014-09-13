@@ -20,7 +20,7 @@
  ***********************************************************************************************************************/
 
 #import "AIMeterTable.h"
-#import "OPAudioUtils.h"
+#import "AIAudioUtils.h"
 
 #define kMinDBvalue -80.f
 #define kTableSize 400

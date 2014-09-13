@@ -23,6 +23,8 @@
 #import "AIDataService.h"
 #import "AIRecordDetector.h"
 #import "OPOutputStreamer.h"
+#import "AIDataService_Private.h"
+#import "AIConfiguration.h"
 
 #import "AFNetworking.h"
 
@@ -48,6 +50,7 @@
         _recordDetector.delegate = self;
         
         AFHTTPRequestOperationManager *manager = self.dataService.manager;
+        id <AIConfiguration> configuration = self.dataService.configuration;
         
         NSString *path = @"query/";
         
@@ -55,7 +58,7 @@
         
         self.boundary = [self creteBoundary];
         
-        NSURL *baseURL = [NSURL URLWithString:@"http://192.168.1.121:8080/api/"];
+        NSURL *baseURL = manager.baseURL;
         
         NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST"
                                                                           URLString:[[NSURL URLWithString:path relativeToURL:baseURL] absoluteString]
@@ -66,7 +69,11 @@
         [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
         [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         [request setValue:@"chunked" forHTTPHeaderField:@"Transfer-Encoding"];
-        [request setValue:@"Bearer e43c0g5d787787d95221c9481cw8fe98" forHTTPHeaderField:@"Authorization"];
+        
+        [request setValue:[NSString stringWithFormat:@"Bearer %@", configuration.clientAccessToken]
+       forHTTPHeaderField:@"Authorization"];
+        [request setValue:[NSString stringWithFormat:@"%@", configuration.subscriptionKey]
+       forHTTPHeaderField:@"ocp-apim-subscription-key"];
         
         __weak typeof(self) seflWeak = self;
         
@@ -93,6 +100,9 @@
         _outputStreamer.delegate = self;
     }
     
+    
+// curl -H "Transfer-Encoding: chunked" -k -F "request={'timezone':'America/New_York'};type=application/json" -F "voiceData=@ann_smith.raw;type=audio/wav" -H "Authorization: Bearer 24111e774e4f40deb0a4bd694294deab" -H "ocp-apim-subscription-key: 30ac7f13fdde4a7489b6f256f90536bf" "https://api.api.ai/v1/query"
+    
     return self;
 }
 
@@ -105,7 +115,7 @@
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"{\"agent_id\":\"chrys\"}" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"{\"agent_id\":\"test\"}" dataUsingEncoding:NSUTF8StringEncoding]];
 
     [data appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"qwe.wav\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -162,13 +172,18 @@
 
 - (void)recordDetectorDidStopRecording:(AIRecordDetector *)helper cancelled:(BOOL)cancelled
 {
+    [self commitVoice];
+}
+
+- (void)commitVoice
+{
     [_outputStreamer appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [_outputStreamer applyAndClose];
 }
 
 - (void)recordDetector:(AIRecordDetector *)helper didFailWithError:(NSError *)error
 {
-
+    [self handleError:error];
 }
 
 - (void)startedOutputStreamer:(OPOutputStreamer *)outputStreamer

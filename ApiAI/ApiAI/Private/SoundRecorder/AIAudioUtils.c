@@ -19,10 +19,16 @@
  *
  ***********************************************************************************************************************/
 
-#import <Foundation/Foundation.h>
+#include "AIAudioUtils.h"
 
-@protocol AIConfiguration <NSObject>
+OSStatus AICAError(OSStatus result, const char *file, int line)
+{
+    if (result == noErr) return noErr;
+    fprintf(stderr, "Error in %s in %d\n", file, line);
+    return result;
+}
 
-@property(nonatomic, copy) NSURL *baseURL;
-
-@end
+inline double AIDbToAmpMy(double inDb)
+{
+	return pow(10., 0.05 * inDb);
+}

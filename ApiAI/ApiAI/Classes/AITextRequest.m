@@ -21,6 +21,8 @@
 
 #import "AITextRequest.h"
 #import "AIDataService.h"
+#import "AIDataService_Private.h"
+#import "AIConfiguration.h"
 
 #import "AFNetworking.h"
 
@@ -29,13 +31,14 @@
 - (void)configureHTTPRequest
 {
     AFHTTPRequestOperationManager *manager = self.dataService.manager;
+    id <AIConfiguration> configuration = self.dataService.configuration;
     
     NSString *path = @"query/";
     
     NSError *error = nil;
     
     NSDictionary *parameters = @{
-                                 @"query": _query
+                                 @"query": _query,
                                  };
     
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST"
@@ -43,9 +46,13 @@
                                                                      parameters:parameters
                                                                           error:&error];
     
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"Bearer e43c0g5d787787d95221c9481cw8fe98" forHTTPHeaderField:@"Authorization"];
+    
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", configuration.clientAccessToken]
+   forHTTPHeaderField:@"Authorization"];
+    [request setValue:[NSString stringWithFormat:@"%@", configuration.subscriptionKey]
+   forHTTPHeaderField:@"ocp-apim-subscription-key"];
     
     __weak typeof(self) seflWeak = self;
     

@@ -19,6 +19,7 @@
 		58C2A87F19BEE2EB00632C2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A87519BEE2EB00632C2F /* main.m */; };
 		58C2A88019BEE2EB00632C2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A87719BEE2EB00632C2F /* ViewController.m */; };
 		58C2A88219BEE3D600632C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A86F19BEE2EB00632C2F /* Main.storyboard */; };
+		58ECF07919C43B7B00EF5291 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ECF07819C43B7B00EF5291 /* Configuration.m */; };
 		EF024C9C86A449C4AC266221 /* libPods-ApiAIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A06C412DEDB64999A93BDCA7 /* libPods-ApiAIDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		58C2A87519BEE2EB00632C2F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		58C2A87619BEE2EB00632C2F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		58C2A87719BEE2EB00632C2F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58ECF07719C43B7B00EF5291 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		58ECF07819C43B7B00EF5291 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		A06C412DEDB64999A93BDCA7 /* libPods-ApiAIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A6B92CE5B040F7B799E9CD /* Pods-ApiAIDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemo.xcconfig"; path = "Pods/Pods-ApiAIDemo.xcconfig"; sourceTree = "<group>"; };
 		F8BC1A9770764F3894230B85 /* libPods-OpenAPIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenAPIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +107,8 @@
 				58C2A87619BEE2EB00632C2F /* ViewController.h */,
 				58C2A87719BEE2EB00632C2F /* ViewController.m */,
 				58C2A88119BEE2F100632C2F /* Supporting Files */,
+				58ECF07719C43B7B00EF5291 /* Configuration.h */,
+				58ECF07819C43B7B00EF5291 /* Configuration.m */,
 			);
 			path = ApiAI;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			files = (
 				58C2A88019BEE2EB00632C2F /* ViewController.m in Sources */,
 				58C2A87F19BEE2EB00632C2F /* main.m in Sources */,
+				58ECF07919C43B7B00EF5291 /* Configuration.m in Sources */,
 				58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

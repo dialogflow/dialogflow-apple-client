@@ -23,6 +23,7 @@
 #import "AIDataService.h"
 #import "AITextRequest.h"
 #import "AIVoiceRequest.h"
+#import "ApiAI_ApiAI_Private.h"
 
 @interface ApiAI ()
 
@@ -34,7 +35,7 @@
 {
     self = [super init];
     if (self) {
-        self.dataService = [[AIDataService alloc] init];
+        
     }
     
     return self;
@@ -49,6 +50,13 @@
     }
     
     return nil;
+}
+
+- (void)setConfiguration:(id<AIConfiguration>)configuration
+{
+    _configuration = configuration;
+    
+    self.dataService = [[AIDataService alloc] initWithConfiguration:configuration];
 }
 
 - (void)enqueue:(AIRequest *)request

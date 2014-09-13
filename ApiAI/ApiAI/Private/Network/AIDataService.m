@@ -21,6 +21,8 @@
 
 #import "AIDataService.h"
 #import "AFNetworking.h"
+#import "AIConfiguration.h"
+#import "AIDataService_Private.h"
 
 @interface AIDataService ()
 
@@ -30,12 +32,12 @@
 
 @implementation AIDataService
 
-- (instancetype)init
+- (instancetype)initWithConfiguration:(id <AIConfiguration>)configuration
 {
     self = [super init];
     if (self) {
-        self.baseURL = [NSURL URLWithString:@"https://dev.api.ai/api/"];
-        self.manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:_baseURL];
+        self.configuration = configuration;
+        self.manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:configuration.baseURL];
         self.manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:0];
         
         self.queue = [[NSOperationQueue alloc] init];

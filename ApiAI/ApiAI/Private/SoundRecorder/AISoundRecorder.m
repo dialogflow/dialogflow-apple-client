@@ -21,7 +21,7 @@
 
 #import "AISoundRecorder.h"
 #import "AISoundRecorderConstants.h"
-#import "OPAudioUtils.h"
+#import "AIAudioUtils.h"
 #import "AIMeterTable.h"
 
 #define kBufferSize 32768

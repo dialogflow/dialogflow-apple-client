@@ -21,7 +21,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "OPConfiguration.h"
+#import "AIConfiguration.h"
 #import "AIRequest.h"
 
 typedef NS_ENUM(NSUInteger, AIRequestType) {
@@ -31,7 +31,6 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 
 @interface ApiAI : NSObject
 
-@property(nonatomic, strong) AIDataService *dataService;
 @property(nonatomic, strong) id <AIConfiguration> configuration;
 
 - (AIRequest *)requestWithType:(AIRequestType)requestType;

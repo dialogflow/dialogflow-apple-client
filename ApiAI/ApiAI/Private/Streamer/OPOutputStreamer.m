@@ -32,7 +32,6 @@
 
 @implementation OPOutputStreamer
 {
-    NSUInteger byteIndex;
     dispatch_once_t onceToken;
 }
 

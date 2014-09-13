@@ -19,16 +19,12 @@
  *
  ***********************************************************************************************************************/
 
-#include "OPAudioUtils.h"
+#import <Foundation/Foundation.h>
 
-OSStatus AICAError(OSStatus result, const char *file, int line)
-{
-    if (result == noErr) return noErr;
-    fprintf(stderr, "Error in %s in %d\n", file, line);
-    return result;
-}
+@protocol AIConfiguration <NSObject>
 
-inline double AIDbToAmpMy(double inDb)
-{
-	return pow(10., 0.05 * inDb);
-}
+@property(nonatomic, copy) NSURL *baseURL;
+@property(nonatomic, copy) NSString *clientAccessToken;
+@property(nonatomic, copy) NSString *subscriptionKey;
+
+@end
