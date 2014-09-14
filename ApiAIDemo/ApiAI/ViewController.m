@@ -43,11 +43,11 @@
     [super viewDidLoad];
     self.openAPI = [[ApiAI alloc] init];
     
+    // Define API.AI configuration here.
     Configuration *configuration = [[Configuration alloc] init];
     configuration.baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
-    
-    configuration.clientAccessToken = @"<your client access token>";
-    configuration.subscriptionKey = @"<your subscription key>";
+    configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";
+    configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY";
     
     self.openAPI.configuration = configuration;
 }
