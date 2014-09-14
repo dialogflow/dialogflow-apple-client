@@ -101,7 +101,7 @@
     }
     
     
-// curl -H "Transfer-Encoding: chunked" -k -F "request={'timezone':'America/New_York'};type=application/json" -F "voiceData=@ann_smith.raw;type=audio/wav" -H "Authorization: Bearer 24111e774e4f40deb0a4bd694294deab" -H "ocp-apim-subscription-key: 30ac7f13fdde4a7489b6f256f90536bf" "https://api.api.ai/v1/query"
+// curl -H "Transfer-Encoding: chunked" -k -F "request={'timezone':'America/New_York'};type=application/json" -F "voiceData=@ann_smith.raw;type=audio/wav" -H "Authorization: Bearer YOUR_CLIENT_ACCESS_TOKEN" -H "ocp-apim-subscription-key: YOUR_SUBSCRIPTION_KEY" "https://api.api.ai/v1/query"
     
     return self;
 }
@@ -113,6 +113,7 @@
     [_output open];
     
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
+    // TODO: we don't need request JSON.
     [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"{\"agent_id\":\"test\"}" dataUsingEncoding:NSUTF8StringEncoding]];
