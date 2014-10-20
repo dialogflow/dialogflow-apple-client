@@ -100,9 +100,6 @@
         _outputStreamer.delegate = self;
     }
     
-    
-// curl -H "Transfer-Encoding: chunked" -k -F "request={'timezone':'America/New_York'};type=application/json" -F "voiceData=@ann_smith.raw;type=audio/wav" -H "Authorization: Bearer 24111e774e4f40deb0a4bd694294deab" -H "ocp-apim-subscription-key: 30ac7f13fdde4a7489b6f256f90536bf" "https://api.api.ai/v1/query"
-    
     return self;
 }
 
