@@ -81,7 +81,6 @@
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
-    
     [_openAPI enqueue:request];
 }
 

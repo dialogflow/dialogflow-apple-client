@@ -24,16 +24,55 @@
 #import "AIConfiguration.h"
 #import "AIRequest.h"
 
+
+
+/*!
+ 
+ @enum AIRequestType enum
+ 
+ @discussion Requst type (Voice or Text).
+ 
+ */
 typedef NS_ENUM(NSUInteger, AIRequestType) {
-    AIRequestTypeText = 0,
-    AIRequestTypeVoice
+    /*! Simple text request type */
+    AIRequestTypeText,
+    /*! Voice request type with VAD(Voice activity detection) for detect end of phrase. */
+    AIRequestTypeVoice = 1
 };
 
+/*!
+ 
+ @class ApiAI
+ 
+ @discussion ApiAI endpoint for ApiAi SDK
+ */
 @interface ApiAI : NSObject
 
+/*!
+ 
+ @property ApiAI enum
+ 
+ @discussion configuration property, cannot be NULL.
+ 
+ */
 @property(nonatomic, strong) id <AIConfiguration> configuration;
 
+/*!
+ 
+ @method requestWithType
+ 
+ @discussion return request object with used type (@see AIRequestType).
+ 
+ */
 - (AIRequest *)requestWithType:(AIRequestType)requestType;
+
+/*!
+ 
+ @method enqueue
+ 
+ @discussion using this method for send request.
+ 
+ */
 - (void)enqueue:(AIRequest *)request;
 
 @end
