@@ -1,0 +1,45 @@
+{
+    "name": "ApiAI",
+    "version": "0.0.1",
+    "license": "MIT",
+    "summary": "Speech interface for apps and devices.",
+    "homepage": "http://api.ai/",
+    "authors": {
+        "Dmitriy Kuragin": "dkuragin@ya.com"
+    },
+    
+    "source": {
+        "git": "git@github.com:api-ai/api-ai-ios-sdk.git",
+        "tag": "v0.0.2"
+    },
+
+    "requires_arc": true,
+    "platforms": {
+        "ios": "7.0"
+    },
+
+    "default_subspec": "All",
+    "subspecs": [
+        {
+            "name": "All",
+            
+            "source_files": [
+                "ApiAI",
+                "ApiAI/Classes/**/*.{h,m}",
+                "ApiAI/Private/**/*.{h,m,c}"
+            ],
+
+            "public_header_files": [
+                "ApiAI/Classes/**/*.h"
+            ],
+
+            "ios": {
+                "frameworks": []
+            },
+
+            "dependencies": {
+                "AFNetworking": []
+            }
+        }
+    ]
+}
