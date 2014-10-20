@@ -3,7 +3,7 @@
 
 target "ApiAIDemo" do
 
-pod 'ApiAI', :path => '../ApiAI'
+pod 'ApiAI', :path => '../'
 pod 'MBProgressHUD'
 
 end
