@@ -99,7 +99,6 @@
         self.outputStreamer = [[OPOutputStreamer alloc] initWithStream:output];
         _outputStreamer.delegate = self;
     }
-    
     return self;
 }
 
@@ -110,6 +109,7 @@
     [_output open];
     
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
+    // TODO: we don't need request JSON.
     [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"{\"asrPref\":\"stiv2\"}" dataUsingEncoding:NSUTF8StringEncoding]];
