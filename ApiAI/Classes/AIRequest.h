@@ -25,7 +25,20 @@
 @class AFHTTPRequestOperation;
 @class AIRequest;
 
+/*!
+ * Succesfull handler definition for AIRequest.
+ *
+ * @param request The request called handler.
+ * @param response Server responce (Serialized JSON).
+ */
 typedef void(^SuccesfullResponseBlock)(AIRequest *request, id response);
+
+/*!
+ * Failure handler definition for AIRequest.
+ *
+ * @param request The request called handler.
+ * @param response Server responce (Serialized JSON).
+ */
 typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 @protocol AIRequest <NSObject>

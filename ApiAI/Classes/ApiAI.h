@@ -62,6 +62,7 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  @method requestWithType
  
  @discussion return request object with used type (@see AIRequestType).
+ @return
  
  */
 - (AIRequest *)requestWithType:(AIRequestType)requestType;

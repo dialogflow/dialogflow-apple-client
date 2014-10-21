@@ -31,16 +31,6 @@
 
 @implementation ApiAI
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    
-    return self;
-}
-
 - (AIRequest *)requestWithType:(AIRequestType)requestType
 {
     if (requestType == AIRequestTypeText) {
