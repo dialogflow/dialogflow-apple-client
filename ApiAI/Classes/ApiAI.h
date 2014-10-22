@@ -48,6 +48,8 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  */
 @interface ApiAI : NSObject
 
+@property(nonatomic, copy) NSString *lang;
+
 /*!
  
  @property ApiAI enum

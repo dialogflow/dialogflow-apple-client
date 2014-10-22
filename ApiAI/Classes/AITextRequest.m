@@ -37,9 +37,18 @@
     
     NSError *error = nil;
     
-    NSDictionary *parameters = @{
-                                 @"query": _query,
-                                 };
+    NSMutableDictionary *parameters = [@{
+                                        @"query": _query,
+                                        @"lang": self.lang
+                                        } mutableCopy];
+    
+    if (self.resetContexts) {
+        parameters[@"resetContexts"] = @(YES);
+    }
+    
+    if ([self.contexts count]) {
+        parameters[@"contexts"] = self.contexts;
+    }
     
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST"
                                                                       URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString]

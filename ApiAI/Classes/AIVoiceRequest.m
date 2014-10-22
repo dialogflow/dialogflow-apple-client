@@ -105,10 +105,27 @@
     AFHTTPRequestOperationManager *manager = self.dataService.manager;
     
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
+    
+    NSMutableDictionary *parameters = [@{
+                                         @"lang": self.lang
+                                         } mutableCopy];
+    
+    if (self.resetContexts) {
+        parameters[@"resetContexts"] = @(YES);
+    }
+    
+    if ([self.contexts count]) {
+        parameters[@"contexts"] = self.contexts;
+    }
 
     [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"{\"asrPref\":\"stiv2\"}" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
+                                                       options:0
+                                                         error:nil];
+    
+    [data appendData:jsonData];
 
     [data appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"qwe.wav\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];

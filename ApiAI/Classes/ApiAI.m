@@ -33,13 +33,16 @@
 
 - (AIRequest *)requestWithType:(AIRequestType)requestType
 {
+    AIRequest *request = nil;
     if (requestType == AIRequestTypeText) {
-        return [[AITextRequest alloc] initWithDataService:_dataService];
+        request = [[AITextRequest alloc] initWithDataService:_dataService];
     } else {
-        return [[AIVoiceRequest alloc] initWithDataService:_dataService];
+        request = [[AIVoiceRequest alloc] initWithDataService:_dataService];
     }
     
-    return nil;
+    [request setLang:self.lang];
+    
+    return request;
 }
 
 - (void)setConfiguration:(id<AIConfiguration>)configuration
@@ -52,6 +55,15 @@
 - (void)enqueue:(AIRequest *)request
 {
     [_dataService enqueueRequest:request];
+}
+
+- (NSString *)lang
+{
+    if (!_lang) {
+        _lang = [[NSLocale preferredLanguages] firstObject]?:@"en";
+    }
+    
+    return _lang;
 }
 
 @end

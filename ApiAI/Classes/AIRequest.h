@@ -54,6 +54,11 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
     AFHTTPRequestOperation *_HTTPRequestOperation;
 }
 
+@property(nonatomic, copy) NSArray *contexts; // default in nil
+@property(nonatomic, assign) BOOL resetContexts; //default is no
+
+@property(nonatomic, copy) NSString *lang; //default is ApiAI lang propery
+
 @property(nonatomic, copy) NSError *error;
 @property(nonatomic, strong) id response;
 
