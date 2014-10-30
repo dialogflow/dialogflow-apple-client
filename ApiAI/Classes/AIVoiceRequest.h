@@ -21,7 +21,11 @@
 
 #import "AIRequest.h"
 
+typedef void(^SoundLevelHandleBlock)(AIRequest *request, CGFloat level);
+
 @interface AIVoiceRequest : AIRequest
+
+@property(nonatomic, copy) SoundLevelHandleBlock soundLevelHandleBlock;
 
 @property(nonatomic, assign) BOOL useVADForAutoCommit;
 

@@ -100,6 +100,12 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
     
+    MBProgressHUD *progressHUD =  [MBProgressHUD HUDForView:self.view];
+    
+    [request setSoundLevelHandleBlock:^(AIRequest *request, CGFloat level) {
+        [progressHUD setLabelText:[NSString stringWithFormat:@"%.2f", level]];
+    }];
+    
     self.voiceRequest = request;
     [_openAPI enqueue:request];
 }

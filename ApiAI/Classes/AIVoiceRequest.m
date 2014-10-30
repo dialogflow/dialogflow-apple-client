@@ -170,6 +170,10 @@
 
 - (void)recordDetector:(AIRecordDetector *)helper didReceiveData:(NSData *)data power:(float)power
 {
+    if (self.soundLevelHandleBlock) {
+        _soundLevelHandleBlock(self, power);
+    }
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [_streamBuffer write:data];
     });
