@@ -26,21 +26,31 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
 
 
 ## Integrating into your app
-* Run ```pod install``` in your project folder.
+* Run 
+  ```Shell
+  pod install
+  ``` 
+  in your project folder.
+  
 * Update **Podfile** to include:
-    ```
+    ```Podfile
     pod 'ApiAI', :git => 'git@github.com:speaktoit/api-ai-ios-sdk.git'
     ```
   Regular pod definitions are coming soon.
 * Run ```pod update```
+
 * Add code to your app:
 1. Init the SDK.
-  ```
-  @property(nonatomic, strong) ApiAI *openAPI;
+  In the ```AppDelegate.h```, add ApiAI.h import and property: 
+  ```Objective-C
+  #import "ApiAI.h"
+  
+  @property(nonatomic, strong) ApiAI *apiAI;
   ```
   
-  ```
-     self.openAPI = [[ApiAI alloc] init];
+  In the AppDeelgate.m, add
+  ```Objective-C
+     self.apiAI = [[ApiAI alloc] init];
     
     // Define API.AI configuration here.
     Configuration *configuration = [[Configuration alloc] init];
@@ -48,14 +58,14 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
     configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN_HERE";
     configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY_HERE";
     
-    self.openAPI.configuration = configuration;
+    self.apiAI.configuration = configuration;
   ```
 
 2. Perform request using text.
-  ```
+  ```Objective-C
   ...
-  // Request using text (assumes that speech recognition / ASR is done using a third-party library, e.g. AT&T
-  AITextRequest *request = (AITextRequest *)[_openAPI requestWithType:AIRequestTypeText];
+  // Request using text (assumes that speech recognition / ASR is done using a third-party library, e.g. AT&T)
+  AITextRequest *request = (AITextRequest *)[_apiAI requestWithType:AIRequestTypeText];
   request.query = @[@"hello"];
   [request setCompletionBlockSuccess:^(OPRequest *request, id response) {
       // Handle success ...
@@ -68,9 +78,9 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   ```
 
 3. Or perform request using voice:
-  ```
+  ```Objective-C
   // Request using voice
-    AIVoiceRequest *request = (AIVoiceRequest *)[_openAPI requestWithType:AIRequestTypeVoice];
+    AIVoiceRequest *request = (AIVoiceRequest *)[_apiAI requestWithType:AIRequestTypeVoice];
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
         // Handle success ...
@@ -79,5 +89,5 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
     }];
     
     self.voiceRequest = request;
-    [_openAPI enqueue:request];
+    [_apiAI enqueue:request];
   ```
