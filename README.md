@@ -76,7 +76,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   // Request using voice
     AIVoiceRequest *request = (AIVoiceRequest *)[_openAPI requestWithType:AIRequestTypeVoice];
     
-    [request setCompletionBlockSuccess:^(AIRequest *request, id responce) {
+    [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
         // Handle success ...
     } failure:^(AIRequest *request, NSError *error) {
         // Handle error ...
