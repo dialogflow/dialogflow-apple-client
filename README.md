@@ -1,15 +1,22 @@
 api-ai-ios-sdk
 ==============
 
-## Overview
+* [Overview](#overview)
+* [Prerequisites](#prerequisites)
+* [Running the Demo app](#runningthedemoapp)
+* [Integrating api.ai into your iOS app](#integratingintoyourapp)
+
+---------------
+
+## <a name="overview"></a>Overview
 The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI natural language processing API on iOS devices. API.AI allows using voice commands and integration with dialog scenarios defined for a particular agent in API.AI.
 
-## Prerequsites
+## <a name="prerequisites"></a>Prerequsites
 * Create an [API.AI account](http://api.ai)
 * Install [CocoaPods](http://cocoapods.org/)
 
 
-## Running the Demo App
+## <a name="runningthedemoapp"></a>Running the Demo app
 * Run ```pod update``` in the ApiAiDemo project folder.
 * Open **ApiAIDemo.xworkspace** in Xcode.
 * In **ViewController -viewDidLoad** insert API key & subscription.
@@ -25,7 +32,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   Inputs are possible with text and voice (experimental).
 
 
-## Integrating into your app
+## <a name="integratingintoyourapp"></a>Integrating into your app
 * Run 
   ```Shell
   pod install
