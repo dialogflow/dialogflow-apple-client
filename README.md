@@ -34,9 +34,9 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   
 * Update **Podfile** to include:
     ```Podfile
-    pod 'ApiAI', :git => 'git@github.com:speaktoit/api-ai-ios-sdk.git'
+    pod 'ApiAI'
     ```
-  Regular pod definitions are coming soon.
+
 * Run ```pod update```
 
 * Add code to your app:
