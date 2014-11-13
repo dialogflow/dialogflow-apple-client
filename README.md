@@ -34,11 +34,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
 
 ## <a name="integratingintoyourapp"></a>Integrating into your app
 ### 1. Initialize CocoaPods 
-  * Run
-  ```Shell
-  pod install
-  ``` 
-  in your project folder.
+  * Run  ```pod install``` in your project folder.
   
   * Update **Podfile** to include:
     ```Podfile
