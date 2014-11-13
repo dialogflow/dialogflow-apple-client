@@ -33,24 +33,24 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
 
 
 ## <a name="integratingintoyourapp"></a>Integrating into your app
-* Run 
+### 1. Initialize CocoaPods 
+  * Run
   ```Shell
   pod install
   ``` 
   in your project folder.
   
-* Update **Podfile** to include:
+  * Update **Podfile** to include:
     ```Podfile
     pod 'ApiAI'
     ```
 
 * Run ```pod update```
 
-* Add code to your app:
-1. Init the SDK.
+### 2. Init the SDK.
   In the ```AppDelegate.h```, add ApiAI.h import and property: 
   ```Objective-C
-  #import "ApiAI.h"
+  #import <ApiAI/ApiAI.h>
   
   @property(nonatomic, strong) ApiAI *apiAI;
   ```
@@ -68,7 +68,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
     self.apiAI.configuration = configuration;
   ```
 
-2. Perform request using text.
+### 3. Perform request using text.
   ```Objective-C
   ...
   // Request using text (assumes that speech recognition / ASR is done using a third-party library, e.g. AT&T)
@@ -83,8 +83,8 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   [_openAPI enqueue:request];
 
   ```
-
-3. Or perform request using voice:
+  
+### 4. Or perform request using voice:
   ```Objective-C
   // Request using voice
     AIVoiceRequest *request = (AIVoiceRequest *)[_apiAI requestWithType:AIRequestTypeVoice];
