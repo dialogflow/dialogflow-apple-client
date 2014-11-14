@@ -24,10 +24,9 @@
 #import <ApiAI/ApiAI.h>
 #import <ApiAI/AITextRequest.h>
 #import <ApiAI/AIVoiceRequest.h>
+#import <ApiAI/AIDefaultConfiguration.h>
 
 #import <MBProgressHUD/MBProgressHUD.h>
-
-#import "Configuration.h"
 
 @interface ViewController () <UITextFieldDelegate>
 
@@ -41,11 +40,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.openAPI = [[ApiAI alloc] init];
+    self.openAPI = [ApiAI sharedApiAI];
     
     // Define API.AI configuration here.
-    Configuration *configuration = [[Configuration alloc] init];
-    configuration.baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
+    id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
+    
     configuration.clientAccessToken = @"<#YOUR_CLIENT_ACCESS_TOKEN#>";
     configuration.subscriptionKey = @"<#YOUR_SUBSCRIPTION_KEY#>";
     
@@ -102,7 +101,7 @@
     
     MBProgressHUD *progressHUD =  [MBProgressHUD HUDForView:self.view];
     
-    [request setSoundLevelHandleBlock:^(AIRequest *request, CGFloat level) {
+    [request setSoundLevelHandleBlock:^(AIRequest *request, float level) {
         [progressHUD setLabelText:[NSString stringWithFormat:@"%.2f", level]];
     }];
     
