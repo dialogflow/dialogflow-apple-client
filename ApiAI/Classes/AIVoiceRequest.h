@@ -21,7 +21,7 @@
 
 #import "AIRequest.h"
 
-typedef void(^SoundLevelHandleBlock)(AIRequest *request, CGFloat level);
+typedef void(^SoundLevelHandleBlock)(AIRequest *request, float level);
 
 @interface AIVoiceRequest : AIRequest
 

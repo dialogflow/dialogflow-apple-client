@@ -34,7 +34,7 @@ UInt32 const kFramesPerPacket = 1;
 UInt32 const kBytesPerFrame = 2;
 UInt32 const kChannelsPerFrame = 1;
 UInt32 const kBitsPerChannel = 16;
-UInt32 const kFormatFlags = kAudioFormatFlagsCanonical;
+UInt32 const kFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
 
 #pragma mark -
 #pragma mark AudioComponentDescription Constants

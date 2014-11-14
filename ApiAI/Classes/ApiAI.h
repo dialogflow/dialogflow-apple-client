@@ -21,6 +21,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CWLSynthesizeSingleton.h"
+
 #import "AIConfiguration.h"
 #import "AIRequest.h"
 
@@ -47,6 +49,8 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  @discussion ApiAI endpoint for ApiAi SDK
  */
 @interface ApiAI : NSObject
+
+CWL_DECLARE_SINGLETON_FOR_CLASS(ApiAI);
 
 @property(nonatomic, copy) NSString *lang;
 

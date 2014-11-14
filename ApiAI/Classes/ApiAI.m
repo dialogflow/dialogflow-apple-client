@@ -24,12 +24,17 @@
 #import "AITextRequest.h"
 #import "AIVoiceRequest.h"
 #import "ApiAI_ApiAI_Private.h"
+#import "AIDefaultConfiguration.h"
 
 @interface ApiAI ()
 
 @end
 
 @implementation ApiAI
+
+CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(ApiAI);
+
+@synthesize configuration=_configuration;
 
 - (AIRequest *)requestWithType:(AIRequestType)requestType
 {
@@ -50,6 +55,16 @@
     _configuration = configuration;
     
     self.dataService = [[AIDataService alloc] initWithConfiguration:configuration];
+}
+
+- (id <AIConfiguration>)configuration
+{
+    if (!_configuration) {
+        _configuration = [[AIDefaultConfiguration alloc] init];
+        self.dataService = [[AIDataService alloc] initWithConfiguration:_configuration];
+    }
+    
+    return _configuration;
 }
 
 - (void)enqueue:(AIRequest *)request

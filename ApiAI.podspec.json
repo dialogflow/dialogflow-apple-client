@@ -10,7 +10,7 @@
     
     "source": {
         "git": "https://github.com/api-ai/api-ai-ios-sdk.git",
-        "tag": "v0.0.1"
+        "tag": "v0.0.2"
     },
 
     "requires_arc": true,
@@ -37,7 +37,8 @@
             },
 
             "dependencies": {
-                "AFNetworking": []
+                "AFNetworking": [],
+                "CWLSynthesizeSingleton": []
             }
         }
     ]
