@@ -50,6 +50,8 @@
         parameters[@"contexts"] = self.contexts;
     }
     
+    parameters[@"sessionId"] = self.sessionId;
+    
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST"
                                                                       URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString]
                                                                      parameters:parameters

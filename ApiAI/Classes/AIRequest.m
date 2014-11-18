@@ -23,6 +23,8 @@
 #import "AIDataService.h"
 #import "AFNetworking.h"
 
+#import <CommonCrypto/CommonDigest.h>
+
 @interface AIRequest ()
 
 @property(nonatomic, assign) BOOL finished;
@@ -100,6 +102,28 @@
     self.finished = YES;
     
     [self didChangeValueForKey:@"isFinished"];
+}
+
+- (NSString *)sessionId
+{
+    if (!_sessionId) {
+        NSString *vendorIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+        _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
+    }
+    
+    return _sessionId;
+}
+
+- (NSString *)md5FromString:(NSString *)string
+{
+    const char *concat_str = [string UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(concat_str, (CC_LONG)strlen(concat_str), result);
+    NSMutableString *hash = [NSMutableString string];
+    for (int i = 0; i < 16; i++)
+        [hash appendFormat:@"%02X", result[i]];
+    return [hash lowercaseString];
 }
 
 - (void)cancel

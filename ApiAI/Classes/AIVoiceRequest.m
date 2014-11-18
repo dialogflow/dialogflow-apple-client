@@ -117,6 +117,8 @@
     if ([self.contexts count]) {
         parameters[@"contexts"] = self.contexts;
     }
+    
+    parameters[@"sessionId"] = self.sessionId;
 
     [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];

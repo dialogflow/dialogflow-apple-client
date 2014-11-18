@@ -57,6 +57,8 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 @property(nonatomic, copy) NSArray *contexts; // default in nil
 @property(nonatomic, assign) BOOL resetContexts; //default is no
 
+@property(nonatomic, copy) NSString *sessionId; //default is md5 checksum from identifierForVendor + bundleIdentifier (maximum length 36 symbols)
+
 @property(nonatomic, copy) NSString *lang; //default is ApiAI lang propery
 
 @property(nonatomic, copy) NSError *error;
