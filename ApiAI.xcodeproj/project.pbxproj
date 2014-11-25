@@ -21,6 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		581AB3AF1A245D8300E8A190 /* AIVoiceRequestButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB39D1A245D8300E8A190 /* AIVoiceRequestButton.m */; };
+		581AB3B01A245D8300E8A190 /* AIEllipseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3A81A245D8300E8A190 /* AIEllipseView.m */; };
+		581AB3B11A245D8300E8A190 /* AIProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AA1A245D8300E8A190 /* AIProgressView.m */; };
+		581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */; };
+		581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */; };
 		584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
 		5891DF531941E14C0043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
@@ -53,6 +58,23 @@
 
 /* Begin PBXFileReference section */
 		0D13DD66A857D0D8D77EF8B7 /* Pods-ApiAI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAI/Pods-ApiAI.debug.xcconfig"; sourceTree = "<group>"; };
+		581AB39C1A245D8300E8A190 /* AIVoiceRequestButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceRequestButton.h; sourceTree = "<group>"; };
+		581AB39D1A245D8300E8A190 /* AIVoiceRequestButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceRequestButton.m; sourceTree = "<group>"; };
+		581AB39E1A245D8300E8A190 /* AIVoiceRequestButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIVoiceRequestButton.xib; sourceTree = "<group>"; };
+		581AB3A01A245D8300E8A190 /* AICubeIconImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AICubeIconImage.png; sourceTree = "<group>"; };
+		581AB3A11A245D8300E8A190 /* AICubeIconImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AICubeIconImage@2x.png"; sourceTree = "<group>"; };
+		581AB3A21A245D8300E8A190 /* AICubeIconImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AICubeIconImage@3x.png"; sourceTree = "<group>"; };
+		581AB3A31A245D8300E8A190 /* AIMicrophoneControlImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AIMicrophoneControlImage.png; sourceTree = "<group>"; };
+		581AB3A41A245D8300E8A190 /* AIMicrophoneControlImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AIMicrophoneControlImage@2x.png"; sourceTree = "<group>"; };
+		581AB3A51A245D8300E8A190 /* AIMicrophoneControlImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AIMicrophoneControlImage@3x.png"; sourceTree = "<group>"; };
+		581AB3A71A245D8300E8A190 /* AIEllipseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIEllipseView.h; sourceTree = "<group>"; };
+		581AB3A81A245D8300E8A190 /* AIEllipseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIEllipseView.m; sourceTree = "<group>"; };
+		581AB3A91A245D8300E8A190 /* AIProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIProgressView.h; sourceTree = "<group>"; };
+		581AB3AA1A245D8300E8A190 /* AIProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIProgressView.m; sourceTree = "<group>"; };
+		581AB3AB1A245D8300E8A190 /* AIVoiceContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceContainerView.h; sourceTree = "<group>"; };
+		581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceContainerView.m; sourceTree = "<group>"; };
+		581AB3AD1A245D8300E8A190 /* AIVoiceLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceLevelView.h; sourceTree = "<group>"; };
+		581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceLevelView.m; sourceTree = "<group>"; };
 		584509AD19F4EB6B00A0AE9A /* OPStreamBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBuffer.h; sourceTree = "<group>"; };
 		584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPStreamBuffer.m; sourceTree = "<group>"; };
 		584509AF19F4EB6B00A0AE9A /* OPStreamBufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBufferDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +132,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		581AB39A1A245D8300E8A190 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				581AB39B1A245D8300E8A190 /* Classes */,
+				581AB39F1A245D8300E8A190 /* Images */,
+				581AB3A61A245D8300E8A190 /* Private */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		581AB39B1A245D8300E8A190 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				581AB39C1A245D8300E8A190 /* AIVoiceRequestButton.h */,
+				581AB39D1A245D8300E8A190 /* AIVoiceRequestButton.m */,
+				581AB39E1A245D8300E8A190 /* AIVoiceRequestButton.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		581AB39F1A245D8300E8A190 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				581AB3A01A245D8300E8A190 /* AICubeIconImage.png */,
+				581AB3A11A245D8300E8A190 /* AICubeIconImage@2x.png */,
+				581AB3A21A245D8300E8A190 /* AICubeIconImage@3x.png */,
+				581AB3A31A245D8300E8A190 /* AIMicrophoneControlImage.png */,
+				581AB3A41A245D8300E8A190 /* AIMicrophoneControlImage@2x.png */,
+				581AB3A51A245D8300E8A190 /* AIMicrophoneControlImage@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		581AB3A61A245D8300E8A190 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				581AB3A71A245D8300E8A190 /* AIEllipseView.h */,
+				581AB3A81A245D8300E8A190 /* AIEllipseView.m */,
+				581AB3A91A245D8300E8A190 /* AIProgressView.h */,
+				581AB3AA1A245D8300E8A190 /* AIProgressView.m */,
+				581AB3AB1A245D8300E8A190 /* AIVoiceContainerView.h */,
+				581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */,
+				581AB3AD1A245D8300E8A190 /* AIVoiceLevelView.h */,
+				581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		5891DF461941E14C0043140B = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +211,7 @@
 		58C2A83019BEE0E000632C2F /* ApiAI */ = {
 			isa = PBXGroup;
 			children = (
+				581AB39A1A245D8300E8A190 /* UIKit */,
 				58C2A83119BEE0E000632C2F /* ApiAI-Prefix.pch */,
 				58C2A83219BEE0E000632C2F /* Classes */,
 				58C2A83D19BEE0E000632C2F /* Private */,
@@ -366,17 +437,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */,
+				581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */,
+				581AB3B11A245D8300E8A190 /* AIProgressView.m in Sources */,
 				584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */,
 				58C2A86119BEE0E000632C2F /* AIAlgorithmDetector.m in Sources */,
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
 				58C2A85E19BEE0E000632C2F /* AIVoiceRequest.m in Sources */,
 				58C2A86419BEE0E000632C2F /* AIAudioUtils.c in Sources */,
+				581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */,
 				58C2A85B19BEE0E000632C2F /* ApiAI.m in Sources */,
+				581AB3AF1A245D8300E8A190 /* AIVoiceRequestButton.m in Sources */,
 				58C2A86619BEE0E000632C2F /* AISoundRecorder.m in Sources */,
 				58C2A86319BEE0E000632C2F /* AIRecordDetector.m in Sources */,
 				58C2A86719BEE0E000632C2F /* AISoundRecorderConstants.m in Sources */,
 				58C2A86519BEE0E000632C2F /* AIMeterTable.m in Sources */,
+				581AB3B01A245D8300E8A190 /* AIEllipseView.m in Sources */,
 				58C2A85D19BEE0E000632C2F /* AITextRequest.m in Sources */,
 				58C2A86019BEE0E000632C2F /* EnergyAndZeroCross.m in Sources */,
 			);

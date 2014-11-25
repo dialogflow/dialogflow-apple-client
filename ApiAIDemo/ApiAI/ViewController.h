@@ -21,9 +21,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import <ApiAI/AIVoiceRequestButton.h>
+
 @interface ViewController : UIViewController
 
 @property(nonatomic, weak) IBOutlet UITextField *textField;
 @property(nonatomic, weak) IBOutlet UITextView *textView;
+
+@property(nonatomic, weak) IBOutlet AIVoiceRequestButton *voiceRequestButton;
 
 @end

@@ -183,12 +183,18 @@
 
 - (void)recordDetectorDidStartRecording:(AIRecordDetector *)helper
 {
-
+    if (self.soundRecordBeginBlock) {
+        self.soundRecordBeginBlock(self);
+    }
 }
 
 - (void)recordDetectorDidStopRecording:(AIRecordDetector *)helper cancelled:(BOOL)cancelled
 {
     [self commitVoice];
+    
+    if (self.soundRecordEndBlock) {
+        self.soundRecordEndBlock(self);
+    }
 }
 
 - (void)commitVoice

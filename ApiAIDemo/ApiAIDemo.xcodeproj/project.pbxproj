@@ -11,9 +11,7 @@
 		5891DFE81941E9210043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE71941E9210043140B /* Foundation.framework */; };
 		5891DFEA1941E9210043140B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE91941E9210043140B /* CoreGraphics.framework */; };
 		5891DFEC1941E9210043140B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFEB1941E9210043140B /* UIKit.framework */; };
-		58C2A87819BEE2EB00632C2F /* ann_smith.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A86A19BEE2EB00632C2F /* ann_smith.wav */; };
 		58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A86E19BEE2EB00632C2F /* AppDelegate.m */; };
-		58C2A87C19BEE2EB00632C2F /* debug0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A87119BEE2EB00632C2F /* debug0.wav */; };
 		58C2A87D19BEE2EB00632C2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A87219BEE2EB00632C2F /* InfoPlist.strings */; };
 		58C2A87E19BEE2EB00632C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A87419BEE2EB00632C2F /* Images.xcassets */; };
 		58C2A87F19BEE2EB00632C2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A87519BEE2EB00632C2F /* main.m */; };
@@ -23,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		581AB3981A24448800E8A190 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		583847291962B5C2007A6091 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5891DFE41941E9210043140B /* ApiAIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiAIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5891DFE71941E9210043140B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -30,13 +29,11 @@
 		5891DFEB1941E9210043140B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5891E0061941E9210043140B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5891E01C1941EC250043140B /* libPods-OpenAPIDemo-OpenAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OpenAPIDemo-OpenAPI.a"; path = "Pods/build/Debug-iphoneos/libPods-OpenAPIDemo-OpenAPI.a"; sourceTree = "<group>"; };
-		58C2A86A19BEE2EB00632C2F /* ann_smith.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ann_smith.wav; sourceTree = "<group>"; };
 		58C2A86B19BEE2EB00632C2F /* ApiAIDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ApiAIDemo-Info.plist"; sourceTree = "<group>"; };
 		58C2A86C19BEE2EB00632C2F /* ApiAIDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ApiAIDemo-Prefix.pch"; sourceTree = "<group>"; };
 		58C2A86D19BEE2EB00632C2F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58C2A86E19BEE2EB00632C2F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		58C2A87019BEE2EB00632C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		58C2A87119BEE2EB00632C2F /* debug0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = debug0.wav; sourceTree = "<group>"; };
 		58C2A87319BEE2EB00632C2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58C2A87419BEE2EB00632C2F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		58C2A87519BEE2EB00632C2F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +91,7 @@
 		5891DFE61941E9210043140B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				581AB3981A24448800E8A190 /* InterfaceBuilderKit.framework */,
 				583847291962B5C2007A6091 /* AVFoundation.framework */,
 				5891E01C1941EC250043140B /* libPods-OpenAPIDemo-OpenAPI.a */,
 				5891DFE71941E9210043140B /* Foundation.framework */,
@@ -121,11 +119,9 @@
 		58C2A88119BEE2F100632C2F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58C2A86A19BEE2EB00632C2F /* ann_smith.wav */,
 				58C2A86B19BEE2EB00632C2F /* ApiAIDemo-Info.plist */,
 				58C2A86C19BEE2EB00632C2F /* ApiAIDemo-Prefix.pch */,
 				58C2A86F19BEE2EB00632C2F /* Main.storyboard */,
-				58C2A87119BEE2EB00632C2F /* debug0.wav */,
 				58C2A87219BEE2EB00632C2F /* InfoPlist.strings */,
 				58C2A87419BEE2EB00632C2F /* Images.xcassets */,
 				58C2A87519BEE2EB00632C2F /* main.m */,
@@ -188,9 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C2A88219BEE3D600632C2F /* Main.storyboard in Resources */,
-				58C2A87C19BEE2EB00632C2F /* debug0.wav in Resources */,
 				58C2A87E19BEE2EB00632C2F /* Images.xcassets in Resources */,
-				58C2A87819BEE2EB00632C2F /* ann_smith.wav in Resources */,
 				58C2A87D19BEE2EB00632C2F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +333,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";
@@ -353,6 +351,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";

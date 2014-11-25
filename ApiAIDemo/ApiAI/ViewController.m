@@ -49,6 +49,21 @@
     configuration.subscriptionKey = @"<#YOUR_SUBSCRIPTION_KEY#>";
     
     self.openAPI.configuration = configuration;
+    
+    __weak typeof(self) selfWeak = self;
+    
+    [_voiceRequestButton setSuccessCallback:^(id response) {
+        selfWeak.textView.text = [response description];
+    }];
+    
+    [_voiceRequestButton setFailureCallback:^(NSError *error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Dismiss"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -99,7 +114,7 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
     
-    MBProgressHUD *progressHUD =  [MBProgressHUD HUDForView:self.view];
+    MBProgressHUD *progressHUD = [MBProgressHUD HUDForView:self.view];
     
     [request setSoundLevelHandleBlock:^(AIRequest *request, float level) {
         [progressHUD setLabelText:[NSString stringWithFormat:@"%.2f", level]];

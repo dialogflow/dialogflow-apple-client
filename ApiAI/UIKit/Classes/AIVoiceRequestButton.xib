@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AIVoiceRequestButton">
+            <connections>
+                <outlet property="button" destination="jZM-Pq-c5R" id="hXX-82-n06"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="bnG-a1-tUK"/>
+                <outlet property="ellipseView" destination="3cO-1s-DVV" id="73u-R3-uCQ"/>
+                <outlet property="levelView" destination="RL7-1s-CaX" id="F4e-Bo-PMA"/>
+                <outlet property="progressView" destination="j7I-OL-RTG" id="hPc-Qy-1Vp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AIVoiceContainerView">
+            <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-1s-CaX" customClass="AIVoiceLevelView">
+                    <rect key="frame" x="-72" y="-72" width="216" height="216"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="CVS-Gf-bhs"/>
+                        <constraint firstAttribute="width" constant="216" id="hBU-1q-bGd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cO-1s-DVV" customClass="AIEllipseView">
+                    <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7I-OL-RTG" customClass="AIProgressView">
+                    <rect key="frame" x="-8" y="-8" width="88" height="88"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="BYS-6Z-J99"/>
+                        <constraint firstAttribute="height" constant="88" id="Ilb-Pc-e5d"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZM-Pq-c5R">
+                    <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clicked:" destination="-1" eventType="touchUpInside" id="8jV-GG-p5E"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="j7I-OL-RTG" secondAttribute="centerY" id="1VB-bx-phT"/>
+                <constraint firstAttribute="centerY" secondItem="RL7-1s-CaX" secondAttribute="centerY" id="C4j-T0-iQ7"/>
+                <constraint firstAttribute="trailing" secondItem="3cO-1s-DVV" secondAttribute="trailing" id="C6i-Df-nE0"/>
+                <constraint firstItem="3cO-1s-DVV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IgI-gV-wV7"/>
+                <constraint firstItem="jZM-Pq-c5R" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JuH-sQ-ujg"/>
+                <constraint firstAttribute="bottom" secondItem="jZM-Pq-c5R" secondAttribute="bottom" id="NNF-PL-lRa"/>
+                <constraint firstAttribute="centerX" secondItem="j7I-OL-RTG" secondAttribute="centerX" id="ObO-ni-FGK"/>
+                <constraint firstAttribute="centerX" secondItem="RL7-1s-CaX" secondAttribute="centerX" id="Pab-pZ-9im"/>
+                <constraint firstAttribute="trailing" secondItem="jZM-Pq-c5R" secondAttribute="trailing" id="RUT-wB-f9a"/>
+                <constraint firstAttribute="bottom" secondItem="3cO-1s-DVV" secondAttribute="bottom" id="bUK-LQ-wCz"/>
+                <constraint firstItem="jZM-Pq-c5R" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qbg-u9-sT2"/>
+                <constraint firstItem="3cO-1s-DVV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wfU-Cv-Tff"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="377" y="252"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

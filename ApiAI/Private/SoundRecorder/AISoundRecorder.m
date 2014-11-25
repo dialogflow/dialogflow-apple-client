@@ -268,11 +268,9 @@ static OSStatus PerformThru(
     
     self.remoteIOUnit = nil;
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if ([_delegate respondsToSelector:@selector(didStopSoundRecorder:)]) {
-            [_delegate didStopSoundRecorder:self];
-        }
-    });
+    if ([_delegate respondsToSelector:@selector(didStopSoundRecorder:)]) {
+        [_delegate didStopSoundRecorder:self];
+    }
 }
 
 - (void)dealloc
