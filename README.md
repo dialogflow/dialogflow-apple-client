@@ -51,7 +51,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   @property(nonatomic, strong) ApiAI *apiAI;
   ```
   
-  In the AppDeelgate.m, add
+  In the AppDelegate.m, add
   ```Objective-C
      self.apiAI = [[ApiAI alloc] init];
     
