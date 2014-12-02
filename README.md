@@ -48,7 +48,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   ```Objective-C
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    ```
+  ```
   
 ### 3. Init the SDK.
   In the ```AppDelegate.h```, add ApiAI.h import and property: 
