@@ -26,8 +26,6 @@
 
 @interface AIDataService ()
 
-@property(nonatomic, strong) NSOperationQueue *queue;
-
 @end
 
 @implementation AIDataService

@@ -25,6 +25,7 @@
 
 @interface AIDataService : NSObject
 
+@property(nonatomic, strong) NSOperationQueue *queue;
 
 - (instancetype)init __unavailable;
 - (instancetype)initWithConfiguration:(id <AIConfiguration>)configuration;

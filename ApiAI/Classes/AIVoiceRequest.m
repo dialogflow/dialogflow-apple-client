@@ -46,6 +46,8 @@
 {
     self = [super initWithDataService:dataService];
     if (self) {
+        self.useVADForAutoCommit = YES;
+        
         self.recordDetector = [[AIRecordDetector alloc] init];
         _recordDetector.delegate = self;
         
@@ -190,7 +192,9 @@
 
 - (void)recordDetectorDidStopRecording:(AIRecordDetector *)helper cancelled:(BOOL)cancelled
 {
-    [self commitVoice];
+    if (self.useVADForAutoCommit) {
+        [self commitVoice];
+    }
     
     if (self.soundRecordEndBlock) {
         self.soundRecordEndBlock(self);

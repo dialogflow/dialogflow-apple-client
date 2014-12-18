@@ -12,8 +12,8 @@
 #import "AIEllipseView.h"
 #import "AIProgressView.h"
 
-#import <ApiAI/ApiAI.h>
-#import <ApiAI/AIVoiceRequest.h>
+#import "ApiAI.h"
+#import "AIVoiceRequest.h"
 
 #import <CoreGraphics/CoreGraphics.h>
 

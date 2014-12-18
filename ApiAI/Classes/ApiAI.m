@@ -26,15 +26,27 @@
 #import "ApiAI_ApiAI_Private.h"
 #import "AIDefaultConfiguration.h"
 
+#import "AIConfiguration.h"
+#import "AIRequest.h"
+
 @interface ApiAI ()
 
 @end
 
 @implementation ApiAI
 
-CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(ApiAI);
-
 @synthesize configuration=_configuration;
+
++ (instancetype)sharedApiAI
+{
+    static ApiAI *apiAI = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        apiAI = [[ApiAI alloc] init];
+    });
+    
+    return apiAI;
+}
 
 - (AIRequest *)requestWithType:(AIRequestType)requestType
 {
@@ -79,6 +91,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(ApiAI);
     }
     
     return _lang;
+}
+
+- (void)cancellAllRequests
+{
+    [self.dataService.queue cancelAllOperations];
 }
 
 @end

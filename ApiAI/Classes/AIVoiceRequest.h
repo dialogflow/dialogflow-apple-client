@@ -18,7 +18,6 @@
  * specific language governing permissions and limitations under the License.
  *
  ***********************************************************************************************************************/
-#import <UIKit/UIKit.h>
 #import "AIRequest.h"
 
 typedef void(^SoundLevelHandleBlock)(AIRequest *request, float level);

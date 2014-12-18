@@ -21,12 +21,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "CWLSynthesizeSingleton.h"
-
 #import "AIConfiguration.h"
 #import "AIRequest.h"
-
-
+#import "AITextRequest.h"
+#import "AIVoiceRequest.h"
 
 /*!
  
@@ -50,7 +48,7 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  */
 @interface ApiAI : NSObject
 
-CWL_DECLARE_SINGLETON_FOR_CLASS(ApiAI);
++ (instancetype)sharedApiAI;
 
 @property(nonatomic, copy) NSString *lang;
 
@@ -81,5 +79,14 @@ CWL_DECLARE_SINGLETON_FOR_CLASS(ApiAI);
  
  */
 - (void)enqueue:(AIRequest *)request;
+
+/*!
+ 
+ @method cancellAllRequests
+ 
+ @discussion using this method for cancell all performing requests.
+ 
+ */
+- (void)cancellAllRequests;
 
 @end
