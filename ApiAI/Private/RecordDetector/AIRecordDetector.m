@@ -159,17 +159,18 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        AIAlgorithmDetectorResult result = [self process];
-        if (result != OPAlgorithmDetectorResultContinue) {
-            if (result == OPAlgorithmDetectorResultNoSpeech) {
-                
-            } else if (result == OPAlgorithmDetectorResultTerminate) {
-
+        if (self.VADListening) {
+            AIAlgorithmDetectorResult result = [self process];
+            if (result != OPAlgorithmDetectorResultContinue) {
+                if (result == OPAlgorithmDetectorResultNoSpeech) {
+                    
+                } else if (result == OPAlgorithmDetectorResultTerminate) {
+                    
+                }
             }
         }
         
         double power1 = _soundRecorder.currentPower;
-        
         [_delegate recordDetector:self didReceiveData:data power:power1];
     });
 }

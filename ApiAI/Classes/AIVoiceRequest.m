@@ -46,10 +46,10 @@
 {
     self = [super initWithDataService:dataService];
     if (self) {
-        self.useVADForAutoCommit = YES;
-        
         self.recordDetector = [[AIRecordDetector alloc] init];
         _recordDetector.delegate = self;
+        
+        self.useVADForAutoCommit = YES;
         
         AFHTTPRequestOperationManager *manager = self.dataService.manager;
         id <AIConfiguration> configuration = self.dataService.configuration;
@@ -142,6 +142,12 @@
     [_recordDetector start];
 }
 
+- (void)setUseVADForAutoCommit:(BOOL)useVADForAutoCommit
+{
+    _useVADForAutoCommit = useVADForAutoCommit;
+    self.recordDetector.VADListening = useVADForAutoCommit;
+}
+
 - (NSString *)creteBoundary
 {
     return [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];;
@@ -192,9 +198,7 @@
 
 - (void)recordDetectorDidStopRecording:(AIRecordDetector *)helper cancelled:(BOOL)cancelled
 {
-    if (self.useVADForAutoCommit) {
-        [self commitVoice];
-    }
+    [self commitVoice];
     
     if (self.soundRecordEndBlock) {
         self.soundRecordEndBlock(self);

@@ -25,6 +25,7 @@
 
 @property (nonatomic, weak) id <AIRecordDetectorDelegate> delegate;
 
+@property(nonatomic, assign) BOOL VADListening;
 
 - (void)start;
 - (void)stop;
