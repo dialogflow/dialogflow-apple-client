@@ -138,7 +138,7 @@
     [manager.operationQueue addOperation:_HTTPRequestOperation];
     
     [_streamBuffer write:data];
-    
+
     [_recordDetector start];
 }
 

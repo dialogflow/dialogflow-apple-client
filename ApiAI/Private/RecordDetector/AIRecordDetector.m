@@ -39,7 +39,7 @@
 {
     self = [super init];
     if (self) {
-        self.algorithmDetector = [AIAlgorithmDetector algorithmWithClassName:@"EnergyAndZeroCross"];
+        self.algorithmDetector = [AIAlgorithmDetector algorithmWithClassName:@"AdaptiveThresold"];
         _algorithmDetector.delegate = self;
         [_algorithmDetector reset];
         
@@ -112,7 +112,7 @@
     [_soundRecorder stop];
     [_frames removeAllObjects];
     
-    if (algorithmDetectorResult != OPAlgorithmDetectorResultTerminate) {
+    if (algorithmDetectorResult != AIAlgorithmDetectorResultTerminate) {
         NSError *error = [NSError errorWithDomain:@"voice.detection.error" code:algorithmDetectorResult userInfo:@{}];
         [_delegate recordDetector:self didFailWithError:error];
     } else {
@@ -161,10 +161,10 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.VADListening) {
             AIAlgorithmDetectorResult result = [self process];
-            if (result != OPAlgorithmDetectorResultContinue) {
-                if (result == OPAlgorithmDetectorResultNoSpeech) {
+            if (result != AIAlgorithmDetectorResultContinue) {
+                if (result == AIAlgorithmDetectorResultNoSpeech) {
                     
-                } else if (result == OPAlgorithmDetectorResultTerminate) {
+                } else if (result == AIAlgorithmDetectorResultTerminate) {
                     
                 }
             }
@@ -189,12 +189,12 @@
         
         AIAlgorithmDetectorResult result = [_algorithmDetector processFrame:frame];
         
-        if (result != OPAlgorithmDetectorResultContinue) {
+        if (result != AIAlgorithmDetectorResultContinue) {
             return result;
         }
     }
     
-    return OPAlgorithmDetectorResultContinue;
+    return AIAlgorithmDetectorResultContinue;
 }
 
 @end

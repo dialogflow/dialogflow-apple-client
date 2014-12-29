@@ -87,20 +87,20 @@
             if (lastSequenceTime > 0) {
                 printf("TERMINATE: %.2f\n", time);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [_delegate endDetection:self withStatus:OPAlgorithmDetectorResultTerminate];
+                    [_delegate endDetection:self withStatus:AIAlgorithmDetectorResultTerminate];
                 });
-                return OPAlgorithmDetectorResultTerminate;
+                return AIAlgorithmDetectorResultTerminate;
             } else {
                 printf("NOSPEECH: %.2f\n", time);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [_delegate endDetection:self withStatus:OPAlgorithmDetectorResultNoSpeech];
+                    [_delegate endDetection:self withStatus:AIAlgorithmDetectorResultNoSpeech];
                 });
-                return OPAlgorithmDetectorResultNoSpeech;
+                return AIAlgorithmDetectorResultNoSpeech;
             }
         }
     }
     
-    return OPAlgorithmDetectorResultContinue;
+    return AIAlgorithmDetectorResultContinue;
 }
 
 - (BOOL)frameActive:(NSArray *)frame

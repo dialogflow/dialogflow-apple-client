@@ -20,7 +20,7 @@
  ***********************************************************************************************************************/
 
 typedef enum _AIAlgorithmDetectorResult {
-    OPAlgorithmDetectorResultContinue = 0,
-    OPAlgorithmDetectorResultNoSpeech = 1,
-    OPAlgorithmDetectorResultTerminate = 3,
+    AIAlgorithmDetectorResultContinue = 0,
+    AIAlgorithmDetectorResultNoSpeech = 1,
+    AIAlgorithmDetectorResultTerminate = 3,
 } AIAlgorithmDetectorResult;

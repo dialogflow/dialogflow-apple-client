@@ -27,6 +27,7 @@
 		581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */; };
 		581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */; };
 		584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */; };
+		5851216F1A5188C8007108CD /* AdaptiveThresold.m in Sources */ = {isa = PBXBuildFile; fileRef = 5851216E1A5188C8007108CD /* AdaptiveThresold.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
 		5891DF531941E14C0043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
 		58C2A85B19BEE0E000632C2F /* ApiAI.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83519BEE0E000632C2F /* ApiAI.m */; };
@@ -90,6 +91,8 @@
 		584509AD19F4EB6B00A0AE9A /* OPStreamBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBuffer.h; sourceTree = "<group>"; };
 		584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPStreamBuffer.m; sourceTree = "<group>"; };
 		584509AF19F4EB6B00A0AE9A /* OPStreamBufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBufferDelegate.h; sourceTree = "<group>"; };
+		5851216D1A5188C8007108CD /* AdaptiveThresold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaptiveThresold.h; sourceTree = "<group>"; };
+		5851216E1A5188C8007108CD /* AdaptiveThresold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdaptiveThresold.m; sourceTree = "<group>"; };
 		585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefaultConfiguration.h; sourceTree = "<group>"; };
 		585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIDefaultConfiguration.m; sourceTree = "<group>"; };
 		5891DF4F1941E14C0043140B /* libApiAI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApiAI.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +195,15 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		5851216C1A5188C8007108CD /* AdaptiveThresold */ = {
+			isa = PBXGroup;
+			children = (
+				5851216D1A5188C8007108CD /* AdaptiveThresold.h */,
+				5851216E1A5188C8007108CD /* AdaptiveThresold.m */,
+			);
+			path = AdaptiveThresold;
+			sourceTree = "<group>";
+		};
 		5891DF461941E14C0043140B = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +290,7 @@
 		58C2A83F19BEE0E000632C2F /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				5851216C1A5188C8007108CD /* AdaptiveThresold */,
 				58C2A84019BEE0E000632C2F /* EnergyAndZeroCross */,
 			);
 			path = Algorithms;
@@ -456,6 +469,7 @@
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
 				58C2A85E19BEE0E000632C2F /* AIVoiceRequest.m in Sources */,
+				5851216F1A5188C8007108CD /* AdaptiveThresold.m in Sources */,
 				58C2A86419BEE0E000632C2F /* AIAudioUtils.c in Sources */,
 				581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */,
 				58C2A85B19BEE0E000632C2F /* ApiAI.m in Sources */,
