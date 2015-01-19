@@ -10,7 +10,7 @@
     
     "source": {
         "git": "https://github.com/api-ai/api-ai-ios-sdk.git",
-        "tag": "v0.0.5"
+        "tag": "v0.0.6"
     },
 
     "requires_arc": true,
