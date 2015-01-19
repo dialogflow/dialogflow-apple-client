@@ -45,8 +45,8 @@
     // Define API.AI configuration here.
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     
-    configuration.clientAccessToken = @"<#YOUR_CLIENT_ACCESS_TOKEN#>";
-    configuration.subscriptionKey = @"<#YOUR_SUBSCRIPTION_KEY#>";
+    configuration.clientAccessToken = @"6123ebe7185a4d9e94e441b7959cf2bc";
+    configuration.subscriptionKey = @"417a7fbdda844ac1ae922d10d4c4e4be";
     
     self.openAPI.configuration = configuration;
     
@@ -72,6 +72,11 @@
     return NO;
 }
 
+- (IBAction)stopListening:(id)sender
+{
+    [_voiceRequest commitVoice];
+}
+
 - (IBAction)sendTextRequest:(id)sender
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -92,6 +97,7 @@
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
+    
     [_openAPI enqueue:request];
 }
 
@@ -115,6 +121,8 @@
     }];
     
     MBProgressHUD *progressHUD = [MBProgressHUD HUDForView:self.view];
+    
+    [progressHUD setUserInteractionEnabled:NO];
     
     [request setSoundLevelHandleBlock:^(AIRequest *request, float level) {
         [progressHUD setLabelText:[NSString stringWithFormat:@"%.2f", level]];

@@ -207,6 +207,8 @@
 
 - (void)commitVoice
 {
+    [_recordDetector stop];
+    
     [_streamBuffer write:[[NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [_streamBuffer flushAndClose];
 }
