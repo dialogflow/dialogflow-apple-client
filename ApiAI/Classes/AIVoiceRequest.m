@@ -54,7 +54,7 @@
         AFHTTPRequestOperationManager *manager = self.dataService.manager;
         id <AIConfiguration> configuration = self.dataService.configuration;
         
-        NSString *path = @"query/";
+        NSString *path = @"query";
         
         NSError *error = nil;
         
@@ -113,7 +113,7 @@
                                          } mutableCopy];
     
     if (self.resetContexts) {
-        parameters[@"resetContexts"] = @(YES);
+        parameters[@"resetContexts"] = @(self.resetContexts);
     }
     
     if ([self.contexts count]) {
@@ -136,6 +136,8 @@
     [data appendData:[@"Content-Type: audio/wav\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
     [manager.operationQueue addOperation:_HTTPRequestOperation];
+    
+    NSLog(@"QQQ: %@", [_HTTPRequestOperation.request allHTTPHeaderFields]);
     
     [_streamBuffer write:data];
 

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5806707E1A763C9000A2B54C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806707C1A763C9000A2B54C /* Settings.m */; };
+		5806707F1A763C9000A2B54C /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5806707D1A763C9000A2B54C /* Settings.plist */; };
+		580670821A763D2C00A2B54C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670811A763D2C00A2B54C /* SettingsTableViewController.m */; };
+		580670861A76428800A2B54C /* VoiceButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670851A76428800A2B54C /* VoiceButtonViewController.m */; };
+		5806708A1A7642FD00A2B54C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670891A7642FD00A2B54C /* ResultViewController.m */; };
+		5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806708C1A76437E00A2B54C /* ResultNavigarionController.m */; };
+		580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670901A76455D00A2B54C /* TextRequestViewController.m */; };
+		580670951A76470900A2B54C /* SimpleVoiceRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */; };
 		5838472A1962B5C2007A6091 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583847291962B5C2007A6091 /* AVFoundation.framework */; };
 		5891DFE81941E9210043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE71941E9210043140B /* Foundation.framework */; };
 		5891DFEA1941E9210043140B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE91941E9210043140B /* CoreGraphics.framework */; };
@@ -21,6 +29,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5806707B1A763C9000A2B54C /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		5806707C1A763C9000A2B54C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		5806707D1A763C9000A2B54C /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		580670801A763D2C00A2B54C /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		580670811A763D2C00A2B54C /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		580670841A76428800A2B54C /* VoiceButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceButtonViewController.h; sourceTree = "<group>"; };
+		580670851A76428800A2B54C /* VoiceButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceButtonViewController.m; sourceTree = "<group>"; };
+		580670881A7642FD00A2B54C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		580670891A7642FD00A2B54C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		5806708B1A76437E00A2B54C /* ResultNavigarionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultNavigarionController.h; sourceTree = "<group>"; };
+		5806708C1A76437E00A2B54C /* ResultNavigarionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultNavigarionController.m; sourceTree = "<group>"; };
+		5806708F1A76455D00A2B54C /* TextRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRequestViewController.h; sourceTree = "<group>"; };
+		580670901A76455D00A2B54C /* TextRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRequestViewController.m; sourceTree = "<group>"; };
+		580670931A76470900A2B54C /* SimpleVoiceRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleVoiceRequestViewController.h; sourceTree = "<group>"; };
+		580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleVoiceRequestViewController.m; sourceTree = "<group>"; };
 		581AB3981A24448800E8A190 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		583847291962B5C2007A6091 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5891DFE41941E9210043140B /* ApiAIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiAIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +93,56 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5806707A1A763C9000A2B54C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5806707B1A763C9000A2B54C /* Settings.h */,
+				5806707C1A763C9000A2B54C /* Settings.m */,
+				5806707D1A763C9000A2B54C /* Settings.plist */,
+				580670801A763D2C00A2B54C /* SettingsTableViewController.h */,
+				580670811A763D2C00A2B54C /* SettingsTableViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		580670831A76427C00A2B54C /* VoiceButtonRequest */ = {
+			isa = PBXGroup;
+			children = (
+				580670841A76428800A2B54C /* VoiceButtonViewController.h */,
+				580670851A76428800A2B54C /* VoiceButtonViewController.m */,
+			);
+			path = VoiceButtonRequest;
+			sourceTree = "<group>";
+		};
+		580670871A7642EE00A2B54C /* ResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				580670881A7642FD00A2B54C /* ResultViewController.h */,
+				580670891A7642FD00A2B54C /* ResultViewController.m */,
+				5806708B1A76437E00A2B54C /* ResultNavigarionController.h */,
+				5806708C1A76437E00A2B54C /* ResultNavigarionController.m */,
+			);
+			path = ResultViewController;
+			sourceTree = "<group>";
+		};
+		5806708E1A76454E00A2B54C /* TextRequestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5806708F1A76455D00A2B54C /* TextRequestViewController.h */,
+				580670901A76455D00A2B54C /* TextRequestViewController.m */,
+			);
+			path = TextRequestViewController;
+			sourceTree = "<group>";
+		};
+		580670921A7646FC00A2B54C /* SimpleVoiceRequestController */ = {
+			isa = PBXGroup;
+			children = (
+				580670931A76470900A2B54C /* SimpleVoiceRequestViewController.h */,
+				580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */,
+			);
+			path = SimpleVoiceRequestController;
+			sourceTree = "<group>";
+		};
 		5891DFDB1941E9210043140B = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +180,11 @@
 		58C2A86919BEE2EB00632C2F /* ApiAI */ = {
 			isa = PBXGroup;
 			children = (
+				580670921A7646FC00A2B54C /* SimpleVoiceRequestController */,
+				5806708E1A76454E00A2B54C /* TextRequestViewController */,
+				580670871A7642EE00A2B54C /* ResultViewController */,
+				580670831A76427C00A2B54C /* VoiceButtonRequest */,
+				5806707A1A763C9000A2B54C /* Settings */,
 				58C2A86D19BEE2EB00632C2F /* AppDelegate.h */,
 				58C2A86E19BEE2EB00632C2F /* AppDelegate.m */,
 				58C2A87619BEE2EB00632C2F /* ViewController.h */,
@@ -184,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C2A88219BEE3D600632C2F /* Main.storyboard in Resources */,
+				5806707F1A763C9000A2B54C /* Settings.plist in Resources */,
 				58C2A87E19BEE2EB00632C2F /* Images.xcassets in Resources */,
 				58C2A87D19BEE2EB00632C2F /* InfoPlist.strings in Resources */,
 			);
@@ -229,8 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */,
 				58C2A88019BEE2EB00632C2F /* ViewController.m in Sources */,
+				5806708A1A7642FD00A2B54C /* ResultViewController.m in Sources */,
+				580670861A76428800A2B54C /* VoiceButtonViewController.m in Sources */,
 				58C2A87F19BEE2EB00632C2F /* main.m in Sources */,
+				580670951A76470900A2B54C /* SimpleVoiceRequestViewController.m in Sources */,
+				580670821A763D2C00A2B54C /* SettingsTableViewController.m in Sources */,
+				5806707E1A763C9000A2B54C /* Settings.m in Sources */,
+				580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */,
 				58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dmitriy Kuragin (2Q79UTTZLM)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -340,7 +427,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ApiAIDemo;
+				PROVISIONING_PROFILE = "71f64a75-cbe1-4e6f-a1f7-8ef9d6286735";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -351,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dmitriy Kuragin (2Q79UTTZLM)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -358,7 +448,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ApiAIDemo;
+				PROVISIONING_PROFILE = "71f64a75-cbe1-4e6f-a1f7-8ef9d6286735";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

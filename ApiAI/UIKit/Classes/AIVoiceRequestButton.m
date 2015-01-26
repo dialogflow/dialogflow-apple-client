@@ -247,6 +247,18 @@
         
         [self addConstraints:constraits];
         
+        [self addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"V:[self(72)]"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(self)]];
+        
+        [self addConstraints:
+         [NSLayoutConstraint constraintsWithVisualFormat:@"H:[self(72)]"
+                                                 options:0
+                                                 metrics:nil
+                                                   views:NSDictionaryOfVariableBindings(self)]];
+        
         self.backgroundColor = [UIColor clearColor];
         
         [self updateButtonImages];

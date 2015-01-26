@@ -11,7 +11,7 @@
 typedef void(^AIVoiceRequestButtonSuccess)(id response);
 typedef void(^AIVoiceRequestButtonFailure)(NSError *error);
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface AIVoiceRequestButton : UIControl
 
 @property(nonatomic, copy) IBInspectable UIColor *color;

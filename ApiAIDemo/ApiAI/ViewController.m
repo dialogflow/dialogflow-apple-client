@@ -45,8 +45,8 @@
     // Define API.AI configuration here.
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     
-    configuration.clientAccessToken = @"6123ebe7185a4d9e94e441b7959cf2bc";
-    configuration.subscriptionKey = @"417a7fbdda844ac1ae922d10d4c4e4be";
+    configuration.clientAccessToken = @"417a7fbdda844ac1ae922d10d4c4e4be";
+    configuration.subscriptionKey = @"6123ebe7185a4d9e94e441b7959cf2bc";
     
     self.openAPI.configuration = configuration;
     

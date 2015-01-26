@@ -15,7 +15,7 @@
 - (NSURL *)baseURL
 {
     if (!_baseURL) {
-        _baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
+        _baseURL = [NSURL URLWithString:@"https://api.api.ai/v1/"];
     }
     
     return _baseURL;

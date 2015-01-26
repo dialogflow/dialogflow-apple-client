@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>language</key>
+		<string>english</string>
+		<key>clientAccessToken</key>
+		<string>92fa31b4e15c4ffca80dca2942deb6d3</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>deutsch</string>
+		<key>clientAccessToken</key>
+		<string>b3de3bd82cd54254bbe35fd25d1f81bc</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>esp</string>
+		<key>clientAccessToken</key>
+		<string>b64ea3877df54cd7a0adc7f3a97929da</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>fran</string>
+		<key>clientAccessToken</key>
+		<string>53c95265e618448f909b9562a7f2b29e</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>ital</string>
+		<key>clientAccessToken</key>
+		<string>700e909d22a344c7b405a5ca82e37d68</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>japan</string>
+		<key>clientAccessToken</key>
+		<string>f36555bbfff7480ea6b26e4c6a370077</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>korean</string>
+		<key>clientAccessToken</key>
+		<string>27865280e7fd436b8523938f40fc5b9d</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>port</string>
+		<key>clientAccessToken</key>
+		<string>3f71440584844f048bad712daf9e19de</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>portbrasil</string>
+		<key>clientAccessToken</key>
+		<string>1d093587fc4f48c5a3529c6fb48c3291</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>rus</string>
+		<key>clientAccessToken</key>
+		<string>bb93d0b7620141c98cd305fbaf989481</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>Chinese simplified</string>
+		<key>clientAccessToken</key>
+		<string>2feb604b0f59447db2f64a2c8a7c271d</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>Chinese (Hong Kong SAR)</string>
+		<key>clientAccessToken</key>
+		<string>e0caf8e54b1041bc8955e44e69304026</string>
+	</dict>
+	<dict>
+		<key>language</key>
+		<string>Chinese (Taiwan)</string>
+		<key>clientAccessToken</key>
+		<string>b0df697344d142f4a1597250741d0ed8</string>
+	</dict>
+</array>
+</plist>
