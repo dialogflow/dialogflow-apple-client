@@ -56,6 +56,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(Settings);
     
     configuration.clientAccessToken = selectedSetting[@"clientAccessToken"];
     configuration.baseURL = [NSURL URLWithString:@"https://dev.api.ai/api/"];
+    apiai.lang = selectedSetting[@"lang"];
     
     apiai.configuration = configuration;
     
