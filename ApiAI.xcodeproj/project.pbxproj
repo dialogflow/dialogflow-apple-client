@@ -559,6 +559,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0D13DD66A857D0D8D77EF8B7 /* Pods-ApiAI.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";
@@ -580,6 +584,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E3C2C9A39E25605C26E7EFC /* Pods-ApiAI.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";
