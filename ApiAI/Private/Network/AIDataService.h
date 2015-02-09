@@ -25,6 +25,7 @@
 
 @interface AIDataService : NSObject
 
+@property(nonatomic, copy) NSString *version;
 @property(nonatomic, strong) NSOperationQueue *queue;
 
 - (instancetype)init __unavailable;

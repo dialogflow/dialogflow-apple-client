@@ -29,13 +29,15 @@
 #import "AIConfiguration.h"
 #import "AIRequest.h"
 
+NSString *const kDefaultVersion = @"20150204";
+
 @interface ApiAI ()
 
 @end
 
 @implementation ApiAI
 
-@synthesize configuration=_configuration;
+@synthesize configuration=_configuration, version=_version;
 
 + (instancetype)sharedApiAI
 {
@@ -79,9 +81,30 @@
     return _configuration;
 }
 
+- (void)setDataService:(AIDataService *)dataService
+{
+    dataService.version = self.version;
+    _dataService = dataService;
+}
+
 - (void)enqueue:(AIRequest *)request
 {
     [_dataService enqueueRequest:request];
+}
+
+- (NSString *)version
+{
+    if (!_version) {
+        _version = kDefaultVersion;
+    }
+    
+    return _version;
+}
+
+- (void)setVersion:(NSString *)version
+{
+    _version = version;
+    _dataService.version = version;
 }
 
 - (NSString *)lang
