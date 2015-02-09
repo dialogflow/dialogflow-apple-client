@@ -54,6 +54,8 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
     AFHTTPRequestOperation *_HTTPRequestOperation;
 }
 
+@property(nonatomic, copy) NSString *version;
+
 @property(nonatomic, copy) NSArray *contexts; // default in nil
 @property(nonatomic, assign) BOOL resetContexts; //default is no
 

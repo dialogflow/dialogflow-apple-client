@@ -54,12 +54,12 @@
         AFHTTPRequestOperationManager *manager = self.dataService.manager;
         id <AIConfiguration> configuration = self.dataService.configuration;
         
-        NSString *version = manager.version;
+        NSString *version = self.version;
         
         NSString *path = @"query";
         
         if (version) {
-            path = [path stringByAppendingFormat:@"?v=%s", version];
+            path = [path stringByAppendingFormat:@"?v=%@", version];
         }
         
         NSError *error = nil;

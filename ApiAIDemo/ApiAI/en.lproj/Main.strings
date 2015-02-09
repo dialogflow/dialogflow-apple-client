@@ -1,0 +1,33 @@
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "3dX-xj-bfJ"; */
+"3dX-xj-bfJ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUILabel"; text = "Settings"; ObjectID = "ClM-4x-9Wb"; */
+"ClM-4x-9Wb.text" = "Settings";
+
+/* Class = "IBUILabel"; text = "Voice Button Request"; ObjectID = "FjW-LC-mPG"; */
+"FjW-LC-mPG.text" = "Voice Button Request";
+
+/* Class = "IBUITextField"; placeholder = "Request"; ObjectID = "HpV-ri-gcC"; */
+"HpV-ri-gcC.placeholder" = "Request";
+
+/* Class = "IBUILabel"; text = "Use end-of-speech detection:"; ObjectID = "TrD-cE-4lF"; */
+"TrD-cE-4lF.text" = "Use end-of-speech detection:";
+
+/* Class = "IBUILabel"; text = "Text Request"; ObjectID = "YcA-In-bwv"; */
+"YcA-In-bwv.text" = "Text Request";
+
+/* Class = "IBUILabel"; text = "Simple Voice Request"; ObjectID = "cgh-Ex-SHQ"; */
+"cgh-Ex-SHQ.text" = "Simple Voice Request";
+
+/* Class = "IBUIButton"; normalTitle = "Send"; ObjectID = "qe2-kR-R3W"; */
+"qe2-kR-R3W.normalTitle" = "Send";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "sMd-se-WH8"; */
+"sMd-se-WH8.text" = "Title";
+
+/* Class = "IBUIButton"; normalTitle = "Start Listening"; ObjectID = "ue2-qG-tee"; */
+"ue2-qG-tee.normalTitle" = "Start Listening";
+
+/* Class = "IBUIButton"; normalTitle = "Stop Listening"; ObjectID = "v9a-8i-tYL"; */
+"v9a-8i-tYL.normalTitle" = "Stop Listening";

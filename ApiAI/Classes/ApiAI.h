@@ -50,7 +50,38 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 
 + (instancetype)sharedApiAI;
 
++ (NSArray *)supportedLanguages;
+
+/*!
+ 
+ @property lang language
+ 
+ @discussion configuration language, default using first system ([NSLocale preferredLanguages]) 
+ cantaining in [ApiAI supportedLanguages]. Can be:
+                             @"en",
+                             @"ru",
+                             @"de",
+                             @"pt",
+                             @"pt-BR",
+                             @"es",
+                             @"fr",
+                             @"it",
+                             @"ja",
+                             @"ko",
+                             @"zh-CN",
+                             @"zh-HK",
+                             @"zh-TW",
+ */
+
 @property(nonatomic, copy) NSString *lang;
+
+/*!
+ 
+ @property version string
+ 
+ @discussion configuration version property, default use latest version, not recommended use it.
+ 
+ */
 
 @property(nonatomic, copy) NSString *version;
 
@@ -89,6 +120,7 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  @discussion using this method for cancell all performing requests.
  
  */
+
 - (void)cancellAllRequests;
 
 @end

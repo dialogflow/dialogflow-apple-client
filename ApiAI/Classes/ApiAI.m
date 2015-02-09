@@ -83,7 +83,6 @@ NSString *const kDefaultVersion = @"20150204";
 
 - (void)setDataService:(AIDataService *)dataService
 {
-    dataService.version = self.version;
     _dataService = dataService;
 }
 
@@ -101,19 +100,57 @@ NSString *const kDefaultVersion = @"20150204";
     return _version;
 }
 
-- (void)setVersion:(NSString *)version
-{
-    _version = version;
-    _dataService.version = version;
-}
-
 - (NSString *)lang
 {
     if (!_lang) {
-        _lang = [[NSLocale preferredLanguages] firstObject]?:@"en";
+        __block NSString *language = nil;
+        
+        [[NSLocale preferredLanguages] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSLocale *locale = [NSLocale localeWithLocaleIdentifier:obj];
+            
+            NSString *languageCode = [locale objectForKey:NSLocaleLanguageCode];
+            NSString *countryCode = [locale objectForKey:NSLocaleCountryCode];
+            
+            if (countryCode) {
+                languageCode = [languageCode stringByAppendingFormat:@"_%@", countryCode];
+            }
+            
+            if ([[[self class] supportedLanguages] containsObject:languageCode]) {
+                language = languageCode;
+                *stop = YES;
+            }
+        }];
+        
+        _lang = language?:@"en";
     }
     
     return _lang;
+}
+
++ (NSArray *)supportedLanguages
+{
+    static NSArray *supportedLanguages = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        supportedLanguages = @[
+                               @"en",
+                               @"ru",
+                               @"de",
+                               @"pt",
+                               @"pt-BR",
+                               @"es",
+                               @"fr",
+                               @"it",
+                               @"ja",
+                               @"ko",
+                               @"zh-CN",
+                               @"zh-HK",
+                               @"zh-TW",
+                               ];
+    });
+    
+    return supportedLanguages;
 }
 
 - (void)cancellAllRequests

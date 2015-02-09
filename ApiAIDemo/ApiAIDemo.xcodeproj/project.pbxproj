@@ -46,6 +46,11 @@
 		580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleVoiceRequestViewController.m; sourceTree = "<group>"; };
 		581AB3981A24448800E8A190 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		583847291962B5C2007A6091 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5869659C1A88819E00719EC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		5869659D1A8881D700719EC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		5869659E1A8881D700719EC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5869659F1A88943A00719EC3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		586965A01A88943A00719EC3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5891DFE41941E9210043140B /* ApiAIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiAIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5891DFE71941E9210043140B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5891DFE91941E9210043140B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -245,6 +250,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 5891DFDB1941E9210043140B;
 			productRefGroup = 5891DFE51941E9210043140B /* Products */;
@@ -328,6 +335,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				58C2A87019BEE2EB00632C2F /* Base */,
+				5869659C1A88819E00719EC3 /* en */,
+				5869659D1A8881D700719EC3 /* zh-Hans */,
+				5869659F1A88943A00719EC3 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -336,6 +346,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				58C2A87319BEE2EB00632C2F /* en */,
+				5869659E1A8881D700719EC3 /* zh-Hans */,
+				586965A01A88943A00719EC3 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

@@ -13,6 +13,8 @@
 
 @interface AIDataService ()
 
+@property(nonatomic, copy) NSString *version;
+
 @property(nonatomic, strong) AFHTTPRequestOperationManager *manager;
 @property(nonatomic, strong) id <AIConfiguration> configuration;
 
