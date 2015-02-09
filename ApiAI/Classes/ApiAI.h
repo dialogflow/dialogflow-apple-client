@@ -59,6 +59,7 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  @discussion configuration language, default using first system ([NSLocale preferredLanguages]) 
  cantaining in [ApiAI supportedLanguages]. Can be:
                              @"en",
+                             @"es",
                              @"ru",
                              @"de",
                              @"pt",

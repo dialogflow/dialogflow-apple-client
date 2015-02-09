@@ -135,6 +135,7 @@ NSString *const kDefaultVersion = @"20150204";
     dispatch_once(&onceToken, ^{
         supportedLanguages = @[
                                @"en",
+                               @"es",
                                @"ru",
                                @"de",
                                @"pt",
