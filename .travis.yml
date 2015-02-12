@@ -1,7 +1,4 @@
 language: objective-c
-before_install:
-    - brew update
-    - brew install xctool
 script: xctool -workspace ApiAI.xcworkspace -scheme ApiAITests build test
 notifications:
     email: false
