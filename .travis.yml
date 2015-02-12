@@ -1,0 +1,7 @@
+language: objective-c
+xcode_project: ApiAI.xcworkspace # path to your xcodeproj folder
+xcode_scheme: AggregateLib
+before_install:
+notifications:
+  email: false
+script: make test
