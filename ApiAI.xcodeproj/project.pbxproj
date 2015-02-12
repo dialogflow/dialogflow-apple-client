@@ -42,35 +42,57 @@
 		58C2A86519BEE0E000632C2F /* AIMeterTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A85219BEE0E000632C2F /* AIMeterTable.m */; };
 		58C2A86619BEE0E000632C2F /* AISoundRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A85419BEE0E000632C2F /* AISoundRecorder.m */; };
 		58C2A86719BEE0E000632C2F /* AISoundRecorderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A85619BEE0E000632C2F /* AISoundRecorderConstants.m */; };
-		58D90EDE1A42E41E00A937EC /* ApiAI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58C2A83419BEE0E000632C2F /* ApiAI.h */; };
-		58D90EDF1A42E64400A937EC /* AIConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58C2A83319BEE0E000632C2F /* AIConfiguration.h */; };
-		58D90EE01A42E64400A937EC /* AIRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58C2A83619BEE0E000632C2F /* AIRequest.h */; };
-		58D90EE11A42E64400A937EC /* AITextRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58C2A83819BEE0E000632C2F /* AITextRequest.h */; };
-		58D90EE21A42E64400A937EC /* AIVoiceRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58C2A83A19BEE0E000632C2F /* AIVoiceRequest.h */; };
-		58D90EE31A42E64400A937EC /* AIDefaultConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */; };
+		58D90EDE1A42E41E00A937EC /* ApiAI.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83419BEE0E000632C2F /* ApiAI.h */; };
+		58D90EDF1A42E64400A937EC /* AIConfiguration.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83319BEE0E000632C2F /* AIConfiguration.h */; };
+		58D90EE01A42E64400A937EC /* AIRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83619BEE0E000632C2F /* AIRequest.h */; };
+		58D90EE11A42E64400A937EC /* AITextRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83819BEE0E000632C2F /* AITextRequest.h */; };
+		58D90EE21A42E64400A937EC /* AIVoiceRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83A19BEE0E000632C2F /* AIVoiceRequest.h */; };
+		58D90EE31A42E64400A937EC /* AIDefaultConfiguration.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */; };
+		58F0602A1A8CAF15002615DF /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F060281A8CAEFE002615DF /* AudioUnit.framework */; };
+		58F0602C1A8CAF2A002615DF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0602B1A8CAF2A002615DF /* AVFoundation.framework */; };
+		58F0604E1A8CB366002615DF /* ApiAITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F0604D1A8CB366002615DF /* ApiAITests.m */; };
+		58F0604F1A8CB366002615DF /* libApiAI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF4F1941E14C0043140B /* libApiAI.a */; };
+		58F060551A8CB394002615DF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0602B1A8CAF2A002615DF /* AVFoundation.framework */; };
+		58F060561A8CB3A1002615DF /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0602F1A8CAF7D002615DF /* CoreAudio.framework */; };
+		58F060571A8CB3AE002615DF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F060311A8CAF82002615DF /* AudioToolbox.framework */; };
+		58F060581A8CB3D7002615DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
+		58F0605A1A8CB3DD002615DF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F060591A8CB3DD002615DF /* MobileCoreServices.framework */; };
+		58F0605C1A8CB3E5002615DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */; };
 		EF3BAD29E983494A8423B6A2 /* libPods-ApiAI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD80C016B73942D79FF2B0CD /* libPods-ApiAI.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		58F060501A8CB366002615DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5891DF471941E14C0043140B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5891DF4E1941E14C0043140B;
+			remoteInfo = ApiAI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		5891DF4D1941E14C0043140B /* CopyFiles */ = {
+		5891DF4D1941E14C0043140B /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				58D90EDF1A42E64400A937EC /* AIConfiguration.h in CopyFiles */,
-				58D90EE01A42E64400A937EC /* AIRequest.h in CopyFiles */,
-				58D90EE11A42E64400A937EC /* AITextRequest.h in CopyFiles */,
-				58D90EE21A42E64400A937EC /* AIVoiceRequest.h in CopyFiles */,
-				58D90EE31A42E64400A937EC /* AIDefaultConfiguration.h in CopyFiles */,
-				58D90EDE1A42E41E00A937EC /* ApiAI.h in CopyFiles */,
+				58D90EDF1A42E64400A937EC /* AIConfiguration.h in Copy Files */,
+				58D90EE01A42E64400A937EC /* AIRequest.h in Copy Files */,
+				58D90EE11A42E64400A937EC /* AITextRequest.h in Copy Files */,
+				58D90EE21A42E64400A937EC /* AIVoiceRequest.h in Copy Files */,
+				58D90EE31A42E64400A937EC /* AIDefaultConfiguration.h in Copy Files */,
+				58D90EDE1A42E41E00A937EC /* ApiAI.h in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D13DD66A857D0D8D77EF8B7 /* Pods-ApiAI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAI/Pods-ApiAI.debug.xcconfig"; sourceTree = "<group>"; };
+		53A568877ECBDCBE5F4DF147 /* libPods-ApiAITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		581AB39C1A245D8300E8A190 /* AIVoiceRequestButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceRequestButton.h; sourceTree = "<group>"; };
 		581AB39D1A245D8300E8A190 /* AIVoiceRequestButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceRequestButton.m; sourceTree = "<group>"; };
 		581AB39E1A245D8300E8A190 /* AIVoiceRequestButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIVoiceRequestButton.xib; sourceTree = "<group>"; };
@@ -130,7 +152,20 @@
 		58C2A85719BEE0E000632C2F /* AISoundRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISoundRecorderDelegate.h; sourceTree = "<group>"; };
 		58ECF07519C4388F00EF5291 /* ApiAI_ApiAI_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiAI_ApiAI_Private.h; sourceTree = "<group>"; };
 		58ECF07619C4399400EF5291 /* AIDataService_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIDataService_Private.h; sourceTree = "<group>"; };
+		58F060281A8CAEFE002615DF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		58F0602B1A8CAF2A002615DF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		58F0602F1A8CAF7D002615DF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		58F060311A8CAF82002615DF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		58F060331A8CAF90002615DF /* libPods-ApiAI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ApiAI.a"; path = "Pods/build/Debug-iphoneos/libPods-ApiAI.a"; sourceTree = "<group>"; };
+		58F060491A8CB366002615DF /* ApiAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F0604C1A8CB366002615DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58F0604D1A8CB366002615DF /* ApiAITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiAITests.m; sourceTree = "<group>"; };
+		58F060591A8CB3DD002615DF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		59DD4E7E81B2CEC27DF57D5B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3C2C9A39E25605C26E7EFC /* Pods-ApiAI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAI.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAI/Pods-ApiAI.release.xcconfig"; sourceTree = "<group>"; };
+		C6FA9A492FC4834AFAEB5D93 /* Pods-ApiAITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAITests/Pods-ApiAITests.release.xcconfig"; sourceTree = "<group>"; };
+		CA2094AC803A0620EF22CE82 /* Pods-ApiAITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAITests/Pods-ApiAITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD80C016B73942D79FF2B0CD /* libPods-ApiAI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,8 +174,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F0602C1A8CAF2A002615DF /* AVFoundation.framework in Frameworks */,
+				58F0602A1A8CAF15002615DF /* AudioUnit.framework in Frameworks */,
 				5891DF531941E14C0043140B /* Foundation.framework in Frameworks */,
 				EF3BAD29E983494A8423B6A2 /* libPods-ApiAI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F060461A8CB366002615DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F0605C1A8CB3E5002615DF /* SystemConfiguration.framework in Frameworks */,
+				58F0605A1A8CB3DD002615DF /* MobileCoreServices.framework in Frameworks */,
+				58F060581A8CB3D7002615DF /* Foundation.framework in Frameworks */,
+				58F060571A8CB3AE002615DF /* AudioToolbox.framework in Frameworks */,
+				58F060561A8CB3A1002615DF /* CoreAudio.framework in Frameworks */,
+				58F060551A8CB394002615DF /* AVFoundation.framework in Frameworks */,
+				58F0604F1A8CB366002615DF /* libApiAI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				58C2A83019BEE0E000632C2F /* ApiAI */,
+				58F0604A1A8CB366002615DF /* ApiAITests */,
 				5891DF511941E14C0043140B /* Frameworks */,
 				5891DF501941E14C0043140B /* Products */,
 				C27C74297216DCB696DD3623 /* Pods */,
@@ -218,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				5891DF4F1941E14C0043140B /* libApiAI.a */,
+				58F060491A8CB366002615DF /* ApiAITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,9 +278,18 @@
 		5891DF511941E14C0043140B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */,
+				58F060591A8CB3DD002615DF /* MobileCoreServices.framework */,
+				58F060331A8CAF90002615DF /* libPods-ApiAI.a */,
+				58F060311A8CAF82002615DF /* AudioToolbox.framework */,
+				58F0602F1A8CAF7D002615DF /* CoreAudio.framework */,
+				58F0602B1A8CAF2A002615DF /* AVFoundation.framework */,
+				58F060281A8CAEFE002615DF /* AudioUnit.framework */,
 				5891DF521941E14C0043140B /* Foundation.framework */,
 				5891DF601941E14C0043140B /* XCTest.framework */,
 				DD80C016B73942D79FF2B0CD /* libPods-ApiAI.a */,
+				59DD4E7E81B2CEC27DF57D5B /* libPods.a */,
+				53A568877ECBDCBE5F4DF147 /* libPods-ApiAITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,11 +412,30 @@
 			path = Streamer;
 			sourceTree = "<group>";
 		};
+		58F0604A1A8CB366002615DF /* ApiAITests */ = {
+			isa = PBXGroup;
+			children = (
+				58F0604D1A8CB366002615DF /* ApiAITests.m */,
+				58F0604B1A8CB366002615DF /* Supporting Files */,
+			);
+			path = ApiAITests;
+			sourceTree = "<group>";
+		};
+		58F0604B1A8CB366002615DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58F0604C1A8CB366002615DF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		C27C74297216DCB696DD3623 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				0D13DD66A857D0D8D77EF8B7 /* Pods-ApiAI.debug.xcconfig */,
 				7E3C2C9A39E25605C26E7EFC /* Pods-ApiAI.release.xcconfig */,
+				CA2094AC803A0620EF22CE82 /* Pods-ApiAITests.debug.xcconfig */,
+				C6FA9A492FC4834AFAEB5D93 /* Pods-ApiAITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -369,7 +450,7 @@
 				93CCBC1C61B64223A9E6DF0C /* Check Pods Manifest.lock */,
 				5891DF4B1941E14C0043140B /* Sources */,
 				5891DF4C1941E14C0043140B /* Frameworks */,
-				5891DF4D1941E14C0043140B /* CopyFiles */,
+				5891DF4D1941E14C0043140B /* Copy Files */,
 				9C8CE9DB01A2492499059E38 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -381,6 +462,24 @@
 			productReference = 5891DF4F1941E14C0043140B /* libApiAI.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		58F060481A8CB366002615DF /* ApiAITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F060541A8CB366002615DF /* Build configuration list for PBXNativeTarget "ApiAITests" */;
+			buildPhases = (
+				58F060451A8CB366002615DF /* Sources */,
+				58F060461A8CB366002615DF /* Frameworks */,
+				58F060471A8CB366002615DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58F060511A8CB366002615DF /* PBXTargetDependency */,
+			);
+			name = ApiAITests;
+			productName = ApiAITests;
+			productReference = 58F060491A8CB366002615DF /* ApiAITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -390,6 +489,11 @@
 				CLASSPREFIX = AI;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Kuragin Dmitriy";
+				TargetAttributes = {
+					58F060481A8CB366002615DF = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
 			};
 			buildConfigurationList = 5891DF4A1941E14C0043140B /* Build configuration list for PBXProject "ApiAI" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -405,9 +509,20 @@
 			targets = (
 				5891DF4E1941E14C0043140B /* ApiAI */,
 				58A4E47919629C1A0049B7A8 /* AggregateLib */,
+				58F060481A8CB366002615DF /* ApiAITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58F060471A8CB366002615DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		5838471619629C44007A6091 /* Run Script */ = {
@@ -484,7 +599,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58F060451A8CB366002615DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F0604E1A8CB366002615DF /* ApiAITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58F060511A8CB366002615DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5891DF4E1941E14C0043140B /* ApiAI */;
+			targetProxy = 58F060501A8CB366002615DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5891DF701941E14C0043140B /* Debug */ = {
@@ -623,6 +754,44 @@
 			};
 			name = Release;
 		};
+		58F060521A8CB366002615DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ApiAITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		58F060531A8CB366002615DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ApiAITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -652,6 +821,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		58F060541A8CB366002615DF /* Build configuration list for PBXNativeTarget "ApiAITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F060521A8CB366002615DF /* Debug */,
+				58F060531A8CB366002615DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

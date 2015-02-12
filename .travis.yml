@@ -1,5 +1,5 @@
 language: objective-c
 xcode_project: ApiAI.xcodeproj
-xcode_scheme: AggregateLib
+xcode_scheme: ApiAITests
 notifications:
   email: false

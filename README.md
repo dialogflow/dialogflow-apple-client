@@ -1,6 +1,8 @@
 api-ai-ios-sdk
 ==============
 
+[![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg?branch=master)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
+
 * [Overview](#overview)
 * [Prerequisites](#prerequisites)
 * [Running the Demo app](#runningthedemoapp)

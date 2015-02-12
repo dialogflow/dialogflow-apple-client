@@ -59,6 +59,8 @@ NSString *const kDefaultVersion = @"20150204";
         request = [[AIVoiceRequest alloc] initWithDataService:_dataService];
     }
     
+    [request setVersion:self.version];
+    
     [request setLang:self.lang];
     
     return request;
