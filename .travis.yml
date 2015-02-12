@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: ApiAI.xcworkspace # path to your xcodeproj folder
+xcode_project: ApiAI.xcodeproj
 xcode_scheme: AggregateLib
 notifications:
   email: false
