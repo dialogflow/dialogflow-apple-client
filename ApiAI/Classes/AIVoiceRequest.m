@@ -114,8 +114,15 @@
     
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:self.timeZone];
+    [dateFormatter setDateFormat:@"Z"];
+    
+    NSString *timeZoneString = [dateFormatter stringFromDate:[NSDate date]];
+    
     NSMutableDictionary *parameters = [@{
-                                         @"lang": self.lang
+                                         @"lang": self.lang,
+                                         @"timezone": timeZoneString
                                          } mutableCopy];
     
     if (self.resetContexts) {

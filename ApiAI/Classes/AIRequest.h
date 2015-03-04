@@ -63,6 +63,8 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 @property(nonatomic, copy) NSString *lang; //default is ApiAI lang propery
 
+@property(nonatomic, copy) NSTimeZone *timeZone; // default 
+
 @property(nonatomic, copy) NSError *error;
 @property(nonatomic, strong) id response;
 

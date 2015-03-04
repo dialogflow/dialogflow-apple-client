@@ -39,7 +39,7 @@
 {
     self = [super init];
     if (self) {
-        self.algorithmDetector = [AIAlgorithmDetector algorithmWithClassName:@"AdaptiveThresold"];
+        self.algorithmDetector = [AIAlgorithmDetector algorithmWithClassName:@"EnergyAndZeroCross"];
         _algorithmDetector.delegate = self;
         [_algorithmDetector reset];
         

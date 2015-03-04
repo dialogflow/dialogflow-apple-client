@@ -43,8 +43,15 @@
     
     NSError *error = nil;
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:self.timeZone];
+    [dateFormatter setDateFormat:@"Z"];
+    
+    NSString *timeZoneString = [dateFormatter stringFromDate:[NSDate date]];
+    
     NSMutableDictionary *parameters = [@{
                                         @"query": _query,
+                                        @"timezone": timeZoneString,
                                         @"lang": self.lang
                                         } mutableCopy];
     

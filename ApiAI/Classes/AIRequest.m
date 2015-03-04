@@ -115,6 +115,15 @@
     return _sessionId;
 }
 
+- (NSTimeZone *)timeZone
+{
+    if (!_timeZone) {
+        _timeZone = [NSTimeZone localTimeZone];
+    }
+    
+    return _timeZone;
+}
+
 - (NSString *)md5FromString:(NSString *)string
 {
     const char *concat_str = [string UTF8String];
