@@ -1,4 +1,4 @@
-api-ai-ios-sdk
+iOS SDK for api.ai
 ==============
 
 [![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg?branch=master)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
