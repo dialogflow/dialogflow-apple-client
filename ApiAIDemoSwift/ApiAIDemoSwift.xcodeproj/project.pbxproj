@@ -19,6 +19,8 @@
 		587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */; };
 		587512661AC2FD3F0053EAA9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512651AC2FD3F0053EAA9 /* ResultViewController.swift */; };
 		587512681AC2FDD20053EAA9 /* ResultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */; };
+		587512701AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875126F1AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift */; };
+		587512731AC3E3DC0053EAA9 /* VoiceButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512721AC3E3DC0053EAA9 /* VoiceButtonViewController.swift */; };
 		D994942AD6327A830925644D /* libPods-ApiAIDemoSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FDAF7A24F73274F98B4113 /* libPods-ApiAIDemoSwift.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextRequestViewController.swift; sourceTree = "<group>"; };
 		587512651AC2FD3F0053EAA9 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultNavigationController.swift; sourceTree = "<group>"; };
+		5875126F1AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVoiceRequestController.swift; sourceTree = "<group>"; };
+		587512721AC3E3DC0053EAA9 /* VoiceButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceButtonViewController.swift; sourceTree = "<group>"; };
 		74AC89F54AB59AC42B6B8FB8 /* Pods-ApiAIDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoSwift/Pods-ApiAIDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E3FDAF7A24F73274F98B4113 /* libPods-ApiAIDemoSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemoSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +118,8 @@
 		587512311AC275280053EAA9 /* ApiAIDemoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				587512711AC3E3CF0053EAA9 /* VoiceButtonRequest */,
+				5875126E1AC3DFD90053EAA9 /* SimpleVoiceRequestController */,
 				587512641AC2FD190053EAA9 /* ResultViewController */,
 				587512611AC2F3D80053EAA9 /* TextRequestViewController */,
 				5875125A1AC2B1DD0053EAA9 /* Settings */,
@@ -178,6 +184,22 @@
 				587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */,
 			);
 			path = ResultViewController;
+			sourceTree = "<group>";
+		};
+		5875126E1AC3DFD90053EAA9 /* SimpleVoiceRequestController */ = {
+			isa = PBXGroup;
+			children = (
+				5875126F1AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift */,
+			);
+			path = SimpleVoiceRequestController;
+			sourceTree = "<group>";
+		};
+		587512711AC3E3CF0053EAA9 /* VoiceButtonRequest */ = {
+			isa = PBXGroup;
+			children = (
+				587512721AC3E3DC0053EAA9 /* VoiceButtonViewController.swift */,
+			);
+			path = VoiceButtonRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +339,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				587512681AC2FDD20053EAA9 /* ResultNavigationController.swift in Sources */,
+				587512731AC3E3DC0053EAA9 /* VoiceButtonViewController.swift in Sources */,
 				5875125C1AC2B1EB0053EAA9 /* Settings.swift in Sources */,
+				587512701AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift in Sources */,
 				587512371AC275280053EAA9 /* ViewController.swift in Sources */,
 				587512351AC275280053EAA9 /* AppDelegate.swift in Sources */,
 				587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */,
