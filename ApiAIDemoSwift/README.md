@@ -69,7 +69,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   ```
   
 ### 4. Init the SDK.
-  In the ```AppDelegate.swift```, add ApiAI.h import and property: 
+  In the ```AppDelegate.swift```, add property: 
   ```swift
     let apiai = ApiAI.sharedApiAI()
   ```
