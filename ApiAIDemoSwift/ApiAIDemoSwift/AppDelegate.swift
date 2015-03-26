@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let apiai = ApiAI.sharedApiAI()
 
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         var settings = Settings.sharedSettings
         settings.selectedSettings = settings.settings.first!
+        
+//        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+//        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+
+//        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+//        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        
+        
         // Override point for customization after application launch.
         return true
     }
