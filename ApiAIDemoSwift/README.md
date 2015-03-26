@@ -45,7 +45,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
 
 * Run ```pod update```
 
-### 3. import Objective-C library
+### 2. import Objective-C library
   In you project file *-Bridging-Header.h, add
   ```Objective-C
     #import <ApiAI/ApiAI.h>
