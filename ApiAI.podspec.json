@@ -76,6 +76,10 @@
         {
             "name": "WatchKitForWatch",
 
+            "platforms": {
+                "ios": "8.2"
+            },
+
             "header_dir": "WatchKit",
             
             "source_files": [
@@ -93,6 +97,10 @@
         },
         {
             "name": "WatchKitForPhone",
+
+            "platforms": {
+                "ios": "8.2"
+            },
 
             "header_dir": "WatchKit",
             
