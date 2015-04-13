@@ -119,7 +119,11 @@
                 "frameworks": ["WatchKit"]
             },
 
-            "requires_arc": true
+            "requires_arc": true,
+
+            "dependencies": {
+                "ApiAI/Default": []
+            }
         }
     ]
 }
