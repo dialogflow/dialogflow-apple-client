@@ -1,0 +1,3 @@
+[submodule "WatchKitDemo"]
+	path = WatchKitDemo
+	url = git@github.com:api-ai/api-ai-apple-watch.git
