@@ -72,58 +72,6 @@
             "dependencies": {
                 "ApiAI/Default": []
             }
-        },
-        {
-            "name": "WatchKitForWatch",
-
-            "platforms": {
-                "ios": "8.2"
-            },
-
-            "header_dir": "WatchKit",
-            
-            "source_files": [
-                "ApiAI",
-                "ApiAI/WatchKit",
-                "ApiAI/WatchKit/Watch/",
-                "ApiAI/WatchKit/Watch/Classes/**/*.{h,m}"
-            ],
-
-            "public_header_files": [
-                "ApiAI/WatchKit/Watch/Classes/**/*.{h}"
-            ],
-
-            "requires_arc": true
-        },
-        {
-            "name": "WatchKitForPhone",
-
-            "platforms": {
-                "ios": "8.2"
-            },
-
-            "header_dir": "WatchKit",
-            
-            "source_files": [
-                "ApiAI",
-                "ApiAI/WatchKit",
-                "ApiAI/WatchKit/Phone",
-                "ApiAI/WatchKit/Phone/Classes/**/*.{h,m}"
-            ],
-
-            "public_header_files": [
-                "ApiAI/WatchKit/Phone/Classes/**/*.{h}"
-            ],
-
-            "ios": {
-                "frameworks": ["WatchKit"]
-            },
-
-            "requires_arc": true,
-
-            "dependencies": {
-                "ApiAI/Default": []
-            }
         }
     ]
 }
