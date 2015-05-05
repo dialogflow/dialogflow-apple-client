@@ -59,6 +59,7 @@
         [expectation fulfill];
     } failure:^(AIRequest *request, NSError *error) {
         XCTAssert(NO, @"Can't response error");
+        [expectation fulfill];
     }];
     
     [_apiai enqueue:textRequest];
