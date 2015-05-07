@@ -16,6 +16,7 @@
 		580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670901A76455D00A2B54C /* TextRequestViewController.m */; };
 		580670951A76470900A2B54C /* SimpleVoiceRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */; };
 		5838472A1962B5C2007A6091 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583847291962B5C2007A6091 /* AVFoundation.framework */; };
+		588D23B91AFB49BE008289F1 /* MappedResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23B81AFB49BE008289F1 /* MappedResponseViewController.m */; };
 		5891DFE81941E9210043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE71941E9210043140B /* Foundation.framework */; };
 		5891DFEA1941E9210043140B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE91941E9210043140B /* CoreGraphics.framework */; };
 		5891DFEC1941E9210043140B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFEB1941E9210043140B /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 		5869659E1A8881D700719EC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5869659F1A88943A00719EC3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		586965A01A88943A00719EC3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		588D23B71AFB49BE008289F1 /* MappedResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappedResponseViewController.h; sourceTree = "<group>"; };
+		588D23B81AFB49BE008289F1 /* MappedResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappedResponseViewController.m; sourceTree = "<group>"; };
 		5891DFE41941E9210043140B /* ApiAIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiAIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5891DFE71941E9210043140B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5891DFE91941E9210043140B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,6 +151,15 @@
 			path = SimpleVoiceRequestController;
 			sourceTree = "<group>";
 		};
+		588D23B61AFB499D008289F1 /* MappedResponseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				588D23B71AFB49BE008289F1 /* MappedResponseViewController.h */,
+				588D23B81AFB49BE008289F1 /* MappedResponseViewController.m */,
+			);
+			path = MappedResponseViewController;
+			sourceTree = "<group>";
+		};
 		5891DFDB1941E9210043140B = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +197,7 @@
 		58C2A86919BEE2EB00632C2F /* ApiAI */ = {
 			isa = PBXGroup;
 			children = (
+				588D23B61AFB499D008289F1 /* MappedResponseViewController */,
 				580670921A7646FC00A2B54C /* SimpleVoiceRequestController */,
 				5806708E1A76454E00A2B54C /* TextRequestViewController */,
 				580670871A7642EE00A2B54C /* ResultViewController */,
@@ -315,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588D23B91AFB49BE008289F1 /* MappedResponseViewController.m in Sources */,
 				5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */,
 				58C2A88019BEE2EB00632C2F /* ViewController.m in Sources */,
 				5806708A1A7642FD00A2B54C /* ResultViewController.m in Sources */,

@@ -1,0 +1,41 @@
+{
+    "id": "30456807-7026-4425-92af-e8918bfff944",
+    "timestamp": "2015-05-06T08:58:20.262Z",
+    "result": {
+        "source": "agent",
+        "resolvedQuery": "Hello",
+        "fulfillment": {
+            "speech": "Hi! How are you?"
+        },
+        "action": "greeting",
+        "parameters": {
+            "date-time-period": "2015-05-07T12:00:00+06:00/2015-05-07T16:00:00+06:00",
+            "date-period": "2012-01-01/2013-01-01",
+            "date": "2013-01-01",
+            "time": "12:00:00",
+            "longDate": "2015-05-07T16:00:00+06:00",
+            "time-period": "12:00:00/15:25:00"
+        },
+        "contexts": [
+                     {
+                         "name": "context_name",
+                         "parameters": {
+                             "date-time-period": "2015-05-07T12:00:00+06:00/2015-05-07T16:00:00+06:00",
+                             "date-period": "2012-01-01/2013-01-01",
+                             "date": "2013-01-01",
+                             "time": "12:00:00",
+                             "longDate": "2015-05-07T16:00:00+06:00",
+                             "time-period": "12:00:00/15:25:00"
+                         }
+                     }
+        ],
+        "metadata": {
+            "intentId": "28389ee8-e364-4eea-b928-60a80be085b7",
+            "intentName": "hello"
+        }
+    },
+    "status": {
+        "code": 200,
+        "errorType": "success"
+    }
+}

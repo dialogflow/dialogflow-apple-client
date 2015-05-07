@@ -5,8 +5,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target "ApiAIDemo" do
 
-pod 'ApiAI', :path => '../'
+pod 'ApiAI/Default', :path => '../'
 pod 'ApiAI/UIKit', :path => '../'
+pod 'ApiAI/ResponseMapping', :path => '../'
 pod 'MBProgressHUD'
 
 

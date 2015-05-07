@@ -25,6 +25,11 @@
 #import "AIRequest.h"
 #import "AITextRequest.h"
 #import "AIVoiceRequest.h"
+#import "AIDefaultConfiguration.h"
+
+#if __has_include("AIResponse.h")
+    #import "AIResponse.h"
+#endif
 
 /*!
  

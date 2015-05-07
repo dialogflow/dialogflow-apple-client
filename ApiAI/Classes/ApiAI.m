@@ -29,7 +29,7 @@
 #import "AIConfiguration.h"
 #import "AIRequest.h"
 
-NSString *const kDefaultVersion = @"20150204";
+NSString *const kDefaultVersion = @"20150415";
 
 @interface ApiAI ()
 
