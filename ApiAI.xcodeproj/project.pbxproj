@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5801F1271B0F33790016DE2A /* AIRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F1261B0F33790016DE2A /* AIRequestEntity.m */; };
+		5801F12B1B0F3E250016DE2A /* AIRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */; };
 		581AB3AF1A245D8300E8A190 /* AIVoiceRequestButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB39D1A245D8300E8A190 /* AIVoiceRequestButton.m */; };
 		581AB3B01A245D8300E8A190 /* AIEllipseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3A81A245D8300E8A190 /* AIEllipseView.m */; };
 		581AB3B11A245D8300E8A190 /* AIProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AA1A245D8300E8A190 /* AIProgressView.m */; };
@@ -29,6 +31,8 @@
 		584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */; };
 		5851216F1A5188C8007108CD /* AdaptiveThresold.m in Sources */ = {isa = PBXBuildFile; fileRef = 5851216E1A5188C8007108CD /* AdaptiveThresold.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
+		587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */; };
+		587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F1261B0F33790016DE2A /* AIRequestEntity.m */; };
 		588D239A1AFB3C95008289F1 /* AIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23841AFB3C95008289F1 /* AIResponse.m */; };
 		588D239B1AFB3C95008289F1 /* AIResponseConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23861AFB3C95008289F1 /* AIResponseConstants.m */; };
 		588D239C1AFB3C95008289F1 /* AIResponseFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23881AFB3C95008289F1 /* AIResponseFulfillment.m */; };
@@ -113,6 +117,11 @@
 /* Begin PBXFileReference section */
 		0D13DD66A857D0D8D77EF8B7 /* Pods-ApiAI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAI/Pods-ApiAI.debug.xcconfig"; sourceTree = "<group>"; };
 		53A568877ECBDCBE5F4DF147 /* libPods-ApiAITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5801F1251B0F33790016DE2A /* AIRequestEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRequestEntity.h; sourceTree = "<group>"; };
+		5801F1261B0F33790016DE2A /* AIRequestEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRequestEntity.m; sourceTree = "<group>"; };
+		5801F1291B0F3E250016DE2A /* AIRequestEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRequestEntry.h; sourceTree = "<group>"; };
+		5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRequestEntry.m; sourceTree = "<group>"; };
+		5801F12C1B0F3E340016DE2A /* AIRequestEntity_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRequestEntity_Private.h; sourceTree = "<group>"; };
 		581AB39C1A245D8300E8A190 /* AIVoiceRequestButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceRequestButton.h; sourceTree = "<group>"; };
 		581AB39D1A245D8300E8A190 /* AIVoiceRequestButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceRequestButton.m; sourceTree = "<group>"; };
 		581AB39E1A245D8300E8A190 /* AIVoiceRequestButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIVoiceRequestButton.xib; sourceTree = "<group>"; };
@@ -413,6 +422,8 @@
 		58C2A83219BEE0E000632C2F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5801F1291B0F3E250016DE2A /* AIRequestEntry.h */,
+				5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */,
 				58C2A83319BEE0E000632C2F /* AIConfiguration.h */,
 				58C2A83419BEE0E000632C2F /* ApiAI.h */,
 				58C2A83519BEE0E000632C2F /* ApiAI.m */,
@@ -424,6 +435,8 @@
 				58C2A83B19BEE0E000632C2F /* AIVoiceRequest.m */,
 				585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */,
 				585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */,
+				5801F1251B0F33790016DE2A /* AIRequestEntity.h */,
+				5801F1261B0F33790016DE2A /* AIRequestEntity.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -431,6 +444,7 @@
 		58C2A83D19BEE0E000632C2F /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				5801F12C1B0F3E340016DE2A /* AIRequestEntity_Private.h */,
 				58C2A83E19BEE0E000632C2F /* AlgorithmDetector */,
 				58C2A84719BEE0E000632C2F /* Network */,
 				58C2A84A19BEE0E000632C2F /* RecordDetector */,
@@ -593,7 +607,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AI;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Kuragin Dmitriy";
 				TargetAttributes = {
 					58F060481A8CB366002615DF = {
@@ -692,6 +706,7 @@
 				58C2A86119BEE0E000632C2F /* AIAlgorithmDetector.m in Sources */,
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
+				5801F12B1B0F3E250016DE2A /* AIRequestEntry.m in Sources */,
 				58C2A85E19BEE0E000632C2F /* AIVoiceRequest.m in Sources */,
 				588D23B21AFB4059008289F1 /* AIResponseContext.m in Sources */,
 				588D239F1AFB3C95008289F1 /* AIResponseResult.m in Sources */,
@@ -710,6 +725,7 @@
 				58C2A86719BEE0E000632C2F /* AISoundRecorderConstants.m in Sources */,
 				58C2A86519BEE0E000632C2F /* AIMeterTable.m in Sources */,
 				581AB3B01A245D8300E8A190 /* AIEllipseView.m in Sources */,
+				5801F1271B0F33790016DE2A /* AIRequestEntity.m in Sources */,
 				588D23AE1AFB3E26008289F1 /* AIRequest+AIMappedResponse.m in Sources */,
 				58C2A85D19BEE0E000632C2F /* AITextRequest.m in Sources */,
 				58C2A86019BEE0E000632C2F /* EnergyAndZeroCross.m in Sources */,
@@ -728,7 +744,9 @@
 				588D23A61AFB3CA1008289F1 /* AIResponseParameter.m in Sources */,
 				588D23A51AFB3CA1008289F1 /* AIResponseMetadata.m in Sources */,
 				588D23A21AFB3CA1008289F1 /* AIResponse.m in Sources */,
+				587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */,
 				588D23A71AFB3CA1008289F1 /* AIResponseResult.m in Sources */,
+				587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */,
 				58F0604E1A8CB366002615DF /* ApiAITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -816,10 +834,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0D13DD66A857D0D8D77EF8B7 /* Pods-ApiAI.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					armv7s,
-				);
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";
@@ -841,10 +855,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E3C2C9A39E25605C26E7EFC /* Pods-ApiAI.release.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					armv7s,
-				);
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";

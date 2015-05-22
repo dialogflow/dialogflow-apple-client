@@ -25,6 +25,7 @@
 #import "OPStreamBuffer.h"
 #import "AIDataService_Private.h"
 #import "AIConfiguration.h"
+#import "AIRequestEntity_Private.h"
 
 #import "AFNetworking.h"
 
@@ -131,6 +132,15 @@
     
     if ([self.contexts count]) {
         parameters[@"contexts"] = self.contexts;
+    }
+    
+    if ([self.entities count]) {
+        NSMutableArray *entities = [NSMutableArray array];
+        [self.entities enumerateObjectsUsingBlock:^(AIRequestEntity *obj, NSUInteger idx, BOOL *stop) {
+            [entities addObject:obj.dictionaryPresentation];
+        }];
+        
+        parameters[@"entities"] = [entities copy];
     }
     
     parameters[@"sessionId"] = self.sessionId;

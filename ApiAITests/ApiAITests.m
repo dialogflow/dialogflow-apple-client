@@ -25,6 +25,7 @@
 #import "ApiAI.h"
 #import "AIDefaultConfiguration.h"
 #import "AIResponse.h"
+#import "AIRequestEntity.h"
 
 @interface ApiAITests : XCTestCase
 
@@ -127,7 +128,7 @@
             
             XCTAssertTrue([context[@"name"] isEqualToString:@"name_question"]);
             
-            XCTAssertTrue([context[@"parameters"] count] == 1);
+            XCTAssertTrue([context[@"parameters"] count] == 2);
             
             
             [expectation fulfill];
@@ -163,7 +164,7 @@
             
             XCTAssertTrue([context[@"name"] isEqualToString:@"name_question"]);
             
-            XCTAssertTrue([context[@"parameters"] count] == 1);
+            XCTAssertTrue([context[@"parameters"] count] == 3);
             
             [expectation fulfill];
         } failure:^(AIRequest *request, NSError *error) {
@@ -204,6 +205,49 @@
                                          XCTAssertNil(error, @"Error");
                                      }];
     }
+}
+
+- (void)testEntities
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Handle response"];
+    
+    NSString *query = @"hi nori";
+    
+    AITextRequest *textRequest = (AITextRequest *)[_apiai requestWithType:AIRequestTypeText];
+    
+    textRequest.query = query;
+    
+    
+    
+    AIRequestEntity *entity =
+    [[AIRequestEntity alloc] initWithName:@"dwarfs" andEntries:@[
+                                                                 [[AIRequestEntry alloc] initWithValue:@"Ori" andSynonims:@[@"ori", @"Nori"]],
+                                                                 [[AIRequestEntry alloc] initWithValue:@"bifur" andSynonims:@[@"Bofur", @"Bombur"]]
+                                                                 ]];
+    
+    NSArray *entities = @[
+                          entity
+                          ];
+    
+    textRequest.entities = entities;
+    
+    [textRequest setCompletionBlockSuccess:^(AIRequest *request, NSDictionary *response) {
+        NSDictionary *result = response[@"result"];
+        
+        XCTAssertTrue([result[@"action"] isEqualToString:@"say_hi"]);
+        XCTAssertTrue([result[@"fulfillment"][@"speech"] isEqualToString:@"hi Bilbo, I am Ori"]);
+        
+        [expectation fulfill];
+    } failure:^(AIRequest *request, NSError *error) {
+        XCTAssert(NO, @"Can't response error");
+    }];
+    
+    [_apiai enqueue:textRequest];
+    
+    [self waitForExpectationsWithTimeout:60
+                                 handler:^(NSError *error) {
+                                     XCTAssertNil(error, @"Error");
+                                 }];
 }
 
 - (void)testUpResponseFields {

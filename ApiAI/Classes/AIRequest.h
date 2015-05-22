@@ -21,6 +21,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AIRequestEntry.h"
+
 @class AIDataService;
 @class AFHTTPRequestOperation;
 @class AIRequest;
@@ -87,6 +89,15 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
  
  */
 @property(nonatomic, copy) NSArray *contexts;
+
+/*!
+ 
+ @property entities
+ 
+ @discussion array of entity objects - List of entities for the query that are enforced from the client. Default in nil.
+ 
+ */
+@property(nonatomic, copy) NSArray *entities;
 
 /*!
  
