@@ -21,13 +21,27 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Representation of parameter.
+ */
+
 @interface AIResponseParameter : NSObject
 
 - (instancetype)init __unavailable;
 
+/**
+ Return string presentation of parameter value.
+ */
 @property(nonatomic, copy, readonly) NSString *stringValue;
 
+/**
+ Return Date Period presentation of parameter value. Can be nil or array of 2 dates.
+ */
 @property(nonatomic, copy, readonly) NSArray *datePeriodValue;
+
+/**
+ Return Date presentation of parameter value. Can be nil or date object.
+ */
 @property(nonatomic, copy, readonly) NSDate *dateValue;
 
 @end

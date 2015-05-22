@@ -25,14 +25,32 @@
 
 - (instancetype)init __unavailable;
 
+/**
+ HTTP Status Code.
+ */
 @property(nonatomic, assign, readonly) NSInteger code;
+
+/**
+ String representation of error.
+ */
 @property(nonatomic, copy, readonly) NSString *errorType;
 
 @end
 
 @interface AIResponseStatus ()
 
+///---------------------------
+/// @name Helper methods
+///---------------------------
+
+/**
+ Validate response and return status of validation.
+*/
 @property(nonatomic, assign, readonly) BOOL isSuccess;
+
+/**
+ Optionally. Not nil if error response validation or server error.
+ */
 @property(nonatomic, copy, readonly) NSError *error;
 
 @end

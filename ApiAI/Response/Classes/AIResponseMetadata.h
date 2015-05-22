@@ -21,9 +21,20 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ `AIResponseMetadata` is class for Metadata object.
+ */
+
 @interface AIResponseMetadata : NSObject
 
+/**
+ Id of the intent that produced this result.
+ */
 @property(nonatomic, copy, readonly) NSString *indentId;
+
+/**
+ Name of the intent that produced this result.
+ */
 @property(nonatomic, copy, readonly) NSString *intentName;
 
 - (instancetype)init __unavailable;

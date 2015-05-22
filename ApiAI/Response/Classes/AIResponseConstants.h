@@ -21,8 +21,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Error Domain for inner errors.
+ */
 extern NSString *const AIErrorDomain;
+
+/**
+ Error code if server response contain wrong status code.
+ */
 extern NSInteger const AIWrongStatusCodeErrorCode;
+
+///---------------------
+/// @name Private constants
+///---------------------
 
 extern NSString *const AIDateFormat;
 extern NSString *const AITimeFormat;

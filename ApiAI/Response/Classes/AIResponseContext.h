@@ -21,11 +21,24 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ `AIResponseContext` is class of context.
+ */
+
 @interface AIResponseContext : NSObject
 
 - (instancetype)init __unavailable;
 
+/**
+ Name of the context.
+ */
 @property(nonatomic, copy, readonly) NSString *name;
+
+/**
+ Parameters for the context. `AIResponseParameter` class.
+ 
+ @see `AIResponseParameter`
+ */
 @property(nonatomic, copy, readonly) NSDictionary *parameters;
 
 @end

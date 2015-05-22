@@ -23,6 +23,13 @@
 
 @interface AITextRequest : AIRequest
 
+/*!
+ 
+ @property query
+ 
+ @discussion string or array of strings. Required field.
+ 
+ */
 @property(nonatomic, strong) id query;
 
 @end

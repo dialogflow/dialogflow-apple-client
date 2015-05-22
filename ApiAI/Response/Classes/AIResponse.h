@@ -26,15 +26,50 @@
 #import "AIResponseStatus.h"
 #import "AIResponseResult.h"
 
+/**
+ `AIResponse` is a class for presentation response in Objective-C mapped classes.
+ */
+
 @interface AIResponse : NSObject
 
+///---------------------
+/// @name Initialization
+///---------------------
+
+
+/**
+ Private method.
+*/
+
 - (instancetype)init __unavailable;
+
+/**
+ Initializes an `AIResponse` object with specified response.
+ */
 - (instancetype)initWithResponse:(id)responseObject;
 
+/**
+ Unique identifier of the result.
+ */
 @property(nonatomic, copy, readonly) NSString *identifier;
+
+/**
+ Date of server response.
+ */
 @property(nonatomic, copy, readonly) NSDate *timestamp;
 
+/**
+ Status object.
+ 
+ @see `AIResponseStatus`
+ */
 @property(nonatomic, strong, readonly) AIResponseStatus *status;
+
+/**
+ Result object.
+ 
+ @see `AIResponseResult`
+ */
 @property(nonatomic, strong, readonly) AIResponseResult *result;
 
 @end

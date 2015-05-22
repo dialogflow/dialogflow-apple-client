@@ -24,18 +24,53 @@
 #import "AIResponseFulfillment.h"
 #import "AIResponseContext.h"
 
+/**
+ `AIResponseResult` is class containing result of server response.
+*/
+
 @interface AIResponseResult : NSObject
 
 - (instancetype)init __unavailable;
 
+/**
+ Source of processing request. Can be 'agent', 'domain'
+ */
 @property(nonatomic, copy, readonly) NSString *source;
+
+/**
+ The query that was used to produce this result.
+ */
 @property(nonatomic, copy, readonly) NSString *resolvedQuery;
+
+/**
+ Action.
+ */
 @property(nonatomic, copy, readonly) NSString *action;
 
+/**
+ The list of parameters for the action.
+ */
 @property(nonatomic, copy, readonly) NSDictionary *parameters;
+
+/**
+ Array of `AIResponseContext` object.
+ 
+ @see `AIResponseContext`
+ */
 @property(nonatomic, copy, readonly) NSArray *contexts;
 
+/**
+ Fulfillment.
+ 
+ @see `AIResponseFulfillment`
+ */
 @property(nonatomic, strong, readonly) AIResponseFulfillment *fulfillment;
+
+/**
+ Metadata object.
+ 
+ @see `AIResponseMetadata`
+ */
 @property(nonatomic, strong, readonly) AIResponseMetadata *metadata;
 
 @end

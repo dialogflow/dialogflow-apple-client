@@ -23,6 +23,12 @@
 
 @interface AIRequest (AIMappedResponse)
 
+/**
+ Set completion handlers. That method processing response and mapping it to AIResponse.
+ @param success A block object to be executed when the task finishes successfully.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data.
+ */
+
 - (void)setMappedCompletionBlockSuccess:(SuccesfullResponseBlock)succesfullBlock failure:(FailureResponseBlock)failureBlock;
 
 @end

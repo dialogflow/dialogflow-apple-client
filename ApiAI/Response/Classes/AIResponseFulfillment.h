@@ -21,10 +21,17 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Fulfillment
+ */
+
 @interface AIResponseFulfillment : NSObject
 
 - (instancetype)init __unavailable;
 
+/**
+ Response speech.
+ */
 @property(nonatomic, copy, readonly) NSString *speech;
 
 @end
