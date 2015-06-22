@@ -1,4 +1,5 @@
 language: objective-c
+bundler_args: --retry 3
 git:
   depth: 2
 branches:
