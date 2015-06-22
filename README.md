@@ -1,5 +1,11 @@
-{% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }})
+---
+layout: post
+---
+
+{site.github public_repositories}
+{% for vars in site.github %}
+## {{ forloop.index }}
+    {{vars}}
 {% endfor %}
 
 iOS SDK for api.ai
