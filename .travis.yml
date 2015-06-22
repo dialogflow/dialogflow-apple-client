@@ -1,4 +1,11 @@
 language: objective-c
-script: xctool -workspace ApiAI.xcworkspace -scheme ApiAITests -sdk iphonesimulator build test
+git:
+  depth: 2
+branches:
+  only:
+    - master
+    - dev
+script: 
+    - xcodebuild -workspace ApiAI.xcworkspace -scheme ApiAITests -sdk iphonesimulator build test
 notifications:
     email: false
