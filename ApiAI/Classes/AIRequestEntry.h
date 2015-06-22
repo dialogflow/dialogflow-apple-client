@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NullabilityDefines.h"
+
 @interface AIRequestEntry : NSObject
 
 @property(nonatomic, copy, readonly, nonnull) NSString *value;

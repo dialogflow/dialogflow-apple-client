@@ -67,6 +67,9 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(Settings);
     
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     
+//    [configuration setBaseURL:[NSURL URLWithString:@"https://dev.api.ai/api/"]];
+//    configuration.clientAccessToken = @"92fa31b4e15c4ffca80dca2942deb6d3";
+    
     configuration.clientAccessToken = selectedSetting[@"clientAccessToken"];
     configuration.subscriptionKey = selectedSetting[@"subscribtionKey"];
     apiai.lang = selectedSetting[@"lang"];

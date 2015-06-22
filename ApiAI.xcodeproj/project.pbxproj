@@ -31,6 +31,7 @@
 		584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */; };
 		5851216F1A5188C8007108CD /* AdaptiveThresold.m in Sources */ = {isa = PBXBuildFile; fileRef = 5851216E1A5188C8007108CD /* AdaptiveThresold.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
+		5869BCFD1B37E56A000B99B7 /* NullabilityDefines.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5869BCFC1B37E505000B99B7 /* NullabilityDefines.h */; };
 		587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */; };
 		587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F1261B0F33790016DE2A /* AIRequestEntity.m */; };
 		588D239A1AFB3C95008289F1 /* AIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23841AFB3C95008289F1 /* AIResponse.m */; };
@@ -54,6 +55,8 @@
 		588D23AF1AFB3F24008289F1 /* AIRequest+AIMappedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23AD1AFB3E26008289F1 /* AIRequest+AIMappedResponse.m */; };
 		588D23B21AFB4059008289F1 /* AIResponseContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23B11AFB4059008289F1 /* AIResponseContext.m */; };
 		5891DF531941E14C0043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
+		589E65771B33FFB40062D868 /* AIRequestEntry.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5801F1291B0F3E250016DE2A /* AIRequestEntry.h */; };
+		589E65781B33FFB40062D868 /* AIRequestEntity.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5801F1251B0F33790016DE2A /* AIRequestEntity.h */; };
 		58C2A85B19BEE0E000632C2F /* ApiAI.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83519BEE0E000632C2F /* ApiAI.m */; };
 		58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83719BEE0E000632C2F /* AIRequest.m */; };
 		58C2A85D19BEE0E000632C2F /* AITextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83919BEE0E000632C2F /* AITextRequest.m */; };
@@ -102,6 +105,9 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				5869BCFD1B37E56A000B99B7 /* NullabilityDefines.h in Copy Files */,
+				589E65771B33FFB40062D868 /* AIRequestEntry.h in Copy Files */,
+				589E65781B33FFB40062D868 /* AIRequestEntity.h in Copy Files */,
 				58D90EDF1A42E64400A937EC /* AIConfiguration.h in Copy Files */,
 				58D90EE01A42E64400A937EC /* AIRequest.h in Copy Files */,
 				58D90EE11A42E64400A937EC /* AITextRequest.h in Copy Files */,
@@ -146,6 +152,7 @@
 		5851216E1A5188C8007108CD /* AdaptiveThresold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdaptiveThresold.m; sourceTree = "<group>"; };
 		585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefaultConfiguration.h; sourceTree = "<group>"; };
 		585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIDefaultConfiguration.m; sourceTree = "<group>"; };
+		5869BCFC1B37E505000B99B7 /* NullabilityDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NullabilityDefines.h; sourceTree = "<group>"; };
 		588D23831AFB3C95008289F1 /* AIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponse.h; sourceTree = "<group>"; };
 		588D23841AFB3C95008289F1 /* AIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponse.m; sourceTree = "<group>"; };
 		588D23851AFB3C95008289F1 /* AIResponseConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseConstants.h; sourceTree = "<group>"; };
@@ -437,6 +444,7 @@
 				585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */,
 				5801F1251B0F33790016DE2A /* AIRequestEntity.h */,
 				5801F1261B0F33790016DE2A /* AIRequestEntity.m */,
+				5869BCFC1B37E505000B99B7 /* NullabilityDefines.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

@@ -10,6 +10,8 @@
 
 #import "AIRequestEntry.h"
 
+#import "NullabilityDefines.h"
+
 @interface AIRequestEntity : NSObject
 
 @property(nonatomic, copy, readonly, nonnull) NSString *name;

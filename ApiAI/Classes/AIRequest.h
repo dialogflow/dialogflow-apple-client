@@ -21,6 +21,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AIRequestEntity.h"
 #import "AIRequestEntry.h"
 
 @class AIDataService;
