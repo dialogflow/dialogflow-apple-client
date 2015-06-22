@@ -1,17 +1,7 @@
----
-layout: post
----
-
-{site.github public_repositories}
-{% for vars in site.github %}
-## {{ forloop.index }}
-    {{vars}}
-{% endfor %}
-
 iOS SDK for api.ai
 ==============
 
-[![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg?branch=master)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
+[![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
 
 * [Overview](#overview)
 * [Prerequisites](#prerequisites)
