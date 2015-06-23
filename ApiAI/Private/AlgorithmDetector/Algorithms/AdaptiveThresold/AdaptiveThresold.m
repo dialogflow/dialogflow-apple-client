@@ -109,7 +109,7 @@
     
     ///////
     
-    if ((energy > thresold * 1.1) && (lam > 0.25) && cz) {
+    if ((energy > thresold * 1.4) && (lam > 0.25) && cz) {
         if (self.activeFrameCount > 10) {
             state = AIAlgorithmDetectorResultContinue;
             self.inactiveFrameCount = 0;

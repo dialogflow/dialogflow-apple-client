@@ -19,6 +19,8 @@
  *
  ***********************************************************************************************************************/
 
+#import <Foundation/Foundation.h>
+
 typedef enum _AIAlgorithmDetectorResult {
     AIAlgorithmDetectorResultContinue = 0,
     AIAlgorithmDetectorResultNoSpeech = 1,
