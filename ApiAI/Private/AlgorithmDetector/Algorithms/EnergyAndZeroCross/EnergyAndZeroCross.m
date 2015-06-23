@@ -134,13 +134,13 @@
         NSLog(@"%f", noiseEnergy);
     } else {
         if (czCount >= minCZ && czCount <= maxCZ) {
-            if (energy > noiseEnergy * energyFactor) {
-                result = YES;
-            }
-            
-//            if (energy > MAX(noiseEnergy, 0.0008) * energyFactor) {
+//            if (energy > noiseEnergy * energyFactor) {
 //                result = YES;
 //            }
+            
+            if (energy > MAX(noiseEnergy, 0.0008) * energyFactor) {
+                result = YES;
+            }
         }
     }
     
