@@ -233,51 +233,102 @@
     return coloredImg;
 }
 
+- (instancetype)init
+{
+    self = [super initWithFrame:CGRectZero];
+    if (self) {
+        [self prepareInterface];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self prepareInterface];
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        NSMutableArray *constraits = [NSMutableArray array];
-        
-        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-        
-        UIView *view = [[bundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] firstObject];
-        NSDictionary *views = NSDictionaryOfVariableBindings(view);
-        
-        [self addSubview:view];
-        
-        [constraits addObjectsFromArray:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|"
-                                                 options:0
-                                                 metrics:nil
-                                                   views:views]];
-        
-        [constraits addObjectsFromArray:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
-                                                 options:0
-                                                 metrics:nil
-                                                   views:views]];
-        
-        [self addConstraints:constraits];
-        
-        [self addConstraints:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"V:[self(72)]"
-                                                 options:0
-                                                 metrics:nil
-                                                   views:NSDictionaryOfVariableBindings(self)]];
-        
-        [self addConstraints:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"H:[self(72)]"
-                                                 options:0
-                                                 metrics:nil
-                                                   views:NSDictionaryOfVariableBindings(self)]];
-        
-        self.backgroundColor = [UIColor clearColor];
-        
-        [self updateButtonImages];
-        [self setupDefaultButtonImages];
+        [self prepareInterface];
     }
     return self;
+}
+
+- (void)prepareInterface
+{
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    
+    NSMutableArray *constraits = [NSMutableArray array];
+    
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    
+    UIView *view = [[bundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] firstObject];
+    [view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(view);
+    
+    [self addSubview:view];
+    
+    [constraits addObjectsFromArray:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];
+    
+    [constraits addObjectsFromArray:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];
+    
+    [self addConstraints:constraits];
+    
+    [self addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[self(72@900)]"
+                                             options:0
+                                             metrics:nil
+                                               views:NSDictionaryOfVariableBindings(self)]];
+    
+    [self addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[self(72@900)]"
+                                             options:0
+                                             metrics:nil
+                                               views:NSDictionaryOfVariableBindings(self)]];
+    
+    
+    
+    self.backgroundColor = [UIColor clearColor];
+    
+    [self updateButtonImages];
+    [self setupDefaultButtonImages];
+    
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    [super willMoveToSuperview:newSuperview];
+    
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 @end

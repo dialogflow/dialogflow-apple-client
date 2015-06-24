@@ -160,8 +160,6 @@
     
     [manager.operationQueue addOperation:_HTTPRequestOperation];
     
-    NSLog(@"QQQ: %@", [_HTTPRequestOperation.request allHTTPHeaderFields]);
-    
     [_streamBuffer write:data];
 
     [_recordDetector start];

@@ -20,6 +20,7 @@
 		5891DFE81941E9210043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE71941E9210043140B /* Foundation.framework */; };
 		5891DFEA1941E9210043140B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE91941E9210043140B /* CoreGraphics.framework */; };
 		5891DFEC1941E9210043140B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFEB1941E9210043140B /* UIKit.framework */; };
+		58AA07F91B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA07F81B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m */; };
 		58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A86E19BEE2EB00632C2F /* AppDelegate.m */; };
 		58C2A87D19BEE2EB00632C2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A87219BEE2EB00632C2F /* InfoPlist.strings */; };
 		58C2A87E19BEE2EB00632C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A87419BEE2EB00632C2F /* Images.xcassets */; };
@@ -60,6 +61,8 @@
 		5891DFEB1941E9210043140B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5891E0061941E9210043140B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5891E01C1941EC250043140B /* libPods-OpenAPIDemo-OpenAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OpenAPIDemo-OpenAPI.a"; path = "Pods/build/Debug-iphoneos/libPods-OpenAPIDemo-OpenAPI.a"; sourceTree = "<group>"; };
+		58AA07F71B3A985200A259D9 /* VoiceButtonRequestProgrammatically.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceButtonRequestProgrammatically.h; sourceTree = "<group>"; };
+		58AA07F81B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceButtonRequestProgrammatically.m; sourceTree = "<group>"; };
 		58C2A86B19BEE2EB00632C2F /* ApiAIDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ApiAIDemo-Info.plist"; sourceTree = "<group>"; };
 		58C2A86C19BEE2EB00632C2F /* ApiAIDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ApiAIDemo-Prefix.pch"; sourceTree = "<group>"; };
 		58C2A86D19BEE2EB00632C2F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -194,9 +197,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		58AA07F61B3A983F00A259D9 /* VoiceButtonRequestProgrammatically */ = {
+			isa = PBXGroup;
+			children = (
+				58AA07F71B3A985200A259D9 /* VoiceButtonRequestProgrammatically.h */,
+				58AA07F81B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m */,
+			);
+			path = VoiceButtonRequestProgrammatically;
+			sourceTree = "<group>";
+		};
 		58C2A86919BEE2EB00632C2F /* ApiAI */ = {
 			isa = PBXGroup;
 			children = (
+				58AA07F61B3A983F00A259D9 /* VoiceButtonRequestProgrammatically */,
 				588D23B61AFB499D008289F1 /* MappedResponseViewController */,
 				580670921A7646FC00A2B54C /* SimpleVoiceRequestController */,
 				5806708E1A76454E00A2B54C /* TextRequestViewController */,
@@ -338,6 +351,7 @@
 				580670821A763D2C00A2B54C /* SettingsTableViewController.m in Sources */,
 				5806707E1A763C9000A2B54C /* Settings.m in Sources */,
 				580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */,
+				58AA07F91B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m in Sources */,
 				58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

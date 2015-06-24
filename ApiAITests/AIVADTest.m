@@ -95,7 +95,7 @@
 }
 
 - (void)testExample {
-    AIAlgorithmDetectorResult result = [self testVoiceSoundWithName:@"sound1"];
+    AIAlgorithmDetectorResult result = [self testVoiceSoundWithName:@"sound2"];
     NSLog(@"");
 }
 

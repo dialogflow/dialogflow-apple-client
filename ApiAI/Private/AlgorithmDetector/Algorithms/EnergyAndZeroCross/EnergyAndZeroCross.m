@@ -131,13 +131,8 @@
     BOOL result = NO;
     if (frameNumber < noiseFrames) {
         noiseEnergy = noiseEnergy + energy / (double)noiseFrames;
-        NSLog(@"%f", noiseEnergy);
     } else {
         if (czCount >= minCZ && czCount <= maxCZ) {
-//            if (energy > noiseEnergy * energyFactor) {
-//                result = YES;
-//            }
-            
             if (energy > MAX(noiseEnergy, 0.0008) * energyFactor) {
                 result = YES;
             }

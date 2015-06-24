@@ -31,6 +31,9 @@ typedef void(^AIVoiceRequestButtonFailure)(NSError *error);
 @property(nonatomic, copy) IBInspectable UIColor *iconColor;
 
 @property(nonatomic ,copy) AIVoiceRequestButtonSuccess successCallback;
+-(void)setSuccessCallback:(AIVoiceRequestButtonSuccess)successCallback;
+
 @property(nonatomic ,copy) AIVoiceRequestButtonFailure failureCallback;
+-(void)setFailureCallback:(AIVoiceRequestButtonFailure)failureCallback;
 
 @end

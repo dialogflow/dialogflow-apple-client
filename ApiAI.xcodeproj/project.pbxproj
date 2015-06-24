@@ -62,6 +62,7 @@
 		58AA07AF1B3949A800A259D9 /* EnergyAndZeroCross.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84219BEE0E000632C2F /* EnergyAndZeroCross.m */; };
 		58AA07B01B3949D300A259D9 /* AIAlgorithmDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84419BEE0E000632C2F /* AIAlgorithmDetector.m */; };
 		58AA07B31B394A5300A259D9 /* sound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58AA07B21B394A5300A259D9 /* sound1.wav */; };
+		58AA07B51B395A6B00A259D9 /* sound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58AA07B41B395A6B00A259D9 /* sound2.wav */; };
 		58C2A85B19BEE0E000632C2F /* ApiAI.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83519BEE0E000632C2F /* ApiAI.m */; };
 		58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83719BEE0E000632C2F /* AIRequest.m */; };
 		58C2A85D19BEE0E000632C2F /* AITextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83919BEE0E000632C2F /* AITextRequest.m */; };
@@ -192,6 +193,7 @@
 		58AA07AB1B39492100A259D9 /* AudioFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileReader.m; sourceTree = "<group>"; };
 		58AA07AD1B39494900A259D9 /* AIVADTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVADTest.m; sourceTree = "<group>"; };
 		58AA07B21B394A5300A259D9 /* sound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound1.wav; sourceTree = "<group>"; };
+		58AA07B41B395A6B00A259D9 /* sound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound2.wav; sourceTree = "<group>"; };
 		58C2A83119BEE0E000632C2F /* ApiAI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ApiAI-Prefix.pch"; sourceTree = "<group>"; };
 		58C2A83319BEE0E000632C2F /* AIConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIConfiguration.h; sourceTree = "<group>"; };
 		58C2A83419BEE0E000632C2F /* ApiAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAI.h; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		58AA07B11B394A5300A259D9 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				58AA07B41B395A6B00A259D9 /* sound2.wav */,
 				58AA07B21B394A5300A259D9 /* sound1.wav */,
 			);
 			path = sounds;
@@ -668,6 +671,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58AA07B51B395A6B00A259D9 /* sound2.wav in Resources */,
 				58AA07B31B394A5300A259D9 /* sound1.wav in Resources */,
 				588D23AB1AFB3D21008289F1 /* response.json in Resources */,
 			);
