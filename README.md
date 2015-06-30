@@ -62,10 +62,10 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   
   In the AppDelegate.m, add
   ```Objective-C
-     self.apiAI = [[ApiAI alloc] init];
+    self.apiAI = [[ApiAI alloc] init];
     
     // Define API.AI configuration here.
-    AIConfiguration *configuration = [[AIConfiguration alloc] init];
+    id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     configuration.baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
     configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN_HERE";
     configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY_HERE";
@@ -85,13 +85,13 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
       // Handle error ...
   }];
   
-  [_openAPI enqueue:request];
+  [_apiAI enqueue:request];
 
   ```
   
 ### 5. Or perform request using voice:
   ```Objective-C
-  // Request using voice
+    // Request using voice
     AIVoiceRequest *request = (AIVoiceRequest *)[_apiAI requestWithType:AIRequestTypeVoice];
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
@@ -99,7 +99,6 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
     } failure:^(AIRequest *request, NSError *error) {
         // Handle error ...
     }];
-    
-    self.voiceRequest = request;
+
     [_apiAI enqueue:request];
   ```
