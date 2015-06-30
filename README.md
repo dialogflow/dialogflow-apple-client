@@ -65,7 +65,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
      self.apiAI = [[ApiAI alloc] init];
     
     // Define API.AI configuration here.
-    Configuration *configuration = [[Configuration alloc] init];
+    AIConfiguration *configuration = [[AIConfiguration alloc] init];
     configuration.baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
     configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN_HERE";
     configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY_HERE";
@@ -79,9 +79,9 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   // Request using text (assumes that speech recognition / ASR is done using a third-party library, e.g. AT&T)
   AITextRequest *request = (AITextRequest *)[_apiAI requestWithType:AIRequestTypeText];
   request.query = @[@"hello"];
-  [request setCompletionBlockSuccess:^(OPRequest *request, id response) {
+  [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
       // Handle success ...
-  } failure:^(OPRequest *request, NSError *error) {
+  } failure:^(AIRequest *request, NSError *error) {
       // Handle error ...
   }];
   
