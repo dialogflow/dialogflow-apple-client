@@ -48,15 +48,6 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 /*!
  
- @property HTTPRequestOperation
- 
- @discussion AFNetworking request.
- 
- */
-@property(nonatomic, strong) AFHTTPRequestOperation *HTTPRequestOperation;
-
-/*!
- 
  @property dataTask
  
  @discussion NSURLSessionDataTask.

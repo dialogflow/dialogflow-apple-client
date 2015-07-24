@@ -21,7 +21,6 @@
 
 #import "AIDataService.h"
 
-@class AFHTTPRequestOperationManager;
 @protocol AIConfiguration;
 
 @interface AIDataService ()
@@ -31,7 +30,6 @@
 @property(nonatomic, strong) NSURLSession *URLSession;
 @property (nonatomic, copy) NSIndexSet *acceptableStatusCodes;
 
-@property(nonatomic, strong) AFHTTPRequestOperationManager *manager;
 @property(nonatomic, strong) id <AIConfiguration> configuration;
 
 @end

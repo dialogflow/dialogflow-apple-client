@@ -40,7 +40,6 @@
             "requires_arc": true,
 
             "dependencies": {
-                "AFNetworking": [],
                 "CWLSynthesizeSingleton": []
             }
         },

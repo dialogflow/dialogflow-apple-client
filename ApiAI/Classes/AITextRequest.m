@@ -95,7 +95,7 @@
     [request setValue:[NSString stringWithFormat:@"%@", configuration.subscriptionKey]
    forHTTPHeaderField:@"ocp-apim-subscription-key"];
     
-    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSession *session = dataService.URLSession;
     
     __weak typeof(self) selfWeak = self;
     

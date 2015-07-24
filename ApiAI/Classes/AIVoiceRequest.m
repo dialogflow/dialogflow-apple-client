@@ -27,7 +27,7 @@
 #import "AIConfiguration.h"
 #import "AIRequestEntity_Private.h"
 
-#import "AFNetworking.h"
+#import "AIResponseConstants.h"
 
 @class AIRecordDetector;
 
@@ -52,10 +52,12 @@
         
         self.useVADForAutoCommit = YES;
         
-        AFHTTPRequestOperationManager *manager = self.dataService.manager;
+        AIDataService *dataService = self.dataService;
         id <AIConfiguration> configuration = self.dataService.configuration;
         
         NSString *version = self.version;
+        
+        self.boundary = [self creteBoundary];
         
         NSString *path = @"query";
         
@@ -63,16 +65,11 @@
             path = [path stringByAppendingFormat:@"?v=%@", version];
         }
         
-        NSError *error = nil;
+        NSURL *URL = [NSURL URLWithString:path relativeToURL:configuration.baseURL];
+
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
         
-        self.boundary = [self creteBoundary];
-        
-        NSURL *baseURL = manager.baseURL;
-        
-        NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST"
-                                                                          URLString:[[NSURL URLWithString:path relativeToURL:baseURL] absoluteString]
-                                                                         parameters:nil
-                                                                              error:&error];
+        [request setHTTPMethod:@"POST"];
         
         NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", _boundary];
         [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
@@ -83,15 +80,7 @@
        forHTTPHeaderField:@"Authorization"];
         [request setValue:[NSString stringWithFormat:@"%@", configuration.subscriptionKey]
        forHTTPHeaderField:@"ocp-apim-subscription-key"];
-        
-        __weak typeof(self) seflWeak = self;
-        
-        self.HTTPRequestOperation = [manager HTTPRequestOperationWithRequest:request
-                                                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                         [seflWeak handleResponse:responseObject];
-                                                                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                         [seflWeak handleError:error];
-                                                                     }];
+
         
         NSInputStream *input = nil;
         NSOutputStream *output = nil;
@@ -101,7 +90,47 @@
         self.input = input;
         self.output = output;
         
-        [_HTTPRequestOperation setInputStream:input];
+        [request setHTTPBodyStream:input];
+        
+        
+        NSURLSession *session = dataService.URLSession;
+        
+        __weak typeof(self) selfWeak = self;
+        
+        NSURLSessionDataTask *dataTask =
+        [session dataTaskWithRequest:request
+                   completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
+                       if (!error) {
+                           NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
+                           if ([dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
+                               NSError *responseSerializeError = nil;
+                               id responseData =
+                               [NSJSONSerialization JSONObjectWithData:data
+                                                               options:0
+                                                                 error:&responseSerializeError];
+                               
+                               if (!responseSerializeError) {
+                                   [self handleResponse:responseData];
+                               } else {
+                                   [self handleError:responseSerializeError];
+                               }
+                               
+                           } else {
+                               NSError *responseStatusCodeError =
+                               [NSError errorWithDomain:AIErrorDomain
+                                                   code:NSURLErrorBadServerResponse
+                                               userInfo:@{
+                                                          NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
+                                                          }];
+                               [selfWeak handleError:responseStatusCodeError];
+                           }
+                       } else {
+                           [selfWeak handleError:error];
+                       }
+                   }];
+        
+        self.dataTask = dataTask;
+        
         
         self.streamBuffer = [[OPStreamBuffer alloc] initWithOutputStream:output];
         [_streamBuffer open];
@@ -111,7 +140,6 @@
 
 - (void)configureHTTPRequest
 {
-    AFHTTPRequestOperationManager *manager = self.dataService.manager;
     
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     
@@ -157,8 +185,8 @@
     [data appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"qwe.wav\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: audio/wav\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [manager.operationQueue addOperation:_HTTPRequestOperation];
+
+    [self.dataTask resume];
     
     [_streamBuffer write:data];
 

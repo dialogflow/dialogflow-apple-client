@@ -21,7 +21,6 @@
 
 #import "AIRequest.h"
 #import "AIDataService.h"
-#import "AFNetworking.h"
 
 #import <CommonCrypto/CommonDigest.h>
 
@@ -33,9 +32,9 @@
 
 @implementation AIRequest
 
-@synthesize finished=_finished;
+@synthesize finished=_finished, dataTask=_dataTask;
 
-@synthesize HTTPRequestOperation=_HTTPRequestOperation, dataService=_dataService;
+@synthesize dataService=_dataService;
 
 - (instancetype)initWithDataService:(AIDataService *)dataService
 {
@@ -143,7 +142,6 @@
 
 - (void)cancelHTTPRequest
 {
-    [self.HTTPRequestOperation cancel];
     [self.dataTask cancel];
 }
 

@@ -20,7 +20,6 @@
  ***********************************************************************************************************************/
 
 #import "AIDataService.h"
-#import "AFNetworking.h"
 #import "AIConfiguration.h"
 #import "AIDataService_Private.h"
 
@@ -38,9 +37,6 @@
         
         self.URLSession = [NSURLSession sharedSession];
         self.acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
-        
-        self.manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:configuration.baseURL];
-        self.manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:0];
         
         self.queue = [[NSOperationQueue alloc] init];
         [_queue setSuspended:NO];
