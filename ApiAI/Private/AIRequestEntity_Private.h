@@ -10,6 +10,6 @@
 
 @interface AIRequestEntity ()
 
-@property(nonatomic, copy, readonly, nonnull) NSDictionary *dictionaryPresentation;
+@property(nonatomic, copy, readonly, AI_NONNULL) NSDictionary *dictionaryPresentation;
 
 @end

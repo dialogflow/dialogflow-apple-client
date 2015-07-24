@@ -101,7 +101,7 @@
     
     NSURLSessionDataTask *dataTask =
     [session dataTaskWithRequest:request
-               completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response1, NSError * _Nullable error) {
+               completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
                    if (!error) {
                        NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
                        if ([dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {

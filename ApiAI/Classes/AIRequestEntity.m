@@ -11,7 +11,7 @@
 
 @implementation AIRequestEntity
 
-- (instancetype)initWithName:(NSString * __nonnull)name andEntries:(NSArray * __nonnull)entries
+- (instancetype)initWithName:(NSString * __AI_NONNULL)name andEntries:(NSArray * __AI_NONNULL)entries
 {
     self = [super init];
     if (self) {

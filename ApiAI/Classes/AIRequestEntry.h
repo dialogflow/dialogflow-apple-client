@@ -12,9 +12,9 @@
 
 @interface AIRequestEntry : NSObject
 
-@property(nonatomic, copy, readonly, nonnull) NSString *value;
-@property(nonatomic, copy, readonly, nonnull) NSArray *synonyms;
+@property(nonatomic, copy, readonly, AI_NONNULL) NSString *value;
+@property(nonatomic, copy, readonly, AI_NONNULL) NSArray *synonyms;
 
-- (nonnull instancetype)initWithValue:(NSString * __nonnull)value andSynonims:(NSArray * __nonnull)synonims;
+- (AI_NONNULL instancetype)initWithValue:(NSString * __AI_NONNULL)value andSynonims:(NSArray * __AI_NONNULL)synonims;
 
 @end

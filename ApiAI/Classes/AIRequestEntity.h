@@ -14,10 +14,10 @@
 
 @interface AIRequestEntity : NSObject
 
-@property(nonatomic, copy, readonly, nonnull) NSString *name;
-@property(nonatomic, copy, readonly, nonnull) NSArray *entries;
+@property(nonatomic, copy, readonly, AI_NONNULL) NSString *name;
+@property(nonatomic, copy, readonly, AI_NONNULL) NSArray *entries;
 
-- (nonnull instancetype)initWithName:(NSString * __nonnull)name
-                          andEntries:(NSArray * __nonnull)entries;
+- (nonnull instancetype)initWithName:(NSString * __AI_NONNULL)name
+                          andEntries:(NSArray * __AI_NONNULL)entries;
 
 @end

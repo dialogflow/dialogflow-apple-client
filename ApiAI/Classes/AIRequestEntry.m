@@ -10,7 +10,7 @@
 
 @implementation AIRequestEntry
 
-- (instancetype)initWithValue:(NSString * __nonnull)value andSynonims:(NSArray * __nonnull) synonims
+- (instancetype)initWithValue:(NSString * __AI_NONNULL)value andSynonims:(NSArray * __AI_NONNULL) synonims
 {
     self = [super init];
     if (self) {
