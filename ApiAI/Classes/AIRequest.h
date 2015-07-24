@@ -57,6 +57,15 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 /*!
  
+ @property dataTask
+ 
+ @discussion NSURLSessionDataTask.
+ 
+ */
+@property(nonatomic, strong) NSURLSessionDataTask *dataTask;
+
+/*!
+ 
  @property dataService
  
  @discussion private property, don't use it.

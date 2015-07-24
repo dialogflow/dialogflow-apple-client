@@ -15,7 +15,8 @@
 
     "requires_arc": true,
     "platforms": {
-        "ios": "7.0"
+        "ios": "7.0",
+        "watchos": "2.0"
     },
 
     "subspecs": [

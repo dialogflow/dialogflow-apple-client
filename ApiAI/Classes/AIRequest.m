@@ -144,6 +144,7 @@
 - (void)cancelHTTPRequest
 {
     [self.HTTPRequestOperation cancel];
+    [self.dataTask cancel];
 }
 
 @end

@@ -25,14 +25,14 @@
 #import "AIConfiguration.h"
 #import "AIRequestEntity_Private.h"
 
-#import "AFNetworking.h"
+#import "AIResponseConstants.h"
 
 @implementation AITextRequest
 
 - (void)configureHTTPRequest
 {
-    AFHTTPRequestOperationManager *manager = self.dataService.manager;
-    id <AIConfiguration> configuration = self.dataService.configuration;
+    AIDataService *dataService = self.dataService;
+    id <AIConfiguration> configuration = dataService.configuration;
     
     NSString *version = self.version;
     
@@ -41,8 +41,6 @@
     if (version) {
         path = [path stringByAppendingFormat:@"?v=%@", version];
     }
-    
-    NSError *error = nil;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:self.timeZone];
@@ -75,10 +73,19 @@
     
     parameters[@"sessionId"] = self.sessionId;
     
-    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST"
-                                                                      URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString]
-                                                                     parameters:parameters
-                                                                          error:&error];
+    NSURL *URL = [NSURL URLWithString:path relativeToURL:configuration.baseURL];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    NSError *serializeError = nil;
+    
+    NSData *requestData =
+    [NSJSONSerialization dataWithJSONObject:parameters
+                                    options:0
+                                      error:&serializeError];
+    
+    [request setHTTPBody:requestData];
     
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -88,15 +95,45 @@
     [request setValue:[NSString stringWithFormat:@"%@", configuration.subscriptionKey]
    forHTTPHeaderField:@"ocp-apim-subscription-key"];
     
-    __weak typeof(self) seflWeak = self;
+    NSURLSession *session = [NSURLSession sharedSession];
     
-    self.HTTPRequestOperation = [manager HTTPRequestOperationWithRequest:request
-                                                                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                     [seflWeak handleResponse:responseObject];
-                                                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                     [seflWeak handleError:error];
-                                                                 }];
-    [manager.operationQueue addOperation:_HTTPRequestOperation];
+    __weak typeof(self) selfWeak = self;
+    
+    NSURLSessionDataTask *dataTask =
+    [session dataTaskWithRequest:request
+               completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response1, NSError * _Nullable error) {
+                   if (!error) {
+                       NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
+                       if ([dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
+                           NSError *responseSerializeError = nil;
+                           id responseData =
+                           [NSJSONSerialization JSONObjectWithData:data
+                                                           options:0
+                                                             error:&responseSerializeError];
+                           
+                           if (!responseSerializeError) {
+                               [self handleResponse:responseData];
+                           } else {
+                               [self handleError:responseSerializeError];
+                           }
+                           
+                       } else {
+                           NSError *responseStatusCodeError =
+                           [NSError errorWithDomain:AIErrorDomain
+                                               code:NSURLErrorBadServerResponse
+                                           userInfo:@{
+                                                      NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
+                                                      }];
+                           [selfWeak handleError:responseStatusCodeError];
+                       }
+                   } else {
+                       [selfWeak handleError:error];
+                   }
+               }];
+    
+    self.dataTask = dataTask;
+
+    [dataTask resume];
 }
 
 @end

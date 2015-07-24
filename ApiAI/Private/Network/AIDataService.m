@@ -35,6 +35,10 @@
     self = [super init];
     if (self) {
         self.configuration = configuration;
+        
+        self.URLSession = [NSURLSession sharedSession];
+        self.acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
+        
         self.manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:configuration.baseURL];
         self.manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:0];
         

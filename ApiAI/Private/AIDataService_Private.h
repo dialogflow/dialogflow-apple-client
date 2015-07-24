@@ -28,6 +28,9 @@
 
 @property(nonatomic, copy) NSString *version;
 
+@property(nonatomic, strong) NSURLSession *URLSession;
+@property (nonatomic, copy) NSIndexSet *acceptableStatusCodes;
+
 @property(nonatomic, strong) AFHTTPRequestOperationManager *manager;
 @property(nonatomic, strong) id <AIConfiguration> configuration;
 

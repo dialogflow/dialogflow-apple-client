@@ -133,7 +133,8 @@
         noiseEnergy = noiseEnergy + energy / (double)noiseFrames;
     } else {
         if (czCount >= minCZ && czCount <= maxCZ) {
-            if (energy > MAX(noiseEnergy, 0.0008) * energyFactor) {
+//            if (energy > MAX(noiseEnergy, 0.0008) * energyFactor) {
+            if (energy > MAX(noiseEnergy, 0.001818) * energyFactor) {
                 result = YES;
             }
         }
