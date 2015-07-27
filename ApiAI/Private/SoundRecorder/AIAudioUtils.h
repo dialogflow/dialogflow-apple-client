@@ -24,11 +24,13 @@
 
 #define OPCA(x) AICAError(x,__FILE__,__LINE__)
 
+
 #include <stdio.h>
 #include <AudioUnit/AudioUnit.h>
 #include <AudioToolbox/AudioToolbox.h>
 
 OSStatus AICAError(OSStatus result, const char *file, int line);
 double AIDbToAmpMy(double inDb);
+
 
 #endif

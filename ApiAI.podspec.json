@@ -40,7 +40,7 @@
             "requires_arc": true,
 
             "dependencies": {
-                "CWLSynthesizeSingleton": []
+                
             }
         },
         {
