@@ -26,6 +26,7 @@
 #import "AIDataService_Private.h"
 #import "AIConfiguration.h"
 #import "AIRequestEntity_Private.h"
+#import "AIRequest+Private.h"
 
 #import "AIResponseConstants.h"
 
@@ -52,35 +53,7 @@
         
         self.useVADForAutoCommit = YES;
         
-        AIDataService *dataService = self.dataService;
-        id <AIConfiguration> configuration = self.dataService.configuration;
-        
-        NSString *version = self.version;
-        
-        self.boundary = [self creteBoundary];
-        
-        NSString *path = @"query";
-        
-        if (version) {
-            path = [path stringByAppendingFormat:@"?v=%@", version];
-        }
-        
-        NSURL *URL = [NSURL URLWithString:path relativeToURL:configuration.baseURL];
-
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
-        
-        [request setHTTPMethod:@"POST"];
-        
-        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", _boundary];
-        [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        [request setValue:@"chunked" forHTTPHeaderField:@"Transfer-Encoding"];
-        
-        [request setValue:[NSString stringWithFormat:@"Bearer %@", configuration.clientAccessToken]
-       forHTTPHeaderField:@"Authorization"];
-        [request setValue:[NSString stringWithFormat:@"%@", configuration.subscriptionKey]
-       forHTTPHeaderField:@"ocp-apim-subscription-key"];
-
+        NSMutableURLRequest *request = self.prepareDefaultRequest;
         
         NSInputStream *input = nil;
         NSOutputStream *output = nil;
@@ -91,7 +64,6 @@
         self.output = output;
         
         [request setHTTPBodyStream:input];
-        
         
         NSURLSession *session = dataService.URLSession;
         
@@ -136,6 +108,17 @@
         [_streamBuffer open];
     }
     return self;
+}
+
+- (NSDictionary *)defaultHeaders
+{
+    NSMutableDictionary *headers = [[super defaultHeaders] mutableCopy];
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", _boundary];
+    
+    headers[@"Content-Type"] = contentType;
+    headers[@"Transfer-Encoding"] = @"chunked";
+    
+    return [headers copy];
 }
 
 - (void)configureHTTPRequest

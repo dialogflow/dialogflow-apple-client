@@ -68,8 +68,7 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
 
 @interface AIRequest : NSOperation <AIRequest>
 {
-    @protected
-    AFHTTPRequestOperation *_HTTPRequestOperation;
+    
 }
 
 /*!

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "NullabilityDefines.h"
+#import "AINullabilityDefines.h"
 
 @interface AIRequestEntry : NSObject
 

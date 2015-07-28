@@ -10,7 +10,7 @@
 
 #import "AIRequestEntry.h"
 
-#import "NullabilityDefines.h"
+#import "AINullabilityDefines.h"
 
 @interface AIRequestEntity : NSObject
 
