@@ -14,7 +14,7 @@ class ResultNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let resultViewController = self.viewControllers.first! as ResultViewController
+        let resultViewController = self.viewControllers.first! as! ResultViewController
         resultViewController.response = self.response
     }
 }

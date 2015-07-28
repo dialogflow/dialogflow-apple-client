@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5806707E1A763C9000A2B54C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806707C1A763C9000A2B54C /* Settings.m */; };
-		5806707F1A763C9000A2B54C /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5806707D1A763C9000A2B54C /* Settings.plist */; };
-		580670821A763D2C00A2B54C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670811A763D2C00A2B54C /* SettingsTableViewController.m */; };
 		580670861A76428800A2B54C /* VoiceButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670851A76428800A2B54C /* VoiceButtonViewController.m */; };
 		5806708A1A7642FD00A2B54C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670891A7642FD00A2B54C /* ResultViewController.m */; };
 		5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806708C1A76437E00A2B54C /* ResultNavigarionController.m */; };
@@ -31,11 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5806707B1A763C9000A2B54C /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		5806707C1A763C9000A2B54C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
-		5806707D1A763C9000A2B54C /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
-		580670801A763D2C00A2B54C /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
-		580670811A763D2C00A2B54C /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		580670841A76428800A2B54C /* VoiceButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceButtonViewController.h; sourceTree = "<group>"; };
 		580670851A76428800A2B54C /* VoiceButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceButtonViewController.m; sourceTree = "<group>"; };
 		580670881A7642FD00A2B54C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
@@ -102,18 +94,6 @@
 				600310EC6FC420125829FEFA /* Pods-ApiAIDemo.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		5806707A1A763C9000A2B54C /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				5806707B1A763C9000A2B54C /* Settings.h */,
-				5806707C1A763C9000A2B54C /* Settings.m */,
-				5806707D1A763C9000A2B54C /* Settings.plist */,
-				580670801A763D2C00A2B54C /* SettingsTableViewController.h */,
-				580670811A763D2C00A2B54C /* SettingsTableViewController.m */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		580670831A76427C00A2B54C /* VoiceButtonRequest */ = {
@@ -215,7 +195,6 @@
 				5806708E1A76454E00A2B54C /* TextRequestViewController */,
 				580670871A7642EE00A2B54C /* ResultViewController */,
 				580670831A76427C00A2B54C /* VoiceButtonRequest */,
-				5806707A1A763C9000A2B54C /* Settings */,
 				58C2A86D19BEE2EB00632C2F /* AppDelegate.h */,
 				58C2A86E19BEE2EB00632C2F /* AppDelegate.m */,
 				58C2A87619BEE2EB00632C2F /* ViewController.h */,
@@ -295,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C2A88219BEE3D600632C2F /* Main.storyboard in Resources */,
-				5806707F1A763C9000A2B54C /* Settings.plist in Resources */,
 				58C2A87E19BEE2EB00632C2F /* Images.xcassets in Resources */,
 				58C2A87D19BEE2EB00632C2F /* InfoPlist.strings in Resources */,
 			);
@@ -348,8 +326,6 @@
 				580670861A76428800A2B54C /* VoiceButtonViewController.m in Sources */,
 				58C2A87F19BEE2EB00632C2F /* main.m in Sources */,
 				580670951A76470900A2B54C /* SimpleVoiceRequestViewController.m in Sources */,
-				580670821A763D2C00A2B54C /* SettingsTableViewController.m in Sources */,
-				5806707E1A763C9000A2B54C /* Settings.m in Sources */,
 				580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */,
 				58AA07F91B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m in Sources */,
 				58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */,

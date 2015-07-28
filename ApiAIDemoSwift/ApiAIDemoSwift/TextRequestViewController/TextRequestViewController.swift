@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ApiAI
+import MBProgressHUD
 
 class TextRequestViewController: UIViewController {
     @IBOutlet var textField: UITextField? = nil
@@ -17,7 +19,7 @@ class TextRequestViewController: UIViewController {
         
         self.textField?.resignFirstResponder()
         
-        let request = ApiAI.sharedApiAI().requestWithType(AIRequestType.Text) as AITextRequest
+        let request = ApiAI.sharedApiAI().requestWithType(AIRequestType.Text) as! AITextRequest
         
         
         if let text = self.textField?.text {
@@ -27,7 +29,7 @@ class TextRequestViewController: UIViewController {
         }
         
         request.setCompletionBlockSuccess({[unowned self] (AIRequest request, AnyObject response) -> Void in
-            let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as ResultNavigationController
+            let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultNavigationController
             
             resultNavigationController.response = response
             

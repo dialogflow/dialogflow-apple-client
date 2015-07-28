@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import ApiAI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,15 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        var settings = Settings.sharedSettings
-        settings.selectedSettings = settings.settings.first!
-        
-//        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-//        [[AVAudioSession sharedInstance] setActive:YES error:nil];
 
-//        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-//        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+
+        let apiai = ApiAI.sharedApiAI()
         
+        let configuration: AIConfiguration = AIDefaultConfiguration()
+        
+        configuration.clientAccessToken = "YOUR_CLIENT_ACCESS_TOKEN"
+        configuration.subscriptionKey = "YOUR_SUBSCRIPTION_KEY"
+        
+        apiai.configuration = configuration
         
         
         // Override point for customization after application launch.

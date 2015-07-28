@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ApiAI
 
 class SimpleVoiceRequestController: UIViewController {
     
@@ -28,14 +29,14 @@ class SimpleVoiceRequestController: UIViewController {
 
         let apiai = ApiAI.sharedApiAI()
         
-        let request = apiai.requestWithType(AIRequestType.Voice) as AIVoiceRequest
+        let request = apiai.requestWithType(AIRequestType.Voice) as! AIVoiceRequest
         
         if let vad = self.useVAD {
             request.useVADForAutoCommit = vad.on
         }
         
         request.setCompletionBlockSuccess({[unowned self] (AIRequest request, AnyObject response) -> Void in
-            let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as ResultNavigationController
+            let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultNavigationController
             
             resultNavigationController.response = response
             

@@ -13,9 +13,6 @@
 		5875123C1AC275280053EAA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5875123B1AC275280053EAA9 /* Images.xcassets */; };
 		5875123F1AC275280053EAA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5875123D1AC275280053EAA9 /* LaunchScreen.xib */; };
 		5875124B1AC275280053EAA9 /* ApiAIDemoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875124A1AC275280053EAA9 /* ApiAIDemoSwiftTests.swift */; };
-		5875125C1AC2B1EB0053EAA9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875125B1AC2B1EB0053EAA9 /* Settings.swift */; };
-		5875125E1AC2F1CE0053EAA9 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5875125D1AC2F1CE0053EAA9 /* Settings.plist */; };
-		587512601AC2F1DF0053EAA9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875125F1AC2F1DF0053EAA9 /* SettingsViewController.swift */; };
 		587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */; };
 		587512661AC2FD3F0053EAA9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512651AC2FD3F0053EAA9 /* ResultViewController.swift */; };
 		587512681AC2FDD20053EAA9 /* ResultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */; };
@@ -47,9 +44,6 @@
 		587512491AC275280053EAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5875124A1AC275280053EAA9 /* ApiAIDemoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAIDemoSwiftTests.swift; sourceTree = "<group>"; };
 		587512561AC276B90053EAA9 /* ApiAIDemoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApiAIDemoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		5875125B1AC2B1EB0053EAA9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		5875125D1AC2F1CE0053EAA9 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
-		5875125F1AC2F1DF0053EAA9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextRequestViewController.swift; sourceTree = "<group>"; };
 		587512651AC2FD3F0053EAA9 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultNavigationController.swift; sourceTree = "<group>"; };
@@ -122,7 +116,6 @@
 				5875126E1AC3DFD90053EAA9 /* SimpleVoiceRequestController */,
 				587512641AC2FD190053EAA9 /* ResultViewController */,
 				587512611AC2F3D80053EAA9 /* TextRequestViewController */,
-				5875125A1AC2B1DD0053EAA9 /* Settings */,
 				587512341AC275280053EAA9 /* AppDelegate.swift */,
 				587512361AC275280053EAA9 /* ViewController.swift */,
 				587512381AC275280053EAA9 /* Main.storyboard */,
@@ -157,16 +150,6 @@
 				587512491AC275280053EAA9 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5875125A1AC2B1DD0053EAA9 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				5875125D1AC2F1CE0053EAA9 /* Settings.plist */,
-				5875125B1AC2B1EB0053EAA9 /* Settings.swift */,
-				5875125F1AC2F1DF0053EAA9 /* SettingsViewController.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		587512611AC2F3D80053EAA9 /* TextRequestViewController */ = {
@@ -285,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5875123A1AC275280053EAA9 /* Main.storyboard in Resources */,
-				5875125E1AC2F1CE0053EAA9 /* Settings.plist in Resources */,
 				5875123F1AC275280053EAA9 /* LaunchScreen.xib in Resources */,
 				5875123C1AC275280053EAA9 /* Images.xcassets in Resources */,
 			);
@@ -340,12 +322,10 @@
 			files = (
 				587512681AC2FDD20053EAA9 /* ResultNavigationController.swift in Sources */,
 				587512731AC3E3DC0053EAA9 /* VoiceButtonViewController.swift in Sources */,
-				5875125C1AC2B1EB0053EAA9 /* Settings.swift in Sources */,
 				587512701AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift in Sources */,
 				587512371AC275280053EAA9 /* ViewController.swift in Sources */,
 				587512351AC275280053EAA9 /* AppDelegate.swift in Sources */,
 				587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */,
-				587512601AC2F1DF0053EAA9 /* SettingsViewController.swift in Sources */,
 				587512661AC2FD3F0053EAA9 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

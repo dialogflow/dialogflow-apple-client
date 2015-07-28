@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ApiAI
 
 class VoiceButtonViewController: UIViewController {
 
@@ -25,7 +26,7 @@ class VoiceButtonViewController: UIViewController {
     }
     
     func showResult(response: AnyObject) {
-        let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as ResultNavigationController
+        let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultNavigationController
             
         resultNavigationController.response = response
         

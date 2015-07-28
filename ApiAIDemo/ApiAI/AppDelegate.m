@@ -26,8 +26,6 @@
 #import <ApiAI/ApiAI.h>
 #import <ApiAI/AIDefaultConfiguration.h>
 
-#import "Settings.h"
-
 @interface AppDelegate ()
 
 @end
@@ -39,8 +37,14 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
-    NSDictionary *settings = [[Settings sharedSettings].settings firstObject];
-    [Settings sharedSettings].selectedSetting = settings;
+    ApiAI *apiai = [ApiAI sharedApiAI];
+    
+    id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
+    
+    configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";
+    configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY";
+    
+    apiai.configuration = configuration;
     
     return YES;
 }
