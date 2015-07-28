@@ -23,6 +23,9 @@
 #import "AIDataService.h"
 
 #import <CommonCrypto/CommonDigest.h>
+#import <UIKit/UIKit.h>
+
+NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
 
 @interface AIRequest ()
 
@@ -106,9 +109,22 @@
 - (NSString *)sessionId
 {
     if (!_sessionId) {
+#ifdef TARGET_OS_WATCH
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        if (![userDefaults objectForKey:kUniqueIdentifierKey]) {
+            [userDefaults setObject:[[NSUUID UUID] UUIDString] forKey:kUniqueIdentifierKey];
+            [userDefaults synchronize];
+        }
+        
+        NSString *vendorIdentifier = [userDefaults objectForKey:kUniqueIdentifierKey];
+        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+        
+        _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
+#else
         NSString *vendorIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
         NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
         _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
+#endif
     }
     
     return _sessionId;

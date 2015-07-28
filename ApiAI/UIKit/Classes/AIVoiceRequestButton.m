@@ -70,7 +70,7 @@
         
         [levelView setHidden:NO];
         
-        AIVoiceRequest *request = (AIVoiceRequest *)[[ApiAI sharedApiAI] requestWithType:AIRequestTypeVoice];
+        AIVoiceRequest *request = [[ApiAI sharedApiAI] voiceRequest];
         
         __weak typeof(self) selfWeak = self;
         

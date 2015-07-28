@@ -52,7 +52,7 @@
     
     ApiAI *apiai = [ApiAI sharedApiAI];
     
-    AITextRequest *request = (AITextRequest *)[apiai requestWithType:AIRequestTypeText];
+    AITextRequest *request = [apiai textRequest];
     request.query = @[_textField.text?:@""];
     
     __weak typeof(self) selfWeak = self;

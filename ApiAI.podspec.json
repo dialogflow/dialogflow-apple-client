@@ -21,7 +21,7 @@
 
     "subspecs": [
         {
-            "name": "Default",
+            "name": "Core",
             
             "source_files": [
                 "ApiAI",
@@ -41,6 +41,38 @@
 
             "dependencies": {
                 
+            },
+
+            "platforms": {
+                "ios": "7.0",
+                "watchos": "2.0"
+            }
+        },
+        {
+            "name": "VoiceRequest",
+
+            "source_files": [
+                          "ApiAI/VoiceRequest",
+                          "ApiAI/VoiceRequest/Classes/**/*.{h,m}",
+                          "ApiAI/VoiceRequest/Private/**/*.{h,m,c}"
+                          ],
+
+            "public_header_files": [
+                                 "ApiAI/VoiceRequest/Classes/**/*.{h}"
+                                 ],
+
+            "ios": {
+                "frameworks": []
+            },
+
+            "requires_arc": true,
+
+            "dependencies": {
+                "ApiAI/Core": []
+            },
+                 
+            "platforms": {
+                "ios": "7.0"
             }
         },
         {
@@ -70,7 +102,11 @@
             "requires_arc": true,
 
             "dependencies": {
-                "ApiAI/Default": []
+                "ApiAI/Core": []
+            },
+
+            "platforms": {
+                "ios": "7.0"
             }
         },
         {
@@ -97,7 +133,7 @@
             "requires_arc": true,
 
             "dependencies": {
-                "ApiAI/Default": [
+                "ApiAI/Core": [
                     "~> 1.1.0"
                 ]
             }

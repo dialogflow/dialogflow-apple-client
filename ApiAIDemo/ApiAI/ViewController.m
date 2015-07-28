@@ -81,7 +81,7 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    AITextRequest *request = (AITextRequest *)[_openAPI requestWithType:AIRequestTypeText];
+    AITextRequest *request = [_openAPI textRequest];
     request.query = @[_textField.text?:@""];
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
@@ -104,7 +104,7 @@
 - (IBAction)sendVoiceRequest:(id)sender
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    AIVoiceRequest *request = (AIVoiceRequest *)[_openAPI requestWithType:AIRequestTypeVoice];
+    AIVoiceRequest *request = [_openAPI voiceRequest];
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
         _textView.text = [response description];

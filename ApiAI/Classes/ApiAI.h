@@ -24,11 +24,14 @@
 #import "AIConfiguration.h"
 #import "AIRequest.h"
 #import "AITextRequest.h"
-#import "AIVoiceRequest.h"
 #import "AIDefaultConfiguration.h"
 
 #if __has_include("AIResponse.h")
     #import "AIResponse.h"
+#endif
+
+#if __has_include("AIVoiceRequest.h")
+    #import "AIVoiceRequest.h"
 #endif
 
 /*!
@@ -107,8 +110,18 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  @discussion return request object with used type (@see AIRequestType).
  @return
  
+ @deprecated This method will be remove in future version. Please use :voiceRequest and :textRequest.
+ 
  */
-- (AIRequest *)requestWithType:(AIRequestType)requestType;
+- (AIRequest *)requestWithType:(AIRequestType)requestType DEPRECATED_ATTRIBUTE;
+
+#if __has_include("AIVoiceRequest.h")
+- (AIVoiceRequest *)voiceRequest;
+#endif
+
+#if __has_include("AITextRequest.h")
+- (AITextRequest *)textRequest;
+#endif
 
 /*!
  

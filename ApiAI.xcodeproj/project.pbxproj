@@ -29,13 +29,11 @@
 		581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */; };
 		581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */; };
 		584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */; };
-		5851216F1A5188C8007108CD /* AdaptiveThresold.m in Sources */ = {isa = PBXBuildFile; fileRef = 5851216E1A5188C8007108CD /* AdaptiveThresold.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
 		5869BCFD1B37E56A000B99B7 /* NullabilityDefines.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5869BCFC1B37E505000B99B7 /* NullabilityDefines.h */; };
 		587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */; };
 		587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F1261B0F33790016DE2A /* AIRequestEntity.m */; };
 		588D239A1AFB3C95008289F1 /* AIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23841AFB3C95008289F1 /* AIResponse.m */; };
-		588D239B1AFB3C95008289F1 /* AIResponseConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23861AFB3C95008289F1 /* AIResponseConstants.m */; };
 		588D239C1AFB3C95008289F1 /* AIResponseFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23881AFB3C95008289F1 /* AIResponseFulfillment.m */; };
 		588D239D1AFB3C95008289F1 /* AIResponseMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D238A1AFB3C95008289F1 /* AIResponseMetadata.m */; };
 		588D239E1AFB3C95008289F1 /* AIResponseParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D238C1AFB3C95008289F1 /* AIResponseParameter.m */; };
@@ -43,7 +41,6 @@
 		588D23A01AFB3C95008289F1 /* AIResponseStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23901AFB3C95008289F1 /* AIResponseStatus.m */; };
 		588D23A11AFB3C95008289F1 /* AIDatePeriodFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23991AFB3C95008289F1 /* AIDatePeriodFormatter.m */; };
 		588D23A21AFB3CA1008289F1 /* AIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23841AFB3C95008289F1 /* AIResponse.m */; };
-		588D23A31AFB3CA1008289F1 /* AIResponseConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23861AFB3C95008289F1 /* AIResponseConstants.m */; };
 		588D23A41AFB3CA1008289F1 /* AIResponseFulfillment.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23881AFB3C95008289F1 /* AIResponseFulfillment.m */; };
 		588D23A51AFB3CA1008289F1 /* AIResponseMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D238A1AFB3C95008289F1 /* AIResponseMetadata.m */; };
 		588D23A61AFB3CA1008289F1 /* AIResponseParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D238C1AFB3C95008289F1 /* AIResponseParameter.m */; };
@@ -59,27 +56,26 @@
 		589E65781B33FFB40062D868 /* AIRequestEntity.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5801F1251B0F33790016DE2A /* AIRequestEntity.h */; };
 		58AA07AC1B39492100A259D9 /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA07AB1B39492100A259D9 /* AudioFileReader.m */; };
 		58AA07AE1B39494900A259D9 /* AIVADTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA07AD1B39494900A259D9 /* AIVADTest.m */; };
-		58AA07AF1B3949A800A259D9 /* EnergyAndZeroCross.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84219BEE0E000632C2F /* EnergyAndZeroCross.m */; };
-		58AA07B01B3949D300A259D9 /* AIAlgorithmDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84419BEE0E000632C2F /* AIAlgorithmDetector.m */; };
 		58AA07B31B394A5300A259D9 /* sound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58AA07B21B394A5300A259D9 /* sound1.wav */; };
 		58AA07B51B395A6B00A259D9 /* sound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58AA07B41B395A6B00A259D9 /* sound2.wav */; };
 		58C2A85B19BEE0E000632C2F /* ApiAI.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83519BEE0E000632C2F /* ApiAI.m */; };
 		58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83719BEE0E000632C2F /* AIRequest.m */; };
 		58C2A85D19BEE0E000632C2F /* AITextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83919BEE0E000632C2F /* AITextRequest.m */; };
-		58C2A85E19BEE0E000632C2F /* AIVoiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A83B19BEE0E000632C2F /* AIVoiceRequest.m */; };
-		58C2A86019BEE0E000632C2F /* EnergyAndZeroCross.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84219BEE0E000632C2F /* EnergyAndZeroCross.m */; };
-		58C2A86119BEE0E000632C2F /* AIAlgorithmDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84419BEE0E000632C2F /* AIAlgorithmDetector.m */; };
 		58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84919BEE0E000632C2F /* AIDataService.m */; };
-		58C2A86319BEE0E000632C2F /* AIRecordDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84C19BEE0E000632C2F /* AIRecordDetector.m */; };
-		58C2A86419BEE0E000632C2F /* AIAudioUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A84F19BEE0E000632C2F /* AIAudioUtils.c */; };
-		58C2A86519BEE0E000632C2F /* AIMeterTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A85219BEE0E000632C2F /* AIMeterTable.m */; };
-		58C2A86619BEE0E000632C2F /* AISoundRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A85419BEE0E000632C2F /* AISoundRecorder.m */; };
-		58C2A86719BEE0E000632C2F /* AISoundRecorderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A85619BEE0E000632C2F /* AISoundRecorderConstants.m */; };
+		58D696FF1B679D0300693710 /* AIVoiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696E31B679D0300693710 /* AIVoiceRequest.m */; };
+		58D697001B679D0300693710 /* AIAlgorithmDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696E71B679D0300693710 /* AIAlgorithmDetector.m */; };
+		58D697011B679D0300693710 /* AdaptiveThresold.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696ED1B679D0300693710 /* AdaptiveThresold.m */; };
+		58D697021B679D0300693710 /* EnergyAndZeroCross.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696F01B679D0300693710 /* EnergyAndZeroCross.m */; };
+		58D697031B679D0300693710 /* AIRecordDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696F31B679D0300693710 /* AIRecordDetector.m */; };
+		58D697041B679D0300693710 /* AIAudioUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 58D696F61B679D0300693710 /* AIAudioUtils.c */; };
+		58D697051B679D0300693710 /* AIMeterTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696F91B679D0300693710 /* AIMeterTable.m */; };
+		58D697061B679D0300693710 /* AISoundRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696FB1B679D0300693710 /* AISoundRecorder.m */; };
+		58D697071B679D0300693710 /* AISoundRecorderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696FD1B679D0300693710 /* AISoundRecorderConstants.m */; };
+		58D6970B1B67A19200693710 /* AIResponseConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D6970A1B67A19200693710 /* AIResponseConstants.m */; };
 		58D90EDE1A42E41E00A937EC /* ApiAI.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83419BEE0E000632C2F /* ApiAI.h */; };
 		58D90EDF1A42E64400A937EC /* AIConfiguration.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83319BEE0E000632C2F /* AIConfiguration.h */; };
 		58D90EE01A42E64400A937EC /* AIRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83619BEE0E000632C2F /* AIRequest.h */; };
 		58D90EE11A42E64400A937EC /* AITextRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83819BEE0E000632C2F /* AITextRequest.h */; };
-		58D90EE21A42E64400A937EC /* AIVoiceRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83A19BEE0E000632C2F /* AIVoiceRequest.h */; };
 		58D90EE31A42E64400A937EC /* AIDefaultConfiguration.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */; };
 		58F0602A1A8CAF15002615DF /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F060281A8CAEFE002615DF /* AudioUnit.framework */; };
 		58F0602C1A8CAF2A002615DF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0602B1A8CAF2A002615DF /* AVFoundation.framework */; };
@@ -117,7 +113,6 @@
 				58D90EDF1A42E64400A937EC /* AIConfiguration.h in Copy Files */,
 				58D90EE01A42E64400A937EC /* AIRequest.h in Copy Files */,
 				58D90EE11A42E64400A937EC /* AITextRequest.h in Copy Files */,
-				58D90EE21A42E64400A937EC /* AIVoiceRequest.h in Copy Files */,
 				58D90EE31A42E64400A937EC /* AIDefaultConfiguration.h in Copy Files */,
 				58D90EDE1A42E41E00A937EC /* ApiAI.h in Copy Files */,
 			);
@@ -154,15 +149,11 @@
 		584509AD19F4EB6B00A0AE9A /* OPStreamBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBuffer.h; sourceTree = "<group>"; };
 		584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPStreamBuffer.m; sourceTree = "<group>"; };
 		584509AF19F4EB6B00A0AE9A /* OPStreamBufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBufferDelegate.h; sourceTree = "<group>"; };
-		5851216D1A5188C8007108CD /* AdaptiveThresold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaptiveThresold.h; sourceTree = "<group>"; };
-		5851216E1A5188C8007108CD /* AdaptiveThresold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdaptiveThresold.m; sourceTree = "<group>"; };
 		585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefaultConfiguration.h; sourceTree = "<group>"; };
 		585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIDefaultConfiguration.m; sourceTree = "<group>"; };
 		5869BCFC1B37E505000B99B7 /* NullabilityDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NullabilityDefines.h; sourceTree = "<group>"; };
 		588D23831AFB3C95008289F1 /* AIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponse.h; sourceTree = "<group>"; };
 		588D23841AFB3C95008289F1 /* AIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponse.m; sourceTree = "<group>"; };
-		588D23851AFB3C95008289F1 /* AIResponseConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseConstants.h; sourceTree = "<group>"; };
-		588D23861AFB3C95008289F1 /* AIResponseConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponseConstants.m; sourceTree = "<group>"; };
 		588D23871AFB3C95008289F1 /* AIResponseFulfillment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseFulfillment.h; sourceTree = "<group>"; };
 		588D23881AFB3C95008289F1 /* AIResponseFulfillment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponseFulfillment.m; sourceTree = "<group>"; };
 		588D23891AFB3C95008289F1 /* AIResponseMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseMetadata.h; sourceTree = "<group>"; };
@@ -202,28 +193,33 @@
 		58C2A83719BEE0E000632C2F /* AIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRequest.m; sourceTree = "<group>"; };
 		58C2A83819BEE0E000632C2F /* AITextRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AITextRequest.h; sourceTree = "<group>"; };
 		58C2A83919BEE0E000632C2F /* AITextRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AITextRequest.m; sourceTree = "<group>"; };
-		58C2A83A19BEE0E000632C2F /* AIVoiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceRequest.h; sourceTree = "<group>"; };
-		58C2A83B19BEE0E000632C2F /* AIVoiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceRequest.m; sourceTree = "<group>"; };
-		58C2A84119BEE0E000632C2F /* EnergyAndZeroCross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnergyAndZeroCross.h; sourceTree = "<group>"; };
-		58C2A84219BEE0E000632C2F /* EnergyAndZeroCross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnergyAndZeroCross.m; sourceTree = "<group>"; };
-		58C2A84319BEE0E000632C2F /* AIAlgorithmDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAlgorithmDetector.h; sourceTree = "<group>"; };
-		58C2A84419BEE0E000632C2F /* AIAlgorithmDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIAlgorithmDetector.m; sourceTree = "<group>"; };
-		58C2A84519BEE0E000632C2F /* AIAlgorithmDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAlgorithmDetectorDelegate.h; sourceTree = "<group>"; };
-		58C2A84619BEE0E000632C2F /* AIAlgorithmDetectorTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAlgorithmDetectorTypes.h; sourceTree = "<group>"; };
 		58C2A84819BEE0E000632C2F /* AIDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDataService.h; sourceTree = "<group>"; };
 		58C2A84919BEE0E000632C2F /* AIDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIDataService.m; sourceTree = "<group>"; };
-		58C2A84B19BEE0E000632C2F /* AIRecordDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRecordDetector.h; sourceTree = "<group>"; };
-		58C2A84C19BEE0E000632C2F /* AIRecordDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRecordDetector.m; sourceTree = "<group>"; };
-		58C2A84D19BEE0E000632C2F /* AIRecordDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRecordDetectorDelegate.h; sourceTree = "<group>"; };
-		58C2A84F19BEE0E000632C2F /* AIAudioUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AIAudioUtils.c; sourceTree = "<group>"; };
-		58C2A85019BEE0E000632C2F /* AIAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAudioUtils.h; sourceTree = "<group>"; };
-		58C2A85119BEE0E000632C2F /* AIMeterTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMeterTable.h; sourceTree = "<group>"; };
-		58C2A85219BEE0E000632C2F /* AIMeterTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMeterTable.m; sourceTree = "<group>"; };
-		58C2A85319BEE0E000632C2F /* AISoundRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISoundRecorder.h; sourceTree = "<group>"; };
-		58C2A85419BEE0E000632C2F /* AISoundRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISoundRecorder.m; sourceTree = "<group>"; };
-		58C2A85519BEE0E000632C2F /* AISoundRecorderConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISoundRecorderConstants.h; sourceTree = "<group>"; };
-		58C2A85619BEE0E000632C2F /* AISoundRecorderConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISoundRecorderConstants.m; sourceTree = "<group>"; };
-		58C2A85719BEE0E000632C2F /* AISoundRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISoundRecorderDelegate.h; sourceTree = "<group>"; };
+		58D696E21B679D0300693710 /* AIVoiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceRequest.h; sourceTree = "<group>"; };
+		58D696E31B679D0300693710 /* AIVoiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceRequest.m; sourceTree = "<group>"; };
+		58D696E61B679D0300693710 /* AIAlgorithmDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAlgorithmDetector.h; sourceTree = "<group>"; };
+		58D696E71B679D0300693710 /* AIAlgorithmDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIAlgorithmDetector.m; sourceTree = "<group>"; };
+		58D696E81B679D0300693710 /* AIAlgorithmDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAlgorithmDetectorDelegate.h; sourceTree = "<group>"; };
+		58D696E91B679D0300693710 /* AIAlgorithmDetectorTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAlgorithmDetectorTypes.h; sourceTree = "<group>"; };
+		58D696EC1B679D0300693710 /* AdaptiveThresold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaptiveThresold.h; sourceTree = "<group>"; };
+		58D696ED1B679D0300693710 /* AdaptiveThresold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdaptiveThresold.m; sourceTree = "<group>"; };
+		58D696EF1B679D0300693710 /* EnergyAndZeroCross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnergyAndZeroCross.h; sourceTree = "<group>"; };
+		58D696F01B679D0300693710 /* EnergyAndZeroCross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnergyAndZeroCross.m; sourceTree = "<group>"; };
+		58D696F21B679D0300693710 /* AIRecordDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRecordDetector.h; sourceTree = "<group>"; };
+		58D696F31B679D0300693710 /* AIRecordDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRecordDetector.m; sourceTree = "<group>"; };
+		58D696F41B679D0300693710 /* AIRecordDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRecordDetectorDelegate.h; sourceTree = "<group>"; };
+		58D696F61B679D0300693710 /* AIAudioUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AIAudioUtils.c; sourceTree = "<group>"; };
+		58D696F71B679D0300693710 /* AIAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIAudioUtils.h; sourceTree = "<group>"; };
+		58D696F81B679D0300693710 /* AIMeterTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMeterTable.h; sourceTree = "<group>"; };
+		58D696F91B679D0300693710 /* AIMeterTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMeterTable.m; sourceTree = "<group>"; };
+		58D696FA1B679D0300693710 /* AISoundRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISoundRecorder.h; sourceTree = "<group>"; };
+		58D696FB1B679D0300693710 /* AISoundRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISoundRecorder.m; sourceTree = "<group>"; };
+		58D696FC1B679D0300693710 /* AISoundRecorderConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISoundRecorderConstants.h; sourceTree = "<group>"; };
+		58D696FD1B679D0300693710 /* AISoundRecorderConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISoundRecorderConstants.m; sourceTree = "<group>"; };
+		58D696FE1B679D0300693710 /* AISoundRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISoundRecorderDelegate.h; sourceTree = "<group>"; };
+		58D697081B679D7300693710 /* ApiAI.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ApiAI.podspec.json; sourceTree = "<group>"; };
+		58D697091B67A19200693710 /* AIResponseConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseConstants.h; sourceTree = "<group>"; };
+		58D6970A1B67A19200693710 /* AIResponseConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponseConstants.m; sourceTree = "<group>"; };
 		58ECF07519C4388F00EF5291 /* ApiAI_ApiAI_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiAI_ApiAI_Private.h; sourceTree = "<group>"; };
 		58ECF07619C4399400EF5291 /* AIDataService_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIDataService_Private.h; sourceTree = "<group>"; };
 		58F060281A8CAEFE002615DF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -320,15 +316,6 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
-		5851216C1A5188C8007108CD /* AdaptiveThresold */ = {
-			isa = PBXGroup;
-			children = (
-				5851216D1A5188C8007108CD /* AdaptiveThresold.h */,
-				5851216E1A5188C8007108CD /* AdaptiveThresold.m */,
-			);
-			path = AdaptiveThresold;
-			sourceTree = "<group>";
-		};
 		588D23811AFB3C95008289F1 /* Response */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,8 +330,6 @@
 			children = (
 				588D23831AFB3C95008289F1 /* AIResponse.h */,
 				588D23841AFB3C95008289F1 /* AIResponse.m */,
-				588D23851AFB3C95008289F1 /* AIResponseConstants.h */,
-				588D23861AFB3C95008289F1 /* AIResponseConstants.m */,
 				588D23871AFB3C95008289F1 /* AIResponseFulfillment.h */,
 				588D23881AFB3C95008289F1 /* AIResponseFulfillment.m */,
 				588D23891AFB3C95008289F1 /* AIResponseMetadata.h */,
@@ -389,6 +374,7 @@
 		5891DF461941E14C0043140B = {
 			isa = PBXGroup;
 			children = (
+				58D697081B679D7300693710 /* ApiAI.podspec.json */,
 				58C2A83019BEE0E000632C2F /* ApiAI */,
 				58F0604A1A8CB366002615DF /* ApiAITests */,
 				5891DF511941E14C0043140B /* Frameworks */,
@@ -437,6 +423,7 @@
 		58C2A83019BEE0E000632C2F /* ApiAI */ = {
 			isa = PBXGroup;
 			children = (
+				58D696E01B679D0300693710 /* VoiceRequest */,
 				588D23811AFB3C95008289F1 /* Response */,
 				581AB39A1A245D8300E8A190 /* UIKit */,
 				58C2A83119BEE0E000632C2F /* ApiAI-Prefix.pch */,
@@ -449,6 +436,8 @@
 		58C2A83219BEE0E000632C2F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				58D697091B67A19200693710 /* AIResponseConstants.h */,
+				58D6970A1B67A19200693710 /* AIResponseConstants.m */,
 				5801F1291B0F3E250016DE2A /* AIRequestEntry.h */,
 				5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */,
 				58C2A83319BEE0E000632C2F /* AIConfiguration.h */,
@@ -458,8 +447,6 @@
 				58C2A83719BEE0E000632C2F /* AIRequest.m */,
 				58C2A83819BEE0E000632C2F /* AITextRequest.h */,
 				58C2A83919BEE0E000632C2F /* AITextRequest.m */,
-				58C2A83A19BEE0E000632C2F /* AIVoiceRequest.h */,
-				58C2A83B19BEE0E000632C2F /* AIVoiceRequest.m */,
 				585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */,
 				585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */,
 				5801F1251B0F33790016DE2A /* AIRequestEntity.h */,
@@ -473,45 +460,12 @@
 			isa = PBXGroup;
 			children = (
 				5801F12C1B0F3E340016DE2A /* AIRequestEntity_Private.h */,
-				58C2A83E19BEE0E000632C2F /* AlgorithmDetector */,
 				58C2A84719BEE0E000632C2F /* Network */,
-				58C2A84A19BEE0E000632C2F /* RecordDetector */,
-				58C2A84E19BEE0E000632C2F /* SoundRecorder */,
 				58C2A85819BEE0E000632C2F /* Streamer */,
 				58ECF07519C4388F00EF5291 /* ApiAI_ApiAI_Private.h */,
 				58ECF07619C4399400EF5291 /* AIDataService_Private.h */,
 			);
 			path = Private;
-			sourceTree = "<group>";
-		};
-		58C2A83E19BEE0E000632C2F /* AlgorithmDetector */ = {
-			isa = PBXGroup;
-			children = (
-				58C2A83F19BEE0E000632C2F /* Algorithms */,
-				58C2A84319BEE0E000632C2F /* AIAlgorithmDetector.h */,
-				58C2A84419BEE0E000632C2F /* AIAlgorithmDetector.m */,
-				58C2A84519BEE0E000632C2F /* AIAlgorithmDetectorDelegate.h */,
-				58C2A84619BEE0E000632C2F /* AIAlgorithmDetectorTypes.h */,
-			);
-			path = AlgorithmDetector;
-			sourceTree = "<group>";
-		};
-		58C2A83F19BEE0E000632C2F /* Algorithms */ = {
-			isa = PBXGroup;
-			children = (
-				5851216C1A5188C8007108CD /* AdaptiveThresold */,
-				58C2A84019BEE0E000632C2F /* EnergyAndZeroCross */,
-			);
-			path = Algorithms;
-			sourceTree = "<group>";
-		};
-		58C2A84019BEE0E000632C2F /* EnergyAndZeroCross */ = {
-			isa = PBXGroup;
-			children = (
-				58C2A84119BEE0E000632C2F /* EnergyAndZeroCross.h */,
-				58C2A84219BEE0E000632C2F /* EnergyAndZeroCross.m */,
-			);
-			path = EnergyAndZeroCross;
 			sourceTree = "<group>";
 		};
 		58C2A84719BEE0E000632C2F /* Network */ = {
@@ -523,32 +477,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		58C2A84A19BEE0E000632C2F /* RecordDetector */ = {
-			isa = PBXGroup;
-			children = (
-				58C2A84B19BEE0E000632C2F /* AIRecordDetector.h */,
-				58C2A84C19BEE0E000632C2F /* AIRecordDetector.m */,
-				58C2A84D19BEE0E000632C2F /* AIRecordDetectorDelegate.h */,
-			);
-			path = RecordDetector;
-			sourceTree = "<group>";
-		};
-		58C2A84E19BEE0E000632C2F /* SoundRecorder */ = {
-			isa = PBXGroup;
-			children = (
-				58C2A84F19BEE0E000632C2F /* AIAudioUtils.c */,
-				58C2A85019BEE0E000632C2F /* AIAudioUtils.h */,
-				58C2A85119BEE0E000632C2F /* AIMeterTable.h */,
-				58C2A85219BEE0E000632C2F /* AIMeterTable.m */,
-				58C2A85319BEE0E000632C2F /* AISoundRecorder.h */,
-				58C2A85419BEE0E000632C2F /* AISoundRecorder.m */,
-				58C2A85519BEE0E000632C2F /* AISoundRecorderConstants.h */,
-				58C2A85619BEE0E000632C2F /* AISoundRecorderConstants.m */,
-				58C2A85719BEE0E000632C2F /* AISoundRecorderDelegate.h */,
-			);
-			path = SoundRecorder;
-			sourceTree = "<group>";
-		};
 		58C2A85819BEE0E000632C2F /* Streamer */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +485,99 @@
 				584509AF19F4EB6B00A0AE9A /* OPStreamBufferDelegate.h */,
 			);
 			path = Streamer;
+			sourceTree = "<group>";
+		};
+		58D696E01B679D0300693710 /* VoiceRequest */ = {
+			isa = PBXGroup;
+			children = (
+				58D696E11B679D0300693710 /* Classes */,
+				58D696E41B679D0300693710 /* Private */,
+			);
+			path = VoiceRequest;
+			sourceTree = "<group>";
+		};
+		58D696E11B679D0300693710 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				58D696E21B679D0300693710 /* AIVoiceRequest.h */,
+				58D696E31B679D0300693710 /* AIVoiceRequest.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		58D696E41B679D0300693710 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				58D696E51B679D0300693710 /* AlgorithmDetector */,
+				58D696F11B679D0300693710 /* RecordDetector */,
+				58D696F51B679D0300693710 /* SoundRecorder */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		58D696E51B679D0300693710 /* AlgorithmDetector */ = {
+			isa = PBXGroup;
+			children = (
+				58D696E61B679D0300693710 /* AIAlgorithmDetector.h */,
+				58D696E71B679D0300693710 /* AIAlgorithmDetector.m */,
+				58D696E81B679D0300693710 /* AIAlgorithmDetectorDelegate.h */,
+				58D696E91B679D0300693710 /* AIAlgorithmDetectorTypes.h */,
+				58D696EA1B679D0300693710 /* Algorithms */,
+			);
+			path = AlgorithmDetector;
+			sourceTree = "<group>";
+		};
+		58D696EA1B679D0300693710 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				58D696EB1B679D0300693710 /* AdaptiveThresold */,
+				58D696EE1B679D0300693710 /* EnergyAndZeroCross */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
+		58D696EB1B679D0300693710 /* AdaptiveThresold */ = {
+			isa = PBXGroup;
+			children = (
+				58D696EC1B679D0300693710 /* AdaptiveThresold.h */,
+				58D696ED1B679D0300693710 /* AdaptiveThresold.m */,
+			);
+			path = AdaptiveThresold;
+			sourceTree = "<group>";
+		};
+		58D696EE1B679D0300693710 /* EnergyAndZeroCross */ = {
+			isa = PBXGroup;
+			children = (
+				58D696EF1B679D0300693710 /* EnergyAndZeroCross.h */,
+				58D696F01B679D0300693710 /* EnergyAndZeroCross.m */,
+			);
+			path = EnergyAndZeroCross;
+			sourceTree = "<group>";
+		};
+		58D696F11B679D0300693710 /* RecordDetector */ = {
+			isa = PBXGroup;
+			children = (
+				58D696F21B679D0300693710 /* AIRecordDetector.h */,
+				58D696F31B679D0300693710 /* AIRecordDetector.m */,
+				58D696F41B679D0300693710 /* AIRecordDetectorDelegate.h */,
+			);
+			path = RecordDetector;
+			sourceTree = "<group>";
+		};
+		58D696F51B679D0300693710 /* SoundRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				58D696F61B679D0300693710 /* AIAudioUtils.c */,
+				58D696F71B679D0300693710 /* AIAudioUtils.h */,
+				58D696F81B679D0300693710 /* AIMeterTable.h */,
+				58D696F91B679D0300693710 /* AIMeterTable.m */,
+				58D696FA1B679D0300693710 /* AISoundRecorder.h */,
+				58D696FB1B679D0300693710 /* AISoundRecorder.m */,
+				58D696FC1B679D0300693710 /* AISoundRecorderConstants.h */,
+				58D696FD1B679D0300693710 /* AISoundRecorderConstants.m */,
+				58D696FE1B679D0300693710 /* AISoundRecorderDelegate.h */,
+			);
+			path = SoundRecorder;
 			sourceTree = "<group>";
 		};
 		58F0604A1A8CB366002615DF /* ApiAITests */ = {
@@ -731,38 +752,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D697051B679D0300693710 /* AIMeterTable.m in Sources */,
+				58D697031B679D0300693710 /* AIRecordDetector.m in Sources */,
+				58D697061B679D0300693710 /* AISoundRecorder.m in Sources */,
+				58D697001B679D0300693710 /* AIAlgorithmDetector.m in Sources */,
 				585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */,
 				581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */,
+				58D6970B1B67A19200693710 /* AIResponseConstants.m in Sources */,
 				581AB3B11A245D8300E8A190 /* AIProgressView.m in Sources */,
 				588D239C1AFB3C95008289F1 /* AIResponseFulfillment.m in Sources */,
+				58D696FF1B679D0300693710 /* AIVoiceRequest.m in Sources */,
 				584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */,
 				588D23A11AFB3C95008289F1 /* AIDatePeriodFormatter.m in Sources */,
-				58C2A86119BEE0E000632C2F /* AIAlgorithmDetector.m in Sources */,
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
 				5801F12B1B0F3E250016DE2A /* AIRequestEntry.m in Sources */,
-				58C2A85E19BEE0E000632C2F /* AIVoiceRequest.m in Sources */,
 				588D23B21AFB4059008289F1 /* AIResponseContext.m in Sources */,
 				588D239F1AFB3C95008289F1 /* AIResponseResult.m in Sources */,
 				588D239D1AFB3C95008289F1 /* AIResponseMetadata.m in Sources */,
-				5851216F1A5188C8007108CD /* AdaptiveThresold.m in Sources */,
+				58D697021B679D0300693710 /* EnergyAndZeroCross.m in Sources */,
 				588D239A1AFB3C95008289F1 /* AIResponse.m in Sources */,
-				58C2A86419BEE0E000632C2F /* AIAudioUtils.c in Sources */,
 				588D23A01AFB3C95008289F1 /* AIResponseStatus.m in Sources */,
+				58D697011B679D0300693710 /* AdaptiveThresold.m in Sources */,
 				581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */,
 				58C2A85B19BEE0E000632C2F /* ApiAI.m in Sources */,
 				588D239E1AFB3C95008289F1 /* AIResponseParameter.m in Sources */,
 				581AB3AF1A245D8300E8A190 /* AIVoiceRequestButton.m in Sources */,
-				588D239B1AFB3C95008289F1 /* AIResponseConstants.m in Sources */,
-				58C2A86619BEE0E000632C2F /* AISoundRecorder.m in Sources */,
-				58C2A86319BEE0E000632C2F /* AIRecordDetector.m in Sources */,
-				58C2A86719BEE0E000632C2F /* AISoundRecorderConstants.m in Sources */,
-				58C2A86519BEE0E000632C2F /* AIMeterTable.m in Sources */,
+				58D697041B679D0300693710 /* AIAudioUtils.c in Sources */,
+				58D697071B679D0300693710 /* AISoundRecorderConstants.m in Sources */,
 				581AB3B01A245D8300E8A190 /* AIEllipseView.m in Sources */,
 				5801F1271B0F33790016DE2A /* AIRequestEntity.m in Sources */,
 				588D23AE1AFB3E26008289F1 /* AIRequest+AIMappedResponse.m in Sources */,
 				58C2A85D19BEE0E000632C2F /* AITextRequest.m in Sources */,
-				58C2A86019BEE0E000632C2F /* EnergyAndZeroCross.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,7 +791,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				588D23A31AFB3CA1008289F1 /* AIResponseConstants.m in Sources */,
 				588D23AF1AFB3F24008289F1 /* AIRequest+AIMappedResponse.m in Sources */,
 				588D23A91AFB3CAB008289F1 /* AIDatePeriodFormatter.m in Sources */,
 				588D23A41AFB3CA1008289F1 /* AIResponseFulfillment.m in Sources */,
@@ -781,11 +801,9 @@
 				588D23A21AFB3CA1008289F1 /* AIResponse.m in Sources */,
 				587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */,
 				588D23A71AFB3CA1008289F1 /* AIResponseResult.m in Sources */,
-				58AA07B01B3949D300A259D9 /* AIAlgorithmDetector.m in Sources */,
 				587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */,
 				58F0604E1A8CB366002615DF /* ApiAITests.m in Sources */,
 				58AA07AC1B39492100A259D9 /* AudioFileReader.m in Sources */,
-				58AA07AF1B3949A800A259D9 /* EnergyAndZeroCross.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

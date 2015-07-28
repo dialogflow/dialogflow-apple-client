@@ -44,7 +44,7 @@
     
     ApiAI *apiai = [ApiAI sharedApiAI];
     
-    AIVoiceRequest *request = (AIVoiceRequest *)[apiai requestWithType:AIRequestTypeVoice];
+    AIVoiceRequest *request = [apiai voiceRequest];
     
     __weak typeof(self) selfWeak = self;
     

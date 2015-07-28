@@ -22,7 +22,6 @@
 #import "ApiAI.h"
 #import "AIDataService.h"
 #import "AITextRequest.h"
-#import "AIVoiceRequest.h"
 #import "ApiAI_ApiAI_Private.h"
 #import "AIDefaultConfiguration.h"
 
@@ -54,9 +53,13 @@ NSString *const kDefaultVersion = @"20150415";
 {
     AIRequest *request = nil;
     if (requestType == AIRequestTypeText) {
+#if __has_include("AITextRequest.h")
         request = [[AITextRequest alloc] initWithDataService:_dataService];
+#endif
     } else {
+#if __has_include("AIVoiceRequest.h")
         request = [[AIVoiceRequest alloc] initWithDataService:_dataService];
+#endif
     }
     
     [request setVersion:self.version];
@@ -65,6 +68,28 @@ NSString *const kDefaultVersion = @"20150415";
     
     return request;
 }
+
+#if __has_include("AIVoiceRequest.h")
+- (AIVoiceRequest *)voiceRequest
+{
+    AIVoiceRequest *request = [[AIVoiceRequest alloc] initWithDataService:_dataService];
+    [request setVersion:self.version];
+    [request setLang:self.lang];
+    
+    return  request;
+}
+#endif
+
+#if __has_include("AITextRequest.h")
+- (AITextRequest *)textRequest
+{
+    AITextRequest *request = [[AITextRequest alloc] initWithDataService:_dataService];
+    [request setVersion:self.version];
+    [request setLang:self.lang];
+    
+    return  request;
+}
+#endif
 
 - (void)setConfiguration:(id<AIConfiguration>)configuration
 {
