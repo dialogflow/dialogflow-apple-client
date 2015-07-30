@@ -49,6 +49,34 @@
             }
         },
         {
+            "name": "VoiceFileRequest",
+
+            "source_files": [
+                          "ApiAI/VoiceFileRequest",
+                          "ApiAI/VoiceFileRequest/Classes/**/*.{h,m}",
+                          "ApiAI/VoiceFileRequest/Private/**/*.{h,m,c}"
+                          ],
+
+            "public_header_files": [
+                                 "ApiAI/VoiceFileRequest/Classes/**/*.{h}"
+                                 ],
+
+            "ios": {
+                "frameworks": []
+            },
+
+            "requires_arc": true,
+
+            "dependencies": {
+                "ApiAI/Core": []
+            },
+                 
+            "platforms": {
+                "ios": "7.0",
+                "watchos": "2.0"
+            }
+        },
+        {
             "name": "VoiceRequest",
 
             "source_files": [

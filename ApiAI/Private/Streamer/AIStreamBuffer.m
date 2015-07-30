@@ -19,9 +19,9 @@
  *
  ***********************************************************************************************************************/
 
-#import "OPStreamBuffer.h"
+#import "AIStreamBuffer.h"
 
-@interface OPStreamBuffer () <NSStreamDelegate>
+@interface AIStreamBuffer () <NSStreamDelegate>
 
 @property(nonatomic, strong) NSOutputStream *outputStream;
 @property(nonatomic, strong) NSMutableData *data;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation OPStreamBuffer
+@implementation AIStreamBuffer
 {
     NSUInteger _offset;
 }
@@ -74,7 +74,7 @@
 
 - (BOOL)hasBytesForWriting
 {
-    return _data.length - _offset > 0;
+    return (_data.length - _offset) > 0;
 }
 
 - (void)flush

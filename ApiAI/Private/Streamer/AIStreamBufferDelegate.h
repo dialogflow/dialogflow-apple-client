@@ -19,20 +19,16 @@
  *
  ***********************************************************************************************************************/
 
-#import <Foundation/Foundation.h>
+@class AIStreamBuffer;
 
-#import "OPStreamBufferDelegate.h"
+@protocol AIStreamBufferDelegate <NSObject>
 
-@interface OPStreamBuffer : NSObject
+@optional
+- (void)willOpenStreamBuffer:(AIStreamBuffer *)streamBuffer;
+- (void)didOpenStreamBuffer:(AIStreamBuffer *)streamBuffer;
+- (void)willCloseStreamBuffer:(AIStreamBuffer *)streamBuffer;
+- (void)didCloseStreamBuffer:(AIStreamBuffer *)streamBuffer;
 
-- (instancetype)init __unavailable;
-- (instancetype)initWithOutputStream:(NSOutputStream *)outputStream;
-
-@property(nonatomic, weak) id <OPStreamBufferDelegate> delegate;
-
-- (void)open;
-- (void)write:(NSData *)data;
-- (void)close;
-- (void)flushAndClose;
+- (void)streamBuffer:(AIStreamBuffer *)streamBuffer error:(NSError *)error;
 
 @end

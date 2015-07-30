@@ -101,7 +101,11 @@ NSString *const kDefaultVersion = @"20150415";
 - (AIVoiceFileRequest *)voiceFileRequestWithStream:(NSInputStream *)inputStream
 {
     AIVoiceFileRequest *request = [[AIVoiceFileRequest alloc] initWithDataService:_dataService];
+    
     request.inputStream = inputStream;
+    [request setVersion:self.version];
+    [request setLang:self.lang];
+    
     return request;
 }
 

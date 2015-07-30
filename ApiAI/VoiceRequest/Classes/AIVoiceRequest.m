@@ -22,7 +22,7 @@
 #import "AIVoiceRequest.h"
 #import "AIDataService.h"
 #import "AIRecordDetector.h"
-#import "OPStreamBuffer.h"
+#import "AIStreamBuffer.h"
 #import "AIDataService_Private.h"
 #import "AIConfiguration.h"
 #import "AIRequestEntity_Private.h"
@@ -37,7 +37,7 @@
 @property(nonatomic, strong) NSOutputStream *output;
 @property(nonatomic, strong) NSInputStream *input;
 @property(nonatomic, strong) AIRecordDetector *recordDetector;
-@property(nonatomic, strong) OPStreamBuffer *streamBuffer;
+@property(nonatomic, strong) AIStreamBuffer *streamBuffer;
 @property(nonatomic, copy) NSString *boundary;
 
 @end
@@ -58,7 +58,7 @@
         NSInputStream *input = nil;
         NSOutputStream *output = nil;
         
-        [[self class] createBoundInputStream:&input outputStream:&output bufferSize:128];
+        [[self class] createBoundInputStream:&input outputStream:&output bufferSize:2048];
         
         self.input = input;
         self.output = output;
@@ -104,7 +104,7 @@
         self.dataTask = dataTask;
         
         
-        self.streamBuffer = [[OPStreamBuffer alloc] initWithOutputStream:output];
+        self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
         [_streamBuffer open];
     }
     return self;

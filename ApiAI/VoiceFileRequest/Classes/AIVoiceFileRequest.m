@@ -8,13 +8,16 @@
 
 #import "AIVoiceFileRequest.h"
 #import "AIVoiceFileRequest_Private.h"
-#import "OPStreamBuffer.h"
+#import "AIStreamBuffer.h"
+#import "AIRequest+Private.h"
+#import "AIDataService_Private.h"
+#import "AIResponseConstants.h"
 
 @interface AIVoiceFileRequest () <NSStreamDelegate>
 
 @property(nonatomic, strong) NSOutputStream *output;
 @property(nonatomic, strong) NSInputStream *input;
-@property(nonatomic, strong) OPStreamBuffer *streamBuffer;
+@property(nonatomic, strong) AIStreamBuffer *streamBuffer;
 @property(nonatomic, copy) NSString *boundary;
 
 @end
@@ -23,10 +26,15 @@
 
 - (void)configureHTTPRequest
 {
+    self.boundary = [self creteBoundary];
+    
+    AIDataService *dataService = self.dataService;
     NSMutableURLRequest *request = self.prepareDefaultRequest;
     
     NSInputStream *input = nil;
     NSOutputStream *output = nil;
+    
+    [[self class] createBoundInputStream:&input outputStream:&output bufferSize:2048];
     
     self.input = input;
     self.output = output;
@@ -71,17 +79,101 @@
     
     self.dataTask = dataTask;
     
+    NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     
-    self.streamBuffer = [[OPStreamBuffer alloc] initWithOutputStream:output];
+    [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[self requestBodyDictionary]
+                                                       options:0
+                                                         error:nil];
+    
+    [data appendData:jsonData];
+    
+    [data appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"qwe.wav\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"Content-Type: audio/wav\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
     [_streamBuffer open];
     
-//    [_inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-//    [_inputStream open];
+    [dataTask resume];
+    
+    [_streamBuffer write:data];
+
+    [_inputStream setDelegate:self];
+    [_inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [_inputStream open];
 }
+
+- (NSDictionary *)defaultHeaders
+{
+    NSMutableDictionary *headers = [[super defaultHeaders] mutableCopy];
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", _boundary];
+    
+    headers[@"Content-Type"] = contentType;
+    headers[@"Transfer-Encoding"] = @"chunked";
+    
+    return [headers copy];
+}
+
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
 {
-
+    switch (eventCode) {
+        case NSStreamEventHasBytesAvailable: {
+            uint8_t *buff = (uint8_t *)malloc(sizeof(uint8_t) * 2048);
+            
+            NSInteger bytesRead = [_inputStream read:buff maxLength:2048];
+            
+            NSData *data = [NSData dataWithBytes:buff length:bytesRead];
+            
+            [_streamBuffer write:data];
+            
+            free(buff);
+            break;
+        }
+        case NSStreamEventEndEncountered: {
+            [_streamBuffer write:[[NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+            [_streamBuffer flushAndClose];
+            break;
+        }
+        case NSStreamEventErrorOccurred:
+            break;
+        default:
+            break;
+    }
 }
+
+- (NSString *)creteBoundary
+{
+    return [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];;
+}
+
++ (void)createBoundInputStream:(NSInputStream **)inputStreamPtr outputStream:(NSOutputStream **)outputStreamPtr bufferSize:(NSUInteger)bufferSize
+{
+    CFReadStreamRef     readStream;
+    CFWriteStreamRef    writeStream;
+    
+    assert( (inputStreamPtr != NULL) || (outputStreamPtr != NULL) );
+    
+    readStream = NULL;
+    writeStream = NULL;
+    
+    CFStreamCreateBoundPair(
+                            NULL,
+                            ((inputStreamPtr  != nil) ? &readStream : NULL),
+                            ((outputStreamPtr != nil) ? &writeStream : NULL),
+                            (CFIndex) bufferSize
+                            );
+    
+    if (inputStreamPtr != NULL) {
+        *inputStreamPtr  = CFBridgingRelease(readStream);
+    }
+    if (outputStreamPtr != NULL) {
+        *outputStreamPtr = CFBridgingRelease(writeStream);
+    }
+}
+
 
 @end

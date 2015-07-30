@@ -28,7 +28,7 @@
 		581AB3B11A245D8300E8A190 /* AIProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AA1A245D8300E8A190 /* AIProgressView.m */; };
 		581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */; };
 		581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */; };
-		584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */; };
+		584509B019F4EB6B00A0AE9A /* AIStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* AIStreamBuffer.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
 		5862E2FE1B6A103B00F6F712 /* AIVoiceFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862E2FD1B6A103B00F6F712 /* AIVoiceFileRequest.m */; };
 		5869BCFD1B37E56A000B99B7 /* AINullabilityDefines.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */; };
@@ -148,9 +148,9 @@
 		581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceContainerView.m; sourceTree = "<group>"; };
 		581AB3AD1A245D8300E8A190 /* AIVoiceLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceLevelView.h; sourceTree = "<group>"; };
 		581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceLevelView.m; sourceTree = "<group>"; };
-		584509AD19F4EB6B00A0AE9A /* OPStreamBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBuffer.h; sourceTree = "<group>"; };
-		584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPStreamBuffer.m; sourceTree = "<group>"; };
-		584509AF19F4EB6B00A0AE9A /* OPStreamBufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBufferDelegate.h; sourceTree = "<group>"; };
+		584509AD19F4EB6B00A0AE9A /* AIStreamBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStreamBuffer.h; sourceTree = "<group>"; };
+		584509AE19F4EB6B00A0AE9A /* AIStreamBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStreamBuffer.m; sourceTree = "<group>"; };
+		584509AF19F4EB6B00A0AE9A /* AIStreamBufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStreamBufferDelegate.h; sourceTree = "<group>"; };
 		585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefaultConfiguration.h; sourceTree = "<group>"; };
 		585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIDefaultConfiguration.m; sourceTree = "<group>"; };
 		5862E2FB1B6A103300F6F712 /* AIVoiceFileRequest_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceFileRequest_Private.h; sourceTree = "<group>"; };
@@ -498,9 +498,9 @@
 		58C2A85819BEE0E000632C2F /* Streamer */ = {
 			isa = PBXGroup;
 			children = (
-				584509AD19F4EB6B00A0AE9A /* OPStreamBuffer.h */,
-				584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */,
-				584509AF19F4EB6B00A0AE9A /* OPStreamBufferDelegate.h */,
+				584509AD19F4EB6B00A0AE9A /* AIStreamBuffer.h */,
+				584509AE19F4EB6B00A0AE9A /* AIStreamBuffer.m */,
+				584509AF19F4EB6B00A0AE9A /* AIStreamBufferDelegate.h */,
 			);
 			path = Streamer;
 			sourceTree = "<group>";
@@ -799,7 +799,7 @@
 				581AB3B11A245D8300E8A190 /* AIProgressView.m in Sources */,
 				588D239C1AFB3C95008289F1 /* AIResponseFulfillment.m in Sources */,
 				58D696FF1B679D0300693710 /* AIVoiceRequest.m in Sources */,
-				584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */,
+				584509B019F4EB6B00A0AE9A /* AIStreamBuffer.m in Sources */,
 				588D23A11AFB3C95008289F1 /* AIDatePeriodFormatter.m in Sources */,
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
