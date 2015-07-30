@@ -30,6 +30,7 @@
 		581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */; };
 		584509B019F4EB6B00A0AE9A /* OPStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* OPStreamBuffer.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
+		5862E2FE1B6A103B00F6F712 /* AIVoiceFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862E2FD1B6A103B00F6F712 /* AIVoiceFileRequest.m */; };
 		5869BCFD1B37E56A000B99B7 /* AINullabilityDefines.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */; };
 		587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */; };
 		587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F1261B0F33790016DE2A /* AIRequestEntity.m */; };
@@ -72,7 +73,6 @@
 		58D697061B679D0300693710 /* AISoundRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696FB1B679D0300693710 /* AISoundRecorder.m */; };
 		58D697071B679D0300693710 /* AISoundRecorderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D696FD1B679D0300693710 /* AISoundRecorderConstants.m */; };
 		58D6970B1B67A19200693710 /* AIResponseConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D6970A1B67A19200693710 /* AIResponseConstants.m */; };
-		58D6975A1B67AC6500693710 /* AIVoiceFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D697591B67AC6500693710 /* AIVoiceFileRequest.m */; };
 		58D6975E1B67ACD300693710 /* AIRequest+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D6975D1B67ACD300693710 /* AIRequest+Private.m */; };
 		58D90EDE1A42E41E00A937EC /* ApiAI.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83419BEE0E000632C2F /* ApiAI.h */; };
 		58D90EDF1A42E64400A937EC /* AIConfiguration.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58C2A83319BEE0E000632C2F /* AIConfiguration.h */; };
@@ -153,6 +153,9 @@
 		584509AF19F4EB6B00A0AE9A /* OPStreamBufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPStreamBufferDelegate.h; sourceTree = "<group>"; };
 		585BC6C71A15F9E800B2584A /* AIDefaultConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefaultConfiguration.h; sourceTree = "<group>"; };
 		585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIDefaultConfiguration.m; sourceTree = "<group>"; };
+		5862E2FB1B6A103300F6F712 /* AIVoiceFileRequest_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceFileRequest_Private.h; sourceTree = "<group>"; };
+		5862E2FC1B6A103B00F6F712 /* AIVoiceFileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceFileRequest.h; sourceTree = "<group>"; };
+		5862E2FD1B6A103B00F6F712 /* AIVoiceFileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceFileRequest.m; sourceTree = "<group>"; };
 		5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AINullabilityDefines.h; sourceTree = "<group>"; };
 		588D23831AFB3C95008289F1 /* AIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponse.h; sourceTree = "<group>"; };
 		588D23841AFB3C95008289F1 /* AIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponse.m; sourceTree = "<group>"; };
@@ -222,8 +225,6 @@
 		58D697081B679D7300693710 /* ApiAI.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ApiAI.podspec.json; sourceTree = "<group>"; };
 		58D697091B67A19200693710 /* AIResponseConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseConstants.h; sourceTree = "<group>"; };
 		58D6970A1B67A19200693710 /* AIResponseConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponseConstants.m; sourceTree = "<group>"; };
-		58D697581B67AC6500693710 /* AIVoiceFileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceFileRequest.h; sourceTree = "<group>"; };
-		58D697591B67AC6500693710 /* AIVoiceFileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceFileRequest.m; sourceTree = "<group>"; };
 		58D6975C1B67ACD300693710 /* AIRequest+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AIRequest+Private.h"; sourceTree = "<group>"; };
 		58D6975D1B67ACD300693710 /* AIRequest+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AIRequest+Private.m"; sourceTree = "<group>"; };
 		58ECF07519C4388F00EF5291 /* ApiAI_ApiAI_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiAI_ApiAI_Private.h; sourceTree = "<group>"; };
@@ -318,6 +319,14 @@
 				581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */,
 				581AB3AD1A245D8300E8A190 /* AIVoiceLevelView.h */,
 				581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		5862E2F91B6A0CB900F6F712 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				5862E2FB1B6A103300F6F712 /* AIVoiceFileRequest_Private.h */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -592,6 +601,7 @@
 		58D697561B67AC3E00693710 /* VoiceFileRequest */ = {
 			isa = PBXGroup;
 			children = (
+				5862E2F91B6A0CB900F6F712 /* Private */,
 				58D697571B67AC5600693710 /* Classes */,
 			);
 			path = VoiceFileRequest;
@@ -600,8 +610,8 @@
 		58D697571B67AC5600693710 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				58D697581B67AC6500693710 /* AIVoiceFileRequest.h */,
-				58D697591B67AC6500693710 /* AIVoiceFileRequest.m */,
+				5862E2FC1B6A103B00F6F712 /* AIVoiceFileRequest.h */,
+				5862E2FD1B6A103B00F6F712 /* AIVoiceFileRequest.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -686,7 +696,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AI;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Kuragin Dmitriy";
 				TargetAttributes = {
 					58F060481A8CB366002615DF = {
@@ -780,9 +790,9 @@
 			files = (
 				58D697051B679D0300693710 /* AIMeterTable.m in Sources */,
 				58D697031B679D0300693710 /* AIRecordDetector.m in Sources */,
+				5862E2FE1B6A103B00F6F712 /* AIVoiceFileRequest.m in Sources */,
 				58D697061B679D0300693710 /* AISoundRecorder.m in Sources */,
 				58D697001B679D0300693710 /* AIAlgorithmDetector.m in Sources */,
-				58D6975A1B67AC6500693710 /* AIVoiceFileRequest.m in Sources */,
 				585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */,
 				581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */,
 				58D6970B1B67A19200693710 /* AIResponseConstants.m in Sources */,
@@ -863,6 +873,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -991,6 +1002,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sstepashka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1008,6 +1020,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sstepashka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

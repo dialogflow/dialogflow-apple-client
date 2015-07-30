@@ -34,6 +34,10 @@
     #import "AIVoiceRequest.h"
 #endif
 
+#if __has_include("AIVoiceFileRequest.h")
+#import "AIVoiceFileRequest.h"
+#endif
+
 /*!
  
  @enum AIRequestType enum
@@ -121,6 +125,13 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 
 #if __has_include("AITextRequest.h")
 - (AITextRequest *)textRequest;
+#endif
+
+
+#if __has_include("AIVoiceFileRequest.h")
+- (AIVoiceFileRequest *)voiceFileRequestWithFileURL:(NSURL *)fileURL;
+- (AIVoiceFileRequest *)voiceFileRequestWithStream:(NSInputStream *)inputStream;
+- (AIVoiceFileRequest *)voiceFileRequestWithData:(NSData *)fileData;
 #endif
 
 /*!

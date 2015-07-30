@@ -24,7 +24,7 @@
 #import "AITextRequest.h"
 #import "ApiAI_ApiAI_Private.h"
 #import "AIDefaultConfiguration.h"
-
+#import "AIVoiceFileRequest_Private.h"
 #import "AIConfiguration.h"
 #import "AIRequest.h"
 
@@ -89,6 +89,28 @@ NSString *const kDefaultVersion = @"20150415";
     
     return  request;
 }
+#endif
+
+#if __has_include("AIVoiceFileRequest.h")
+- (AIVoiceFileRequest *)voiceFileRequestWithFileURL:(NSURL *)fileURL
+{
+    NSInputStream *stream = [[NSInputStream alloc] initWithURL:fileURL];
+    return [self voiceFileRequestWithStream:stream];
+}
+
+- (AIVoiceFileRequest *)voiceFileRequestWithStream:(NSInputStream *)inputStream
+{
+    AIVoiceFileRequest *request = [[AIVoiceFileRequest alloc] initWithDataService:_dataService];
+    request.inputStream = inputStream;
+    return request;
+}
+
+- (AIVoiceFileRequest *)voiceFileRequestWithData:(NSData *)fileData
+{
+    NSInputStream *stream = [[NSInputStream alloc] initWithData:fileData];
+    return [self voiceFileRequestWithStream:stream];
+}
+
 #endif
 
 - (void)setConfiguration:(id<AIConfiguration>)configuration
