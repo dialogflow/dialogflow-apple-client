@@ -122,9 +122,9 @@
 {
     switch (eventCode) {
         case NSStreamEventHasBytesAvailable: {
-            uint8_t *buff = (uint8_t *)malloc(sizeof(uint8_t) * 2048);
+            uint8_t *buff = (uint8_t *)malloc(sizeof(uint8_t) * 1024);
             
-            NSInteger bytesRead = [_inputStream read:buff maxLength:2048];
+            NSInteger bytesRead = [_inputStream read:buff maxLength:1024];
             
             NSData *data = [NSData dataWithBytes:buff length:bytesRead];
             
@@ -136,9 +136,12 @@
         case NSStreamEventEndEncountered: {
             [_streamBuffer write:[[NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
             [_streamBuffer flushAndClose];
+            
+            [_inputStream close];
             break;
         }
         case NSStreamEventErrorOccurred:
+            [_inputStream close];
             break;
         default:
             break;
@@ -175,5 +178,9 @@
     }
 }
 
+- (void)dealloc
+{
+    [_inputStream close];
+}
 
 @end

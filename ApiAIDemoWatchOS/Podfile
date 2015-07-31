@@ -10,6 +10,8 @@ target 'ApiAIDemoWatchOS WatchKit App' do
 end
 
 target 'ApiAIDemoWatchOS WatchKit Extension' do
-pod 'ApiAI/Core', :path => '../'
+platform :watchos, '2.0'
+pod 'ApiAI/VoiceFileRequest', :path => '../'
+pod 'ApiAI/ResponseMapping', :path => '../'
 end
 

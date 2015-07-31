@@ -34,12 +34,15 @@
 @implementation AIStreamBuffer
 {
     NSUInteger _offset;
+    dispatch_queue_t mutex;
 }
 
 - (instancetype)initWithOutputStream:(NSOutputStream *)outputStream
 {
     self = [super init];
     if (self) {
+        mutex = dispatch_queue_create(NULL, 0);
+        
         self.outputStream = outputStream;
         _outputStream.delegate = self;
     }
@@ -65,7 +68,9 @@
 
 - (void)write:(NSData *)data
 {
-    [_data appendData:data];
+    dispatch_sync(mutex, ^{
+        [_data appendData:data];
+    });
     
     if ([_outputStream hasSpaceAvailable] && _opened) {
         [self flush];
@@ -74,11 +79,15 @@
 
 - (BOOL)hasBytesForWriting
 {
-    return (_data.length - _offset) > 0;
+    __block BOOL can = NO;
+    can = (_data.length - _offset) > 0;
+    
+    return can;
 }
 
 - (void)flush
 {
+    dispatch_sync(mutex, ^{
     if ([self hasBytesForWriting]) {
         NSUInteger availableLen = _data.length - _offset;
         
@@ -98,6 +107,7 @@
             _offset += writtenBytes;
         }
     }
+    });
 }
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode

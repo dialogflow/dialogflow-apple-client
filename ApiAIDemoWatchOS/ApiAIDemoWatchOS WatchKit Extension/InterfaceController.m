@@ -21,9 +21,12 @@
  ***********************************************************************************************************************/
 
 #import "InterfaceController.h"
-
+#import <ApiAI/ApiAI.h>
 
 @interface InterfaceController()
+
+@property(nonatomic, weak) IBOutlet WKInterfaceButton *button;
+@property(nonatomic, weak) IBOutlet WKInterfaceImage *progressImage;
 
 @end
 
@@ -34,6 +37,130 @@
     [super awakeWithContext:context];
 
     // Configure interface objects here.
+}
+
+- (void)didAppear
+{
+
+}
+
+- (IBAction)doAction:(id)sender
+{
+    NSArray <WKAlertAction *> *actions =
+  @[
+    [WKAlertAction actionWithTitle:@"Text message"
+                             style:WKAlertActionStyleDefault
+                           handler:^{
+                               [self sendTextRequest];
+                           }],
+    [WKAlertAction actionWithTitle:@"Voice message"
+                             style:WKAlertActionStyleDefault
+                           handler:^{
+                               [self sendVoiceRequest];
+                           }],
+    [WKAlertAction actionWithTitle:@"Cancel"
+                             style:WKAlertActionStyleCancel
+                           handler:^{
+                               
+                           }],
+    ];
+    
+    [self presentAlertControllerWithTitle:@"Choose action"
+                                  message:nil
+                           preferredStyle:WKAlertControllerStyleActionSheet
+                                  actions:actions];
+}
+
+- (void)sendTextRequest
+{
+    NSArray <NSString *> * suggestions = @[
+                                           @"Hello",
+                                           @"How are you?"
+                                           ];
+    [self presentTextInputControllerWithSuggestions:suggestions
+                                   allowedInputMode:WKTextInputModePlain
+                                         completion:^(NSArray * _Nullable results) {
+                                             if (results.count) {
+                                                 [self showProgress];
+                                                 
+                                                 ApiAI *apiai = [ApiAI sharedApiAI];
+                                                 
+                                                 AITextRequest *textRequest = (AITextRequest *)[apiai requestWithType:AIRequestTypeText];
+                                                 
+                                                 textRequest.query = @[results.firstObject];
+                                                 
+                                                 [textRequest setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
+                                                     NSString *text = response.result.fulfillment.speech;
+                                                     
+                                                     if (![text length]) {
+                                                         text = @"<empty response>";
+                                                     }
+                                                     
+                                                     [self.button setTitle:text];
+                                                     
+                                                     [self dismissProgress];
+                                                 } failure:^(AIRequest *request, NSError *error) {
+                                                     [self.button setTitle:[error localizedDescription]];
+                                                     [self dismissProgress];
+                                                 }];
+                                                 
+                                                 [apiai enqueue:textRequest];
+                                             }
+                                         }];
+
+}
+
+- (void)sendVoiceRequest
+{
+    NSArray *filePaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                             NSUserDomainMask,YES);
+    NSString *path = [[filePaths firstObject] stringByAppendingPathComponent:@"recording.mp4"];
+    NSURL *fileUrl = [NSURL fileURLWithPath:path];
+    
+    [self presentAudioRecordingControllerWithOutputURL:fileUrl
+                                                preset:WKAudioRecordingPresetWideBandSpeech
+                                       maximumDuration:10.f
+                                           actionTitle:@"Send"
+                                            completion:^(BOOL didSave, NSError * _Nullable error) {
+                                                if (didSave) {
+                                                    [self showProgress];
+                                                    
+                                                    ApiAI *apiai = [ApiAI sharedApiAI];
+                                                    
+                                                    AIVoiceFileRequest *request = [apiai voiceFileRequestWithFileURL:fileUrl];
+                                                    
+                                                    [request setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
+                                                        NSString *text = response.result.fulfillment.speech;
+                                                        
+                                                        if (![text length]) {
+                                                            text = @"<empty response>";
+                                                        }
+                                                        
+                                                        [self.button setTitle:text];
+                                                        
+                                                        [self dismissProgress];
+                                                    } failure:^(AIRequest *request, NSError *error) {
+                                                        [self.button setTitle:[error localizedDescription]];
+                                                        [self dismissProgress];
+                                                    }];
+                                                    
+                                                    [apiai enqueue:request];
+                                                }
+                                            }];
+}
+
+- (void)showProgress
+{
+    [_button setHidden:YES];
+    [_progressImage setHidden:NO];
+    [_progressImage startAnimating];
+}
+
+- (void)dismissProgress
+{
+    [_button setHidden:NO];
+    [_progressImage setHidden:YES];
+    [_progressImage stopAnimating];
 }
 
 - (void)willActivate {
