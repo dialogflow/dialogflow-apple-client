@@ -49,6 +49,33 @@
             }
         },
         {
+            "name": "AudioFileConverter",
+            
+            "source_files": [
+                "ApiAI",
+                "ApiAI/AudioFileConverter/Classes/**/*.{h,hpp,m,mm}",
+                "ApiAI/AudioFileConverter/Private/**/*.{h,mm,c}"
+            ],
+
+            "public_header_files": [
+                "ApiAI/AudioFileConverter/Classes/**/*.{h}"
+            ],
+
+            "ios": {
+                "frameworks": ["AudioToolbox"]
+            },
+
+            "requires_arc": true,
+
+            "dependencies": {
+                "ApiAI/Core": []
+            },
+
+            "platforms": {
+                "ios": "7.0",
+            }
+        },
+        {
             "name": "VoiceFileRequest",
 
             "source_files": [
