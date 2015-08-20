@@ -54,7 +54,7 @@
             "source_files": [
                 "ApiAI",
                 "ApiAI/AudioFileConverter/Classes/**/*.{h,hpp,m,mm}",
-                "ApiAI/AudioFileConverter/Private/**/*.{h,mm,c}"
+                "ApiAI/AudioFileConverter/Private/**/*.{h,mm,c,hpp,cpp}"
             ],
 
             "public_header_files": [
@@ -72,7 +72,11 @@
             },
 
             "platforms": {
-                "ios": "7.0",
+                "ios": "7.0"
+            },
+
+            "xcconfig": {
+                "OTHER_LDFLAGS": "-weak_library /usr/lib/libc++.dylib"
             }
         },
         {

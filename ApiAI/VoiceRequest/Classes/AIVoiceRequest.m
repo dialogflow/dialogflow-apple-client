@@ -53,6 +53,8 @@
         
         self.useVADForAutoCommit = YES;
         
+        self.boundary = [self creteBoundary];
+        
         NSMutableURLRequest *request = self.prepareDefaultRequest;
         
         NSInputStream *input = nil;

@@ -1,4 +1,3 @@
-//
 /***********************************************************************************************************************
  *
  * API.AI iOS SDK - client-side libraries for API.AI
@@ -22,8 +21,9 @@
 
 #import "InterfaceController.h"
 #import <ApiAI/ApiAI.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface InterfaceController()
+@interface InterfaceController() <WCSessionDelegate>
 
 @property(nonatomic, weak) IBOutlet WKInterfaceButton *button;
 @property(nonatomic, weak) IBOutlet WKInterfaceImage *progressImage;
@@ -112,6 +112,11 @@
 
 - (void)sendVoiceRequest
 {
+    if ([WCSession isSupported]) {
+        [WCSession defaultSession].delegate = self;
+        [[WCSession defaultSession] activateSession];
+    }
+    
     NSArray *filePaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                              NSUserDomainMask,YES);
     NSString *path = [[filePaths firstObject] stringByAppendingPathComponent:@"recording.mp4"];
@@ -125,28 +130,34 @@
                                                 if (didSave) {
                                                     [self showProgress];
                                                     
-                                                    ApiAI *apiai = [ApiAI sharedApiAI];
-                                                    
-                                                    AIVoiceFileRequest *request = [apiai voiceFileRequestWithFileURL:fileUrl];
-                                                    
-                                                    [request setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
-                                                        NSString *text = response.result.fulfillment.speech;
-                                                        
-                                                        if (![text length]) {
-                                                            text = @"<empty response>";
-                                                        }
-                                                        
-                                                        [self.button setTitle:text];
-                                                        
-                                                        [self dismissProgress];
-                                                    } failure:^(AIRequest *request, NSError *error) {
-                                                        [self.button setTitle:[error localizedDescription]];
-                                                        [self dismissProgress];
-                                                    }];
-                                                    
-                                                    [apiai enqueue:request];
+                                                    [[WCSession defaultSession] transferFile:fileUrl metadata:nil];
+//                                                    ApiAI *apiai = [ApiAI sharedApiAI];
+//                                                    
+//                                                    AIVoiceFileRequest *request = [apiai voiceFileRequestWithFileURL:fileUrl];
+//                                                    
+//                                                    [request setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
+//                                                        NSString *text = response.result.fulfillment.speech;
+//                                                        
+//                                                        if (![text length]) {
+//                                                            text = @"<empty response>";
+//                                                        }
+//                                                        
+//                                                        [self.button setTitle:text];
+//                                                        
+//                                                        [self dismissProgress];
+//                                                    } failure:^(AIRequest *request, NSError *error) {
+//                                                        [self.button setTitle:[error localizedDescription]];
+//                                                        [self dismissProgress];
+//                                                    }];
+//                                                    
+//                                                    [apiai enqueue:request];
                                                 }
                                             }];
+}
+
+- (void)session:(nonnull WCSession *)session didFinishFileTransfer:(nonnull WCSessionFileTransfer *)fileTransfer error:(nullable NSError *)error
+{
+    NSLog(@"");
 }
 
 - (void)showProgress
