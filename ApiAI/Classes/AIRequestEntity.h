@@ -17,7 +17,7 @@
 @property(nonatomic, copy, readonly, AI_NONNULL) NSString *name;
 @property(nonatomic, copy, readonly, AI_NONNULL) NSArray *entries;
 
-- (nonnull instancetype)initWithName:(NSString * __AI_NONNULL)name
-                          andEntries:(NSArray * __AI_NONNULL)entries;
+- (AI_NONNULL instancetype)initWithName:(NSString * __AI_NONNULL)name
+                             andEntries:(NSArray * __AI_NONNULL)entries;
 
 @end
