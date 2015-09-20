@@ -24,6 +24,7 @@
 #import "AIDataService_Private.h"
 #import "AIConfiguration.h"
 #import "AIRequestEntity_Private.h"
+#import "AIRequest+Private.h"
 
 #import "AIResponseConstants.h"
 
@@ -58,8 +59,8 @@
         parameters[@"resetContexts"] = @(YES);
     }
     
-    if ([self.contexts count]) {
-        parameters[@"contexts"] = self.contexts;
+    if ([self.requestContexts count]) {
+        parameters[@"contexts"] = [self contextsRequestPresentation];
     }
     
     if ([self.entities count]) {

@@ -12,12 +12,12 @@
 @implementation AIRequestEntity
 
 - (AI_NONNULL instancetype)initWithName:(NSString * __AI_NONNULL)name
-                             andEntries:(NSArray * __AI_NONNULL)entries
+                             andEntries:(NSArray AI_GENERICS_1(AIRequestEntry *) * __AI_NONNULL)entries
 {
     self = [super init];
     if (self) {
-        _name = name;
-        _entries = entries;
+        _name = [name copy];
+        _entries = [entries copy];
     }
     
     return self;

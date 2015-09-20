@@ -15,4 +15,6 @@
 
 - (NSMutableURLRequest *)prepareDefaultRequest;
 
+- (NSArray *)contextsRequestPresentation;
+
 @end

@@ -23,6 +23,7 @@
 
 #import "AIRequestEntity.h"
 #import "AIRequestEntry.h"
+#import "AIRequestContext.h"
 
 @class AIDataService;
 @class AFHTTPRequestOperation;
@@ -88,7 +89,18 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
  @discussion array of strings - List of contexts for the query that are enforced from the client. Default in nil.
  
  */
-@property(nonatomic, copy) NSArray *contexts;
+
+@property(nonatomic, copy) NSArray AI_GENERICS_1(NSString *) *contexts DEPRECATED_MSG_ATTRIBUTE("Use requestContexts");
+
+/*!
+ 
+ @property requestContexts
+ 
+ @discussion array of context objects - List of contexts for the query that are enforced from the client. Default in nil.
+ 
+ */
+
+@property(nonatomic, copy) NSArray AI_GENERICS_1(AIRequestContext *) *requestContexts;
 
 /*!
  
@@ -97,7 +109,7 @@ typedef void(^FailureResponseBlock)(AIRequest *request, NSError *error);
  @discussion array of entity objects - List of entities for the query that are enforced from the client. Default in nil.
  
  */
-@property(nonatomic, copy) NSArray *entities;
+@property(nonatomic, copy) NSArray AI_GENERICS_1(AIRequestEntity *) *entities;
 
 /*!
  

@@ -45,6 +45,23 @@
 
 #endif
 
+#if __has_feature(objc_generics)
+
+    #define AI_GENERICS_1(a1) <a1>
+    #define AI_GENERICS_2(a1, a2) <a1, a2>
+    #define AI_GENERICS_3(a1, a2, a3) <a1, a2, a3>
+    #define AI_GENERICS_4(a1, a2, a3, a4) <a1, a2, a3, a4>
+    #define AI_GENERICS_5(a1, a2, a3, a4, a5) <a1, a2, a3, a4, a5>
+
+#else
+
+    #define AI_GENERICS_1(a1)
+    #define AI_GENERICS_2(a1, a2)
+    #define AI_GENERICS_3(a1, a2, a3)
+    #define AI_GENERICS_4(a1, a2, a3, a4)
+    #define AI_GENERICS_5(a1, a2, a3, a4, a5)
+
+#endif
 
 
 #endif

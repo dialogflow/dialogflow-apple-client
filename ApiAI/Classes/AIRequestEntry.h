@@ -13,8 +13,9 @@
 @interface AIRequestEntry : NSObject
 
 @property(nonatomic, copy, readonly, AI_NONNULL) NSString *value;
-@property(nonatomic, copy, readonly, AI_NONNULL) NSArray *synonyms;
+@property(nonatomic, copy, readonly, AI_NONNULL) NSArray AI_GENERICS_1(NSString *) *synonyms;
 
-- (AI_NONNULL instancetype)initWithValue:(NSString * __AI_NONNULL)value andSynonims:(NSArray * __AI_NONNULL)synonims;
+- (AI_NONNULL instancetype)initWithValue:(NSString * __AI_NONNULL)value
+                             andSynonims:(NSArray AI_GENERICS_1(NSString *) * __AI_NONNULL)synonims;
 
 @end

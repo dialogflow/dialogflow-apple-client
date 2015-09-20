@@ -15,9 +15,9 @@
 @interface AIRequestEntity : NSObject
 
 @property(nonatomic, copy, readonly, AI_NONNULL) NSString *name;
-@property(nonatomic, copy, readonly, AI_NONNULL) NSArray *entries;
+@property(nonatomic, copy, readonly, AI_NONNULL) NSArray AI_GENERICS_1(AIRequestEntry *) *entries;
 
 - (AI_NONNULL instancetype)initWithName:(NSString * __AI_NONNULL)name
-                             andEntries:(NSArray * __AI_NONNULL)entries;
+                             andEntries:(NSArray AI_GENERICS_1(AIRequestEntry *) * __AI_NONNULL)entries;
 
 @end

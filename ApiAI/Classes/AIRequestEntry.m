@@ -14,8 +14,8 @@
 {
     self = [super init];
     if (self) {
-        _value = value;
-        _synonyms = synonims;
+        _value = [value copy];
+        _synonyms = [synonims copy];
     }
     
     return self;

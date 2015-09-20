@@ -42,8 +42,8 @@
         parameters[@"resetContexts"] = @(self.resetContexts);
     }
     
-    if ([self.contexts count]) {
-        parameters[@"contexts"] = self.contexts;
+    if ([self.requestContexts count]) {
+        parameters[@"contexts"] = [self contextsRequestPresentation];
     }
     
     if ([self.entities count]) {
@@ -81,6 +81,23 @@
     [request setAllHTTPHeaderFields:self.defaultHeaders];
     
     return request;
+}
+
+- (NSArray *)contextsRequestPresentation
+{
+    NSMutableArray AI_GENERICS_1(NSDictionary AI_GENERICS_2(NSString *, id) *) *contexts = [NSMutableArray array];
+    [self.requestContexts enumerateObjectsUsingBlock:^(AIRequestContext * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSMutableDictionary AI_GENERICS_2(NSString *, id) *context = [NSMutableDictionary dictionary];
+        
+        context[@"name"] = obj.name;
+        if (obj.parameters) {
+            context[@"parameters"] = obj.parameters;
+        }
+        
+        [contexts addObject:context];
+    }];
+    
+    return [contexts copy];
 }
 
 @end

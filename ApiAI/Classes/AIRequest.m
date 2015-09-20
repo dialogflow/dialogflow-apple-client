@@ -49,6 +49,21 @@ NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
     return self;
 }
 
+- (void)setContexts:(NSArray *)contexts
+{
+    _contexts = [contexts copy];
+    
+    NSMutableArray AI_GENERICS_1(AIRequestContext *)  *requestContexts = [NSMutableArray array];
+    
+    [contexts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        AIRequestContext *requestContext = [[AIRequestContext alloc] initWithName:obj
+                                                                    andParameters:nil];
+        [requestContexts addObject:requestContext];
+    }];
+    
+    self.requestContexts = requestContexts;
+}
+
 - (void)start
 {
     [self configureHTTPRequest];
