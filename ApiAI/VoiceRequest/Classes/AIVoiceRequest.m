@@ -143,10 +143,6 @@
         parameters[@"resetContexts"] = @(self.resetContexts);
     }
     
-    if ([self.contexts count]) {
-        parameters[@"contexts"] = self.contexts;
-    }
-    
     if ([self.entities count]) {
         NSMutableArray *entities = [NSMutableArray array];
         [self.entities enumerateObjectsUsingBlock:^(AIRequestEntity *obj, NSUInteger idx, BOOL *stop) {

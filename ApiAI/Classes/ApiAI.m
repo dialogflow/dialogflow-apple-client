@@ -24,9 +24,13 @@
 #import "AITextRequest.h"
 #import "ApiAI_ApiAI_Private.h"
 #import "AIDefaultConfiguration.h"
-#import "AIVoiceFileRequest_Private.h"
+
 #import "AIConfiguration.h"
 #import "AIRequest.h"
+
+#if __has_include("AIVoiceFileRequest_Private.h")
+    #import "AIVoiceFileRequest_Private.h"
+#endif
 
 NSString *const kDefaultVersion = @"20150415";
 
