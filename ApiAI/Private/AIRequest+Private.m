@@ -86,7 +86,7 @@
 - (NSArray *)contextsRequestPresentation
 {
     NSMutableArray AI_GENERICS_1(NSDictionary AI_GENERICS_2(NSString *, id) *) *contexts = [NSMutableArray array];
-    [self.requestContexts enumerateObjectsUsingBlock:^(AIRequestContext * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.requestContexts enumerateObjectsUsingBlock:^(AIRequestContext * __AI_NONNULL obj, NSUInteger idx, BOOL * __AI_NONNULL stop) {
         NSMutableDictionary AI_GENERICS_2(NSString *, id) *context = [NSMutableDictionary dictionary];
         
         context[@"name"] = obj.name;
