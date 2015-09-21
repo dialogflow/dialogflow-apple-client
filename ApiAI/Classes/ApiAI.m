@@ -32,7 +32,7 @@
     #import "AIVoiceFileRequest_Private.h"
 #endif
 
-NSString *const kDefaultVersion = @"20150415";
+NSString *const kDefaultVersion = @"20150910";
 
 @interface ApiAI ()
 
