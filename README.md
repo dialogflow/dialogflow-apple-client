@@ -66,7 +66,6 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
     
     // Define API.AI configuration here.
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
-    configuration.baseURL = [NSURL URLWithString:@"https://api.api.ai/v1"];
     configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN_HERE";
     configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY_HERE";
     
