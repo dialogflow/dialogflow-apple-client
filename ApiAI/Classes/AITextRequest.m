@@ -74,7 +74,7 @@
     
     parameters[@"sessionId"] = self.sessionId;
     
-    NSURL *URL = [NSURL URLWithString:path relativeToURL:configuration.baseURL];
+    NSURL *URL = [configuration.baseURL URLByAppendingPathComponent:path];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
     
     [request setHTTPMethod:@"POST"];

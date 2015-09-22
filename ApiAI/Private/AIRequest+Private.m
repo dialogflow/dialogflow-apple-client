@@ -72,7 +72,7 @@
         path = [path stringByAppendingFormat:@"?v=%@", version];
     }
     
-    NSURL *URL = [NSURL URLWithString:path relativeToURL:configuration.baseURL];
+    NSURL *URL = [configuration.baseURL URLByAppendingPathComponent:path];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
     
