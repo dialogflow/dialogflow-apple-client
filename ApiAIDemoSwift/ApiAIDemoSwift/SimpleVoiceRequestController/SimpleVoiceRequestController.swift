@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ApiAI
 
 class SimpleVoiceRequestController: UIViewController {
     
@@ -29,7 +28,7 @@ class SimpleVoiceRequestController: UIViewController {
 
         let apiai = ApiAI.sharedApiAI()
         
-        let request = apiai.requestWithType(AIRequestType.Voice) as! AIVoiceRequest
+        let request = apiai.voiceRequest()
         
         if let vad = self.useVAD {
             request.useVADForAutoCommit = vad.on
@@ -45,7 +44,6 @@ class SimpleVoiceRequestController: UIViewController {
             self.changeStateToStop()
             
         }, failure: { (AIRequest request, NSError error) -> Void in
-            println()
             self.changeStateToStop()
         })
         

@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import ApiAI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,9 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        let session = AVAudioSession.sharedInstance()
+        
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try session.setActive(true)
+        } catch {
+            // same error
+        }
 
         let apiai = ApiAI.sharedApiAI()
         

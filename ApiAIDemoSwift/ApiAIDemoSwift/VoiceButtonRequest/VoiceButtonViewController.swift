@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ApiAI
 
 class VoiceButtonViewController: UIViewController {
 
@@ -21,7 +20,7 @@ class VoiceButtonViewController: UIViewController {
         }
         
         self.voiceRequestButton?.failureCallback = {(NSError error) -> Void in
-            println()
+            
         }
     }
     

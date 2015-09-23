@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import ApiAI
-import MBProgressHUD
 
 class TextRequestViewController: UIViewController {
     @IBOutlet var textField: UITextField? = nil
@@ -19,8 +17,7 @@ class TextRequestViewController: UIViewController {
         
         self.textField?.resignFirstResponder()
         
-        let request = ApiAI.sharedApiAI().requestWithType(AIRequestType.Text) as! AITextRequest
-        
+        let request = ApiAI.sharedApiAI().textRequest()
         
         if let text = self.textField?.text {
             request.query = [text]
@@ -37,7 +34,6 @@ class TextRequestViewController: UIViewController {
             
             MBProgressHUD.hideAllHUDsForView(self.view.window, animated: true)
         }, failure: { (AIRequest request, NSError error) -> Void in
-            println()
             MBProgressHUD.hideAllHUDsForView(self.view.window, animated: true)
         });
         
