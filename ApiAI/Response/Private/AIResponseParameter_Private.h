@@ -23,6 +23,6 @@
 
 @interface AIResponseParameter ()
 
-- (instancetype)initWithString:(NSString *)string;
+- (instancetype)initWithObject:(id)object;
 
 @end

@@ -38,7 +38,7 @@
             NSDictionary *sourceParameters = dictionary[@"parameters"]?:@{};
             
             [sourceParameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                parameters[key] = [[AIResponseParameter alloc] initWithString:obj];
+                parameters[key] = [[AIResponseParameter alloc] initWithObject:obj];
             }];
             
             _parameters = [parameters copy];

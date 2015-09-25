@@ -25,19 +25,19 @@
 
 @interface AIResponseParameter ()
 
-@property(nonatomic, copy) NSString *string;
+@property(nonatomic, copy) id object;
 
 @end
 
 @implementation AIResponseParameter
 
-- (instancetype)initWithString:(NSString *)string
+- (instancetype)initWithObject:(id)object
 {
     self = [super init];
     if (self) {
-        self.string = string;
+        self.object = object;
         
-        _stringValue = self.string;
+        _stringValue = [NSString stringWithFormat:@"%@", object];
         
         [self prepareValues];
     }
@@ -62,7 +62,7 @@
     
     __block NSDate *date = nil;
     
-    NSString *dateString = self.string;
+    NSString *dateString = self.stringValue;
     
     [dateFormatters enumerateObjectsUsingBlock:^(NSDateFormatter *dateFormatter, NSUInteger idx, BOOL *stop) {
         date = [dateFormatter dateFromString:dateString];
@@ -86,7 +86,7 @@
     
     __block NSArray *datePeriod = nil;
     
-    NSString *datePeriodString = self.string;
+    NSString *datePeriodString = self.stringValue;
     
     [datePeriodFormatters enumerateObjectsUsingBlock:^(AIDatePeriodFormatter *datePeriodFormatter, NSUInteger idx, BOOL *stop) {
         datePeriod = [datePeriodFormatter datesFromString:datePeriodString];
