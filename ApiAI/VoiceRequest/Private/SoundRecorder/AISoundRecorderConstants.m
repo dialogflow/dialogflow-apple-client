@@ -40,7 +40,11 @@ UInt32 const kFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIs
 #pragma mark AudioComponentDescription Constants
 
 OSType const kComponentType = kAudioUnitType_Output;
-OSType const kComponentSubType = kAudioUnitSubType_RemoteIO;
+
+#warning "uncomment it"
+//OSType const kComponentSubType = kAudioUnitSubType_RemoteIO;
+//OSType const kComponentSubType = kAudioUnitSubType_DefaultOutput;
+OSType const kComponentSubType = kAudioUnitSubType_VoiceProcessingIO;
 OSType const kComponentManufacturer = kAudioUnitManufacturer_Apple;
 UInt32 const kComponentFlags = 0;
 UInt32 const kComponentFlagsMask = 0;

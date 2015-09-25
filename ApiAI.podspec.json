@@ -16,7 +16,8 @@
     "requires_arc": true,
     "platforms": {
         "ios": "7.0",
-        "watchos": "2.0"
+        "watchos": "2.0",
+        "osx": "10.9"
     },
 
     "subspecs": [
@@ -45,7 +46,8 @@
 
             "platforms": {
                 "ios": "7.0",
-                "watchos": "2.0"
+                "watchos": "2.0",
+                "osx": "10.9"
             }
         },
         {
@@ -104,7 +106,8 @@
                  
             "platforms": {
                 "ios": "7.0",
-                "watchos": "2.0"
+                "watchos": "2.0",
+                "osx": "10.9"
             }
         },
         {
@@ -131,7 +134,8 @@
             },
                  
             "platforms": {
-                "ios": "7.0"
+                "ios": "7.0",
+                "osx": "10.9"
             }
         },
         {

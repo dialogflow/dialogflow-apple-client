@@ -101,21 +101,23 @@ static OSStatus PerformThru(
     if (self = [super init]) {
         self.meterTable = [[AIMeterTable alloc] init];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interruption:) name:AVAudioSessionInterruptionNotification object:nil];
+        #warning "uncomment it"
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interruption:) name:AVAudioSessionInterruptionNotification object:nil];
     }
     return self;
 }
 
-- (void)interruption:(NSNotification *)notification
-{
-    int interruptionType = [notification.userInfo[AVAudioSessionInterruptionTypeKey] intValue];
-    if (interruptionType == AVAudioSessionInterruptionTypeEnded) {
-        if ([self isRecording]) {
-            [self stop];
-            [self start];
-        }
-    }
-}
+#warning "uncomment it"
+//- (void)interruption:(NSNotification *)notification
+//{
+//    int interruptionType = [notification.userInfo[AVAudioSessionInterruptionTypeKey] intValue];
+//    if (interruptionType == AVAudioSessionInterruptionTypeEnded) {
+//        if ([self isRecording]) {
+//            [self stop];
+//            [self start];
+//        }
+//    }
+//}
 
 - (CGFloat)calculateLevel:(AudioBufferList *)ioData andNumberFrames:(UInt32)numberofFrames
 {

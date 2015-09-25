@@ -23,7 +23,6 @@
 #import "AIDataService.h"
 
 #import <CommonCrypto/CommonDigest.h>
-#import <UIKit/UIKit.h>
 
 NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
 

@@ -1,0 +1,12 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'ApiAIMacOSDemo' do
+
+pod 'ApiAI/Core', :path => '../'
+pod 'ApiAI/VoiceRequest', :path => '../'
+pod 'ApiAI/ResponseMapping', :path => '../'
+pod 'ApiAI/VoiceFileRequest', :path => '../'
+
+end
+
