@@ -10,6 +10,7 @@ pod 'ApiAI/VoiceRequest', :path => '../'
 pod 'ApiAI/UIKit', :path => '../'
 pod 'ApiAI/ResponseMapping', :path => '../'
 pod 'ApiAI/VoiceFileRequest', :path => '../'
+pod 'ApiAI/AudioFileConverter', :path => '../'
 pod 'MBProgressHUD'
 
 end
