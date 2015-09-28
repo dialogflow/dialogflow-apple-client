@@ -68,15 +68,11 @@
     time = frameNumber * self.frameSize / sampleRate;
     
     if (active) {
-        printf("Active %.2f: %.2f\n", time, lastActiveTime);
         if (lastActiveTime >= 0 && (time - lastActiveTime) < sequenceLengthMilis) {
             sequenceCounter += 1;
-            printf("Seq %.2f %i\n", time, sequenceCounter);
             if (sequenceCounter >= minSequenceCount) {
-                printf("LAST SPEECH %.2f\n", time);
                 lastSequenceTime = time;
                 silenceLengthMilis = MAX(minSilenceLengthMilis, silenceLengthMilis - (maxSilenceLengthMilis - minSilenceLengthMilis) / 4);
-                printf("SM: %.2f\n", silenceLengthMilis);
             }
         } else {
             sequenceCounter = 1;
@@ -85,13 +81,11 @@
     } else {
         if (time - lastSequenceTime > silenceLengthMilis) {
             if (lastSequenceTime > 0) {
-                printf("TERMINATE: %.2f\n", time);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [_delegate endDetection:self withStatus:AIAlgorithmDetectorResultTerminate];
                 });
                 return AIAlgorithmDetectorResultTerminate;
             } else {
-                printf("NOSPEECH: %.2f\n", time);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [_delegate endDetection:self withStatus:AIAlgorithmDetectorResultNoSpeech];
                 });

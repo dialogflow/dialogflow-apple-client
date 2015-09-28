@@ -101,23 +101,25 @@ static OSStatus PerformThru(
     if (self = [super init]) {
         self.meterTable = [[AIMeterTable alloc] init];
         
-        #warning "uncomment it"
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interruption:) name:AVAudioSessionInterruptionNotification object:nil];
+#if TARGET_OS_IOS || TARGET_IPHONE_SIMULATOR
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interruption:) name:AVAudioSessionInterruptionNotification object:nil];
+#endif
     }
     return self;
 }
 
-#warning "uncomment it"
-//- (void)interruption:(NSNotification *)notification
-//{
-//    int interruptionType = [notification.userInfo[AVAudioSessionInterruptionTypeKey] intValue];
-//    if (interruptionType == AVAudioSessionInterruptionTypeEnded) {
-//        if ([self isRecording]) {
-//            [self stop];
-//            [self start];
-//        }
-//    }
-//}
+#if TARGET_OS_IOS || TARGET_IPHONE_SIMULATOR
+- (void)interruption:(NSNotification *)notification
+{
+    int interruptionType = [notification.userInfo[AVAudioSessionInterruptionTypeKey] intValue];
+    if (interruptionType == AVAudioSessionInterruptionTypeEnded) {
+        if ([self isRecording]) {
+            [self stop];
+            [self start];
+        }
+    }
+}
+#endif
 
 - (CGFloat)calculateLevel:(AudioBufferList *)ioData andNumberFrames:(UInt32)numberofFrames
 {
@@ -203,13 +205,16 @@ static OSStatus PerformThru(
 
 - (void)configureProperties
 {
+#if TARGET_OS_IOS || TARGET_IPHONE_SIMULATOR
     UInt32 one = 1;
+    
     OPCA(AudioUnitSetProperty(_remoteIOUnit,
-                            kAudioOutputUnitProperty_EnableIO,
-                            kAudioUnitScope_Input,
-                            1,
-                            &one,
-                            sizeof(one)));
+                              kAudioOutputUnitProperty_EnableIO,
+                              kAudioUnitScope_Input,
+                              1,
+                              &one,
+                              sizeof(one)));
+#endif
     
     OPCA(AudioUnitSetProperty(_remoteIOUnit,
                                   kAudioOutputUnitProperty_SetInputCallback,
