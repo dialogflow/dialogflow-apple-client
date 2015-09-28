@@ -687,31 +687,17 @@
                                     <action selector="startListening:" target="XfG-lQ-9wD" id="jiA-ox-hGG"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GKK-lL-0jn">
-                                <rect key="frame" x="14" y="189" width="452" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rxi-e4-Ibc"/>
-                                </constraints>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cde-QE-Har">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="stopListening:" target="XfG-lQ-9wD" id="dXT-iY-Fte"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GKK-lL-0jn" firstAttribute="top" secondItem="uF2-Qb-lZZ" secondAttribute="bottom" constant="12" id="Fyg-ic-3S1"/>
-                            <constraint firstAttribute="trailing" secondItem="GKK-lL-0jn" secondAttribute="trailing" constant="20" id="Q90-SO-AXq"/>
-                            <constraint firstItem="GKK-lL-0jn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Y45-hj-cG8"/>
                             <constraint firstAttribute="trailing" secondItem="uF2-Qb-lZZ" secondAttribute="trailing" constant="20" id="d9N-zg-fa2"/>
                             <constraint firstItem="uF2-Qb-lZZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="nm6-kh-tLs"/>
                             <constraint firstItem="uF2-Qb-lZZ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="oNe-n4-Zca"/>
                         </constraints>
                         <animations/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="uF2-Qb-lZZ" id="rDJ-JK-omu"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

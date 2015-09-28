@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 
+@property(nonatomic, weak) IBOutlet NSButton *button;
 @property(nonatomic, strong) AIVoiceRequest *request;
 
 @end
@@ -24,22 +25,27 @@
 
 - (IBAction)startListening:(id)sender
 {
+    self.button.enabled = NO;
     AIVoiceRequest *request = [[ApiAI sharedApiAI] voiceRequest];
     
+    __weak typeof(self) selfWeak = self;
+    
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
-        NSLog(@"");
+        selfWeak.button.enabled = YES;
+        
+        NSAlert *alert = [[NSAlert alloc] init];
+        
+        alert.informativeText = [NSString stringWithFormat:@"%@", response];
+        [alert setAlertStyle:NSInformationalAlertStyle];
+        [alert runModal];
+        
     } failure:^(AIRequest *request, NSError *error) {
-        NSLog(@"");
+        selfWeak.button.enabled = YES;
     }];
     
     self.request = request;
     
     [[ApiAI sharedApiAI] enqueue:request];
-}
-
-- (IBAction)stopListening:(id)sender
-{
-    [self.request commitVoice];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
