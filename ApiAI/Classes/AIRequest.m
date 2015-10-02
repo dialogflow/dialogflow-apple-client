@@ -24,6 +24,12 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
+#if TARGET_OS_IOS || TARGET_OS_SIMULATOR
+
+#import <UIKit/UIKit.h>
+
+#endif
+
 NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
 
 @interface AIRequest ()
@@ -123,7 +129,12 @@ NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
 - (NSString *)sessionId
 {
     if (!_sessionId) {
-#ifdef TARGET_OS_WATCH
+#if TARGET_OS_IOS || TARGET_OS_SIMULATOR
+        
+        NSString *vendorIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+        _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
+#else
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         if (![userDefaults objectForKey:kUniqueIdentifierKey]) {
             [userDefaults setObject:[[NSUUID UUID] UUIDString] forKey:kUniqueIdentifierKey];
@@ -133,10 +144,6 @@ NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
         NSString *vendorIdentifier = [userDefaults objectForKey:kUniqueIdentifierKey];
         NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
         
-        _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
-#else
-        NSString *vendorIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
         _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
 #endif
     }
