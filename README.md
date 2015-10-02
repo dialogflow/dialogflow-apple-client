@@ -2,6 +2,9 @@ iOS SDK for api.ai
 ==============
 
 [![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
+[![Version](https://img.shields.io/cocoapods/v/ApiAI.svg?style=flat)](http://cocoapods.org/pods/ApiAI)
+[![License](https://img.shields.io/cocoapods/l/ApiAI.svg?style=flat)](http://cocoapods.org/pods/ApiAI)
+[![Platform](https://img.shields.io/cocoapods/p/ApiAI.svg?style=flat)](http://cocoapods.org/pods/ApiAI)
 
 * [Overview](#overview)
 * [Prerequisites](#prerequisites)
