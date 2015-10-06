@@ -24,7 +24,7 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
-#if TARGET_OS_IOS || TARGET_OS_SIMULATOR
+#if TARGET_OS_IOS
 
 #import <UIKit/UIKit.h>
 
@@ -129,8 +129,7 @@ NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
 - (NSString *)sessionId
 {
     if (!_sessionId) {
-#if TARGET_OS_IOS || TARGET_OS_SIMULATOR
-        
+#if TARGET_OS_IOS
         NSString *vendorIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
         NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
         _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
@@ -146,6 +145,10 @@ NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
         
         _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
 #endif
+//        NSInteger e = TARGET_OS_IOS;
+//        NSInteger f = TARGET_IPHONE_SIMULATOR;
+//        NSInteger q = TARGET_OS_WATCH;
+
     }
     
     return _sessionId;

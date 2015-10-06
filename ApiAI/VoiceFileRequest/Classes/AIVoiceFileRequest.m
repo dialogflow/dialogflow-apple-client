@@ -92,7 +92,7 @@
     
     [data appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"qwe.wav\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"Content-Type: audio/wav\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"Content-Type: audio/mp4\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
     self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
     [_streamBuffer open];
