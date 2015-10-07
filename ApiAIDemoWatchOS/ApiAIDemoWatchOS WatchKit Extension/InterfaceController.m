@@ -130,26 +130,30 @@
                                                preset:WKAudioRecorderPresetWideBandSpeech
                                               options:options
                                            completion:^(BOOL didSave, NSError * _Nullable error) {
-                                               ApiAI *apiai = [ApiAI sharedApiAI];
-                                               
-                                               AIVoiceFileRequest *request = [apiai voiceFileRequestWithFileURL:fileUrl];
-                                               
-                                               [request setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
-                                                   NSString *text = response.result.fulfillment.speech;
+                                               if (didSave && !error) {
+                                                   [self showProgress];
                                                    
-                                                   if (![text length]) {
-                                                       text = @"<empty response>";
-                                                   }
+                                                   ApiAI *apiai = [ApiAI sharedApiAI];
                                                    
-                                                   [self.button setTitle:text];
+                                                   AIVoiceFileRequest *request = [apiai voiceFileRequestWithFileURL:fileUrl];
                                                    
-                                                   [self dismissProgress];
-                                               } failure:^(AIRequest *request, NSError *error) {
-                                                   [self.button setTitle:[error localizedDescription]];
-                                                   [self dismissProgress];
-                                               }];
-                                               
-                                               [apiai enqueue:request];
+                                                   [request setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
+                                                       NSString *text = response.result.fulfillment.speech;
+                                                       
+                                                       if (![text length]) {
+                                                           text = @"<empty response>";
+                                                       }
+                                                       
+                                                       [self.button setTitle:text];
+                                                       
+                                                       [self dismissProgress];
+                                                   } failure:^(AIRequest *request, NSError *error) {
+                                                       [self.button setTitle:[error localizedDescription]];
+                                                       [self dismissProgress];
+                                                   }];
+                                                   
+                                                   [apiai enqueue:request];
+                                               }
                                            }];
 }
 

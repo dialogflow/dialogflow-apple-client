@@ -24,6 +24,16 @@
 
 @implementation AIVoiceFileRequest
 
+- (instancetype)initWithDataService:(AIDataService *)dataService
+{
+    self = [super initWithDataService:dataService];
+    if (self) {
+        self.contentType = @"audio/wav";
+    }
+    
+    return self;
+}
+
 - (void)configureHTTPRequest
 {
     self.boundary = [self creteBoundary];
@@ -91,8 +101,11 @@
     [data appendData:jsonData];
     
     [data appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"qwe.wav\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"Content-Type: audio/mp4\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"recording.mp4\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSString *contentType = [NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", self.contentType?:@"audio/wav"];
+    
+    [data appendData:[contentType dataUsingEncoding:NSUTF8StringEncoding]];
     
     self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
     [_streamBuffer open];
@@ -122,15 +135,13 @@
 {
     switch (eventCode) {
         case NSStreamEventHasBytesAvailable: {
-            uint8_t *buff = (uint8_t *)malloc(sizeof(uint8_t) * 1024);
+            uint8_t buffer[1024];
             
-            NSInteger bytesRead = [_inputStream read:buff maxLength:1024];
+            NSInteger bytesRead = [_inputStream read:buffer maxLength:1024];
             
-            NSData *data = [NSData dataWithBytes:buff length:bytesRead];
+            NSData *data = [NSData dataWithBytes:&buffer length:bytesRead];
             
             [_streamBuffer write:data];
-            
-            free(buff);
             break;
         }
         case NSStreamEventEndEncountered: {

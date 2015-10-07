@@ -10,4 +10,6 @@
 
 @interface AIVoiceFileRequest : AIRequest
 
+@property(nonatomic, copy) NSString *contentType; 
+
 @end

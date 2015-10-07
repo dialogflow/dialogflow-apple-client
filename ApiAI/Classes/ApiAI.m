@@ -98,8 +98,21 @@ NSString *const kDefaultVersion = @"20150910";
 #if __has_include("AIVoiceFileRequest.h")
 - (AIVoiceFileRequest *)voiceFileRequestWithFileURL:(NSURL *)fileURL
 {
+    NSString *contentType = @"audio/wav";
+    
+    NSString *fileExtension = [fileURL pathExtension];
+    if (fileExtension) {
+        if ([fileExtension isEqualToString:@"mp4"]) {
+            contentType = @"audio/mp4";
+        }
+    }
+    
     NSInputStream *stream = [[NSInputStream alloc] initWithURL:fileURL];
-    return [self voiceFileRequestWithStream:stream];
+    AIVoiceFileRequest *request = [self voiceFileRequestWithStream:stream];
+    
+    request.contentType = contentType;
+    
+    return request;
 }
 
 - (AIVoiceFileRequest *)voiceFileRequestWithStream:(NSInputStream *)inputStream
