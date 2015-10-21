@@ -28,10 +28,12 @@
 		581AB3B11A245D8300E8A190 /* AIProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AA1A245D8300E8A190 /* AIProgressView.m */; };
 		581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */; };
 		581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */; };
+		58271B601BC6AAF400CF6BE6 /* AIRequestContext.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5862C2D41BAEABE1007C6C4F /* AIRequestContext.h */; };
 		584509B019F4EB6B00A0AE9A /* AIStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* AIStreamBuffer.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
 		5862C2D61BAEABE1007C6C4F /* AIRequestContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862C2D51BAEABE1007C6C4F /* AIRequestContext.m */; settings = {ASSET_TAGS = (); }; };
 		5862E2FE1B6A103B00F6F712 /* AIVoiceFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862E2FD1B6A103B00F6F712 /* AIVoiceFileRequest.m */; };
+		5867737D1BD0F76000E1253D /* speech_d.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5867737C1BD0F76000E1253D /* speech_d.wav */; settings = {ASSET_TAGS = (); }; };
 		5869BCFD1B37E56A000B99B7 /* AINullabilityDefines.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */; };
 		587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */; };
 		587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F1261B0F33790016DE2A /* AIRequestEntity.m */; };
@@ -110,6 +112,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				58271B601BC6AAF400CF6BE6 /* AIRequestContext.h in Copy Files */,
 				5869BCFD1B37E56A000B99B7 /* AINullabilityDefines.h in Copy Files */,
 				589E65771B33FFB40062D868 /* AIRequestEntry.h in Copy Files */,
 				589E65781B33FFB40062D868 /* AIRequestEntity.h in Copy Files */,
@@ -159,6 +162,7 @@
 		5862E2FB1B6A103300F6F712 /* AIVoiceFileRequest_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceFileRequest_Private.h; sourceTree = "<group>"; };
 		5862E2FC1B6A103B00F6F712 /* AIVoiceFileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceFileRequest.h; sourceTree = "<group>"; };
 		5862E2FD1B6A103B00F6F712 /* AIVoiceFileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceFileRequest.m; sourceTree = "<group>"; };
+		5867737C1BD0F76000E1253D /* speech_d.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = speech_d.wav; sourceTree = "<group>"; };
 		5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AINullabilityDefines.h; sourceTree = "<group>"; };
 		588D23831AFB3C95008289F1 /* AIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponse.h; sourceTree = "<group>"; };
 		588D23841AFB3C95008289F1 /* AIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponse.m; sourceTree = "<group>"; };
@@ -432,6 +436,7 @@
 		58AA07B11B394A5300A259D9 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				5867737C1BD0F76000E1253D /* speech_d.wav */,
 				58AA07B41B395A6B00A259D9 /* sound2.wav */,
 				58AA07B21B394A5300A259D9 /* sound1.wav */,
 			);
@@ -736,6 +741,7 @@
 				58AA07B51B395A6B00A259D9 /* sound2.wav in Resources */,
 				58AA07B31B394A5300A259D9 /* sound1.wav in Resources */,
 				588D23AB1AFB3D21008289F1 /* response.json in Resources */,
+				5867737D1BD0F76000E1253D /* speech_d.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +944,7 @@
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ApiAI",
@@ -959,6 +966,7 @@
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ApiAI",

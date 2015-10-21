@@ -32,9 +32,12 @@
     
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     
-    configuration.clientAccessToken = @"95a1bad594414951b1f42dfae31d8176";
+    configuration.clientAccessToken = @"09604c7f91ce4cd8a4ede55eb5340b9d";
     configuration.subscriptionKey = @"4c91a8e5-275f-4bf0-8f94-befa78ef92cd";
-    configuration.baseURL = [NSURL URLWithString:@"https://dev.api.ai/api/"];
+    
+//    configuration.clientAccessToken = @"95a1bad594414951b1f42dfae31d8176";
+//    configuration.subscriptionKey = @"4c91a8e5-275f-4bf0-8f94-befa78ef92cd";
+//    configuration.baseURL = [NSURL URLWithString:@"https://dev.api.ai/api/"];
     
     apiai.configuration = configuration;
 }

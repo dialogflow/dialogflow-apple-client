@@ -1,0 +1,20 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+use_frameworks!
+
+target 'ApiAIDemoWatchOSSwift' do
+    platform :ios, '7.0'
+    pod 'ApiAI', :path => '../'
+end
+
+target 'ApiAIDemoWatchOSSwift WatchKit App' do
+
+end
+
+target 'ApiAIDemoWatchOSSwift WatchKit Extension' do
+    platform :watchos, '2.0'
+
+    pod 'ApiAI', :path => '../'
+end
+

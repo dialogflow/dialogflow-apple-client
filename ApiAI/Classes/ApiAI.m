@@ -61,7 +61,7 @@ NSString *const kDefaultVersion = @"20150910";
         request = [[AITextRequest alloc] initWithDataService:_dataService];
 #endif
     } else {
-#if __has_include("AIVoiceRequest.h")
+#if AI_SUPPORT_VOICE_REQUEST
         request = [[AIVoiceRequest alloc] initWithDataService:_dataService];
 #endif
     }
@@ -73,7 +73,7 @@ NSString *const kDefaultVersion = @"20150910";
     return request;
 }
 
-#if __has_include("AIVoiceRequest.h")
+#if AI_SUPPORT_VOICE_REQUEST
 - (AIVoiceRequest *)voiceRequest
 {
     AIVoiceRequest *request = [[AIVoiceRequest alloc] initWithDataService:_dataService];

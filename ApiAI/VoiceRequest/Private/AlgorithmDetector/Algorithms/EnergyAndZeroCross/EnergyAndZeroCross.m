@@ -120,12 +120,16 @@
             lastsign = sign;
         }
     }
+    
+//    NSLog(@"%f", energy);
+//    printf("%f\t%.20f\n", time * 1000.0, energy);
     frameNumber += 1;
     
     BOOL result = NO;
     if (frameNumber < noiseFrames) {
         noiseEnergy = noiseEnergy + energy / (double)noiseFrames;
     } else {
+//        NSLog(@"%lf", noiseEnergy);
         if (czCount >= minCZ && czCount <= maxCZ) {
 //            if (energy > MAX(noiseEnergy, 0.0008) * energyFactor) {
             if (energy > MAX(noiseEnergy, 0.001818) * energyFactor) {

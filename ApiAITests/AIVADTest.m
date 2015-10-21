@@ -78,6 +78,13 @@
             [frames addObject:@(((double)value) / (double)SHRT_MAX)];
         }
         
+        if (count == 20) {
+            for (int i = 0; i < 160; i++) {
+                printf("%d\n", int16Buffer[i]);
+            }
+            NSLog(@"");
+        }
+    
         offset += len;
         
         result = [_energyAndZeroCross processFrame:frames];
@@ -95,7 +102,7 @@
 }
 
 - (void)testExample {
-    AIAlgorithmDetectorResult result = [self testVoiceSoundWithName:@"sound2"];
+    AIAlgorithmDetectorResult result = [self testVoiceSoundWithName:@"speech_d"];
     NSLog(@"");
 }
 

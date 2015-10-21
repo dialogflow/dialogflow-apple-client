@@ -112,11 +112,6 @@
 
 - (void)sendVoiceRequest
 {
-    if ([WCSession isSupported]) {
-        [WCSession defaultSession].delegate = self;
-        [[WCSession defaultSession] activateSession];
-    }
-    
     NSArray *filePaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                              NSUserDomainMask,YES);
     NSString *path = [[filePaths firstObject] stringByAppendingPathComponent:@"recording.mp4"];
@@ -155,11 +150,6 @@
                                                    [apiai enqueue:request];
                                                }
                                            }];
-}
-
-- (void)session:(nonnull WCSession *)session didFinishFileTransfer:(nonnull WCSessionFileTransfer *)fileTransfer error:(nullable NSError *)error
-{
-    NSLog(@"");
 }
 
 - (void)showProgress

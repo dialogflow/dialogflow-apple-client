@@ -38,6 +38,12 @@
 #import "AIVoiceFileRequest.h"
 #endif
 
+#ifdef TARGET_OS_IOS
+    #define AI_SUPPORT_VOICE_REQUEST TARGET_OS_IOS
+#else
+    #define AI_SUPPORT_VOICE_REQUEST 0
+#endif
+
 /*!
  
  @enum AIRequestType enum
@@ -119,7 +125,8 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
  */
 - (AIRequest *)requestWithType:(AIRequestType)requestType DEPRECATED_ATTRIBUTE;
 
-#if __has_include("AIVoiceRequest.h")
+//#if __has_include("AIVoiceRequest.h")
+#if AI_SUPPORT_VOICE_REQUEST
 - (AIVoiceRequest *)voiceRequest;
 #endif
 
