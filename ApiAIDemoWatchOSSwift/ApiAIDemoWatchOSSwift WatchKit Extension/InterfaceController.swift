@@ -65,6 +65,8 @@ class InterfaceController: WKInterfaceController {
                     return
                 }
                 
+                self.showProgress()
+                
                 let api = ApiAI.sharedApiAI()
                 
                 let request = api.textRequest()
@@ -72,16 +74,72 @@ class InterfaceController: WKInterfaceController {
                 
                 request.setMappedCompletionBlockSuccess(
                     { (request, response) -> Void in
+                        let response = response as! AIResponse
                         
+                        var speech = response.result.fulfillment.speech
+                        
+                        if (speech.characters.count == 0) {
+                            speech = "<empty speech>"
+                        }
+                        
+                        self.button.setTitle(speech)
+                        
+                        self.dismissProgress()
                     }, failure: { (request, error) -> Void in
-                        
+                        self.dismissProgress()
                     }
                 )
+                
+                api.enqueue(request)
         }
     }
     
     private func voiceRequest() {
-    
+        let filePaths = NSSearchPathForDirectoriesInDomains(
+            NSSearchPathDirectory.DocumentDirectory,
+            NSSearchPathDomainMask.UserDomainMask,
+            true)
+        
+        let documentDir = filePaths.first!
+        let recSoundURL = documentDir + "/record.m4a"
+        let URL = NSURL.fileURLWithPath(recSoundURL)
+        
+        let options = [
+            WKAudioRecorderControllerOptionsMaximumDurationKey: 10.0
+        ]
+        
+        self.presentAudioRecorderControllerWithOutputURL(
+            URL,
+            preset: .WideBandSpeech,
+            options: options) { (didSave, error) -> Void in
+                if error == .None {
+                    self.showProgress()
+                    
+                    let api = ApiAI.sharedApiAI()
+                    
+                    let request = api.voiceFileRequestWithFileURL(URL)
+                
+                    request.setMappedCompletionBlockSuccess(
+                        { (request, response) -> Void in
+                            let response = response as! AIResponse
+                            
+                            var speech = response.result.fulfillment.speech
+                            
+                            if (speech.characters.count == 0) {
+                                speech = "<empty speech>"
+                            }
+                            
+                            self.button.setTitle(speech)
+                            
+                            self.dismissProgress()
+                        
+                        }, failure: { (request, error) -> Void in
+                            self.dismissProgress()
+                    })
+                    
+                    api.enqueue(request)
+                }
+        }
     }
     
     private func showProgress() {

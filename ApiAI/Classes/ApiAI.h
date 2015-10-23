@@ -32,16 +32,18 @@
 
 #if __has_include("AIVoiceRequest.h")
     #import "AIVoiceRequest.h"
+
+    #ifdef TARGET_OS_IOS
+        #define AI_SUPPORT_VOICE_REQUEST TARGET_OS_IOS
+    #else
+        #define AI_SUPPORT_VOICE_REQUEST 0
+    #endif
+#else
+    #define AI_SUPPORT_VOICE_REQUEST 0
 #endif
 
 #if __has_include("AIVoiceFileRequest.h")
 #import "AIVoiceFileRequest.h"
-#endif
-
-#ifdef TARGET_OS_IOS
-    #define AI_SUPPORT_VOICE_REQUEST TARGET_OS_IOS
-#else
-    #define AI_SUPPORT_VOICE_REQUEST 0
 #endif
 
 /*!

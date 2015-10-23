@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="ApiAIDemoWatchOSSwift_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="1" height="50" alignment="center" verticalAlignment="center" hidden="YES" image="spinner" contentMode="scaleAspectFit" animationDuration="1" id="eX6-ee-QUS">
+                            <color key="tintColor" red="0.96470588239999999" green="0.2901960784" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Press me" id="mmy-DQ-5DD">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="doAction:" destination="AgC-eL-Hgc" id="jHd-Lr-kjF"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="0.1647058824" green="0.56862745100000001" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="button" destination="mmy-DQ-5DD" id="tSf-sN-CIz"/>
+                        <outlet property="progressImage" destination="eX6-ee-QUS" id="xmn-cX-W8u"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>
