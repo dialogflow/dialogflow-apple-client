@@ -74,7 +74,7 @@
  
     NSString *query = @"Hello";
     
-    AITextRequest *textRequest = (AITextRequest *)[_apiai requestWithType:AIRequestTypeText];
+    AITextRequest *textRequest = [_apiai textRequest];
     
     textRequest.query = query;
     
@@ -108,7 +108,7 @@
         
         NSString *query = @"What is your name?";
         
-        AITextRequest *textRequest = (AITextRequest *)[_apiai requestWithType:AIRequestTypeText];
+        AITextRequest *textRequest = [_apiai textRequest];
         
         textRequest.query = query;
         
@@ -147,7 +147,7 @@
     {
         XCTestExpectation *expectation = [self expectationWithDescription:@"Handle response"];
         
-        AITextRequest *textRequest = (AITextRequest *)[_apiai requestWithType:AIRequestTypeText];
+        AITextRequest *textRequest = [_apiai textRequest];
         
         textRequest.resetContexts = NO;
         
@@ -182,7 +182,7 @@
     {
         XCTestExpectation *expectation = [self expectationWithDescription:@"Handle response"];
         
-        AITextRequest *textRequest = (AITextRequest *)[_apiai requestWithType:AIRequestTypeText];
+        AITextRequest *textRequest = [_apiai textRequest];
         
         textRequest.resetContexts = YES;
         
@@ -213,7 +213,7 @@
     
     NSString *query = @"hi nori";
     
-    AITextRequest *textRequest = (AITextRequest *)[_apiai requestWithType:AIRequestTypeText];
+    AITextRequest *textRequest = [_apiai textRequest];
     
     textRequest.query = query;
     
@@ -406,7 +406,7 @@
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Handle response"];
     
-    AITextRequest *textRequest = (AITextRequest *)[_apiai requestWithType:AIRequestTypeText];
+    AITextRequest *textRequest = [_apiai textRequest];
     
     textRequest.resetContexts = NO;
     
