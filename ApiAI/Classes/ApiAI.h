@@ -34,7 +34,7 @@
     #import "AIVoiceRequest.h"
 
     #ifdef TARGET_OS_IOS
-        #define AI_SUPPORT_VOICE_REQUEST TARGET_OS_IOS
+        #define AI_SUPPORT_VOICE_REQUEST (TARGET_OS_IOS || TARGET_OS_MAC)
     #else
         #define AI_SUPPORT_VOICE_REQUEST 0
     #endif
