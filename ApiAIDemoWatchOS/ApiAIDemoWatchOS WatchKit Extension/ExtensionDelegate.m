@@ -35,10 +35,6 @@
     configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";
     configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY";
     
-//    configuration.clientAccessToken = @"95a1bad594414951b1f42dfae31d8176";
-//    configuration.subscriptionKey = @"4c91a8e5-275f-4bf0-8f94-befa78ef92cd";
-//    configuration.baseURL = [NSURL URLWithString:@"https://dev.api.ai/api/"];
-    
     apiai.configuration = configuration;
 }
 
