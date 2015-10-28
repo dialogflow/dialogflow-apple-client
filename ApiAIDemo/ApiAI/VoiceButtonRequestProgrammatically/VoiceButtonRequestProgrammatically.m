@@ -8,7 +8,7 @@
 
 #import "VoiceButtonRequestProgrammatically.h"
 
-#import <ApiAI/UIKit/AIVoiceRequestButton.h>
+#import <ApiAI/AIVoiceRequestButton.h>
 
 @implementation VoiceButtonRequestProgrammatically
 
@@ -25,8 +25,6 @@
     [button setFailureCallback:^(NSError *error) {
         NSLog(@"%@", error);
     }];
-    
-//    [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self.view addSubview:button];
     
@@ -47,20 +45,6 @@
                                   attribute:NSLayoutAttributeCenterY
                                  multiplier:1.f
                                    constant:0.f]];
-    
-    
-    
-//    [self.view addConstraints:
-//     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[button(72)]"
-//                                             options:0
-//                                             metrics:nil
-//                                               views:NSDictionaryOfVariableBindings(button)]];
-//    
-//    [self.view addConstraints:
-//     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[button(72)]"
-//                                             options:0
-//                                             metrics:nil
-//                                               views:NSDictionaryOfVariableBindings(button)]];
     
     [self.view setNeedsLayout];
 }

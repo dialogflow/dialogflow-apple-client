@@ -27,11 +27,7 @@
 
 - (NSDictionary *)requestBodyDictionary
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:self.timeZone];
-    [dateFormatter setDateFormat:@"Z"];
-    
-    NSString *timeZoneString = [dateFormatter stringFromDate:[NSDate date]];
+    NSString *timeZoneString = self.timeZone ? self.timeZone.name : [NSTimeZone localTimeZone].name;
     
     NSMutableDictionary *parameters = [@{
                                          @"lang": self.lang,

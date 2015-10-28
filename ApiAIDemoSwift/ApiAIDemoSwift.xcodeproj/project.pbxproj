@@ -197,6 +197,7 @@
 				5875122C1AC275280053EAA9 /* Frameworks */,
 				5875122D1AC275280053EAA9 /* Resources */,
 				D4D65FEFF1AB44EF7013F7FC /* Copy Pods Resources */,
+				E8D6147269FA043183CF515B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,6 +313,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoSwift/Pods-ApiAIDemoSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8D6147269FA043183CF515B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoSwift/Pods-ApiAIDemoSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

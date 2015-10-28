@@ -226,6 +226,7 @@
 				58D697131B67A46C00693710 /* Resources */,
 				58D697521B67A46D00693710 /* Embed Watch Content */,
 				6947B8C8EF254336A57923E3 /* Copy Pods Resources */,
+				3BDAB0B0D63A98109809FE75 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +264,7 @@
 				58D697381B67A46D00693710 /* Frameworks */,
 				58D697391B67A46D00693710 /* Resources */,
 				A87358770EE2A3F9D14FCFB1 /* Copy Pods Resources */,
+				9DE4A073CA250FCD13F36643 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,6 +346,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3BDAB0B0D63A98109809FE75 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6947B8C8EF254336A57923E3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +389,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9DE4A073CA250FCD13F36643 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A87358770EE2A3F9D14FCFB1 /* Copy Pods Resources */ = {

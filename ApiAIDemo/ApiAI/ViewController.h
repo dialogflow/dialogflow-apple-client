@@ -21,7 +21,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <ApiAI/UIKit/AIVoiceRequestButton.h>
+#import <ApiAI/AIVoiceRequestButton.h>
 
 @interface ViewController : UIViewController
 

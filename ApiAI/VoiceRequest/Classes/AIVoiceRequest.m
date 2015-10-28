@@ -125,14 +125,9 @@
 
 - (void)configureHTTPRequest
 {
-    
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:self.timeZone];
-    [dateFormatter setDateFormat:@"Z"];
-    
-    NSString *timeZoneString = [dateFormatter stringFromDate:[NSDate date]];
+    NSString *timeZoneString = self.timeZone ? self.timeZone.name : [NSTimeZone localTimeZone].name;
     
     NSMutableDictionary *parameters = [@{
                                          @"lang": self.lang,

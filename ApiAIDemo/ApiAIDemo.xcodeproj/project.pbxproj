@@ -245,6 +245,7 @@
 				5891DFE11941E9210043140B /* Frameworks */,
 				5891DFE21941E9210043140B /* Resources */,
 				297ABF95E4914694B2C81872 /* Copy Pods Resources */,
+				42371F2A6483D73A8E6EAAA6 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,7 +262,7 @@
 		5891DFDC1941E9210043140B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Kuragin Dmitriy";
 			};
 			buildConfigurationList = 5891DFDF1941E9210043140B /* Build configuration list for PBXProject "ApiAIDemo" */;
@@ -312,6 +313,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42371F2A6483D73A8E6EAAA6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B3B17A40B5C746408DA688F3 /* Check Pods Manifest.lock */ = {
@@ -395,6 +411,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -462,6 +479,7 @@
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.speaktoit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ApiAIDemo;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -483,6 +501,7 @@
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.speaktoit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ApiAIDemo;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

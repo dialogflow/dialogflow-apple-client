@@ -64,7 +64,8 @@
             ],
 
             "ios": {
-                "frameworks": ["AudioToolbox"]
+                "frameworks": ["AudioToolbox"],
+                "libraries": ["c++"]
             },
 
             "requires_arc": true,
@@ -75,10 +76,6 @@
 
             "platforms": {
                 "ios": "7.0"
-            },
-
-            "xcconfig": {
-                "OTHER_LDFLAGS": "-weak_library /usr/lib/libc++.dylib"
             }
         },
         {
