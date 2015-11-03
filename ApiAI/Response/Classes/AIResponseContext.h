@@ -41,4 +41,9 @@
  */
 @property(nonatomic, copy, readonly) NSDictionary *parameters;
 
+/**
+ Parameters for the context. Int object. Nullable.
+ */
+@property(nonatomic, copy, readonly) NSNumber *lifespan;
+
 @end

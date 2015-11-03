@@ -43,6 +43,12 @@
             
             _parameters = [parameters copy];
         }
+        
+        NSNumber *lifespan = dictionary[@"lifespan"];
+        
+        if (lifespan && ! [lifespan isKindOfClass:[NSNull class]]) {
+            _lifespan = [lifespan copy];
+        }
     }
     
     return self;

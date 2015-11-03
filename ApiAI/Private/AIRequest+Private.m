@@ -90,6 +90,10 @@
             context[@"parameters"] = obj.parameters;
         }
         
+        if (obj.lifespan) {
+            context[@"lifespan"] = obj.lifespan;
+        }
+        
         [contexts addObject:context];
     }];
     
