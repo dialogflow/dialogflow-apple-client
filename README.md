@@ -79,7 +79,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   ```Objective-C
   ...
   // Request using text (assumes that speech recognition / ASR is done using a third-party library, e.g. AT&T)
-  AITextRequest *request = (AITextRequest *)[_apiAI requestWithType:AIRequestTypeText];
+  AITextRequest *request = [apiai textRequest];
   request.query = @[@"hello"];
   [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
       // Handle success ...
@@ -94,7 +94,7 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
 ### 5. Or perform request using voice:
   ```Objective-C
     // Request using voice
-    AIVoiceRequest *request = (AIVoiceRequest *)[_apiAI requestWithType:AIRequestTypeVoice];
+    AIVoiceRequest *request = [apiai voiceRequest];
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
         // Handle success ...
