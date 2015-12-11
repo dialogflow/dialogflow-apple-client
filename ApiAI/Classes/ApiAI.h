@@ -34,10 +34,11 @@
 #if __has_include("AIVoiceRequest.h")
     #import "AIVoiceRequest.h"
 
-    #ifdef TARGET_OS_IOS
+    #if defined(TARGET_OS_IOS) || defined(TARGET_OS_MAC)
         #define AI_SUPPORT_VOICE_REQUEST (TARGET_OS_IOS || TARGET_OS_MAC)
     #else
-        #define AI_SUPPORT_VOICE_REQUEST 0
+        //Enable support voice reuqest for XCode older than 7.x version
+        #define AI_SUPPORT_VOICE_REQUEST 1
     #endif
 #else
     #define AI_SUPPORT_VOICE_REQUEST 0

@@ -161,7 +161,7 @@
 
 - (NSString *)creteBoundary
 {
-    return [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];;
+    return [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
 }
 
 + (void)createBoundInputStream:(NSInputStream **)inputStreamPtr outputStream:(NSOutputStream **)outputStreamPtr bufferSize:(NSUInteger)bufferSize
