@@ -5,10 +5,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'ApiAIDemoSwift' do
 
-pod 'ApiAI/Core', :path => '../'
-pod 'ApiAI/VoiceRequest', :path => '../'
-pod 'ApiAI/UIKit', :path => '../'
-pod 'ApiAI/ResponseMapping', :path => '../'
+pod 'ApiAI/Core' #, :path => '../'
+pod 'ApiAI/VoiceRequest' #, :path => '../'
+pod 'ApiAI/UIKit' #, :path => '../'
+pod 'ApiAI/ResponseMapping' #, :path => '../'
 pod 'MBProgressHUD'
 
 end

@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'ApiAIDemoWatchOSSwift' do
     platform :ios, '7.0'
-    pod 'ApiAI', :path => '../'
+    pod 'ApiAI' #, :path => '../'
 end
 
 target 'ApiAIDemoWatchOSSwift WatchKit App' do
@@ -15,6 +15,6 @@ end
 target 'ApiAIDemoWatchOSSwift WatchKit Extension' do
     platform :watchos, '2.0'
 
-    pod 'ApiAI', :path => '../'
+    pod 'ApiAI' #, :path => '../'
 end
 

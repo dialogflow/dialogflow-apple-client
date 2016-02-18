@@ -3,10 +3,10 @@
 
 target 'ApiAIMacOSDemo' do
 
-pod 'ApiAI/Core', :path => '../'
-pod 'ApiAI/VoiceRequest', :path => '../'
-pod 'ApiAI/ResponseMapping', :path => '../'
-pod 'ApiAI/VoiceFileRequest', :path => '../'
+pod 'ApiAI/Core' #, :path => '../'
+pod 'ApiAI/VoiceRequest' #, :path => '../'
+pod 'ApiAI/ResponseMapping' #, :path => '../'
+pod 'ApiAI/VoiceFileRequest' #, :path => '../'
 
 end
 
