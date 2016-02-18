@@ -30,7 +30,7 @@
 - (instancetype)init __unavailable;
 - (instancetype)initWithConfiguration:(id <AIConfiguration>)configuration;
 
-- (void)enqueueRequest:(AIRequest *)request;
-- (void)dequeueRequest:(AIRequest *)request;
+- (void)enqueueRequest:(NSOperation<AIRequest> *)request;
+- (void)dequeueRequest:(NSOperation<AIRequest> *)request;
 
 @end

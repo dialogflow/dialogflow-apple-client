@@ -45,12 +45,12 @@
     return self;
 }
 
-- (void)enqueueRequest:(AIRequest *)request
+- (void)enqueueRequest:(NSOperation<AIRequest> *)request
 {
     [_queue addOperation:request];
 }
 
-- (void)dequeueRequest:(AIRequest *)request
+- (void)dequeueRequest:(NSOperation<AIRequest> *)request
 {
     [request cancel];
 }

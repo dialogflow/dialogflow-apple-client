@@ -121,7 +121,9 @@
                                  ],
 
             "ios": {
-                "frameworks": []
+                "frameworks": [
+                    "AVFoundation"
+                ]
             },
 
             "requires_arc": true,

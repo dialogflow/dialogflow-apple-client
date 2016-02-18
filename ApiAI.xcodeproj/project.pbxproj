@@ -92,6 +92,8 @@
 		58F060581A8CB3D7002615DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
 		58F0605A1A8CB3DD002615DF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F060591A8CB3DD002615DF /* MobileCoreServices.framework */; };
 		58F0605C1A8CB3E5002615DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */; };
+		58FF3A2C1C43BD240038BD9D /* AIUserEntitiesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF3A291C43BD240038BD9D /* AIUserEntitiesRequest.m */; };
+		58FF3A2D1C43BD240038BD9D /* AIUserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF3A2B1C43BD240038BD9D /* AIUserEntity.m */; };
 		EF3BAD29E983494A8423B6A2 /* libPods-ApiAI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD80C016B73942D79FF2B0CD /* libPods-ApiAI.a */; };
 /* End PBXBuildFile section */
 
@@ -246,6 +248,11 @@
 		58F0604D1A8CB366002615DF /* ApiAITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiAITests.m; sourceTree = "<group>"; };
 		58F060591A8CB3DD002615DF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		58FF3A281C43BD240038BD9D /* AIUserEntitiesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserEntitiesRequest.h; sourceTree = "<group>"; };
+		58FF3A291C43BD240038BD9D /* AIUserEntitiesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserEntitiesRequest.m; sourceTree = "<group>"; };
+		58FF3A2A1C43BD240038BD9D /* AIUserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserEntity.h; sourceTree = "<group>"; };
+		58FF3A2B1C43BD240038BD9D /* AIUserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserEntity.m; sourceTree = "<group>"; };
+		58FF3A2E1C43BD410038BD9D /* AIUserEntity_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserEntity_Private.h; sourceTree = "<group>"; };
 		59DD4E7E81B2CEC27DF57D5B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3C2C9A39E25605C26E7EFC /* Pods-ApiAI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAI.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAI/Pods-ApiAI.release.xcconfig"; sourceTree = "<group>"; };
 		C6FA9A492FC4834AFAEB5D93 /* Pods-ApiAITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAITests/Pods-ApiAITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -446,6 +453,7 @@
 		58C2A83019BEE0E000632C2F /* ApiAI */ = {
 			isa = PBXGroup;
 			children = (
+				58FF3A1F1C43BB210038BD9D /* UserEntities */,
 				58D697561B67AC3E00693710 /* VoiceFileRequest */,
 				58D696E01B679D0300693710 /* VoiceRequest */,
 				588D23811AFB3C95008289F1 /* Response */,
@@ -648,6 +656,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		58FF3A1F1C43BB210038BD9D /* UserEntities */ = {
+			isa = PBXGroup;
+			children = (
+				58FF3A271C43BD240038BD9D /* Classes */,
+				58FF3A261C43BD170038BD9D /* Private */,
+			);
+			path = UserEntities;
+			sourceTree = "<group>";
+		};
+		58FF3A261C43BD170038BD9D /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				58FF3A2E1C43BD410038BD9D /* AIUserEntity_Private.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		58FF3A271C43BD240038BD9D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				58FF3A281C43BD240038BD9D /* AIUserEntitiesRequest.h */,
+				58FF3A291C43BD240038BD9D /* AIUserEntitiesRequest.m */,
+				58FF3A2A1C43BD240038BD9D /* AIUserEntity.h */,
+				58FF3A2B1C43BD240038BD9D /* AIUserEntity.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		C27C74297216DCB696DD3623 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,6 +836,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D697051B679D0300693710 /* AIMeterTable.m in Sources */,
+				58FF3A2C1C43BD240038BD9D /* AIUserEntitiesRequest.m in Sources */,
 				58D697031B679D0300693710 /* AIRecordDetector.m in Sources */,
 				5862E2FE1B6A103B00F6F712 /* AIVoiceFileRequest.m in Sources */,
 				58D697061B679D0300693710 /* AISoundRecorder.m in Sources */,
@@ -814,6 +851,7 @@
 				588D23A11AFB3C95008289F1 /* AIDatePeriodFormatter.m in Sources */,
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
+				58FF3A2D1C43BD240038BD9D /* AIUserEntity.m in Sources */,
 				5801F12B1B0F3E250016DE2A /* AIRequestEntry.m in Sources */,
 				588D23B21AFB4059008289F1 /* AIResponseContext.m in Sources */,
 				588D239F1AFB3C95008289F1 /* AIResponseResult.m in Sources */,

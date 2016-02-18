@@ -156,7 +156,7 @@ NSString *const kDefaultVersion = @"20150910";
     _dataService = dataService;
 }
 
-- (void)enqueue:(AIRequest *)request
+- (void)enqueue:(NSOperation<AIRequest> *)request
 {
     [_dataService enqueueRequest:request];
 }
