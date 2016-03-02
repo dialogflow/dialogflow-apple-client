@@ -45,7 +45,11 @@
 #endif
 
 #if __has_include("AIVoiceFileRequest.h")
-#import "AIVoiceFileRequest.h"
+    #import "AIVoiceFileRequest.h"
+#endif
+
+#if __has_include("AIUserEntitiesRequest.h")
+    #import "AIUserEntitiesRequest.h"
 #endif
 
 /*!
@@ -137,6 +141,10 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 
 #if __has_include("AITextRequest.h")
 - (AITextRequest *)textRequest;
+#endif
+
+#if __has_include("AIUserEntitiesRequest.h")
+- (AIUserEntitiesRequest *)userEntitiesRequest;
 #endif
 
 

@@ -6,13 +6,13 @@
 //  Copyright © 2015 Kuragin Dmitriy. All rights reserved.
 //
 
-#import "AIRequest+Private.h"
+#import "AIQueryRequest+Private.h"
 #import "AIConfiguration.h"
 #import "AIDataService_Private.h"
 #import "AIRequestEntity_Private.h"
 #import "AINullabilityDefines.h"
 
-@implementation AIRequest (Private)
+@implementation AIQueryRequest (Private)
 
 - (NSDictionary *)defaultHeaders
 {

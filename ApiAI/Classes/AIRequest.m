@@ -21,10 +21,8 @@
 
 #import "AIRequest.h"
 #import "AIDataService.h"
-
-#import <CommonCrypto/CommonDigest.h>
-
-NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
+#import "AISessionIdentifierStorage.h"
+#import "AIRequest_Private.h"
 
 @interface AIRequest ()
 
@@ -46,21 +44,6 @@ NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
     }
     
     return self;
-}
-
-- (void)setContexts:(NSArray *)contexts
-{
-    _contexts = [contexts copy];
-    
-    NSMutableArray AI_GENERICS_1(AIRequestContext *)  *requestContexts = [NSMutableArray array];
-    
-    [contexts enumerateObjectsUsingBlock:^(id  __AI_NONNULL obj, NSUInteger idx, BOOL * __AI_NONNULL stop) {
-        AIRequestContext *requestContext = [[AIRequestContext alloc] initWithName:obj
-                                                                    andParameters:nil];
-        [requestContexts addObject:requestContext];
-    }];
-    
-    self.requestContexts = requestContexts;
 }
 
 - (void)start
@@ -118,44 +101,6 @@ NSString *const kUniqueIdentifierKey = @"kUniqueIdentifierKey";
     self.finished = YES;
     
     [self didChangeValueForKey:@"isFinished"];
-}
-
-- (NSString *)sessionId
-{
-    if (!_sessionId) {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        if (![userDefaults objectForKey:kUniqueIdentifierKey]) {
-            [userDefaults setObject:[[NSUUID UUID] UUIDString] forKey:kUniqueIdentifierKey];
-            [userDefaults synchronize];
-        }
-        
-        NSString *vendorIdentifier = [userDefaults objectForKey:kUniqueIdentifierKey];
-        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-        
-        _sessionId = [self md5FromString:[NSString stringWithFormat:@"%@:%@", vendorIdentifier, bundleIdentifier]];
-    }
-    
-    return _sessionId;
-}
-
-- (NSTimeZone *)timeZone
-{
-    if (!_timeZone) {
-        _timeZone = [NSTimeZone localTimeZone];
-    }
-    
-    return _timeZone;
-}
-
-- (NSString *)md5FromString:(NSString *)string
-{
-    const char *concat_str = [string UTF8String];
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(concat_str, (CC_LONG)strlen(concat_str), result);
-    NSMutableString *hash = [NSMutableString string];
-    for (int i = 0; i < 16; i++)
-        [hash appendFormat:@"%02X", result[i]];
-    return [hash lowercaseString];
 }
 
 - (void)cancel

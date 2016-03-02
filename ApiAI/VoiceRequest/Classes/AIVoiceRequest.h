@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations under the License.
  *
  ***********************************************************************************************************************/
-#import "AIRequest.h"
+#import "AIQueryRequest.h"
 
 /*!
  * Sound level handler definition for AIVoiceRequest.
@@ -42,7 +42,7 @@ typedef void(^SoundRecordBeginBlock)(AIRequest *request);
  */
 typedef void(^SoundRecordEndBlock)(AIRequest *request);
 
-@interface AIVoiceRequest : AIRequest
+@interface AIVoiceRequest : AIQueryRequest
 
 /*!
  

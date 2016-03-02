@@ -8,6 +8,7 @@
 
 #import "AIUserEntity.h"
 #import "AIUserEntity_Private.h"
+#import "AISessionIdentifierStorage.h"
 
 @implementation AIUserEntity
 
@@ -18,6 +19,7 @@
     self = [super init];
 
     if (self) {
+        _sessionId = [AISessionIdentifierStorage defaulSessionIdentifier];
         _name = name;
         _entries = entries;
         _extend = extend;

@@ -19,9 +19,9 @@
  *
  ***********************************************************************************************************************/
 
-#import "AIRequest.h"
+#import "AIQueryRequest.h"
 
-@interface AITextRequest : AIRequest
+@interface AITextRequest : AIQueryRequest
 
 /*!
  

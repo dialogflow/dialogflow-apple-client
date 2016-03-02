@@ -6,9 +6,9 @@
 //  Copyright © 2015 Kuragin Dmitriy. All rights reserved.
 //
 
-#import "AIRequest.h"
+#import "AIQueryRequest.h"
 
-@interface AIVoiceFileRequest : AIRequest
+@interface AIVoiceFileRequest : AIQueryRequest
 
 @property(nonatomic, copy) NSString *contentType; 
 

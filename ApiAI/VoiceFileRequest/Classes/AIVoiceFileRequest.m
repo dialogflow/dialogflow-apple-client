@@ -9,9 +9,10 @@
 #import "AIVoiceFileRequest.h"
 #import "AIVoiceFileRequest_Private.h"
 #import "AIStreamBuffer.h"
-#import "AIRequest+Private.h"
+#import "AIQueryRequest+Private.h"
 #import "AIDataService_Private.h"
 #import "AIResponseConstants.h"
+#import "AIRequest_Private.h"
 
 @interface AIVoiceFileRequest () <NSStreamDelegate>
 

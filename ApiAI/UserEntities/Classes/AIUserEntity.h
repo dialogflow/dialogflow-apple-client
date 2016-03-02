@@ -13,6 +13,7 @@
 
 @interface AIUserEntity : NSObject
 
+@property(nonatomic, copy,                AI_NONNULL) NSString *sessionId;
 @property(nonatomic, copy,      readonly, AI_NONNULL) NSString *name;
 @property(nonatomic, copy,      readonly, AI_NONNULL) NSArray AI_GENERICS_1(AIRequestEntry *) *entries;
 @property(nonatomic, assign,    readonly            ) BOOL extend;

@@ -26,7 +26,8 @@
 #import "AIDataService_Private.h"
 #import "AIConfiguration.h"
 #import "AIRequestEntity_Private.h"
-#import "AIRequest+Private.h"
+#import "AIQueryRequest+Private.h"
+#import "AIRequest_Private.h"
 
 #import "AIResponseConstants.h"
 

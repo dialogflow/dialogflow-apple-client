@@ -1,6 +1,6 @@
 {
     "name": "ApiAI",
-    "version": "0.4.5",
+    "version": "0.4.6",
     "license": "MIT",
     "summary": "The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI natural language processing API on iOS devices.",
     "homepage": "http://api.ai/",
@@ -10,7 +10,7 @@
     
     "source": {
         "git": "https://github.com/api-ai/api-ai-ios-sdk.git",
-        "tag": "v0.4.5"
+        "tag": "v0.4.6"
     },
 
     "requires_arc": true,
@@ -192,10 +192,33 @@
             "requires_arc": true,
 
             "dependencies": {
-                "ApiAI/Core": [
-                    "~> 1.1.0"
-                ]
+                "ApiAI/Core": []
             }
-        }
+        },
+        {
+            "name": "UserEntities",
+             
+            "source_files": [
+                            "ApiAI/UserEntities",
+                            "ApiAI/UserEntities/Classes/**/*.{h,m}",
+                            "ApiAI/UserEntities/Private/**/*.{h,m,c}"
+                            ],
+             
+            "resources": [],
+             
+            "public_header_files": [
+                                    "ApiAI/UserEntities/Classes/**/*.{h}"
+                                    ],
+             
+            "ios": {
+                "frameworks": ["Foundation"]
+            },
+             
+            "requires_arc": true,
+             
+            "dependencies": {
+                "ApiAI/Core": []
+            }
+         }
     ]
 }

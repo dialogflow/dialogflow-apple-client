@@ -9,8 +9,9 @@
 #import "AIRequest.h"
 #import "AIUserEntity.h"
 
-@interface AIUserEntitiesRequest : NSOperation <AIRequest>
+@interface AIUserEntitiesRequest : AIRequest
 
+@property(nonatomic, copy) NSString *sessionId;
 @property(nonatomic, strong) NSArray AI_GENERICS_1(AIUserEntity *) *entities;
 
 @end

@@ -24,6 +24,7 @@
 #import "AITextRequest.h"
 #import "ApiAI_ApiAI_Private.h"
 #import "AIDefaultConfiguration.h"
+#import "AIRequest_Private.h"
 
 #import "AIConfiguration.h"
 #import "AIRequest.h"
@@ -66,9 +67,12 @@ NSString *const kDefaultVersion = @"20150910";
 #endif
     }
     
-    [request setVersion:self.version];
-    
-    [request setLang:self.lang];
+    if ([request isKindOfClass:[AIQueryRequest class]]) {
+        AIQueryRequest *queryRequest = (AIQueryRequest *)request;
+        
+        [queryRequest setVersion:self.version];
+        [queryRequest setLang:self.lang];
+    }
     
     return request;
 }
@@ -92,6 +96,14 @@ NSString *const kDefaultVersion = @"20150910";
     [request setLang:self.lang];
     
     return  request;
+}
+#endif
+
+#if __has_include("AIUserEntitiesRequest.h")
+- (AIUserEntitiesRequest *)userEntitiesRequest
+{
+    AIUserEntitiesRequest *request = [[AIUserEntitiesRequest alloc] initWithDataService:_dataService];
+    return request;
 }
 #endif
 

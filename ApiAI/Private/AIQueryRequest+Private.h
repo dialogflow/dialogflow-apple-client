@@ -6,9 +6,9 @@
 //  Copyright © 2015 Kuragin Dmitriy. All rights reserved.
 //
 
-#import "AIRequest.h"
+#import "AIQueryRequest.h"
 
-@interface AIRequest (Private)
+@interface AIQueryRequest (Private)
 
 - (NSDictionary *)defaultHeaders;
 - (NSDictionary *)requestBodyDictionary;
