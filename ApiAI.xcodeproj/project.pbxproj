@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		5801F1271B0F33790016DE2A /* AIRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F1261B0F33790016DE2A /* AIRequestEntity.m */; };
 		5801F12B1B0F3E250016DE2A /* AIRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801F12A1B0F3E250016DE2A /* AIRequestEntry.m */; };
+		580C69421CA16F1C00C55313 /* AIQueryRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 581409F31C86B8290014BBE8 /* AIQueryRequest.h */; };
 		581409F21C86B1500014BBE8 /* AISessionIdentifierStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 581409F11C86B1500014BBE8 /* AISessionIdentifierStorage.m */; };
 		581409F51C86B8290014BBE8 /* AIQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 581409F41C86B8290014BBE8 /* AIQueryRequest.m */; };
 		581409F81C86C7E30014BBE8 /* UserEntitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 581409F71C86C7E30014BBE8 /* UserEntitiesTests.m */; };
@@ -120,6 +121,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				580C69421CA16F1C00C55313 /* AIQueryRequest.h in Copy Files */,
 				58929B101CA1473800448D81 /* AIVoiceFileRequest.h in Copy Files */,
 				58929B0F1CA1472600448D81 /* AIUserEntity.h in Copy Files */,
 				58929B0E1CA1471B00448D81 /* AIUserEntitiesRequest.h in Copy Files */,
