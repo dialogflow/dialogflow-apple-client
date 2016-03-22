@@ -59,6 +59,10 @@
 		588D23AF1AFB3F24008289F1 /* AIRequest+AIMappedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23AD1AFB3E26008289F1 /* AIRequest+AIMappedResponse.m */; };
 		588D23B21AFB4059008289F1 /* AIResponseContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23B11AFB4059008289F1 /* AIResponseContext.m */; };
 		5891DF531941E14C0043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
+		58929B0D1CA146D100448D81 /* AIVoiceRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58D696E21B679D0300693710 /* AIVoiceRequest.h */; };
+		58929B0E1CA1471B00448D81 /* AIUserEntitiesRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58FF3A281C43BD240038BD9D /* AIUserEntitiesRequest.h */; };
+		58929B0F1CA1472600448D81 /* AIUserEntity.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 58FF3A2A1C43BD240038BD9D /* AIUserEntity.h */; };
+		58929B101CA1473800448D81 /* AIVoiceFileRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5862E2FC1B6A103B00F6F712 /* AIVoiceFileRequest.h */; };
 		589E65771B33FFB40062D868 /* AIRequestEntry.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5801F1291B0F3E250016DE2A /* AIRequestEntry.h */; };
 		589E65781B33FFB40062D868 /* AIRequestEntity.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5801F1251B0F33790016DE2A /* AIRequestEntity.h */; };
 		58AA07AC1B39492100A259D9 /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA07AB1B39492100A259D9 /* AudioFileReader.m */; };
@@ -116,6 +120,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				58929B101CA1473800448D81 /* AIVoiceFileRequest.h in Copy Files */,
+				58929B0F1CA1472600448D81 /* AIUserEntity.h in Copy Files */,
+				58929B0E1CA1471B00448D81 /* AIUserEntitiesRequest.h in Copy Files */,
+				58929B0D1CA146D100448D81 /* AIVoiceRequest.h in Copy Files */,
 				58271B601BC6AAF400CF6BE6 /* AIRequestContext.h in Copy Files */,
 				5869BCFD1B37E56A000B99B7 /* AINullabilityDefines.h in Copy Files */,
 				589E65771B33FFB40062D868 /* AIRequestEntry.h in Copy Files */,

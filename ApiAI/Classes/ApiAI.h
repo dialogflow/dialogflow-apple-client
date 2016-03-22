@@ -134,7 +134,6 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 
 - (AIRequest *)requestWithType:(AIRequestType)requestType DEPRECATED_MSG_ATTRIBUTE("Use :voiceRequest or :textRequest methods");
 
-//#if __has_include("AIVoiceRequest.h")
 #if AI_SUPPORT_VOICE_REQUEST
 - (AIVoiceRequest *)voiceRequest;
 #endif
