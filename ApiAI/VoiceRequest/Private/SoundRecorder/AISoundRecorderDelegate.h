@@ -19,6 +19,7 @@
  *
  ***********************************************************************************************************************/
 
+#import <Foundation/Foundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 
 @class AISoundRecorder;

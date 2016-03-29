@@ -19,6 +19,8 @@
  *
  ***********************************************************************************************************************/
 
+#import <MacTypes.h>
+
 #pragma mark - 
 #pragma mark AudioStreamBasicDescription Constants
 

@@ -57,70 +57,10 @@
 
 - (IBAction)clicked:(id)sender
 {
-    if (self.request && ![self.request isFinished]) {
-        [self.request cancel];
+    if (self.isProcessing) {
+        [self cancel];
     } else {
-        AIEllipseView *ellipseView = _ellipseView;
-        AIVoiceLevelView *levelView = _levelView;
-        AIProgressView *progressView = _progressView;
-        
-        progressView.color = self.color;
-        ellipseView.color = self.color;
-        
-        
-        [levelView setHidden:NO];
-        
-        AIVoiceRequest *request = [[ApiAI sharedApiAI] voiceRequest];
-        
-        __weak typeof(self) selfWeak = self;
-        
-        __block float prevValue = 0.f;
-        
-        [request setSoundLevelHandleBlock:^(AIRequest *request, float level) {
-            float prepared = MIN(level * 2.f, 1.f);
-            prepared = MAX(prevValue * 0.96f, prepared);
-            
-            prevValue = prepared;
-            selfWeak.levelView.level = prepared;
-        }];
-        
-        [request setSoundRecordBeginBlock:^(AIRequest *request){
-            
-        }];
-        
-        [request setSoundRecordEndBlock:^(AIRequest *request){
-            [UIView transitionWithView:self.containerView
-                              duration:0.2f
-                               options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionTransitionFlipFromLeft
-                            animations:^{
-                                [selfWeak setupSendingButtonImages];
-                            } completion:^(BOOL finished) {
-                                
-                            }];
-            [selfWeak setupSendingButtonImages];
-            [levelView setHidden:YES];
-            [progressView startAnimating];
-        }];
-        
-        [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
-            if (selfWeak.successCallback) {
-                selfWeak.successCallback(response);
-            }
-            
-            [self restoreStateAnimated];
-        } failure:^(AIRequest *request, NSError *error) {
-            if (selfWeak.failureCallback) {
-                selfWeak.failureCallback(error);
-            }
-            
-            [self restoreStateAnimated];
-        }];
-        
-        self.request = request;
-        
-        [[ApiAI sharedApiAI] enqueue:request];
-        
-        [ellipseView setRadius:1.f animated:YES];
+        [self start];
     }
 }
 
@@ -182,9 +122,29 @@
     return _iconColor;
 }
 
+- (UIImage *)imageNamed:(NSString *)imageName
+{
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    
+    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+        return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
+    } else {
+        UIImage *image = [UIImage imageNamed:imageName];
+        if (!image) {
+            NSString *imagePath = [bundle pathForResource:imageName ofType:@"png"];
+            
+            if (imagePath) {
+                image = [UIImage imageWithContentsOfFile:imagePath];
+            }
+        }
+        
+        return image;
+    }
+}
+
 - (void)updateButtonImages
 {
-    UIImage *originalMicImage = [UIImage imageNamed:@"AIMicrophoneControlImage"];
+    UIImage *originalMicImage = [self imageNamed:@"AIMicrophoneControlImage"];
     
     UIImage *overlayMicIconImage = [self image:originalMicImage withColor:self.iconColor];
     UIImage *overlayMicImage = [self image:originalMicImage withColor:self.color];
@@ -192,7 +152,7 @@
     self.defaultStateNormalImage = overlayMicIconImage;
     self.defaultStateHighlightedImage = overlayMicImage;
     
-    UIImage *originalBoxImage = [UIImage imageNamed:@"AICubeIconImage"];
+    UIImage *originalBoxImage = [self imageNamed:@"AICubeIconImage"];
     
     UIImage *overlayBoxIconImage = [self image:originalBoxImage withColor:self.iconColor];
     UIImage *overlayBoxImage = [self image:originalBoxImage withColor:self.color];
@@ -329,6 +289,82 @@
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
+}
+
+- (BOOL)isProcessing {
+    return self.request && ![self.request isFinished];
+}
+
+- (void)start {
+    if (!self.isProcessing) {
+        AIEllipseView *ellipseView = _ellipseView;
+        AIVoiceLevelView *levelView = _levelView;
+        AIProgressView *progressView = _progressView;
+        
+        progressView.color = self.color;
+        ellipseView.color = self.color;
+        
+        
+        [levelView setHidden:NO];
+        
+        AIVoiceRequest *request = [[ApiAI sharedApiAI] voiceRequest];
+        
+        __weak typeof(self) selfWeak = self;
+        
+        __block float prevValue = 0.f;
+        
+        [request setSoundLevelHandleBlock:^(AIRequest *request, float level) {
+            float prepared = MIN(level * 2.f, 1.f);
+            prepared = MAX(prevValue * 0.96f, prepared);
+            
+            prevValue = prepared;
+            selfWeak.levelView.level = prepared;
+        }];
+        
+        [request setSoundRecordBeginBlock:^(AIRequest *request){
+            
+        }];
+        
+        [request setSoundRecordEndBlock:^(AIRequest *request){
+            [UIView transitionWithView:self.containerView
+                              duration:0.2f
+                               options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionTransitionFlipFromLeft
+                            animations:^{
+                                [selfWeak setupSendingButtonImages];
+                            } completion:^(BOOL finished) {
+                                
+                            }];
+            [selfWeak setupSendingButtonImages];
+            [levelView setHidden:YES];
+            [progressView startAnimating];
+        }];
+        
+        [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
+            if (selfWeak.successCallback) {
+                selfWeak.successCallback(response);
+            }
+            
+            [self restoreStateAnimated];
+        } failure:^(AIRequest *request, NSError *error) {
+            if (selfWeak.failureCallback) {
+                selfWeak.failureCallback(error);
+            }
+            
+            [self restoreStateAnimated];
+        }];
+        
+        self.request = request;
+        
+        [[ApiAI sharedApiAI] enqueue:request];
+        
+        [ellipseView setRadius:1.f animated:YES];
+    }
+}
+
+- (void)cancel {
+    if (self.isProcessing) {
+        [self.request cancel];
+    }
 }
 
 @end

@@ -36,4 +36,9 @@ typedef void(^AIVoiceRequestButtonFailure)(NSError *error);
 @property(nonatomic ,copy) AIVoiceRequestButtonFailure failureCallback;
 -(void)setFailureCallback:(AIVoiceRequestButtonFailure)failureCallback;
 
+@property(nonatomic, assign, readonly) BOOL isProcessing;
+
+- (void)start;
+- (void)cancel;
+
 @end
