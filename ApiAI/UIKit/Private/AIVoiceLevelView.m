@@ -57,9 +57,9 @@
     CGFloat minRadius = (rect.size.width / 2.f) / 3.f;
     CGFloat maxRadius = rect.size.width / 2.f;
     
-    UIColor *color = [UIColor colorWithRed:1.f
-                                     green:1.f
-                                      blue:1.f
+    UIColor *color = [UIColor colorWithRed:0.f
+                                     green:0.f
+                                      blue:0.f
                                      alpha:0.16f];
     
     CGContextSetFillColorWithColor(context, color.CGColor);
