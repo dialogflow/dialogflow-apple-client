@@ -49,6 +49,8 @@
 @property(nonatomic, strong) UIImage *sendingStateNormalImage;
 @property(nonatomic, strong) UIImage *sendingStateHighlightedImage;
 
+@property(nonatomic, assign) BOOL isListening;
+
 @end
 
 @implementation AIVoiceRequestButton
@@ -58,7 +60,11 @@
 - (IBAction)clicked:(id)sender
 {
     if (self.isProcessing) {
-        [self cancel];
+        if (self.isListening) {
+            [self.request commitVoice];
+        } else {
+            [self cancel];
+        }
     } else {
         [self start];
     }
@@ -297,6 +303,8 @@
 
 - (void)start {
     if (!self.isProcessing) {
+        self.isListening = YES;
+        
         AIEllipseView *ellipseView = _ellipseView;
         AIVoiceLevelView *levelView = _levelView;
         AIProgressView *progressView = _progressView;
@@ -326,17 +334,8 @@
         }];
         
         [request setSoundRecordEndBlock:^(AIRequest *request){
-            [UIView transitionWithView:self.containerView
-                              duration:0.2f
-                               options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionTransitionFlipFromLeft
-                            animations:^{
-                                [selfWeak setupSendingButtonImages];
-                            } completion:^(BOOL finished) {
-                                
-                            }];
-            [selfWeak setupSendingButtonImages];
-            [levelView setHidden:YES];
-            [progressView startAnimating];
+            selfWeak.isListening = NO;
+            [selfWeak changeButtonStateToSending];
         }];
         
         [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
@@ -361,8 +360,25 @@
     }
 }
 
+- (void)changeButtonStateToSending {
+    __weak typeof(self) selfWeak = self;
+    
+    [UIView transitionWithView:self.containerView
+                      duration:0.2f
+                       options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        [selfWeak setupSendingButtonImages];
+                    } completion:^(BOOL finished) {
+                        
+                    }];
+    [self setupSendingButtonImages];
+    [_levelView setHidden:YES];
+    [_progressView startAnimating];
+}
+
 - (void)cancel {
     if (self.isProcessing) {
+        self.isListening = NO;
         [self.request cancel];
     }
 }
