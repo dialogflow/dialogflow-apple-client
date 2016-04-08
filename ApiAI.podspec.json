@@ -125,6 +125,10 @@
                     "AVFoundation"
                 ]
             },
+                 
+            "resources": [
+                          "ApiAI/VoiceRequest/Resources/*.{caf}"
+                          ],
 
             "requires_arc": true,
 

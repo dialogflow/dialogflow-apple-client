@@ -90,8 +90,6 @@
     
     [request setValue:[NSString stringWithFormat:@"Bearer %@", configuration.clientAccessToken]
    forHTTPHeaderField:@"Authorization"];
-    [request setValue:[NSString stringWithFormat:@"%@", configuration.subscriptionKey]
-   forHTTPHeaderField:@"ocp-apim-subscription-key"];
     
     NSURLSession *session = dataService.URLSession;
     

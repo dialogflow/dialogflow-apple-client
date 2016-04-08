@@ -20,8 +20,7 @@
     
     return @{
              @"Accept": @"application/json",
-             @"Authorization": [NSString stringWithFormat:@"Bearer %@", configuration.clientAccessToken],
-             @"ocp-apim-subscription-key": [NSString stringWithFormat:@"%@", configuration.subscriptionKey]
+             @"Authorization": [NSString stringWithFormat:@"Bearer %@", configuration.clientAccessToken]
              };
 }
 
