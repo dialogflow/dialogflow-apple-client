@@ -10,6 +10,17 @@
 
 #import "AIRequest.h"
 
+@interface AIQueryRequestLocation : NSObject
+
+@property(nonatomic, assign) double latitude;
+@property(nonatomic, assign) double longitude;
+
+- (instancetype)initWithLatitude:(double)latitude andLongitude:(double)longitude;
+
++ (instancetype)locationWithLatitude:(double)latitude andLongitude:(double)longitude;
+
+@end
+
 @interface AIQueryRequest : AIRequest
 
 /*!
@@ -86,5 +97,14 @@
  
  */
 @property(nonatomic, copy) NSTimeZone *timeZone;
+
+/*!
+ 
+ @property location
+ 
+ @discussion Current user location. Default nil.
+ 
+ */
+@property(nonatomic, strong) AIQueryRequestLocation *location;
 
 @end

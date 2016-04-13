@@ -52,6 +52,15 @@
     }
     
     parameters[@"sessionId"] = self.sessionId;
+    
+    AIQueryRequestLocation *location = self.location;
+    
+    if (location) {
+        parameters[@"location"] = @{
+                                    @"latitude": @(location.latitude),
+                                    @"longitude": @(location.longitude)
+                                    };
+    }
 
     return [parameters copy];
 }

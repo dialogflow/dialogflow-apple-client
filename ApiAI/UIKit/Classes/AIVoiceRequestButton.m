@@ -317,6 +317,10 @@
         
         AIVoiceRequest *request = [[ApiAI sharedApiAI] voiceRequest];
         
+        if (self.prepareRequest) {
+            self.prepareRequest(request);
+        }
+        
         __weak typeof(self) selfWeak = self;
         
         __block float prevValue = 0.f;

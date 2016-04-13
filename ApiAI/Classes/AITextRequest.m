@@ -71,6 +71,15 @@
     
     parameters[@"sessionId"] = self.sessionId;
     
+    AIQueryRequestLocation *location = self.location;
+    
+    if (location) {
+        parameters[@"location"] = @{
+                                    @"latitude": @(location.latitude),
+                                    @"longitude": @(location.longitude)
+                                    };
+    }
+    
     NSURL *URL = [configuration.baseURL URLByAppendingPathComponent:path];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
     

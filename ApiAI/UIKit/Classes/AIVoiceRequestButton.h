@@ -21,8 +21,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class AIVoiceRequest;
+
 typedef void(^AIVoiceRequestButtonSuccess)(id response);
 typedef void(^AIVoiceRequestButtonFailure)(NSError *error);
+
+typedef void(^AIVoiceRequestPrepareRequest)(AIVoiceRequest *voiceRequest);
 
 //IB_DESIGNABLE
 @interface AIVoiceRequestButton : UIControl
@@ -35,6 +39,9 @@ typedef void(^AIVoiceRequestButtonFailure)(NSError *error);
 
 @property(nonatomic ,copy) AIVoiceRequestButtonFailure failureCallback;
 -(void)setFailureCallback:(AIVoiceRequestButtonFailure)failureCallback;
+
+@property(nonatomic ,copy) AIVoiceRequestPrepareRequest prepareRequest;
+-(void)setPrepareRequest:(AIVoiceRequestPrepareRequest)prepareRequest;
 
 @property(nonatomic, assign, readonly) BOOL isProcessing;
 

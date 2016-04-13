@@ -9,6 +9,24 @@
 #import "AIQueryRequest.h"
 #import "AISessionIdentifierStorage.h"
 
+@implementation AIQueryRequestLocation
+
+- (instancetype)initWithLatitude:(double)latitude andLongitude:(double)longitude {
+    self = [super init];
+    if (self) {
+        self.latitude = latitude;
+        self.longitude = longitude;
+    }
+    
+    return self;
+}
+
++ (instancetype)locationWithLatitude:(double)latitude andLongitude:(double)longitude {
+    return [[self alloc] initWithLatitude:latitude andLongitude:longitude];
+}
+
+@end
+
 @implementation AIQueryRequest
 
 - (void)setContexts:(NSArray *)contexts
