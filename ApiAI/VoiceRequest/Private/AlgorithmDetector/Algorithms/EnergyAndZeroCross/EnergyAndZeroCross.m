@@ -21,9 +21,42 @@
 
 #import "EnergyAndZeroCross.h"
 
+@interface Total : NSObject
+
+@property(nonatomic, assign) BOOL isActive;
+
+- (void)push:(BOOL)value;
+
+@end
+
+@implementation Total {
+    NSUInteger counter;
+}
+
+- (BOOL)isActive {
+    return counter >= 3;
+}
+
+- (void)push:(BOOL)value {
+    if (value) {
+        if (counter < 8) {
+            counter += 1;
+        }
+    } else {
+        if (counter > 0) {
+            counter -= 1;
+        }
+    }
+}
+
+@end
+
+
+
 @interface EnergyAndZeroCross()
 
 @property(nonatomic, strong) NSMutableArray *frame;
+@property(nonatomic, strong) Total *total;
 
 @end
 
@@ -57,6 +90,7 @@
     self = [super init];
     if (self) {
         self.sampleRate = 16000.f;
+        self.total = [[Total alloc] init];
         [self reset];
     }
     return self;
@@ -72,7 +106,7 @@
             sequenceCounter += 1;
             if (sequenceCounter >= minSequenceCount) {
                 lastSequenceTime = time;
-                silenceLengthMilis = MAX(minSilenceLengthMilis, silenceLengthMilis - (maxSilenceLengthMilis - minSilenceLengthMilis) / 4);
+                silenceLengthMilis = MAX(minSilenceLengthMilis, silenceLengthMilis - (maxSilenceLengthMilis - minSilenceLengthMilis) / 4.0);
             }
         } else {
             sequenceCounter = 1;
@@ -129,13 +163,19 @@
     if (frameNumber < noiseFrames) {
         noiseEnergy = noiseEnergy + energy / (double)noiseFrames;
     } else {
-//        NSLog(@"%lf", noiseEnergy);
-        if (czCount >= minCZ && czCount <= maxCZ) {
-//            if (energy > MAX(noiseEnergy, 0.0008) * energyFactor) {
+        [self.total push:czCount >= minCZ && czCount <= maxCZ];
+        
+        if (self.total.isActive) {
             if (energy > MAX(noiseEnergy, 0.001818) * energyFactor) {
                 result = YES;
             }
         }
+        
+//        if (czCount >= minCZ && czCount <= maxCZ) {
+//            if (energy > MAX(noiseEnergy, 0.001818) * energyFactor) {
+//                result = YES;
+//            }
+//        }
     }
     
     
@@ -146,11 +186,11 @@
 {
     frameLengthMilis = 10.0;
     maxSilenceLengthMilis = 3.5;
-    minSilenceLengthMilis = 0.8;
+    minSilenceLengthMilis = 1.8;
     silenceLengthMilis = maxSilenceLengthMilis;
     sequenceLengthMilis = 0.03;
     minSequenceCount = 3;
-    energyFactor = 3.1; // 1.1
+    energyFactor = 2.1; // 1.1
     self.frameSize = (int)((sampleRate * frameLengthMilis) / 1000.0);
     minCZ = (int)(5. * frameLengthMilis / 10.);
     maxCZ = minCZ * 3;
