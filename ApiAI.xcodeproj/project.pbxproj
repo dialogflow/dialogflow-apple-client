@@ -134,6 +134,8 @@
 		581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */; };
 		581AB3B31A245D8300E8A190 /* AIVoiceLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */; };
 		58271B601BC6AAF400CF6BE6 /* AIRequestContext.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5862C2D41BAEABE1007C6C4F /* AIRequestContext.h */; };
+		582FB8291CB7757C0069B60B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F060311A8CAF82002615DF /* AudioToolbox.framework */; };
+		582FB82C1CB775C50069B60B /* beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = 582FB82B1CB775B50069B60B /* beep.caf */; };
 		584509B019F4EB6B00A0AE9A /* AIStreamBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 584509AE19F4EB6B00A0AE9A /* AIStreamBuffer.m */; };
 		585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 585BC6C81A15F9E800B2584A /* AIDefaultConfiguration.m */; };
 		5862C2D61BAEABE1007C6C4F /* AIRequestContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862C2D51BAEABE1007C6C4F /* AIRequestContext.m */; };
@@ -283,6 +285,7 @@
 		581AB3AC1A245D8300E8A190 /* AIVoiceContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceContainerView.m; sourceTree = "<group>"; };
 		581AB3AD1A245D8300E8A190 /* AIVoiceLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIVoiceLevelView.h; sourceTree = "<group>"; };
 		581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVoiceLevelView.m; sourceTree = "<group>"; };
+		582FB82B1CB775B50069B60B /* beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beep.caf; sourceTree = "<group>"; };
 		584509AD19F4EB6B00A0AE9A /* AIStreamBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStreamBuffer.h; sourceTree = "<group>"; };
 		584509AE19F4EB6B00A0AE9A /* AIStreamBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStreamBuffer.m; sourceTree = "<group>"; };
 		584509AF19F4EB6B00A0AE9A /* AIStreamBufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStreamBufferDelegate.h; sourceTree = "<group>"; };
@@ -405,6 +408,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582FB8291CB7757C0069B60B /* AudioToolbox.framework in Frameworks */,
 				58F0602C1A8CAF2A002615DF /* AVFoundation.framework in Frameworks */,
 				58F0602A1A8CAF15002615DF /* AudioUnit.framework in Frameworks */,
 				5891DF531941E14C0043140B /* Foundation.framework in Frameworks */,
@@ -482,6 +486,14 @@
 				581AB3AE1A245D8300E8A190 /* AIVoiceLevelView.m */,
 			);
 			path = Private;
+			sourceTree = "<group>";
+		};
+		582FB82A1CB775B50069B60B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				582FB82B1CB775B50069B60B /* beep.caf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5862E2F91B6A0CB900F6F712 /* Private */ = {
@@ -681,6 +693,7 @@
 		58D696E01B679D0300693710 /* VoiceRequest */ = {
 			isa = PBXGroup;
 			children = (
+				582FB82A1CB775B50069B60B /* Resources */,
 				58D696E11B679D0300693710 /* Classes */,
 				58D696E41B679D0300693710 /* Private */,
 			);
@@ -1018,6 +1031,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582FB82C1CB775C50069B60B /* beep.caf in Resources */,
 				587074061CA184C900C4535B /* AIVoiceRequestButton.xib in Resources */,
 				587074071CA184C900C4535B /* AICubeIconImage.png in Resources */,
 				587074081CA184C900C4535B /* AICubeIconImage@2x.png in Resources */,

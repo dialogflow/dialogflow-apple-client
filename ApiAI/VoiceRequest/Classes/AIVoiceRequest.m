@@ -31,6 +31,8 @@
 
 #import "AIResponseConstants.h"
 
+#import <AudioToolbox/AudioToolbox.h>
+
 @class AIRecordDetector;
 
 @interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate>
@@ -111,6 +113,34 @@
         [_streamBuffer open];
     }
     return self;
+}
+
+- (void)start
+{
+    NSString *audioFileName = @"beep";
+    NSURL *audioFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:audioFileName withExtension:@"caf"];
+    
+    if (audioFileURL) {
+        SystemSoundID soundID = 0;
+        
+        OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(audioFileURL), &soundID);
+        if (status == noErr) {
+            __weak typeof(self) selfWeak = self;
+            AudioServicesPlaySystemSoundWithCompletion(soundID, ^{
+                [selfWeak callSuperStart];
+                
+                AudioServicesDisposeSystemSoundID(soundID);
+            });
+        } else {
+            [self callSuperStart];
+        }
+    } else {
+        [self callSuperStart];
+    }
+}
+
+- (void)callSuperStart {
+    [super start];
 }
 
 - (NSDictionary *)defaultHeaders
