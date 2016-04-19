@@ -190,7 +190,7 @@
     silenceLengthMilis = maxSilenceLengthMilis;
     sequenceLengthMilis = 0.03;
     minSequenceCount = 3;
-    energyFactor = 2.1; // 1.1
+    energyFactor = 1.1; // 1.1
     self.frameSize = (int)((sampleRate * frameLengthMilis) / 1000.0);
     minCZ = (int)(5. * frameLengthMilis / 10.);
     maxCZ = minCZ * 3;
