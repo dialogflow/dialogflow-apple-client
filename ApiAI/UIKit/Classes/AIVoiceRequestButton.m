@@ -53,7 +53,9 @@
 
 @end
 
-@implementation AIVoiceRequestButton
+@implementation AIVoiceRequestButton {
+    double startTime;
+}
 
 @synthesize color=_color, iconColor=_iconColor;
 
@@ -61,7 +63,11 @@
 {
     if (self.isProcessing) {
         if (self.isListening) {
-            [self.request commitVoice];
+            if (CACurrentMediaTime() - startTime > 0.6) {
+                [self.request commitVoice];
+            } else {
+                [self cancel];
+            }
         } else {
             [self cancel];
         }
@@ -361,6 +367,8 @@
         [[ApiAI sharedApiAI] enqueue:request];
         
         [ellipseView setRadius:1.f animated:YES];
+        
+        startTime = CACurrentMediaTime();
     }
 }
 
@@ -384,6 +392,8 @@
     if (self.isProcessing) {
         self.isListening = NO;
         [self.request cancel];
+        
+        startTime = 0.0;
     }
 }
 
