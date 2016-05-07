@@ -1,16 +1,16 @@
 {
     "name": "ApiAI",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "license": "MIT",
     "summary": "The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI natural language processing API on iOS devices.",
     "homepage": "http://api.ai/",
     "authors": {
         "Dmitriy Kuragin": "kuragin@speaktoit.com"
     },
-    
+
     "source": {
         "git": "https://github.com/api-ai/api-ai-ios-sdk.git",
-        "tag": "v0.5.0"
+        "tag": "v0.5.1"
     },
 
     "requires_arc": true,
@@ -23,7 +23,7 @@
     "subspecs": [
         {
             "name": "Core",
-            
+
             "source_files": [
                 "ApiAI",
                 "ApiAI/Classes/**/*.{h,m}",
@@ -41,7 +41,7 @@
             "requires_arc": true,
 
             "dependencies": {
-                
+
             },
 
             "platforms": {
@@ -52,7 +52,7 @@
         },
         {
             "name": "AudioFileConverter",
-            
+
             "source_files": [
                 "ApiAI",
                 "ApiAI/AudioFileConverter/Classes/**/*.{h,hpp,m,mm}",
@@ -100,7 +100,7 @@
             "dependencies": {
                 "ApiAI/Core": []
             },
-                 
+
             "platforms": {
                 "ios": "7.0",
                 "watchos": "2.0",
@@ -125,7 +125,7 @@
                     "AVFoundation"
                 ]
             },
-                 
+
             "resources": [
                           "ApiAI/VoiceRequest/Resources/*.{caf}"
                           ],
@@ -135,7 +135,7 @@
             "dependencies": {
                 "ApiAI/Core": []
             },
-                 
+
             "platforms": {
                 "ios": "7.0",
                 "osx": "10.9"
@@ -143,7 +143,7 @@
         },
         {
             "name": "UIKit",
-            
+
             "source_files": [
                 "ApiAI/UIKit",
                 "ApiAI/UIKit/Classes/**/*.{h,m}",
@@ -176,7 +176,7 @@
         },
         {
             "name": "ResponseMapping",
-            
+
             "source_files": [
                 "ApiAI/Response",
                 "ApiAI/Response/Classes/**/*.{h,m}",
@@ -201,25 +201,25 @@
         },
         {
             "name": "UserEntities",
-             
+
             "source_files": [
                             "ApiAI/UserEntities",
                             "ApiAI/UserEntities/Classes/**/*.{h,m}",
                             "ApiAI/UserEntities/Private/**/*.{h,m,c}"
                             ],
-             
+
             "resources": [],
-             
+
             "public_header_files": [
                                     "ApiAI/UserEntities/Classes/**/*.{h}"
                                     ],
-             
+
             "ios": {
                 "frameworks": ["Foundation"]
             },
-             
+
             "requires_arc": true,
-             
+
             "dependencies": {
                 "ApiAI/Core": []
             }
