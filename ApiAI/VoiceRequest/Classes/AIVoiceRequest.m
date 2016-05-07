@@ -43,9 +43,21 @@
 @property(nonatomic, strong) AIStreamBuffer *streamBuffer;
 @property(nonatomic, copy) NSString *boundary;
 
+- (void)callSuperStart;
+
 @end
 
-@implementation AIVoiceRequest
+static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* __nullable clientData) {
+    AIVoiceRequest *request = (__bridge AIVoiceRequest *)clientData;
+    
+    [request callSuperStart];
+    
+    AudioServicesRemoveSystemSoundCompletion(ssID);
+}
+
+@implementation AIVoiceRequest {
+    SystemSoundID soundID;
+}
 
 - (instancetype)initWithDataService:(AIDataService *)dataService
 {
@@ -121,16 +133,28 @@
     NSURL *audioFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:audioFileName withExtension:@"caf"];
     
     if (audioFileURL) {
-        SystemSoundID soundID = 0;
-        
+        soundID = 0;
+
         OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(audioFileURL), &soundID);
         if (status == noErr) {
-            __weak typeof(self) selfWeak = self;
-            AudioServicesPlaySystemSoundWithCompletion(soundID, ^{
-                [selfWeak callSuperStart];
-                
-                AudioServicesDisposeSystemSoundID(soundID);
-            });
+            
+            void (^__nullable inCompletionBlock)(void) = ^{
+                [self callSuperStart];
+            };
+            
+            AudioServicesAddSystemSoundCompletion(soundID,
+                                                  CFRunLoopGetMain(),
+                                                  kCFRunLoopDefaultMode,
+                                                  MyAudioServicesSystemSoundCompletionProc,
+                                                  (__bridge void * _Nullable)(self));
+            AudioServicesPlaySystemSound(soundID);
+            
+//            __weak typeof(self) selfWeak = self;
+//            AudioServicesPlaySystemSoundWithCompletion(soundID, ^{
+//                [selfWeak callSuperStart];
+//                
+//                AudioServicesDisposeSystemSoundID(soundID);
+//            });
         } else {
             [self callSuperStart];
         }
@@ -276,5 +300,9 @@
     [self handleError:error];
 }
 
+- (void)dealloc
+{
+    AudioServicesRemoveSystemSoundCompletion(soundID);
+}
 
 @end

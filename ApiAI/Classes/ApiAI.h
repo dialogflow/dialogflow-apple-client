@@ -37,7 +37,7 @@
     #if defined(TARGET_OS_IOS) || defined(TARGET_OS_MAC)
         #define AI_SUPPORT_VOICE_REQUEST (TARGET_OS_IOS || TARGET_OS_MAC)
     #else
-        //Enable support voice reuqest for XCode older than 7.x version
+        //Enable support voice request for XCode older than 7.x version
         #define AI_SUPPORT_VOICE_REQUEST 1
     #endif
 #else

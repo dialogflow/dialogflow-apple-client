@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		582FB82F1CB787500069B60B /* AggrageteFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 582FB8301CB787500069B60B /* Build configuration list for PBXAggregateTarget "AggrageteFramework" */;
+			buildPhases = (
+				582FB8331CB787660069B60B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = AggrageteFramework;
+			productName = AggrageteFramework;
+		};
 		58A4E47919629C1A0049B7A8 /* AggregateLib */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 58A4E47C19629C1A0049B7A8 /* Build configuration list for PBXAggregateTarget "AggregateLib" */;
@@ -1001,6 +1012,9 @@
 					580C6A4E1CA17F0C00C55313 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					582FB82F1CB787500069B60B = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					58F060481A8CB366002615DF = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -1022,6 +1036,7 @@
 				58A4E47919629C1A0049B7A8 /* AggregateLib */,
 				58F060481A8CB366002615DF /* ApiAITests */,
 				580C6A4E1CA17F0C00C55313 /* ApiAIFramework */,
+				582FB82F1CB787500069B60B /* AggrageteFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -1056,6 +1071,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		582FB8331CB787660069B60B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=true\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\nSCHEME=\"ApiAIFramework\"\n\n\n######################\n# Build Frameworks\n######################\n\n#xcodebuild -project ApiAI.xcodeproj -scheme ApiAIFramework -sdk iphonesimulator -configuration -arch i386 -arch x86_64 Release clean build CONFIGURATION_BUILD_DIR=/build/Release-iphonesimulator\n\n#echo \"xcodebuild -project ${PROJECT_NAME}.xcodeproj -scheme ${SCHEME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\"\n\n#exit(-1)\n\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -scheme ${SCHEME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -scheme ${SCHEME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n######################\n# On Release, copy the result to release directory\n######################\nOUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\n\nrm -rf \"$OUTPUT_DIR\"\nmkdir -p \"$OUTPUT_DIR\"\n\ncp -r \"${FRAMEWORK}\" \"$OUTPUT_DIR\"\n\nif [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\nopen \"${OUTPUT_DIR}/\"\nfi\n";
+		};
 		5838471619629C44007A6091 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1213,9 +1241,11 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ApiAIFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.speaktoit.ApiAI;
 				PRODUCT_NAME = ApiAI;
@@ -1243,9 +1273,11 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ApiAIFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.speaktoit.ApiAI;
 				PRODUCT_NAME = ApiAI;
@@ -1253,6 +1285,20 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		582FB8311CB787500069B60B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		582FB8321CB787500069B60B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1427,6 +1473,15 @@
 			buildConfigurations = (
 				580C6A541CA17F0C00C55313 /* Debug */,
 				580C6A551CA17F0C00C55313 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		582FB8301CB787500069B60B /* Build configuration list for PBXAggregateTarget "AggrageteFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				582FB8311CB787500069B60B /* Debug */,
+				582FB8321CB787500069B60B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
