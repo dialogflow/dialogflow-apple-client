@@ -203,6 +203,15 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     }
     
     parameters[@"sessionId"] = self.sessionId;
+    
+    AIQueryRequestLocation *location = self.location;
+    
+    if (location) {
+        parameters[@"location"] = @{
+                                    @"latitude": @(location.latitude),
+                                    @"longitude": @(location.longitude)
+                                    };
+    }
 
     [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];

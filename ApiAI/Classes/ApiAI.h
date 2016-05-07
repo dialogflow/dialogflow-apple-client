@@ -26,9 +26,12 @@
 #import "AITextRequest.h"
 #import "AIDefaultConfiguration.h"
 
+#if __has_include("AIVoiceRequestButton.h")
+    #import "AIVoiceRequestButton.h"
+#endif
+
 #if __has_include("AIResponse.h")
     #import "AIResponse.h"
-
 #endif
 
 #if __has_include("AIVoiceRequest.h")
