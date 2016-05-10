@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = AIDefaultConfiguration()
         
         configuration.clientAccessToken = ""
-        configuration.subscriptionKey = ""
         
         ApiAI.sharedApiAI().configuration = configuration
         
