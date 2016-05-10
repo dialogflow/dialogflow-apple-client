@@ -15,7 +15,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         let configuration = AIDefaultConfiguration()
         
         configuration.clientAccessToken = "YOUR_CLIENT_ACCESS_TOKEN"
-        configuration.subscriptionKey = "YOUR_SUBSCRIPTION_KEY"
         
         ApiAI.sharedApiAI().configuration = configuration
         

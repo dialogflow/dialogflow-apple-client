@@ -10,7 +10,7 @@
 
 @implementation AIDefaultConfiguration
 
-@synthesize baseURL=_baseURL, clientAccessToken=_clientAccessToken, subscriptionKey=_subscriptionKey;
+@synthesize baseURL=_baseURL, clientAccessToken=_clientAccessToken;
 
 - (NSURL *)baseURL
 {

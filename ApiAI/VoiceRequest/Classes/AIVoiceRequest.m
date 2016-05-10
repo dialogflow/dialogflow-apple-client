@@ -137,10 +137,9 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
 
         OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(audioFileURL), &soundID);
         if (status == noErr) {
-            
-            void (^__nullable inCompletionBlock)(void) = ^{
-                [self callSuperStart];
-            };
+//            void (^__nullable inCompletionBlock)(void) = ^{
+//                [self callSuperStart];
+//            };
             
             AudioServicesAddSystemSoundCompletion(soundID,
                                                   CFRunLoopGetMain(),

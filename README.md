@@ -24,23 +24,22 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
 ## <a name="runningthedemoapp"></a>Running the Demo app
 * Run ```pod update``` in the ApiAiDemo project folder.
 * Open **ApiAIDemo.xworkspace** in Xcode.
-* In **ViewController -viewDidLoad** insert API key & subscription.
+* In **ViewController -viewDidLoad** insert API key.
   ```
   configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";
-  configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY";
   ```
-  
+
   Note: an agent in **api.ai** should exist. Keys could be obtained on the agent's settings page.
-  
+
 * Define sample intents in the agent.
 * Run the app in Xcode.
   Inputs are possible with text and voice (experimental).
 
 
 ## <a name="integratingintoyourapp"></a>Integrating into your app
-### 1. Initialize CocoaPods 
+### 1. Initialize CocoaPods
   * Run  ```pod install``` in your project folder.
-  
+
   * Update **Podfile** to include:
     ```Podfile
     pod 'ApiAI'
@@ -56,24 +55,23 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
   ```
-  
+
 ### 3. Init the SDK.
-  In the ```AppDelegate.h```, add ApiAI.h import and property: 
+  In the ```AppDelegate.h```, add ApiAI.h import and property:
   ```Objective-C
   #import <ApiAI/ApiAI.h>
-  
+
   @property(nonatomic, strong) ApiAI *apiAI;
   ```
-  
+
   In the AppDelegate.m, add
   ```Objective-C
     self.apiAI = [[ApiAI alloc] init];
-    
+
     // Define API.AI configuration here.
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN_HERE";
-    configuration.subscriptionKey = @"YOUR_SUBSCRIPTION_KEY_HERE";
-    
+
     self.apiAI.configuration = configuration;
   ```
 
@@ -88,16 +86,16 @@ The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI nat
   } failure:^(AIRequest *request, NSError *error) {
       // Handle error ...
   }];
-  
+
   [_apiAI enqueue:request];
 
   ```
-  
+
 ### 5. Or perform request using voice:
   ```Objective-C
     // Request using voice
     AIVoiceRequest *request = [apiai voiceRequest];
-    
+
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
         // Handle success ...
     } failure:^(AIRequest *request, NSError *error) {

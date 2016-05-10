@@ -48,13 +48,4 @@
  */
 @property(nonatomic, copy) NSString *clientAccessToken;
 
-/*!
- 
- @property subscriptionKey
- 
- @discussion Subscription Key, cannot be NULL. Can get it in http://api.ai/
- 
- */
-@property(nonatomic, copy) NSString *subscriptionKey __deprecated_msg("Just romove it, this is unused anymore");
-
 @end
