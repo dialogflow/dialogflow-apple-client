@@ -21,14 +21,15 @@
 
 #import "AIRecordDetector.h"
 #import "AIAlgorithmDetector.h"
-#import "AISoundRecorder.h"
+//#import "AISoundRecorder.h"
+#import "AIQueueAudioRecorder.h"
 
 @import AVFoundation;
 
-@interface AIRecordDetector() <AIAlgorithmDetectorDelegate, AISoundRecorderDelegate>
+@interface AIRecordDetector() <AIQueueAudioRecorderDelegate, AIAlgorithmDetectorDelegate>
 
 @property(nonatomic, strong) AIAlgorithmDetector *algorithmDetector;
-@property(nonatomic, strong) AISoundRecorder *soundRecorder;
+@property(nonatomic, strong) AIQueueAudioRecorder *audioRecorder;
 @property(nonatomic, strong) NSMutableArray *frames;
 
 @end
@@ -44,8 +45,8 @@
         _algorithmDetector.delegate = self;
         [_algorithmDetector reset];
         
-        self.soundRecorder = [[AISoundRecorder alloc] init];
-        _soundRecorder.delegate = self;
+        self.audioRecorder = [[AIQueueAudioRecorder alloc] init];
+        _audioRecorder.delegate = self;
         
         self.frames = [NSMutableArray array];
     }
@@ -57,8 +58,9 @@
 {
     self.frames = [NSMutableArray array];
     [_algorithmDetector reset];
-    _soundRecorder.delegate = self;
-    [_soundRecorder start];
+    
+    _audioRecorder.delegate = self;
+    [_audioRecorder start];
     
     __weak id selfWeak = self;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -68,12 +70,13 @@
 
 - (void)cancel
 {
-    if (![_soundRecorder isRecording]) {
+    if (![_audioRecorder isRecording]) {
         return;
     }
     
-    _soundRecorder.delegate = nil;
-    [_soundRecorder stop];
+    _audioRecorder.delegate = nil;
+    [_audioRecorder stop];
+    
     [_frames removeAllObjects];
     
     __weak id selfWeak = self;
@@ -84,12 +87,13 @@
 
 - (void)stop
 {
-    if (![_soundRecorder isRecording]) {
+    if (![_audioRecorder isRecording]) {
         return;
     }
     
-    _soundRecorder.delegate = nil;
-    [_soundRecorder stop];
+    _audioRecorder.delegate = nil;
+    [_audioRecorder stop];
+    
     [_frames removeAllObjects];
     
     __weak id selfWeak = self;
@@ -109,8 +113,9 @@
 - (void)endDetection:(AIAlgorithmDetector *)algorithmDetector
           withStatus:(AIAlgorithmDetectorResult)algorithmDetectorResult;
 {
-    _soundRecorder.delegate = nil;
-    [_soundRecorder stop];
+    _audioRecorder.delegate = nil;
+    [_audioRecorder stop];
+    
     [_frames removeAllObjects];
     
     if (algorithmDetectorResult != AIAlgorithmDetectorResultTerminate) {
@@ -121,59 +126,34 @@
     }
 }
 
-#pragma mark - 
-#pragma mark SoundRecorderDelegate
+#pragma mark -
+#pragma mark AIQueueAudioRecorderDelegate
 
-- (void)willStartSoundRecorder:(AISoundRecorder *)soundRecorder
+- (void)audioRecorder:(AIQueueAudioRecorder *)audioRecorder dataReceived:(SInt16 *)samples andSamplesCount:(UInt32)samplesCount
 {
-    
-}
-
-- (void)didStopSoundRecorder:(AISoundRecorder *)soundRecorder
-{
-    
-}
-
-- (void)soundRecorder:(AISoundRecorder *)soundRecorder
-         receivedData:(AudioBufferList *)ioData
-    andNumberOfFrames:(UInt32)numberofFrames
-{
-    long long pw = 0;
-    long long cnt = 0;
-    
     NSMutableData *data = [[NSMutableData alloc] init];
-    for (int i = 0; i < ioData->mNumberBuffers; i++) {
-        SInt16* mdata = (SInt16 *)ioData->mBuffers[i].mData;
-        UInt32 len = ioData->mBuffers[i].mDataByteSize;
-        [data appendBytes:mdata length:len];
-        
-        long long ret = 0;
-        for (UInt32 i = 0; i < numberofFrames; i++)
-        {
-            SInt16 mY1 = mdata[i];
-            ret += abs(mY1);
-            [_frames addObject:@((double)mY1 / (double)SHRT_MAX)];
-        }
-        
-        pw += ret;
-        cnt += len;
+    [data appendBytes:samples length:samplesCount * sizeof(SInt16)];
+    
+    for (UInt32 i = 0; i < samplesCount; i++)
+    {
+        [_frames addObject:@((double)samples[i] / (double)SHRT_MAX)];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.VADListening) {
-            AIAlgorithmDetectorResult result = [self process];
-            if (result != AIAlgorithmDetectorResultContinue) {
-                if (result == AIAlgorithmDetectorResultNoSpeech) {
-                    
-                } else if (result == AIAlgorithmDetectorResultTerminate) {
-                    
-                }
-            }
+            [self process];
         }
-        
-        double power1 = _soundRecorder.currentPower;
-        [_delegate recordDetector:self didReceiveData:data power:power1];
+    
+        [_delegate recordDetector:self didReceiveData:data];
     });
+}
+
+- (void)audioRecorder:(AIQueueAudioRecorder *)audioRecorder didFailWithError:(NSError *)error {
+    
+}
+
+- (void)audioRecorder:(AIQueueAudioRecorder *)audioRecorder audioLevelChanged:(float)audioLevel {
+    [_delegate recordDetector:self audioLevelChanged:audioLevel];
 }
 
 - (AIAlgorithmDetectorResult)process

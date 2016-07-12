@@ -27,7 +27,8 @@
 
 @required
 
-- (void)recordDetector:(AIRecordDetector *)helper didReceiveData:(NSData *)data power:(float)power;
+- (void)recordDetector:(AIRecordDetector *)helper didReceiveData:(NSData *)data;
+- (void)recordDetector:(AIRecordDetector *)helper audioLevelChanged:(float)audioLevel;
 - (void)recordDetectorDidStartRecording:(AIRecordDetector *)helper;
 - (void)recordDetectorDidStopRecording:(AIRecordDetector *)helper cancelled:(BOOL)cancelled;
 - (void)recordDetector:(AIRecordDetector *)helper didFailWithError:(NSError *)error;

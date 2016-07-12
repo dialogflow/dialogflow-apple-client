@@ -327,9 +327,10 @@
         
         [request setSoundLevelHandleBlock:^(AIRequest *request, float level) {
             float prepared = MIN(level * 2.f, 1.f);
-            prepared = MAX(prevValue * 0.96f, prepared);
-            
-            prevValue = prepared;
+//            prepared = MAX(prevValue * 0.96f, prepared);
+//            
+//            prevValue = prepared;
+//            selfWeak.levelView.level = prepared;
             selfWeak.levelView.level = prepared;
         }];
         

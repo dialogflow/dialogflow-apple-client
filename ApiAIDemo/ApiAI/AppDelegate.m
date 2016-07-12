@@ -37,7 +37,8 @@
     
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     
-    configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";  
+//    configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";  
+    configuration.clientAccessToken = @"417a7fbdda844ac1ae922d10d4c4e4be";
     
     apiai.configuration = configuration;
     

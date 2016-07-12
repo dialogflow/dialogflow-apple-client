@@ -268,15 +268,17 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     }
 }
 
-- (void)recordDetector:(AIRecordDetector *)helper didReceiveData:(NSData *)data power:(float)power
+- (void)recordDetector:(AIRecordDetector *)helper didReceiveData:(NSData *)data
 {
-    if (self.soundLevelHandleBlock) {
-        _soundLevelHandleBlock(self, power);
-    }
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         [_streamBuffer write:data];
     });
+}
+
+- (void)recordDetector:(AIRecordDetector *)helper audioLevelChanged:(float)audioLevel {
+    if (self.soundLevelHandleBlock) {
+        _soundLevelHandleBlock(self, audioLevel);
+    }
 }
 
 - (void)recordDetectorDidStartRecording:(AIRecordDetector *)helper

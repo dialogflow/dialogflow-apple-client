@@ -221,6 +221,9 @@
 		58F060581A8CB3D7002615DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DF521941E14C0043140B /* Foundation.framework */; };
 		58F0605A1A8CB3DD002615DF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F060591A8CB3DD002615DF /* MobileCoreServices.framework */; };
 		58F0605C1A8CB3E5002615DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */; };
+		58F1ABB61CE1B3DF00FF34D2 /* AIQueueAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1ABB51CE1B3DF00FF34D2 /* AIQueueAudioRecorder.m */; };
+		58F1ABB71CE1B47C00FF34D2 /* AIQueueAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1ABB51CE1B3DF00FF34D2 /* AIQueueAudioRecorder.m */; };
+		58F1ABB81CE1B47D00FF34D2 /* AIQueueAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1ABB51CE1B3DF00FF34D2 /* AIQueueAudioRecorder.m */; };
 		58FF3A2C1C43BD240038BD9D /* AIUserEntitiesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF3A291C43BD240038BD9D /* AIUserEntitiesRequest.m */; };
 		58FF3A2D1C43BD240038BD9D /* AIUserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF3A2B1C43BD240038BD9D /* AIUserEntity.m */; };
 /* End PBXBuildFile section */
@@ -391,6 +394,8 @@
 		58F0604D1A8CB366002615DF /* ApiAITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiAITests.m; sourceTree = "<group>"; };
 		58F060591A8CB3DD002615DF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		58F1ABB41CE1B3DF00FF34D2 /* AIQueueAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIQueueAudioRecorder.h; sourceTree = "<group>"; };
+		58F1ABB51CE1B3DF00FF34D2 /* AIQueueAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIQueueAudioRecorder.m; sourceTree = "<group>"; };
 		58FF3A281C43BD240038BD9D /* AIUserEntitiesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserEntitiesRequest.h; sourceTree = "<group>"; };
 		58FF3A291C43BD240038BD9D /* AIUserEntitiesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserEntitiesRequest.m; sourceTree = "<group>"; };
 		58FF3A2A1C43BD240038BD9D /* AIUserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserEntity.h; sourceTree = "<group>"; };
@@ -782,6 +787,8 @@
 		58D696F51B679D0300693710 /* SoundRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				58F1ABB41CE1B3DF00FF34D2 /* AIQueueAudioRecorder.h */,
+				58F1ABB51CE1B3DF00FF34D2 /* AIQueueAudioRecorder.m */,
 				58D696F61B679D0300693710 /* AIAudioUtils.c */,
 				58D696F71B679D0300693710 /* AIAudioUtils.h */,
 				58D696F81B679D0300693710 /* AIMeterTable.h */,
@@ -1121,6 +1128,7 @@
 				580C6ABD1CA1837A00C55313 /* AIProgressView.m in Sources */,
 				580C6ABE1CA1837A00C55313 /* AIVoiceContainerView.m in Sources */,
 				580C6ABF1CA1837A00C55313 /* AIVoiceLevelView.m in Sources */,
+				58F1ABB71CE1B47C00FF34D2 /* AIQueueAudioRecorder.m in Sources */,
 				580C6AAE1CA1833C00C55313 /* AIUserEntity.m in Sources */,
 				580C6AA51CA1820C00C55313 /* AIAudioUtils.c in Sources */,
 				580C6AA31CA181E700C55313 /* AIMeterTable.m in Sources */,
@@ -1167,6 +1175,7 @@
 				588D23A11AFB3C95008289F1 /* AIDatePeriodFormatter.m in Sources */,
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
+				58F1ABB61CE1B3DF00FF34D2 /* AIQueueAudioRecorder.m in Sources */,
 				58FF3A2D1C43BD240038BD9D /* AIUserEntity.m in Sources */,
 				5801F12B1B0F3E250016DE2A /* AIRequestEntry.m in Sources */,
 				581409F51C86B8290014BBE8 /* AIQueryRequest.m in Sources */,
@@ -1203,6 +1212,7 @@
 				588D23A41AFB3CA1008289F1 /* AIResponseFulfillment.m in Sources */,
 				588D23A81AFB3CA1008289F1 /* AIResponseStatus.m in Sources */,
 				588D23A61AFB3CA1008289F1 /* AIResponseParameter.m in Sources */,
+				58F1ABB81CE1B47D00FF34D2 /* AIQueueAudioRecorder.m in Sources */,
 				588D23A51AFB3CA1008289F1 /* AIResponseMetadata.m in Sources */,
 				58AA07AE1B39494900A259D9 /* AIVADTest.m in Sources */,
 				588D23A21AFB3CA1008289F1 /* AIResponse.m in Sources */,
