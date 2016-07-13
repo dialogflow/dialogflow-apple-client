@@ -43,6 +43,12 @@
 @property(nonatomic, copy, readonly) NSString *resolvedQuery;
 
 /**
+ 'actionIncomplete'
+ */
+
+@property(nonnull, copy, readonly) NSNumber *actionIncomplete;
+
+/**
  Action.
  */
 @property(nonatomic, copy, readonly) NSString *action;

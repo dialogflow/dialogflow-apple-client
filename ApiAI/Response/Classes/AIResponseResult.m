@@ -43,6 +43,7 @@
         _source = _responseResult[@"source"];
         _resolvedQuery = _responseResult[@"resolvedQuery"];
         _action = _responseResult[@"action"];
+        _actionIncomplete = _responseResult[@"actionIncomplete"];
         
         {
             __block NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
