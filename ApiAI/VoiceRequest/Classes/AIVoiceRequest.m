@@ -63,68 +63,72 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
 {
     self = [super initWithDataService:dataService];
     if (self) {
-        self.recordDetector = [[AIRecordDetector alloc] init];
-        _recordDetector.delegate = self;
-        
-        self.useVADForAutoCommit = YES;
-        
-        self.boundary = [self creteBoundary];
-        
-        NSMutableURLRequest *request = self.prepareDefaultRequest;
-        
-        NSInputStream *input = nil;
-        NSOutputStream *output = nil;
-        
-        [[self class] createBoundInputStream:&input outputStream:&output bufferSize:2048];
-        
-        self.input = input;
-        self.output = output;
-        
-        [request setHTTPBodyStream:input];
-        
-        NSURLSession *session = dataService.URLSession;
-        
-        __weak typeof(self) selfWeak = self;
-        
-        NSURLSessionDataTask *dataTask =
-        [session dataTaskWithRequest:request
-                   completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
-                       if (!error) {
-                           NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
-                           if ([dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
-                               NSError *responseSerializeError = nil;
-                               id responseData =
-                               [NSJSONSerialization JSONObjectWithData:data
-                                                               options:0
-                                                                 error:&responseSerializeError];
-                               
-                               if (!responseSerializeError) {
-                                   [self handleResponse:responseData];
-                               } else {
-                                   [self handleError:responseSerializeError];
-                               }
-                               
-                           } else {
-                               NSError *responseStatusCodeError =
-                               [NSError errorWithDomain:AIErrorDomain
-                                                   code:NSURLErrorBadServerResponse
-                                               userInfo:@{
-                                                          NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
-                                                          }];
-                               [selfWeak handleError:responseStatusCodeError];
-                           }
-                       } else {
-                           [selfWeak handleError:error];
-                       }
-                   }];
-        
-        self.dataTask = dataTask;
-        
-        
-        self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
-        [_streamBuffer open];
+//        [self prepare];
     }
     return self;
+}
+
+- (void)prepare {
+    self.recordDetector = [[AIRecordDetector alloc] init];
+    _recordDetector.delegate = self;
+    
+    self.useVADForAutoCommit = YES;
+    
+    self.boundary = [self creteBoundary];
+    
+    NSMutableURLRequest *request = self.prepareDefaultRequest;
+    
+    NSInputStream *input = nil;
+    NSOutputStream *output = nil;
+    
+    [[self class] createBoundInputStream:&input outputStream:&output bufferSize:2048];
+    
+    self.input = input;
+    self.output = output;
+    
+    [request setHTTPBodyStream:input];
+    
+    NSURLSession *session = self.dataService.URLSession;
+    
+    __weak typeof(self) selfWeak = self;
+    
+    NSURLSessionDataTask *dataTask =
+    [session dataTaskWithRequest:request
+               completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
+                   if (!error) {
+                       NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
+                       if ([self.dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
+                           NSError *responseSerializeError = nil;
+                           id responseData =
+                           [NSJSONSerialization JSONObjectWithData:data
+                                                           options:0
+                                                             error:&responseSerializeError];
+                           
+                           if (!responseSerializeError) {
+                               [self handleResponse:responseData];
+                           } else {
+                               [self handleError:responseSerializeError];
+                           }
+                           
+                       } else {
+                           NSError *responseStatusCodeError =
+                           [NSError errorWithDomain:AIErrorDomain
+                                               code:NSURLErrorBadServerResponse
+                                           userInfo:@{
+                                                      NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
+                                                      }];
+                           [selfWeak handleError:responseStatusCodeError];
+                       }
+                   } else {
+                       [selfWeak handleError:error];
+                   }
+               }];
+    
+    self.dataTask = dataTask;
+    
+    
+    self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
+    [_streamBuffer open];
 }
 
 - (void)start
@@ -179,6 +183,8 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
 
 - (void)configureHTTPRequest
 {
+    [self prepare];
+    
     NSMutableData *data = [[[NSString stringWithFormat:@"--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     
     NSString *timeZoneString = self.timeZone ? self.timeZone.name : [NSTimeZone localTimeZone].name;
@@ -212,7 +218,7 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
                                     };
     }
 
-    [data appendData:[@"Content-Disposition: form-data; name=\"request\"; filename=\"request.json\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"Content-Disposition: form-data; name=\"request\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: application/json\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
@@ -222,7 +228,7 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     [data appendData:jsonData];
 
     [data appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", _boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"qwe.wav\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"Content-Disposition: form-data; name=\"voiceData\"; filename=\"-\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[@"Content-Type: audio/wav\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 
     [self.dataTask resume];
