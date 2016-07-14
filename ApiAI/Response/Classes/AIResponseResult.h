@@ -46,7 +46,7 @@
  'actionIncomplete'
  */
 
-@property(nonnull, copy, readonly) NSNumber *actionIncomplete;
+@property(nonatomic, copy, readonly) NSNumber *actionIncomplete;
 
 /**
  Action.
