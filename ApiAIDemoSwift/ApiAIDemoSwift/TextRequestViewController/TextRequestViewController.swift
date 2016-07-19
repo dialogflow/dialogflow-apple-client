@@ -13,7 +13,7 @@ class TextRequestViewController: UIViewController {
     
     @IBAction func sendText(sender: UIButton)
     {
-        MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+        let hud = MBProgressHUD.showHUDAddedTo(self.view.window!, animated: true)
         
         self.textField?.resignFirstResponder()
         
@@ -25,16 +25,16 @@ class TextRequestViewController: UIViewController {
             request.query = [""]
         }
         
-        request.setCompletionBlockSuccess({[unowned self] (AIRequest request, AnyObject response) -> Void in
+        request.setCompletionBlockSuccess({[unowned self] (request, response) -> Void in
             let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultNavigationController
             
             resultNavigationController.response = response
             
             self.presentViewController(resultNavigationController, animated: true, completion: nil)
             
-            MBProgressHUD.hideAllHUDsForView(self.view.window, animated: true)
-        }, failure: { (AIRequest request, NSError error) -> Void in
-            MBProgressHUD.hideAllHUDsForView(self.view.window, animated: true)
+            hud.hideAnimated(true)
+        }, failure: { (request, error) -> Void in
+            hud.hideAnimated(true)
         });
         
         ApiAI.sharedApiAI().enqueue(request)

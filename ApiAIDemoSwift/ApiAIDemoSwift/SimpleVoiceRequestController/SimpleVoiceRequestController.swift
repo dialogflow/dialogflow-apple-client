@@ -34,7 +34,7 @@ class SimpleVoiceRequestController: UIViewController {
             request.useVADForAutoCommit = vad.on
         }
         
-        request.setCompletionBlockSuccess({[unowned self] (AIRequest request, AnyObject response) -> Void in
+        request.setCompletionBlockSuccess({[unowned self] (request, response) -> Void in
             let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultNavigationController
             
             resultNavigationController.response = response
@@ -43,7 +43,7 @@ class SimpleVoiceRequestController: UIViewController {
             
             self.changeStateToStop()
             
-        }, failure: { (AIRequest request, NSError error) -> Void in
+        }, failure: { (request, error) -> Void in
             self.changeStateToStop()
         })
         

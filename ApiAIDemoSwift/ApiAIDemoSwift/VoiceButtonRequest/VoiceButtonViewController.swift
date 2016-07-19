@@ -15,11 +15,11 @@ class VoiceButtonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.voiceRequestButton?.successCallback = {(AnyObject response) -> Void in
+        self.voiceRequestButton?.successCallback = {(response) -> Void in
             self.showResult(response)
         }
         
-        self.voiceRequestButton?.failureCallback = {(NSError error) -> Void in
+        self.voiceRequestButton?.failureCallback = {(error) -> Void in
             
         }
     }

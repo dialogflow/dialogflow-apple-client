@@ -7,7 +7,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target "ApiAIDemo" do
 
-pod 'ApiAI' , :path => '../'
+pod 'ApiAI' #, :path => '../'
 pod 'MBProgressHUD'
 
 end
