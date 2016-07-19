@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F01E2482627454D6E1F3175 /* libPods-ApiAIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 612591F13737A770BECC1C4C /* libPods-ApiAIDemo.a */; };
+		0299F11107D463DF66322558 /* Pods_ApiAIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB8D665B5DCBC5066038865 /* Pods_ApiAIDemo.framework */; };
 		580670861A76428800A2B54C /* VoiceButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670851A76428800A2B54C /* VoiceButtonViewController.m */; };
 		5806708A1A7642FD00A2B54C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670891A7642FD00A2B54C /* ResultViewController.m */; };
 		5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806708C1A76437E00A2B54C /* ResultNavigarionController.m */; };
@@ -72,7 +72,7 @@
 		58C2A87519BEE2EB00632C2F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		58C2A87619BEE2EB00632C2F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		58C2A87719BEE2EB00632C2F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		612591F13737A770BECC1C4C /* libPods-ApiAIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EB8D665B5DCBC5066038865 /* Pods_ApiAIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiAIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 				5891DFEA1941E9210043140B /* CoreGraphics.framework in Frameworks */,
 				5891DFEC1941E9210043140B /* UIKit.framework in Frameworks */,
 				5891DFE81941E9210043140B /* Foundation.framework in Frameworks */,
-				0F01E2482627454D6E1F3175 /* libPods-ApiAIDemo.a in Frameworks */,
+				0299F11107D463DF66322558 /* Pods_ApiAIDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +175,7 @@
 				5891DFE91941E9210043140B /* CoreGraphics.framework */,
 				5891DFEB1941E9210043140B /* UIKit.framework */,
 				5891E0061941E9210043140B /* XCTest.framework */,
-				612591F13737A770BECC1C4C /* libPods-ApiAIDemo.a */,
+				6EB8D665B5DCBC5066038865 /* Pods_ApiAIDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -476,6 +476,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.speaktoit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ApiAIDemo;
@@ -498,6 +499,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAIDemo-Prefix.pch";
 				INFOPLIST_FILE = "ApiAI/ApiAIDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.speaktoit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ApiAIDemo;

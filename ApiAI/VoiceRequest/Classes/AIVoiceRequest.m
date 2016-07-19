@@ -53,6 +53,7 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     [request callSuperStart];
     
     AudioServicesRemoveSystemSoundCompletion(ssID);
+    AudioServicesDisposeSystemSoundID(ssID);
 }
 
 @implementation AIVoiceRequest {
@@ -63,17 +64,16 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
 {
     self = [super initWithDataService:dataService];
     if (self) {
+        self.recordDetector = [[AIRecordDetector alloc] init];
+        _recordDetector.delegate = self;
+        
+        self.useVADForAutoCommit = YES;
 //        [self prepare];
     }
     return self;
 }
 
 - (void)prepare {
-    self.recordDetector = [[AIRecordDetector alloc] init];
-    _recordDetector.delegate = self;
-    
-    self.useVADForAutoCommit = YES;
-    
     self.boundary = [self creteBoundary];
     
     NSMutableURLRequest *request = self.prepareDefaultRequest;
@@ -136,28 +136,31 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     NSString *audioFileName = @"beep";
     NSURL *audioFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:audioFileName withExtension:@"caf"];
     
+    NSLog(@"Bundle path: %@", [NSBundle bundleForClass:[self class]].bundlePath);
+    NSLog(@"Playing file: %@", audioFileURL);
+    
     if (audioFileURL) {
         soundID = 0;
 
         OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(audioFileURL), &soundID);
         if (status == noErr) {
-//            void (^__nullable inCompletionBlock)(void) = ^{
-//                [self callSuperStart];
-//            };
             
-            AudioServicesAddSystemSoundCompletion(soundID,
-                                                  CFRunLoopGetMain(),
-                                                  kCFRunLoopDefaultMode,
-                                                  MyAudioServicesSystemSoundCompletionProc,
-                                                  (__bridge void * _Nullable)(self));
-            AudioServicesPlaySystemSound(soundID);
-            
-//            __weak typeof(self) selfWeak = self;
-//            AudioServicesPlaySystemSoundWithCompletion(soundID, ^{
-//                [selfWeak callSuperStart];
-//                
-//                AudioServicesDisposeSystemSoundID(soundID);
-//            });
+//            if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_9_0) {
+//                __weak typeof(self) selfWeak = self;
+//                AudioServicesPlaySystemSoundWithCompletion(soundID, ^{
+//                    [selfWeak callSuperStart];
+//                    
+//                    AudioServicesDisposeSystemSoundID(soundID);
+//                });
+//            } else {
+//                OSStatus s =
+                AudioServicesAddSystemSoundCompletion(soundID,
+                                                      CFRunLoopGetMain(),
+                                                      kCFRunLoopDefaultMode,
+                                                      MyAudioServicesSystemSoundCompletionProc,
+                                                      (__bridge void * _Nullable)(self));
+                AudioServicesPlaySystemSound(soundID);
+//            }
         } else {
             [self callSuperStart];
         }
