@@ -238,12 +238,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5891E0161941E9220043140B /* Build configuration list for PBXNativeTarget "ApiAIDemo" */;
 			buildPhases = (
-				C56E6EE44C68444733D450D2 /* 📦 Check Pods Manifest.lock */,
+				C1B5FC3FFDEE72FFA5D59F26 /* 📦 Check Pods Manifest.lock */,
+				C56E6EE44C68444733D450D2 /* [CP] Check Pods Manifest.lock */,
 				5891DFE01941E9210043140B /* Sources */,
 				5891DFE11941E9210043140B /* Frameworks */,
 				5891DFE21941E9210043140B /* Resources */,
-				0EC5C4B5A9AB66030A95E7E5 /* 📦 Embed Pods Frameworks */,
-				2BA6AED7FE19D98244D3652C /* 📦 Copy Pods Resources */,
+				0EC5C4B5A9AB66030A95E7E5 /* [CP] Embed Pods Frameworks */,
+				2BA6AED7FE19D98244D3652C /* [CP] Copy Pods Resources */,
+				6B8A8F44E67AA24389E364CE /* 📦 Embed Pods Frameworks */,
+				859228A2E7DDF213D2DD26DF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,7 +301,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EC5C4B5A9AB66030A95E7E5 /* 📦 Embed Pods Frameworks */ = {
+		0EC5C4B5A9AB66030A95E7E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BA6AED7FE19D98244D3652C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B8A8F44E67AA24389E364CE /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,7 +346,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2BA6AED7FE19D98244D3652C /* 📦 Copy Pods Resources */ = {
+		859228A2E7DDF213D2DD26DF /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,7 +361,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C56E6EE44C68444733D450D2 /* 📦 Check Pods Manifest.lock */ = {
+		C1B5FC3FFDEE72FFA5D59F26 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,6 +369,21 @@
 			inputPaths = (
 			);
 			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C56E6EE44C68444733D450D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

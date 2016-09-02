@@ -35,13 +35,15 @@
 
 @class AIRecordDetector;
 
-@interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate>
+@interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate, NSURLSessionDataDelegate>
 
 @property(nonatomic, strong) NSOutputStream *output;
 @property(nonatomic, strong) NSInputStream *input;
 @property(nonatomic, strong) AIRecordDetector *recordDetector;
 @property(nonatomic, strong) AIStreamBuffer *streamBuffer;
 @property(nonatomic, copy) NSString *boundary;
+
+@property(nonnull, strong) NSURLSession *session;
 
 - (void)callSuperStart;
 
@@ -60,6 +62,13 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     SystemSoundID soundID;
 }
 
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+didReceiveResponse:(NSURLResponse *)response
+ completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler
+{
+    NSLog(@"");
+}
+
 - (instancetype)initWithDataService:(AIDataService *)dataService
 {
     self = [super initWithDataService:dataService];
@@ -68,9 +77,16 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
         _recordDetector.delegate = self;
         
         self.useVADForAutoCommit = YES;
-//        [self prepare];
     }
     return self;
+}
+
+- (NSDictionary *)getQueryParameters {
+    NSMutableDictionary *parameters = [[super getQueryParameters] mutableCopy];
+    
+    parameters[@"endofspeech"] = @"true";
+    
+    return [parameters copy];
 }
 
 - (void)prepare {
@@ -88,43 +104,54 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     
     [request setHTTPBodyStream:input];
     
-    NSURLSession *session = self.dataService.URLSession;
+//    NSURLSession *session = self.dataService.URLSession;
+    NSURLSession *session =
+    [NSURLSession
+     sessionWithConfiguration:self.dataService.URLSession.configuration
+     delegate:self
+     delegateQueue:nil
+     ];
+    
+    self.session = session;
     
     __weak typeof(self) selfWeak = self;
     
-    NSURLSessionDataTask *dataTask =
-    [session dataTaskWithRequest:request
-               completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
-                   if (!error) {
-                       NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
-                       if ([self.dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
-                           NSError *responseSerializeError = nil;
-                           id responseData =
-                           [NSJSONSerialization JSONObjectWithData:data
-                                                           options:0
-                                                             error:&responseSerializeError];
-                           
-                           if (!responseSerializeError) {
-                               [self handleResponse:responseData];
-                           } else {
-                               [self handleError:responseSerializeError];
-                           }
-                           
-                       } else {
-                           NSError *responseStatusCodeError =
-                           [NSError errorWithDomain:AIErrorDomain
-                                               code:NSURLErrorBadServerResponse
-                                           userInfo:@{
-                                                      NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
-                                                      }];
-                           [selfWeak handleError:responseStatusCodeError];
-                       }
-                   } else {
-                       [selfWeak handleError:error];
-                   }
-               }];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request];
+    [dataTask resume];
     
-    self.dataTask = dataTask;
+//    NSURLSessionDataTask *dataTask =
+//    [session dataTaskWithRequest:request
+//               completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
+//                   if (!error) {
+//                       NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
+//                       if ([self.dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
+//                           NSError *responseSerializeError = nil;
+//                           id responseData =
+//                           [NSJSONSerialization JSONObjectWithData:data
+//                                                           options:0
+//                                                             error:&responseSerializeError];
+//                           
+//                           if (!responseSerializeError) {
+//                               [self handleResponse:responseData];
+//                           } else {
+//                               [self handleError:responseSerializeError];
+//                           }
+//                           
+//                       } else {
+//                           NSError *responseStatusCodeError =
+//                           [NSError errorWithDomain:AIErrorDomain
+//                                               code:NSURLErrorBadServerResponse
+//                                           userInfo:@{
+//                                                      NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
+//                                                      }];
+//                           [selfWeak handleError:responseStatusCodeError];
+//                       }
+//                   } else {
+//                       [selfWeak handleError:error];
+//                   }
+//               }];
+//    
+//    self.dataTask = dataTask;
     
     
     self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
@@ -136,31 +163,17 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     NSString *audioFileName = @"beep";
     NSURL *audioFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:audioFileName withExtension:@"caf"];
     
-    NSLog(@"Bundle path: %@", [NSBundle bundleForClass:[self class]].bundlePath);
-    NSLog(@"Playing file: %@", audioFileURL);
-    
     if (audioFileURL) {
         soundID = 0;
 
         OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(audioFileURL), &soundID);
         if (status == noErr) {
-            
-//            if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_9_0) {
-//                __weak typeof(self) selfWeak = self;
-//                AudioServicesPlaySystemSoundWithCompletion(soundID, ^{
-//                    [selfWeak callSuperStart];
-//                    
-//                    AudioServicesDisposeSystemSoundID(soundID);
-//                });
-//            } else {
-//                OSStatus s =
                 AudioServicesAddSystemSoundCompletion(soundID,
                                                       CFRunLoopGetMain(),
                                                       kCFRunLoopDefaultMode,
                                                       MyAudioServicesSystemSoundCompletionProc,
                                                       (__bridge void * _Nullable)(self));
                 AudioServicesPlaySystemSound(soundID);
-//            }
         } else {
             [self callSuperStart];
         }

@@ -13,6 +13,8 @@
 - (NSDictionary *)defaultHeaders;
 - (NSDictionary *)requestBodyDictionary;
 
+- (NSDictionary *)getQueryParameters;
+
 - (NSMutableURLRequest *)prepareDefaultRequest;
 
 - (NSArray *)contextsRequestPresentation;
