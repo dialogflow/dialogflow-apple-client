@@ -35,7 +35,7 @@
 
 @class AIRecordDetector;
 
-@interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate, NSURLSessionDataDelegate>
+@interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 
 @property(nonatomic, strong) NSOutputStream *output;
 @property(nonatomic, strong) NSInputStream *input;
@@ -62,9 +62,41 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     SystemSoundID soundID;
 }
 
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
+   didSendBodyData:(int64_t)bytesSent
+    totalBytesSent:(int64_t)totalBytesSent
+totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend
+{
+    NSLog(@"");
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
+didCompleteWithError:(nullable NSError *)error
+{
+    NSLog(@"");
+}
+
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
 didReceiveResponse:(NSURLResponse *)response
  completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler
+{
+    completionHandler(NSURLSessionResponseAllow);
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask
+{
+    NSLog(@"");
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask
+{
+    NSLog(@"");
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+    didReceiveData:(NSData *)data
 {
     NSLog(@"");
 }
@@ -94,6 +126,10 @@ didReceiveResponse:(NSURLResponse *)response
     
     NSMutableURLRequest *request = self.prepareDefaultRequest;
     
+    [request addValue:@"100-continue" forHTTPHeaderField:@"Expect"];
+    
+    request.HTTPShouldUsePipelining = YES;
+    
     NSInputStream *input = nil;
     NSOutputStream *output = nil;
     
@@ -104,55 +140,43 @@ didReceiveResponse:(NSURLResponse *)response
     
     [request setHTTPBodyStream:input];
     
-//    NSURLSession *session = self.dataService.URLSession;
-    NSURLSession *session =
-    [NSURLSession
-     sessionWithConfiguration:self.dataService.URLSession.configuration
-     delegate:self
-     delegateQueue:nil
-     ];
-    
-    self.session = session;
+    NSURLSession *session = self.dataService.URLSession;
     
     __weak typeof(self) selfWeak = self;
     
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request];
-    [dataTask resume];
+    NSURLSessionDataTask *dataTask =
+    [session dataTaskWithRequest:request
+               completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
+                   if (!error) {
+                       NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
+                       if ([self.dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
+                           NSError *responseSerializeError = nil;
+                           id responseData =
+                           [NSJSONSerialization JSONObjectWithData:data
+                                                           options:0
+                                                             error:&responseSerializeError];
+                           
+                           if (!responseSerializeError) {
+                               [self handleResponse:responseData];
+                           } else {
+                               [self handleError:responseSerializeError];
+                           }
+                           
+                       } else {
+                           NSError *responseStatusCodeError =
+                           [NSError errorWithDomain:AIErrorDomain
+                                               code:NSURLErrorBadServerResponse
+                                           userInfo:@{
+                                                      NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
+                                                      }];
+                           [selfWeak handleError:responseStatusCodeError];
+                       }
+                   } else {
+                       [selfWeak handleError:error];
+                   }
+               }];
     
-//    NSURLSessionDataTask *dataTask =
-//    [session dataTaskWithRequest:request
-//               completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
-//                   if (!error) {
-//                       NSHTTPURLResponse *response = (NSHTTPURLResponse *)response1;
-//                       if ([self.dataService.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode]) {
-//                           NSError *responseSerializeError = nil;
-//                           id responseData =
-//                           [NSJSONSerialization JSONObjectWithData:data
-//                                                           options:0
-//                                                             error:&responseSerializeError];
-//                           
-//                           if (!responseSerializeError) {
-//                               [self handleResponse:responseData];
-//                           } else {
-//                               [self handleError:responseSerializeError];
-//                           }
-//                           
-//                       } else {
-//                           NSError *responseStatusCodeError =
-//                           [NSError errorWithDomain:AIErrorDomain
-//                                               code:NSURLErrorBadServerResponse
-//                                           userInfo:@{
-//                                                      NSLocalizedDescriptionKey: [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode]
-//                                                      }];
-//                           [selfWeak handleError:responseStatusCodeError];
-//                       }
-//                   } else {
-//                       [selfWeak handleError:error];
-//                   }
-//               }];
-//    
-//    self.dataTask = dataTask;
-    
+    self.dataTask = dataTask;
     
     self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
     [_streamBuffer open];

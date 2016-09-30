@@ -72,7 +72,7 @@ static NSString *URLEncode(NSString *string) {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
     if (self.version) {
-        parameters[@"version"] = self.version;
+        parameters[@"v"] = self.version;
     }
     
     return [parameters copy];
@@ -97,9 +97,14 @@ static NSString *URLEncode(NSString *string) {
     NSString *path = @"query";
     
     NSString *getQueryString = [self queryFromQueryParameters: [self getQueryParameters]];
-    path = [path stringByAppendingFormat:@"?%@", getQueryString];
+//    path = [path stringByAppendingFormat:@"?%@", getQueryString];
     
     NSURL *URL = [configuration.baseURL URLByAppendingPathComponent:path];
+    
+    NSURLComponents *components = [NSURLComponents componentsWithURL:URL resolvingAgainstBaseURL:NO];
+    components.query = getQueryString;
+    
+    URL = components.URL;
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
     

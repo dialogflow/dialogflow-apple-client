@@ -140,6 +140,10 @@
             
             break;
         }
+        case NSStreamEventEndEncountered: {
+            NSLog(@"");
+            break;
+        }
         default:
             break;
     }
