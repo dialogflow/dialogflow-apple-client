@@ -228,7 +228,7 @@
             "name": "Events",
 
             "source_files": [
-                            "ApiAI/EventRequest/**/*.{h,m,c}",
+                            "ApiAI/EventRequest/**/*.{h,m,c}"
                             ],
 
             "resources": [],
