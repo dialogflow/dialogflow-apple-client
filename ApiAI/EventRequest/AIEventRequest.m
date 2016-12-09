@@ -33,8 +33,8 @@
     NSString *timeZoneString = self.timeZone ? self.timeZone.name : [NSTimeZone localTimeZone].name;
     
     NSDictionary *eventDictionary = @{
-                                      @"event": _event.event,
-                                      @"data": _event.data
+                                      @"name": _event.name ?: @"",
+                                      @"data": _event.data ?: @{}
                                       };
     
     NSMutableDictionary *parameters = [@{

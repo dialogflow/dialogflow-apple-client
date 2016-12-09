@@ -10,10 +10,10 @@
 
 @interface AIEvent : NSObject
 
-@property(nonatomic, copy) NSString *event;
+@property(nonatomic, copy) NSString *name;
 @property(nonatomic, copy) NSDictionary *data;
 
-- (instancetype)initWithEvent:(NSString *)event andData:(NSDictionary *)data;
-- (instancetype)initWithEvent:(NSString *)event;
+- (instancetype)initWithName:(NSString *)name andData:(NSDictionary *)data;
+- (instancetype)initWithName:(NSString *)name;
 
 @end

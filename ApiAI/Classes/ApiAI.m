@@ -146,6 +146,18 @@ NSString *const kDefaultVersion = @"20150910";
 
 #endif
 
+#if __has_include("AIEventRequest.h")
+- (AIEventRequest *)eventRequest
+{
+    AIEventRequest *request = [[AIEventRequest alloc] initWithDataService:_dataService];
+    
+    [request setVersion:self.version];
+    [request setLang:self.lang];
+    
+    return request;
+}
+#endif
+
 - (void)setConfiguration:(id<AIConfiguration>)configuration
 {
     _configuration = configuration;

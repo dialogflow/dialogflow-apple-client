@@ -10,20 +10,20 @@
 
 @implementation AIEvent
 
-- (instancetype)initWithEvent:(NSString *)event andData:(NSDictionary *)data {
+- (instancetype)initWithName:(NSString *)name andData:(NSDictionary *)data {
     self = [super init];
     if (self) {
-        self.event = event;
+        self.name = name;
         self.data = data;
     }
     
     return self;
 }
 
-- (instancetype)initWithEvent:(NSString *)event {
+- (instancetype)initWithName:(NSString *)name {
     self = [super init];
     if (self) {
-        self.event = event;
+        self.name = name;
         self.data = nil;
     }
     return self;

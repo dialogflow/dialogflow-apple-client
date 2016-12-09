@@ -55,6 +55,10 @@
     #import "AIUserEntitiesRequest.h"
 #endif
 
+#if __has_include("AIEventRequest.h")
+    #import "AIEventRequest.h"
+#endif
+
 /*!
  
  @enum AIRequestType enum
@@ -172,6 +176,10 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 - (AIVoiceFileRequest *)voiceFileRequestWithFileURL:(NSURL *)fileURL AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.");
 - (AIVoiceFileRequest *)voiceFileRequestWithStream:(NSInputStream *)inputStream AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.");
 - (AIVoiceFileRequest *)voiceFileRequestWithData:(NSData *)fileData AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.");
+#endif
+
+#if __has_include("AIEventRequest.h")
+- (AIEventRequest *)eventRequest;
 #endif
 
 /*!

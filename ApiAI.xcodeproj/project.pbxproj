@@ -155,6 +155,7 @@
 		5865DD1F1DFA7CD00073D1A3 /* AIEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5865DD1E1DFA7CD00073D1A3 /* AIEvent.m */; };
 		5865DD201DFA7E4A0073D1A3 /* AIEventRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5865DD1B1DFA7CA50073D1A3 /* AIEventRequest.m */; };
 		5865DD211DFA7E4A0073D1A3 /* AIEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5865DD1E1DFA7CD00073D1A3 /* AIEvent.m */; };
+		5865DD271DFA82400073D1A3 /* EventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5865DD261DFA82400073D1A3 /* EventsTests.m */; };
 		5867737D1BD0F76000E1253D /* speech_d.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5867737C1BD0F76000E1253D /* speech_d.wav */; };
 		5869BCFD1B37E56A000B99B7 /* AINullabilityDefines.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */; };
 		587074061CA184C900C4535B /* AIVoiceRequestButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581AB39E1A245D8300E8A190 /* AIVoiceRequestButton.xib */; };
@@ -315,6 +316,7 @@
 		5865DD1B1DFA7CA50073D1A3 /* AIEventRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIEventRequest.m; sourceTree = "<group>"; };
 		5865DD1D1DFA7CD00073D1A3 /* AIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIEvent.h; sourceTree = "<group>"; };
 		5865DD1E1DFA7CD00073D1A3 /* AIEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIEvent.m; sourceTree = "<group>"; };
+		5865DD261DFA82400073D1A3 /* EventsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTests.m; sourceTree = "<group>"; };
 		5867737C1BD0F76000E1253D /* speech_d.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = speech_d.wav; sourceTree = "<group>"; };
 		5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AINullabilityDefines.h; sourceTree = "<group>"; };
 		588D23831AFB3C95008289F1 /* AIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponse.h; sourceTree = "<group>"; };
@@ -843,6 +845,7 @@
 				58F0604D1A8CB366002615DF /* ApiAITests.m */,
 				58AA07AD1B39494900A259D9 /* AIVADTest.m */,
 				581409F71C86C7E30014BBE8 /* UserEntitiesTests.m */,
+				5865DD261DFA82400073D1A3 /* EventsTests.m */,
 				58F0604B1A8CB366002615DF /* Supporting Files */,
 			);
 			path = ApiAITests;
@@ -1224,6 +1227,7 @@
 				588D23AF1AFB3F24008289F1 /* AIRequest+AIMappedResponse.m in Sources */,
 				581409F81C86C7E30014BBE8 /* UserEntitiesTests.m in Sources */,
 				588D23A91AFB3CAB008289F1 /* AIDatePeriodFormatter.m in Sources */,
+				5865DD271DFA82400073D1A3 /* EventsTests.m in Sources */,
 				588D23A41AFB3CA1008289F1 /* AIResponseFulfillment.m in Sources */,
 				588D23A81AFB3CA1008289F1 /* AIResponseStatus.m in Sources */,
 				588D23A61AFB3CA1008289F1 /* AIResponseParameter.m in Sources */,
