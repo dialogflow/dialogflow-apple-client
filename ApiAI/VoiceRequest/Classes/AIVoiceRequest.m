@@ -262,15 +262,15 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
 
 + (void)createBoundInputStream:(NSInputStream **)inputStreamPtr outputStream:(NSOutputStream **)outputStreamPtr bufferSize:(NSUInteger)bufferSize
 {
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
-        NSInputStream *input = NULL;
-        NSOutputStream *output = NULL;
-        
-        [NSStream getBoundStreamsWithBufferSize:bufferSize inputStream:&input outputStream:&output];
-        
-        *inputStreamPtr = input;
-        *outputStreamPtr = output;
-    } else {
+//    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+//        NSInputStream *input = NULL;
+//        NSOutputStream *output = NULL;
+//        
+//        [NSStream getBoundStreamsWithBufferSize:bufferSize inputStream:&input outputStream:&output];
+//        
+//        *inputStreamPtr = input;
+//        *outputStreamPtr = output;
+//    } else {
         CFReadStreamRef     readStream;
         CFWriteStreamRef    writeStream;
         
@@ -292,7 +292,7 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
         if (outputStreamPtr != NULL) {
             *outputStreamPtr = CFBridgingRelease(writeStream);
         }
-    }
+//    }
 }
 
 - (void)recordDetector:(AIRecordDetector *)helper didReceiveData:(NSData *)data power:(float)power
