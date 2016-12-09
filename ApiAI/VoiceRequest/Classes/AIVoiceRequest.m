@@ -93,7 +93,7 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     NSMutableURLRequest *request = self.prepareDefaultRequest;
     
     [request addValue:@"100-continue" forHTTPHeaderField:@"Expect"];
-//    [request addValue:@"close" forHTTPHeaderField:@"Connection"];
+    [request addValue:@"close" forHTTPHeaderField:@"Connection"];
     
     request.HTTPShouldUsePipelining = YES;
     

@@ -223,6 +223,29 @@
             "dependencies": {
                 "ApiAI/Core": []
             }
+         },
+         {
+            "name": "Events",
+
+            "source_files": [
+                            "ApiAI/EventRequest/**/*.{h,m,c}",
+                            ],
+
+            "resources": [],
+
+            "public_header_files": [
+                                    "ApiAI/EventRequest/**/*.{h}"
+                                    ],
+
+            "ios": {
+                "frameworks": ["Foundation"]
+            },
+
+            "requires_arc": true,
+
+            "dependencies": {
+                "ApiAI/Core": []
+            }
          }
     ]
 }
