@@ -66,7 +66,7 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
     /*! Simple text request type */
     AIRequestTypeText,
     /*! Voice request type with VAD(Voice activity detection) for detect end of phrase. */
-    AIRequestTypeVoice = 1
+    AIRequestTypeVoice DEPRECATED_MSG_ATTRIBUTE("Use :voiceRequest or :textRequest methods") = 1
 };
 
 /*!
@@ -138,7 +138,16 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 - (AIRequest *)requestWithType:(AIRequestType)requestType DEPRECATED_MSG_ATTRIBUTE("Use :voiceRequest or :textRequest methods");
 
 #if AI_SUPPORT_VOICE_REQUEST
-- (AIVoiceRequest *)voiceRequest;
+/*!
+ API.AI speech recognition is going to be deprecated soon.
+ Use Google Cloud Speech API or other solutions.
+ 
+ This is request type available only for old paid plans.
+ It doesn't working for new users.
+ 
+ Will be removed on 1 Feb 2016.
+ */
+- (AIVoiceRequest *)voiceRequest AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.");
 #endif
 
 #if __has_include("AITextRequest.h")
@@ -151,9 +160,18 @@ typedef NS_ENUM(NSUInteger, AIRequestType) {
 
 
 #if __has_include("AIVoiceFileRequest.h")
-- (AIVoiceFileRequest *)voiceFileRequestWithFileURL:(NSURL *)fileURL;
-- (AIVoiceFileRequest *)voiceFileRequestWithStream:(NSInputStream *)inputStream;
-- (AIVoiceFileRequest *)voiceFileRequestWithData:(NSData *)fileData;
+/*!
+ API.AI speech recognition is going to be deprecated soon.
+ Use Google Cloud Speech API or other solutions.
+ 
+ This is request type available only for old paid plans.
+ It doesn't working for new users.
+ 
+ Will be removed on 1 Feb 2016.
+ */
+- (AIVoiceFileRequest *)voiceFileRequestWithFileURL:(NSURL *)fileURL AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.");
+- (AIVoiceFileRequest *)voiceFileRequestWithStream:(NSInputStream *)inputStream AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.");
+- (AIVoiceFileRequest *)voiceFileRequestWithData:(NSData *)fileData AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.");
 #endif
 
 /*!

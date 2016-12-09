@@ -43,12 +43,7 @@
     
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     
-//    configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";
-    configuration.clientAccessToken = @"95a1bad594414951b1f42dfae31d8176";
-    configuration.baseURL = [NSURL URLWithString:@"http://openapi-dev/api/"];
-    
-//    configuration.clientAccessToken = @"0cc6d0ded92d49968dad4ddcb083b48f";
-//    configuration.baseURL = [NSURL URLWithString:@"http://192.168.1.12:8080/api/"];
+    configuration.clientAccessToken = @"YOUR_CLIENT_ACCESS_TOKEN";
     
     apiai.configuration = configuration;
     

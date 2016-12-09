@@ -112,6 +112,9 @@
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
 {
+    if (eventCode != NSStreamEventHasSpaceAvailable) {
+        NSLog(@"");
+    }
     switch (eventCode) {
         case NSStreamEventOpenCompleted:
             self.opened = YES;

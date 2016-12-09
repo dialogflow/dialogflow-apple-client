@@ -33,9 +33,14 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 
+
+
+
+
+
 @class AIRecordDetector;
 
-@interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
+@interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate>
 
 @property(nonatomic, strong) NSOutputStream *output;
 @property(nonatomic, strong) NSInputStream *input;
@@ -60,45 +65,6 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
 
 @implementation AIVoiceRequest {
     SystemSoundID soundID;
-}
-
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-   didSendBodyData:(int64_t)bytesSent
-    totalBytesSent:(int64_t)totalBytesSent
-totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend
-{
-    NSLog(@"");
-}
-
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-didCompleteWithError:(nullable NSError *)error
-{
-    NSLog(@"");
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-didReceiveResponse:(NSURLResponse *)response
- completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler
-{
-    completionHandler(NSURLSessionResponseAllow);
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask
-{
-    NSLog(@"");
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask
-{
-    NSLog(@"");
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-    didReceiveData:(NSData *)data
-{
-    NSLog(@"");
 }
 
 - (instancetype)initWithDataService:(AIDataService *)dataService
@@ -127,6 +93,7 @@ didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask
     NSMutableURLRequest *request = self.prepareDefaultRequest;
     
     [request addValue:@"100-continue" forHTTPHeaderField:@"Expect"];
+//    [request addValue:@"close" forHTTPHeaderField:@"Connection"];
     
     request.HTTPShouldUsePipelining = YES;
     
@@ -140,10 +107,11 @@ didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask
     
     [request setHTTPBodyStream:input];
     
+    self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
+    
     NSURLSession *session = self.dataService.URLSession;
     
     __weak typeof(self) selfWeak = self;
-    
     NSURLSessionDataTask *dataTask =
     [session dataTaskWithRequest:request
                completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
@@ -178,8 +146,11 @@ didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask
     
     self.dataTask = dataTask;
     
-    self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
     [_streamBuffer open];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_streamBuffer close];
+    });
 }
 
 - (void)start
@@ -291,26 +262,36 @@ didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask
 
 + (void)createBoundInputStream:(NSInputStream **)inputStreamPtr outputStream:(NSOutputStream **)outputStreamPtr bufferSize:(NSUInteger)bufferSize
 {
-    CFReadStreamRef     readStream;
-    CFWriteStreamRef    writeStream;
-    
-    assert( (inputStreamPtr != NULL) || (outputStreamPtr != NULL) );
-    
-    readStream = NULL;
-    writeStream = NULL;
-    
-    CFStreamCreateBoundPair(
-                            NULL,
-                            ((inputStreamPtr  != nil) ? &readStream : NULL),
-                            ((outputStreamPtr != nil) ? &writeStream : NULL),
-                            (CFIndex) bufferSize
-                            );
-    
-    if (inputStreamPtr != NULL) {
-        *inputStreamPtr  = CFBridgingRelease(readStream);
-    }
-    if (outputStreamPtr != NULL) {
-        *outputStreamPtr = CFBridgingRelease(writeStream);
+    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+        NSInputStream *input = NULL;
+        NSOutputStream *output = NULL;
+        
+        [NSStream getBoundStreamsWithBufferSize:bufferSize inputStream:&input outputStream:&output];
+        
+        *inputStreamPtr = input;
+        *outputStreamPtr = output;
+    } else {
+        CFReadStreamRef     readStream;
+        CFWriteStreamRef    writeStream;
+        
+        assert( (inputStreamPtr != NULL) || (outputStreamPtr != NULL) );
+        
+        readStream = NULL;
+        writeStream = NULL;
+        
+        CFStreamCreateBoundPair(
+                                NULL,
+                                ((inputStreamPtr  != nil) ? &readStream : NULL),
+                                ((outputStreamPtr != nil) ? &writeStream : NULL),
+                                (CFIndex) bufferSize
+                                );
+        
+        if (inputStreamPtr != NULL) {
+            *inputStreamPtr  = CFBridgingRelease(readStream);
+        }
+        if (outputStreamPtr != NULL) {
+            *outputStreamPtr = CFBridgingRelease(writeStream);
+        }
     }
 }
 
