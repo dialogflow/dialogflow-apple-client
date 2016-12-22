@@ -9,7 +9,7 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    @IBOutlet private var textView: UITextView? = nil
+    @IBOutlet fileprivate var textView: UITextView? = nil
     
     var response: AnyObject? = nil
     
@@ -19,7 +19,7 @@ class ResultViewController: UIViewController {
         self.textView?.text = self.response?.description
     }
 
-    @IBAction func done(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

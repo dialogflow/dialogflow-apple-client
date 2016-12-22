@@ -10,25 +10,25 @@ import UIKit
 
 class VoiceButtonViewController: UIViewController {
 
-    @IBOutlet var voiceRequestButton: AIVoiceRequestButton? = nil
+    @IBOutlet var voiceRequestButton: AIVoiceRequestButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.voiceRequestButton?.successCallback = {(response) -> Void in
-            self.showResult(response)
+        self.voiceRequestButton.successCallback = {(response) -> Void in
+            
         }
         
-        self.voiceRequestButton?.failureCallback = {(error) -> Void in
+        self.voiceRequestButton.failureCallback = {(error) -> Void in
             
         }
     }
     
-    func showResult(response: AnyObject) {
-        let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultNavigationController
+    func showResult(_ response: AnyObject) {
+        let resultNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultNavigationController
             
         resultNavigationController.response = response
         
-        self.presentViewController(resultNavigationController, animated: true, completion: nil)
+        self.present(resultNavigationController, animated: true, completion: nil)
     }
 }
