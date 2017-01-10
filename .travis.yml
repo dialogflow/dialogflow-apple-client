@@ -19,9 +19,8 @@ script:
     - xcodebuild -workspace ApiAIMacOSDemo/ApiAIMacOSDemo.xcworkspace -scheme ApiAIMacOSDemo -sdk macosx build
     - pod install --project-directory=./ApiAIMacOSDemo
     - xcodebuild -workspace ApiAIMacOSDemo/ApiAIMacOSDemo.xcworkspace -scheme ApiAIMacOSDemo -sdk macosx build
-    - xcodebuild -workspace ApiAIMacOSDemo/ApiAIMacOSDemo.xcworkspace -scheme ApiAIMacOSDemo -sdk macosx build
     - pod install --project-directory=./ApiAIMacOSDemoSwift
-    - xcodebuild -workspace ApiAIMacOSDemoSwift/APIAiMacOSSwiftDemo.xcworkspace -scheme ApiAIMacOSDemoSwift -sdk macosx build
+    - xcodebuild -workspace ApiAIMacOSDemoSwift/APIAiMacOSSwiftDemo.xcworkspace -scheme APIAiMacOSSwiftDemo -sdk macosx build
     
 notifications:
   email:
