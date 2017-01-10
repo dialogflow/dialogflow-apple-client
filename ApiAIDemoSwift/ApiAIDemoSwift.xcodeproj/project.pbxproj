@@ -192,12 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5875124E1AC275280053EAA9 /* Build configuration list for PBXNativeTarget "ApiAIDemoSwift" */;
 			buildPhases = (
-				30E3F8442E8F846FC50DD577 /* 📦 Check Pods Manifest.lock */,
+				30E3F8442E8F846FC50DD577 /* [CP] Check Pods Manifest.lock */,
 				5875122B1AC275280053EAA9 /* Sources */,
 				5875122C1AC275280053EAA9 /* Frameworks */,
 				5875122D1AC275280053EAA9 /* Resources */,
-				8EE6E255B94C1A06C5244429 /* 📦 Embed Pods Frameworks */,
-				E281031366BE97EF229CB865 /* 📦 Copy Pods Resources */,
+				8EE6E255B94C1A06C5244429 /* [CP] Embed Pods Frameworks */,
+				E281031366BE97EF229CB865 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,9 +238,11 @@
 				TargetAttributes = {
 					5875122E1AC275280053EAA9 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0820;
 					};
 					587512431AC275280053EAA9 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0820;
 						TestTargetID = 5875122E1AC275280053EAA9;
 					};
 				};
@@ -285,29 +287,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		30E3F8442E8F846FC50DD577 /* 📦 Check Pods Manifest.lock */ = {
+		30E3F8442E8F846FC50DD577 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8EE6E255B94C1A06C5244429 /* 📦 Embed Pods Frameworks */ = {
+		8EE6E255B94C1A06C5244429 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,14 +317,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoSwift/Pods-ApiAIDemoSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E281031366BE97EF229CB865 /* 📦 Copy Pods Resources */ = {
+		E281031366BE97EF229CB865 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +477,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ApiAIDemoSwift/ApiAIDemoSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -489,6 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.speaktoit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ApiAIDemoSwift/ApiAIDemoSwift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -508,6 +512,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.speaktoit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApiAIDemoSwift.app/ApiAIDemoSwift";
 			};
 			name = Debug;
@@ -524,6 +529,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.speaktoit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApiAIDemoSwift.app/ApiAIDemoSwift";
 			};
 			name = Release;

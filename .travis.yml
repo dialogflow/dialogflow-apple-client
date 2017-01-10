@@ -17,6 +17,11 @@ script:
     #xcodebuild -workspace ApiAIDemoWatchOS/ApiAIDemoWatchOS.xcworkspace clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     - pod install --project-directory=./ApiAIMacOSDemo
     - xcodebuild -workspace ApiAIMacOSDemo/ApiAIMacOSDemo.xcworkspace -scheme ApiAIMacOSDemo -sdk macosx build
+    - pod install --project-directory=./ApiAIMacOSDemo
+    - xcodebuild -workspace ApiAIMacOSDemo/ApiAIMacOSDemo.xcworkspace -scheme ApiAIMacOSDemo -sdk macosx build
+    - pod install --project-directory=./ApiAIMacOSDemoSwift
+    - xcodebuild -workspace ApiAIMacOSDemoSwift/APIAiMacOSSwiftDemo.xcworkspace -scheme APIAiMacOSSwiftDemo -sdk macosx build
+    
 notifications:
   email:
     recipients:

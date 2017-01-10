@@ -11,32 +11,32 @@ import UIKit
 class TextRequestViewController: UIViewController {
     @IBOutlet var textField: UITextField? = nil
     
-    @IBAction func sendText(sender: UIButton)
+    @IBAction func sendText(_ sender: UIButton)
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view.window!, animated: true)
+        let hud = MBProgressHUD.showAdded(to: self.view.window!, animated: true)
         
         self.textField?.resignFirstResponder()
         
-        let request = ApiAI.sharedApiAI().textRequest()
+        let request = ApiAI.shared().textRequest()
         
         if let text = self.textField?.text {
-            request.query = [text]
+            request?.query = [text]
         } else {
-            request.query = [""]
+            request?.query = [""]
         }
         
-        request.setCompletionBlockSuccess({[unowned self] (request, response) -> Void in
-            let resultNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultNavigationController
+        request?.setCompletionBlockSuccess({[unowned self] (request, response) -> Void in
+            let resultNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultNavigationController
             
-            resultNavigationController.response = response
+            resultNavigationController.response = response as AnyObject?
             
-            self.presentViewController(resultNavigationController, animated: true, completion: nil)
+            self.present(resultNavigationController, animated: true, completion: nil)
             
-            hud.hideAnimated(true)
+            hud.hide(animated: true)
         }, failure: { (request, error) -> Void in
-            hud.hideAnimated(true)
+            hud.hide(animated: true)
         });
         
-        ApiAI.sharedApiAI().enqueue(request)
+        ApiAI.shared().enqueue(request)
     }
 }

@@ -46,6 +46,8 @@
     
     AIVoiceRequest *request = [apiai voiceRequest];
     
+    request.useVADForAutoCommit = _useVAD.isOn;
+    
     __weak typeof(self) selfWeak = self;
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {

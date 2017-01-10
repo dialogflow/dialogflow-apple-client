@@ -42,6 +42,16 @@ typedef void(^SoundRecordBeginBlock)(AIRequest *request);
  */
 typedef void(^SoundRecordEndBlock)(AIRequest *request);
 
+/*!
+ API.AI speech recognition is going to be deprecated soon.
+ Use Google Cloud Speech API or other solutions.
+ 
+ This is request type available only for old paid plans.
+ It doesn't working for new users.
+ 
+ Will be removed on 1 Feb 2016.
+ */
+AI_DEPRECATED_MSG_ATTRIBUTE("Will be removed on 1 Feb 2016.")
 @interface AIVoiceRequest : AIQueryRequest
 
 /*!
@@ -49,9 +59,8 @@ typedef void(^SoundRecordEndBlock)(AIRequest *request);
  @property soundLevelHandleBlock
  
  @discussion Sound level handler. Default is nil.
- 
  */
-@property(nonatomic, copy) SoundLevelHandleBlock soundLevelHandleBlock;
+@property(nonatomic, copy) SoundLevelHandleBlock soundLevelHandleBlock AI_DEPRECATED_ATTRIBUTE;
 
 /*!
  
@@ -60,7 +69,7 @@ typedef void(^SoundRecordEndBlock)(AIRequest *request);
  @discussion Record begin handler. Default is nil.
  
  */
-@property(nonatomic, copy) SoundRecordBeginBlock soundRecordBeginBlock;
+@property(nonatomic, copy) SoundRecordBeginBlock soundRecordBeginBlock AI_DEPRECATED_ATTRIBUTE;
 
 /*!
  
@@ -69,7 +78,7 @@ typedef void(^SoundRecordEndBlock)(AIRequest *request);
  @discussion Record end handler. Default is nil.
  
  */
-@property(nonatomic, copy) SoundRecordEndBlock soundRecordEndBlock;
+@property(nonatomic, copy) SoundRecordEndBlock soundRecordEndBlock AI_DEPRECATED_ATTRIBUTE;
 
 /*!
  
@@ -78,11 +87,11 @@ typedef void(^SoundRecordEndBlock)(AIRequest *request);
  @discussion Use Voice Activity Detection for detect end of speech. Default is YES.
  
  */
-@property(nonatomic, assign) BOOL useVADForAutoCommit;
+@property(nonatomic, assign) BOOL useVADForAutoCommit AI_DEPRECATED_ATTRIBUTE;
 
 /*!
  * Manually stop listening and send request to server.
  */
-- (void)commitVoice;
+- (void)commitVoice AI_DEPRECATED_ATTRIBUTE;
 
 @end

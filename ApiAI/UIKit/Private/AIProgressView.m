@@ -110,6 +110,8 @@ NSString *const kAIProgressAnimationKey = @"AIProgressAnimationKey";
 
 - (void)awakeFromNib
 {
+     [super awakeFromNib];
+    
     AIProgressLayer *layer = (AIProgressLayer *)self.layer;
     layer.contentsScale = [UIScreen mainScreen].scale;
 }

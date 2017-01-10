@@ -88,6 +88,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
 }
 

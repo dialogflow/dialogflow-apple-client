@@ -1,15 +1,15 @@
 //
-//  ApiAIDemoSwiftTests.swift
-//  ApiAIDemoSwiftTests
+//  APIAiMacOSSwiftDemoTests.swift
+//  APIAiMacOSSwiftDemoTests
 //
-//  Created by Kuragin Dmitriy on 25/03/15.
-//  Copyright (c) 2015 Kuragin Dmitriy. All rights reserved.
+//  Created by Grant Kemp on 03/01/2017.
+//  Copyright © 2017 Grant Kemp. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import APIAiMacOSSwiftDemo
 
-class ApiAIDemoSwiftTests: XCTestCase {
+class APIAiMacOSSwiftDemoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class ApiAIDemoSwiftTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure() {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

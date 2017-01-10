@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EA06300F856E3DAB8021081 /* Pods_APIAiMacOSSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E119C44264CEAB6993924E94 /* Pods_APIAiMacOSSwiftDemoTests.framework */; };
+		5ABE48E659C5D31F5EC9B64C /* Pods_APIAiMacOSSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5D0EB0A9C5FCC5E58D3E45 /* Pods_APIAiMacOSSwiftDemo.framework */; };
+		A1C11CDA1E1B2CC400D7E943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C11CD91E1B2CC400D7E943 /* AppDelegate.swift */; };
+		A1C11CDC1E1B2CC400D7E943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C11CDB1E1B2CC400D7E943 /* ViewController.swift */; };
+		A1C11CDE1E1B2CC400D7E943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1C11CDD1E1B2CC400D7E943 /* Assets.xcassets */; };
+		A1C11CE11E1B2CC400D7E943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C11CDF1E1B2CC400D7E943 /* Main.storyboard */; };
+		A1C11CEC1E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C11CEB1E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1C11CE81E1B2CC400D7E943 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1C11CCE1E1B2CC400D7E943 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1C11CD51E1B2CC400D7E943;
+			remoteInfo = APIAiMacOSSwiftDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5759CB0930E097F0EEF996BB /* Pods-APIAiMacOSSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIAiMacOSSwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-APIAiMacOSSwiftDemoTests/Pods-APIAiMacOSSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		5B5D0EB0A9C5FCC5E58D3E45 /* Pods_APIAiMacOSSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIAiMacOSSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C11CD61E1B2CC400D7E943 /* APIAiMacOSSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIAiMacOSSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C11CD91E1B2CC400D7E943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1C11CDB1E1B2CC400D7E943 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1C11CDD1E1B2CC400D7E943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1C11CE01E1B2CC400D7E943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1C11CE21E1B2CC400D7E943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1C11CE71E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIAiMacOSSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C11CEB1E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAiMacOSSwiftDemoTests.swift; sourceTree = "<group>"; };
+		A1C11CED1E1B2CC400D7E943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E119C44264CEAB6993924E94 /* Pods_APIAiMacOSSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIAiMacOSSwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DC645F30E438A1D49FDED9 /* Pods-APIAiMacOSSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIAiMacOSSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-APIAiMacOSSwiftDemo/Pods-APIAiMacOSSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F2EA4C0D804749B1565D745C /* Pods-APIAiMacOSSwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIAiMacOSSwiftDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APIAiMacOSSwiftDemoTests/Pods-APIAiMacOSSwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8FF9F2B06DB8006866D79BA /* Pods-APIAiMacOSSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIAiMacOSSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APIAiMacOSSwiftDemo/Pods-APIAiMacOSSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1C11CD31E1B2CC400D7E943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABE48E659C5D31F5EC9B64C /* Pods_APIAiMacOSSwiftDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1C11CE41E1B2CC400D7E943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EA06300F856E3DAB8021081 /* Pods_APIAiMacOSSwiftDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16CF39B62B51494A88D503A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8FF9F2B06DB8006866D79BA /* Pods-APIAiMacOSSwiftDemo.debug.xcconfig */,
+				E8DC645F30E438A1D49FDED9 /* Pods-APIAiMacOSSwiftDemo.release.xcconfig */,
+				F2EA4C0D804749B1565D745C /* Pods-APIAiMacOSSwiftDemoTests.debug.xcconfig */,
+				5759CB0930E097F0EEF996BB /* Pods-APIAiMacOSSwiftDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		55AE6D24BA9374F57D911F37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B5D0EB0A9C5FCC5E58D3E45 /* Pods_APIAiMacOSSwiftDemo.framework */,
+				E119C44264CEAB6993924E94 /* Pods_APIAiMacOSSwiftDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1C11CCD1E1B2CC400D7E943 = {
+			isa = PBXGroup;
+			children = (
+				A1C11CD81E1B2CC400D7E943 /* APIAiMacOSSwiftDemo */,
+				A1C11CEA1E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests */,
+				A1C11CD71E1B2CC400D7E943 /* Products */,
+				16CF39B62B51494A88D503A2 /* Pods */,
+				55AE6D24BA9374F57D911F37 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A1C11CD71E1B2CC400D7E943 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1C11CD61E1B2CC400D7E943 /* APIAiMacOSSwiftDemo.app */,
+				A1C11CE71E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1C11CD81E1B2CC400D7E943 /* APIAiMacOSSwiftDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A1C11CD91E1B2CC400D7E943 /* AppDelegate.swift */,
+				A1C11CDB1E1B2CC400D7E943 /* ViewController.swift */,
+				A1C11CDD1E1B2CC400D7E943 /* Assets.xcassets */,
+				A1C11CDF1E1B2CC400D7E943 /* Main.storyboard */,
+				A1C11CE21E1B2CC400D7E943 /* Info.plist */,
+			);
+			path = APIAiMacOSSwiftDemo;
+			sourceTree = "<group>";
+		};
+		A1C11CEA1E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1C11CEB1E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.swift */,
+				A1C11CED1E1B2CC400D7E943 /* Info.plist */,
+			);
+			path = APIAiMacOSSwiftDemoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1C11CD51E1B2CC400D7E943 /* APIAiMacOSSwiftDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1C11CF01E1B2CC400D7E943 /* Build configuration list for PBXNativeTarget "APIAiMacOSSwiftDemo" */;
+			buildPhases = (
+				496C1CC4A32D409BD5C2CA45 /* [CP] Check Pods Manifest.lock */,
+				A1C11CD21E1B2CC400D7E943 /* Sources */,
+				A1C11CD31E1B2CC400D7E943 /* Frameworks */,
+				A1C11CD41E1B2CC400D7E943 /* Resources */,
+				EA78B4AFEC5F10E1736403E5 /* [CP] Embed Pods Frameworks */,
+				3D057C098294E2E27EF3D496 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = APIAiMacOSSwiftDemo;
+			productName = APIAiMacOSSwiftDemo;
+			productReference = A1C11CD61E1B2CC400D7E943 /* APIAiMacOSSwiftDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1C11CE61E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1C11CF31E1B2CC400D7E943 /* Build configuration list for PBXNativeTarget "APIAiMacOSSwiftDemoTests" */;
+			buildPhases = (
+				4EEF9D5CA7BC3FF2C7F30892 /* [CP] Check Pods Manifest.lock */,
+				A1C11CE31E1B2CC400D7E943 /* Sources */,
+				A1C11CE41E1B2CC400D7E943 /* Frameworks */,
+				A1C11CE51E1B2CC400D7E943 /* Resources */,
+				6238518689010A975E818EEF /* [CP] Embed Pods Frameworks */,
+				7574FB6BD6B9311F8AF04948 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1C11CE91E1B2CC400D7E943 /* PBXTargetDependency */,
+			);
+			name = APIAiMacOSSwiftDemoTests;
+			productName = APIAiMacOSSwiftDemoTests;
+			productReference = A1C11CE71E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1C11CCE1E1B2CC400D7E943 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Grant Kemp";
+				TargetAttributes = {
+					A1C11CD51E1B2CC400D7E943 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					A1C11CE61E1B2CC400D7E943 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A1C11CD51E1B2CC400D7E943;
+					};
+				};
+			};
+			buildConfigurationList = A1C11CD11E1B2CC400D7E943 /* Build configuration list for PBXProject "APIAiMacOSSwiftDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1C11CCD1E1B2CC400D7E943;
+			productRefGroup = A1C11CD71E1B2CC400D7E943 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1C11CD51E1B2CC400D7E943 /* APIAiMacOSSwiftDemo */,
+				A1C11CE61E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1C11CD41E1B2CC400D7E943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C11CDE1E1B2CC400D7E943 /* Assets.xcassets in Resources */,
+				A1C11CE11E1B2CC400D7E943 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1C11CE51E1B2CC400D7E943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D057C098294E2E27EF3D496 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APIAiMacOSSwiftDemo/Pods-APIAiMacOSSwiftDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		496C1CC4A32D409BD5C2CA45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4EEF9D5CA7BC3FF2C7F30892 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6238518689010A975E818EEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APIAiMacOSSwiftDemoTests/Pods-APIAiMacOSSwiftDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7574FB6BD6B9311F8AF04948 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APIAiMacOSSwiftDemoTests/Pods-APIAiMacOSSwiftDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA78B4AFEC5F10E1736403E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APIAiMacOSSwiftDemo/Pods-APIAiMacOSSwiftDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1C11CD21E1B2CC400D7E943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C11CDC1E1B2CC400D7E943 /* ViewController.swift in Sources */,
+				A1C11CDA1E1B2CC400D7E943 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1C11CE31E1B2CC400D7E943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C11CEC1E1B2CC400D7E943 /* APIAiMacOSSwiftDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1C11CE91E1B2CC400D7E943 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1C11CD51E1B2CC400D7E943 /* APIAiMacOSSwiftDemo */;
+			targetProxy = A1C11CE81E1B2CC400D7E943 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1C11CDF1E1B2CC400D7E943 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1C11CE01E1B2CC400D7E943 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1C11CEE1E1B2CC400D7E943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1C11CEF1E1B2CC400D7E943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		A1C11CF11E1B2CC400D7E943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8FF9F2B06DB8006866D79BA /* Pods-APIAiMacOSSwiftDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = APIAiMacOSSwiftDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebloke.chatbot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A1C11CF21E1B2CC400D7E943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8DC645F30E438A1D49FDED9 /* Pods-APIAiMacOSSwiftDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = APIAiMacOSSwiftDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebloke.chatbot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A1C11CF41E1B2CC400D7E943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2EA4C0D804749B1565D745C /* Pods-APIAiMacOSSwiftDemoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = APIAiMacOSSwiftDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebloke.apiai.APIAiMacOSSwiftDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APIAiMacOSSwiftDemo.app/Contents/MacOS/APIAiMacOSSwiftDemo";
+			};
+			name = Debug;
+		};
+		A1C11CF51E1B2CC400D7E943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5759CB0930E097F0EEF996BB /* Pods-APIAiMacOSSwiftDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = APIAiMacOSSwiftDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebloke.apiai.APIAiMacOSSwiftDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APIAiMacOSSwiftDemo.app/Contents/MacOS/APIAiMacOSSwiftDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1C11CD11E1B2CC400D7E943 /* Build configuration list for PBXProject "APIAiMacOSSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1C11CEE1E1B2CC400D7E943 /* Debug */,
+				A1C11CEF1E1B2CC400D7E943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1C11CF01E1B2CC400D7E943 /* Build configuration list for PBXNativeTarget "APIAiMacOSSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1C11CF11E1B2CC400D7E943 /* Debug */,
+				A1C11CF21E1B2CC400D7E943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1C11CF31E1B2CC400D7E943 /* Build configuration list for PBXNativeTarget "APIAiMacOSSwiftDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1C11CF41E1B2CC400D7E943 /* Debug */,
+				A1C11CF51E1B2CC400D7E943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1C11CCE1E1B2CC400D7E943 /* Project object */;
+}

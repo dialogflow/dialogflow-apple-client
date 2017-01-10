@@ -20,6 +20,7 @@
  ***********************************************************************************************************************/
 
 #import <Foundation/Foundation.h>
+#import "AINullabilityDefines.h"
 
 /**
  Fulfillment
@@ -32,6 +33,11 @@
 /**
  Response speech.
  */
-@property(nonatomic, copy, readonly) NSString *speech;
+@property(nonatomic, copy, readonly) NSString *speech AI_DEPRECATED_MSG_ATTRIBUTE("Use messages property.");
+
+/**
+ Response messages. See https://docs.api.ai/docs/rich-messages for details.
+ */
+@property(nonatomic, copy, readonly) NSArray AI_GENERICS_1(NSDictionary *) *messages;
 
 @end
