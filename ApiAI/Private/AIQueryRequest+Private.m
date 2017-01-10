@@ -12,6 +12,10 @@
 #import "AIRequestEntity_Private.h"
 #import "AINullabilityDefines.h"
 
+static NSString *URLEncode(NSString *string) {
+    return [string stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+}
+
 @implementation AIQueryRequest (Private)
 
 - (NSDictionary *)defaultHeaders
@@ -64,6 +68,26 @@
     return [parameters copy];
 }
 
+- (NSDictionary *)getQueryParameters {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    if (self.version) {
+        parameters[@"v"] = self.version;
+    }
+    
+    return [parameters copy];
+}
+
+- (NSString *)queryFromQueryParameters:(NSDictionary *)queryParameters {
+    NSMutableArray *pairs = [NSMutableArray arrayWithCapacity:queryParameters.count];
+    
+    [queryParameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [pairs addObject:[NSString stringWithFormat:@"%@=%@", URLEncode(key), URLEncode(obj)]];
+    }];
+    
+    return [pairs componentsJoinedByString:@"&"];
+}
+
 - (NSMutableURLRequest *)prepareDefaultRequest
 {
     id <AIConfiguration> configuration = self.dataService.configuration;
@@ -72,11 +96,15 @@
     
     NSString *path = @"query";
     
-    if (version) {
-        path = [path stringByAppendingFormat:@"?v=%@", version];
-    }
+    NSString *getQueryString = [self queryFromQueryParameters: [self getQueryParameters]];
+//    path = [path stringByAppendingFormat:@"?%@", getQueryString];
     
     NSURL *URL = [configuration.baseURL URLByAppendingPathComponent:path];
+    
+    NSURLComponents *components = [NSURLComponents componentsWithURL:URL resolvingAgainstBaseURL:NO];
+    components.query = getQueryString;
+    
+    URL = components.URL;
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
     

@@ -33,6 +33,11 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 
+
+
+
+
+
 @class AIRecordDetector;
 
 @interface AIVoiceRequest () <NSStreamDelegate, AIRecordDetectorDelegate>
@@ -42,6 +47,8 @@
 @property(nonatomic, strong) AIRecordDetector *recordDetector;
 @property(nonatomic, strong) AIStreamBuffer *streamBuffer;
 @property(nonatomic, copy) NSString *boundary;
+
+@property(nonnull, strong) NSURLSession *session;
 
 - (void)callSuperStart;
 
@@ -68,15 +75,27 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
         _recordDetector.delegate = self;
         
         self.useVADForAutoCommit = YES;
-//        [self prepare];
     }
     return self;
+}
+
+- (NSDictionary *)getQueryParameters {
+    NSMutableDictionary *parameters = [[super getQueryParameters] mutableCopy];
+    
+    parameters[@"endofspeech"] = @"true";
+    
+    return [parameters copy];
 }
 
 - (void)prepare {
     self.boundary = [self creteBoundary];
     
     NSMutableURLRequest *request = self.prepareDefaultRequest;
+    
+    [request addValue:@"100-continue" forHTTPHeaderField:@"Expect"];
+    [request addValue:@"close" forHTTPHeaderField:@"Connection"];
+    
+    request.HTTPShouldUsePipelining = YES;
     
     NSInputStream *input = nil;
     NSOutputStream *output = nil;
@@ -88,10 +107,11 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     
     [request setHTTPBodyStream:input];
     
+    self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
+    
     NSURLSession *session = self.dataService.URLSession;
     
     __weak typeof(self) selfWeak = self;
-    
     NSURLSessionDataTask *dataTask =
     [session dataTaskWithRequest:request
                completionHandler:^(NSData * __AI_NULLABLE data, NSURLResponse * __AI_NULLABLE response1, NSError * __AI_NULLABLE error) {
@@ -126,9 +146,11 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     
     self.dataTask = dataTask;
     
-    
-    self.streamBuffer = [[AIStreamBuffer alloc] initWithOutputStream:output];
     [_streamBuffer open];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_streamBuffer close];
+    });
 }
 
 - (void)start
@@ -136,31 +158,17 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
     NSString *audioFileName = @"beep";
     NSURL *audioFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:audioFileName withExtension:@"caf"];
     
-    NSLog(@"Bundle path: %@", [NSBundle bundleForClass:[self class]].bundlePath);
-    NSLog(@"Playing file: %@", audioFileURL);
-    
     if (audioFileURL) {
         soundID = 0;
 
         OSStatus status = AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(audioFileURL), &soundID);
         if (status == noErr) {
-            
-//            if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_9_0) {
-//                __weak typeof(self) selfWeak = self;
-//                AudioServicesPlaySystemSoundWithCompletion(soundID, ^{
-//                    [selfWeak callSuperStart];
-//                    
-//                    AudioServicesDisposeSystemSoundID(soundID);
-//                });
-//            } else {
-//                OSStatus s =
                 AudioServicesAddSystemSoundCompletion(soundID,
                                                       CFRunLoopGetMain(),
                                                       kCFRunLoopDefaultMode,
                                                       MyAudioServicesSystemSoundCompletionProc,
                                                       (__bridge void * _Nullable)(self));
                 AudioServicesPlaySystemSound(soundID);
-//            }
         } else {
             [self callSuperStart];
         }
@@ -254,27 +262,37 @@ static void MyAudioServicesSystemSoundCompletionProc( SystemSoundID ssID, void* 
 
 + (void)createBoundInputStream:(NSInputStream **)inputStreamPtr outputStream:(NSOutputStream **)outputStreamPtr bufferSize:(NSUInteger)bufferSize
 {
-    CFReadStreamRef     readStream;
-    CFWriteStreamRef    writeStream;
-    
-    assert( (inputStreamPtr != NULL) || (outputStreamPtr != NULL) );
-    
-    readStream = NULL;
-    writeStream = NULL;
-    
-    CFStreamCreateBoundPair(
-                            NULL,
-                            ((inputStreamPtr  != nil) ? &readStream : NULL),
-                            ((outputStreamPtr != nil) ? &writeStream : NULL),
-                            (CFIndex) bufferSize
-                            );
-    
-    if (inputStreamPtr != NULL) {
-        *inputStreamPtr  = CFBridgingRelease(readStream);
-    }
-    if (outputStreamPtr != NULL) {
-        *outputStreamPtr = CFBridgingRelease(writeStream);
-    }
+//    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+//        NSInputStream *input = NULL;
+//        NSOutputStream *output = NULL;
+//        
+//        [NSStream getBoundStreamsWithBufferSize:bufferSize inputStream:&input outputStream:&output];
+//        
+//        *inputStreamPtr = input;
+//        *outputStreamPtr = output;
+//    } else {
+        CFReadStreamRef     readStream;
+        CFWriteStreamRef    writeStream;
+        
+        assert( (inputStreamPtr != NULL) || (outputStreamPtr != NULL) );
+        
+        readStream = NULL;
+        writeStream = NULL;
+        
+        CFStreamCreateBoundPair(
+                                NULL,
+                                ((inputStreamPtr  != nil) ? &readStream : NULL),
+                                ((outputStreamPtr != nil) ? &writeStream : NULL),
+                                (CFIndex) bufferSize
+                                );
+        
+        if (inputStreamPtr != NULL) {
+            *inputStreamPtr  = CFBridgingRelease(readStream);
+        }
+        if (outputStreamPtr != NULL) {
+            *outputStreamPtr = CFBridgingRelease(writeStream);
+        }
+//    }
 }
 
 - (void)recordDetector:(AIRecordDetector *)helper didReceiveData:(NSData *)data power:(float)power

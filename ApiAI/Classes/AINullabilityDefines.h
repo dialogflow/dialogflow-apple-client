@@ -63,5 +63,7 @@
 
 #endif
 
+#define AI_DEPRECATED_ATTRIBUTE __attribute__((deprecated))
+#define AI_DEPRECATED_MSG_ATTRIBUTE(msg) __attribute((deprecated((msg))))
 
 #endif

@@ -29,6 +29,7 @@
     self = [super init];
     if (self) {
         _speech = dictionary[@"speech"];
+        _messages = dictionary[@"messages"];
     }
     
     return self;

@@ -44,6 +44,9 @@
                <Test
                   Identifier = "ApiAITests">
                </Test>
+               <Test
+                  Identifier = "UserEntitiesTests">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>
