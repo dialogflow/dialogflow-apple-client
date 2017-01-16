@@ -8,7 +8,7 @@ branches:
     - master
     - dev
 script:
-    - xcodebuild -project ApiAI.xcodeproj -scheme ApiAITests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7' build test
+    - xcodebuild -project ApiAI.xcodeproj -scheme ApiAITests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6' build test
     - pod install --project-directory=./ApiAIDemo
     - xcodebuild -workspace ApiAIDemo/ApiAIDemo.xcworkspace -scheme ApiAIDemo -sdk iphonesimulator build
     - pod install --project-directory=./ApiAIDemoSwift
