@@ -1,4 +1,4 @@
-iOS SDK for api.ai
+Objective-C(Cocoa) SDK for api.ai
 ==============
 
 [![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
@@ -14,7 +14,7 @@ iOS SDK for api.ai
 ---------------
 
 ## <a name="overview"></a>Overview
-The API.AI iOS SDK makes it easy to integrate speech recognition with API.AI natural language processing API on iOS devices. API.AI allows using voice commands and integration with dialog scenarios defined for a particular agent in API.AI.
+The API.AI Objective-C(Cocoa) SDK makes it easy to integrate speech recognition with API.AI natural language processing API on Apple devices. API.AI allows using voice commands and integration with dialog scenarios defined for a particular agent in API.AI.
 
 ## <a name="prerequisites"></a>Prerequsites
 * Create an [API.AI account](http://api.ai)

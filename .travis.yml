@@ -8,13 +8,13 @@ branches:
     - master
     - dev
 script:
-    - xcodebuild -project ApiAI.xcodeproj -scheme ApiAITests -sdk iphonesimulator build test
+    - xcodebuild -project ApiAI.xcodeproj -scheme ApiAITests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7' build test
     - pod install --project-directory=./ApiAIDemo
     - xcodebuild -workspace ApiAIDemo/ApiAIDemo.xcworkspace -scheme ApiAIDemo -sdk iphonesimulator build
     - pod install --project-directory=./ApiAIDemoSwift
     - xcodebuild -workspace ApiAIDemoSwift/ApiAIDemoSwift.xcworkspace -scheme ApiAIDemoSwift -sdk iphonesimulator build
-    # - pod install --project-directory=./ApiAIDemoWatchOS
-    #xcodebuild -workspace ApiAIDemoWatchOS/ApiAIDemoWatchOS.xcworkspace clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+    - pod install --project-directory=./ApiAIDemoWatchOS
+    - xcodebuild -workspace ApiAIDemoWatchOS/ApiAIDemoWatchOS.xcworkspace -scheme ApiAIDemoWatchOS clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     - pod install --project-directory=./ApiAIMacOSDemo
     - xcodebuild -workspace ApiAIMacOSDemo/ApiAIMacOSDemo.xcworkspace -scheme ApiAIMacOSDemo -sdk macosx build
 notifications:
