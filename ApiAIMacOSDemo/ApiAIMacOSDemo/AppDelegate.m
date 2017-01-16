@@ -20,7 +20,7 @@
     
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     
-    configuration.clientAccessToken = @"b316a120a0ab4383980746032c21c4f5";
+    configuration.clientAccessToken = @"c2a4a7a56173452e98d4824e52d0269b";
     
     [ApiAI sharedApiAI].configuration = configuration;
 }

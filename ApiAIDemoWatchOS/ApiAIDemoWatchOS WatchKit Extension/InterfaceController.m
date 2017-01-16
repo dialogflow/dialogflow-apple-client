@@ -33,17 +33,6 @@
 
 @implementation InterfaceController
 
-- (void)awakeWithContext:(id)context {
-    [super awakeWithContext:context];
-
-    // Configure interface objects here.
-}
-
-- (void)didAppear
-{
-
-}
-
 - (IBAction)doAction:(id)sender
 {
     NSArray <WKAlertAction *> *actions =
@@ -52,11 +41,6 @@
                              style:WKAlertActionStyleDefault
                            handler:^{
                                [self sendTextRequest];
-                           }],
-    [WKAlertAction actionWithTitle:@"Voice message"
-                             style:WKAlertActionStyleDefault
-                           handler:^{
-                               [self sendVoiceRequest];
                            }],
     [WKAlertAction actionWithTitle:@"Cancel"
                              style:WKAlertActionStyleCancel
@@ -108,48 +92,6 @@
                                              }
                                          }];
 
-}
-
-- (void)sendVoiceRequest
-{
-    NSArray *filePaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                             NSUserDomainMask,YES);
-    NSString *path = [[filePaths firstObject] stringByAppendingPathComponent:@"recording.mp4"];
-    NSURL *fileUrl = [NSURL fileURLWithPath:path];
-    
-    NSDictionary *options = @{
-                              WKAudioRecorderControllerOptionsMaximumDurationKey: @(10.f)
-                              };
-    
-    [self presentAudioRecorderControllerWithOutputURL:fileUrl
-                                               preset:WKAudioRecorderPresetWideBandSpeech
-                                              options:options
-                                           completion:^(BOOL didSave, NSError * _Nullable error) {
-                                               if (didSave && !error) {
-                                                   [self showProgress];
-                                                   
-                                                   ApiAI *apiai = [ApiAI sharedApiAI];
-                                                   
-                                                   AIVoiceFileRequest *request = [apiai voiceFileRequestWithFileURL:fileUrl];
-                                                   
-                                                   [request setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
-                                                       NSString *text = response.result.fulfillment.speech;
-                                                       
-                                                       if (![text length]) {
-                                                           text = @"<empty response>";
-                                                       }
-                                                       
-                                                       [self.button setTitle:text];
-                                                       
-                                                       [self dismissProgress];
-                                                   } failure:^(AIRequest *request, NSError *error) {
-                                                       [self.button setTitle:[error localizedDescription]];
-                                                       [self dismissProgress];
-                                                   }];
-                                                   
-                                                   [apiai enqueue:request];
-                                               }
-                                           }];
 }
 
 - (void)showProgress

@@ -30,15 +30,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord
-             withOptions:(AVAudioSessionCategoryOptionAllowBluetooth | AVAudioSessionCategoryOptionDefaultToSpeaker)
-                   error:nil];
-    
-    [session setActive:YES
-           withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation
-                 error:nil];
-    
     ApiAI *apiai = [ApiAI sharedApiAI];
     
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];

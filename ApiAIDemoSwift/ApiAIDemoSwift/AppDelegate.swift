@@ -17,16 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        let session = AVAudioSession.sharedInstance()
-        
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            try session.setActive(true)
-        } catch {
-            // same error
-        }
-        
         let configuration: AIConfiguration = AIDefaultConfiguration()
         
         configuration.clientAccessToken = "YOUR_CLIENT_ACCESS_TOKEN"

@@ -12,7 +12,6 @@
 		5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806708C1A76437E00A2B54C /* ResultNavigarionController.m */; };
 		580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670901A76455D00A2B54C /* TextRequestViewController.m */; };
 		5838472A1962B5C2007A6091 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583847291962B5C2007A6091 /* AVFoundation.framework */; };
-		5862E3001B6A198100F6F712 /* ann_smith.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5862E2FF1B6A198100F6F712 /* ann_smith.wav */; };
 		588D23B91AFB49BE008289F1 /* MappedResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23B81AFB49BE008289F1 /* MappedResponseViewController.m */; };
 		5891DFE81941E9210043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE71941E9210043140B /* Foundation.framework */; };
 		5891DFEA1941E9210043140B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE91941E9210043140B /* CoreGraphics.framework */; };
@@ -35,7 +34,6 @@
 		580670901A76455D00A2B54C /* TextRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRequestViewController.m; sourceTree = "<group>"; };
 		581AB3981A24448800E8A190 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		583847291962B5C2007A6091 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		5862E2FF1B6A198100F6F712 /* ann_smith.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ann_smith.wav; sourceTree = "<group>"; };
 		5869659C1A88819E00719EC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5869659D1A8881D700719EC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5869659E1A8881D700719EC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		58C2A88119BEE2F100632C2F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5862E2FF1B6A198100F6F712 /* ann_smith.wav */,
 				58C2A86B19BEE2EB00632C2F /* ApiAIDemo-Info.plist */,
 				58C2A86C19BEE2EB00632C2F /* ApiAIDemo-Prefix.pch */,
 				58C2A86F19BEE2EB00632C2F /* Main.storyboard */,
@@ -236,7 +233,6 @@
 			files = (
 				58C2A88219BEE3D600632C2F /* Main.storyboard in Resources */,
 				58C2A87E19BEE2EB00632C2F /* Images.xcassets in Resources */,
-				5862E3001B6A198100F6F712 /* ann_smith.wav in Resources */,
 				58C2A87D19BEE2EB00632C2F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

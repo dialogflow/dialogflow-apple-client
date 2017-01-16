@@ -12,8 +12,9 @@
 
 @interface ViewController ()
 
-@property(nonatomic, weak) IBOutlet NSButton *button;
-@property(nonatomic, strong) AIVoiceRequest *request;
+@property(nonatomic, weak) IBOutlet NSButton *sendButton;
+@property(nonatomic, weak) IBOutlet NSTextField *textField;
+@property(nonatomic, weak) IBOutlet NSProgressIndicator *progress;
 
 @end
 
@@ -23,15 +24,25 @@
     [super viewDidLoad];
 }
 
-- (IBAction)startListening:(id)sender
+- (IBAction)sendRequest:(id)sender
 {
-    self.button.enabled = NO;
-    AIVoiceRequest *request = [[ApiAI sharedApiAI] voiceRequest];
+    [_sendButton setEnabled:NO];
+    [_textField setEnabled:NO];
+    
+    [_progress startAnimation:self];
+    
+    
+    AITextRequest *request = [[ApiAI sharedApiAI] textRequest];
+    request.query = @[
+                      [_textField stringValue] ?: @""
+                      ];
+    
+    _textField.stringValue = @"";
     
     __weak typeof(self) selfWeak = self;
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
-        selfWeak.button.enabled = YES;
+        typeof(selfWeak) sself = selfWeak;
         
         NSAlert *alert = [[NSAlert alloc] init];
         
@@ -39,19 +50,26 @@
         [alert setAlertStyle:NSInformationalAlertStyle];
         [alert runModal];
         
+        [sself.progress stopAnimation:sself];
+        
+        [_sendButton setEnabled:YES];
+        [_textField setEnabled:YES];
     } failure:^(AIRequest *request, NSError *error) {
-        selfWeak.button.enabled = YES;
+        typeof(selfWeak) sself = selfWeak;
+        
+        NSAlert *alert = [[NSAlert alloc] init];
+        
+        alert.informativeText = [NSString stringWithFormat:@"%@", error.localizedDescription];
+        [alert setAlertStyle:NSInformationalAlertStyle];
+        [alert runModal];
+        
+        [sself.progress stopAnimation:sself];
+        
+        [_sendButton setEnabled:YES];
+        [_textField setEnabled:YES];
     }];
     
-    self.request = request;
-    
     [[ApiAI sharedApiAI] enqueue:request];
-}
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
 }
 
 @end

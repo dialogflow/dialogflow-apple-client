@@ -12,11 +12,12 @@
 		58ED3EC91BB55951002E66A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ED3EC81BB55951002E66A1 /* ViewController.m */; };
 		58ED3ECB1BB55951002E66A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58ED3ECA1BB55951002E66A1 /* Assets.xcassets */; };
 		58ED3ECE1BB55951002E66A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ED3ECC1BB55951002E66A1 /* Main.storyboard */; };
-		B9C997582F03F5DFB1836182 /* libPods-ApiAIMacOSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 752AFB4FA987133E4F79F17A /* libPods-ApiAIMacOSDemo.a */; };
+		89BA27C93BBE63504C365334 /* libPods-ApiAIMacOSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BA6AA0B0C78D8352F2D324 /* libPods-ApiAIMacOSDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		41E119F66FB9A9B1AE40B24B /* Pods-ApiAIMacOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIMacOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIMacOSDemo/Pods-ApiAIMacOSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		1BEAC83378EFE3F30A190773 /* Pods-ApiAIMacOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIMacOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIMacOSDemo/Pods-ApiAIMacOSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		42BA6AA0B0C78D8352F2D324 /* libPods-ApiAIMacOSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIMacOSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ED3EBE1BB55951002E66A1 /* ApiAIMacOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiAIMacOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ED3EC11BB55951002E66A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58ED3EC21BB55951002E66A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,8 +27,7 @@
 		58ED3ECA1BB55951002E66A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58ED3ECD1BB55951002E66A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58ED3ECF1BB55951002E66A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		752AFB4FA987133E4F79F17A /* libPods-ApiAIMacOSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIMacOSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C86259BECE85831AE29872AD /* Pods-ApiAIMacOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIMacOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIMacOSDemo/Pods-ApiAIMacOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A5E6024AA14850FF2F0B33B4 /* Pods-ApiAIMacOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIMacOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIMacOSDemo/Pods-ApiAIMacOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,26 +35,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C997582F03F5DFB1836182 /* libPods-ApiAIMacOSDemo.a in Frameworks */,
+				89BA27C93BBE63504C365334 /* libPods-ApiAIMacOSDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		287076E2D18A427F9479591D /* Pods */ = {
+		12E24402C9E1EC2215713436 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C86259BECE85831AE29872AD /* Pods-ApiAIMacOSDemo.debug.xcconfig */,
-				41E119F66FB9A9B1AE40B24B /* Pods-ApiAIMacOSDemo.release.xcconfig */,
+				A5E6024AA14850FF2F0B33B4 /* Pods-ApiAIMacOSDemo.debug.xcconfig */,
+				1BEAC83378EFE3F30A190773 /* Pods-ApiAIMacOSDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		42253726881A8215DE672A55 /* Frameworks */ = {
+		2FEDE502EEEA8EA029500822 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				752AFB4FA987133E4F79F17A /* libPods-ApiAIMacOSDemo.a */,
+				42BA6AA0B0C78D8352F2D324 /* libPods-ApiAIMacOSDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -64,8 +64,8 @@
 			children = (
 				58ED3EC01BB55951002E66A1 /* ApiAIMacOSDemo */,
 				58ED3EBF1BB55951002E66A1 /* Products */,
-				287076E2D18A427F9479591D /* Pods */,
-				42253726881A8215DE672A55 /* Frameworks */,
+				12E24402C9E1EC2215713436 /* Pods */,
+				2FEDE502EEEA8EA029500822 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,12 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58ED3ED21BB55951002E66A1 /* Build configuration list for PBXNativeTarget "ApiAIMacOSDemo" */;
 			buildPhases = (
-				1BAB5678928EBD7E330DC584 /* Check Pods Manifest.lock */,
+				1B9613A9446289FEFD2C054F /* [CP] Check Pods Manifest.lock */,
 				58ED3EBA1BB55951002E66A1 /* Sources */,
 				58ED3EBB1BB55951002E66A1 /* Frameworks */,
 				58ED3EBC1BB55951002E66A1 /* Resources */,
-				9F2892059422E593E453BD78 /* Copy Pods Resources */,
-				573DD9DDEA1452F1BE6E63DA /* Embed Pods Frameworks */,
+				E9CB7EBD63D90BB52B5551C2 /* [CP] Embed Pods Frameworks */,
+				8CBCB0FCC71B4749E287A261 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,49 +168,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BAB5678928EBD7E330DC584 /* Check Pods Manifest.lock */ = {
+		1B9613A9446289FEFD2C054F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		573DD9DDEA1452F1BE6E63DA /* Embed Pods Frameworks */ = {
+		8CBCB0FCC71B4749E287A261 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIMacOSDemo/Pods-ApiAIMacOSDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F2892059422E593E453BD78 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIMacOSDemo/Pods-ApiAIMacOSDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9CB7EBD63D90BB52B5551C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIMacOSDemo/Pods-ApiAIMacOSDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -321,7 +321,7 @@
 		};
 		58ED3ED31BB55951002E66A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C86259BECE85831AE29872AD /* Pods-ApiAIMacOSDemo.debug.xcconfig */;
+			baseConfigurationReference = A5E6024AA14850FF2F0B33B4 /* Pods-ApiAIMacOSDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -335,7 +335,7 @@
 		};
 		58ED3ED41BB55951002E66A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41E119F66FB9A9B1AE40B24B /* Pods-ApiAIMacOSDemo.release.xcconfig */;
+			baseConfigurationReference = 1BEAC83378EFE3F30A190773 /* Pods-ApiAIMacOSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

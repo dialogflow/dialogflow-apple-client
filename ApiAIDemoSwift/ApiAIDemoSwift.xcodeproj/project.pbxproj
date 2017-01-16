@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4AE24B1164D55A2F0FF5F310 /* libPods-ApiAIDemoSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6711603C25C162764E2C546 /* libPods-ApiAIDemoSwift.a */; };
 		587512351AC275280053EAA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512341AC275280053EAA9 /* AppDelegate.swift */; };
-		587512371AC275280053EAA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512361AC275280053EAA9 /* ViewController.swift */; };
 		5875123A1AC275280053EAA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587512381AC275280053EAA9 /* Main.storyboard */; };
 		5875123C1AC275280053EAA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5875123B1AC275280053EAA9 /* Images.xcassets */; };
 		5875123F1AC275280053EAA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5875123D1AC275280053EAA9 /* LaunchScreen.xib */; };
@@ -17,8 +16,6 @@
 		587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */; };
 		587512661AC2FD3F0053EAA9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512651AC2FD3F0053EAA9 /* ResultViewController.swift */; };
 		587512681AC2FDD20053EAA9 /* ResultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */; };
-		587512701AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875126F1AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift */; };
-		587512731AC3E3DC0053EAA9 /* VoiceButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587512721AC3E3DC0053EAA9 /* VoiceButtonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +33,6 @@
 		5875122F1AC275280053EAA9 /* ApiAIDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiAIDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587512331AC275280053EAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587512341AC275280053EAA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		587512361AC275280053EAA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		587512391AC275280053EAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5875123B1AC275280053EAA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5875123E1AC275280053EAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -47,8 +43,6 @@
 		587512621AC2F3EB0053EAA9 /* TextRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextRequestViewController.swift; sourceTree = "<group>"; };
 		587512651AC2FD3F0053EAA9 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultNavigationController.swift; sourceTree = "<group>"; };
-		5875126F1AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVoiceRequestController.swift; sourceTree = "<group>"; };
-		587512721AC3E3DC0053EAA9 /* VoiceButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceButtonViewController.swift; sourceTree = "<group>"; };
 		B6711603C25C162764E2C546 /* libPods-ApiAIDemoSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemoSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78874D3C280D1F58A0C1EA7 /* Pods-ApiAIDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoSwift/Pods-ApiAIDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,12 +89,9 @@
 		587512311AC275280053EAA9 /* ApiAIDemoSwift */ = {
 			isa = PBXGroup;
 			children = (
-				587512711AC3E3CF0053EAA9 /* VoiceButtonRequest */,
-				5875126E1AC3DFD90053EAA9 /* SimpleVoiceRequestController */,
 				587512641AC2FD190053EAA9 /* ResultViewController */,
 				587512611AC2F3D80053EAA9 /* TextRequestViewController */,
 				587512341AC275280053EAA9 /* AppDelegate.swift */,
-				587512361AC275280053EAA9 /* ViewController.swift */,
 				587512381AC275280053EAA9 /* Main.storyboard */,
 				5875123B1AC275280053EAA9 /* Images.xcassets */,
 				5875123D1AC275280053EAA9 /* LaunchScreen.xib */,
@@ -150,22 +141,6 @@
 				587512671AC2FDD20053EAA9 /* ResultNavigationController.swift */,
 			);
 			path = ResultViewController;
-			sourceTree = "<group>";
-		};
-		5875126E1AC3DFD90053EAA9 /* SimpleVoiceRequestController */ = {
-			isa = PBXGroup;
-			children = (
-				5875126F1AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift */,
-			);
-			path = SimpleVoiceRequestController;
-			sourceTree = "<group>";
-		};
-		587512711AC3E3CF0053EAA9 /* VoiceButtonRequest */ = {
-			isa = PBXGroup;
-			children = (
-				587512721AC3E3DC0053EAA9 /* VoiceButtonViewController.swift */,
-			);
-			path = VoiceButtonRequest;
 			sourceTree = "<group>";
 		};
 		8E82D84A70436E6C5BA72D62 /* Frameworks */ = {
@@ -340,9 +315,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				587512681AC2FDD20053EAA9 /* ResultNavigationController.swift in Sources */,
-				587512731AC3E3DC0053EAA9 /* VoiceButtonViewController.swift in Sources */,
-				587512701AC3DFEB0053EAA9 /* SimpleVoiceRequestController.swift in Sources */,
-				587512371AC275280053EAA9 /* ViewController.swift in Sources */,
 				587512351AC275280053EAA9 /* AppDelegate.swift in Sources */,
 				587512631AC2F3EB0053EAA9 /* TextRequestViewController.swift in Sources */,
 				587512661AC2FD3F0053EAA9 /* ResultViewController.swift in Sources */,

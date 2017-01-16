@@ -16,7 +16,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
         configuration.clientAccessToken = "YOUR_CLIENT_ACCESS_TOKEN"
         
-        ApiAI.sharedApiAI().configuration = configuration
+        ApiAI.shared().configuration = configuration
         
         // Perform any final initialization of your application.
     }

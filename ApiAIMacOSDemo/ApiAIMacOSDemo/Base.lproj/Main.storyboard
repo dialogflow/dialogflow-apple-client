@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,30 +674,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uF2-Qb-lZZ">
-                                <rect key="frame" x="14" y="222" width="452" height="32"/>
+                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3S-xl-k9r">
+                                <rect key="frame" x="20" y="228" width="416" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2uN-SO-xdV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Wq-mm-Ywn">
+                                <rect key="frame" x="14" y="192" width="452" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Q7e-dM-PFn"/>
+                                    <constraint firstAttribute="height" constant="21" id="MRg-Po-q05"/>
                                 </constraints>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="exK-iu-EoE">
+                                <buttonCell key="cell" type="push" title="Send" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wUg-cE-HWS">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="startListening:" target="XfG-lQ-9wD" id="jiA-ox-hGG"/>
+                                    <action selector="sendRequest:" target="XfG-lQ-9wD" id="y5Z-xt-VWt"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="2" doubleValue="1" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="PK8-Fg-Mx7">
+                                <rect key="frame" x="444" y="231" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uF2-Qb-lZZ" secondAttribute="trailing" constant="20" id="d9N-zg-fa2"/>
-                            <constraint firstItem="uF2-Qb-lZZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="nm6-kh-tLs"/>
-                            <constraint firstItem="uF2-Qb-lZZ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="oNe-n4-Zca"/>
+                            <constraint firstItem="I3S-xl-k9r" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="5nN-hb-E1D"/>
+                            <constraint firstItem="PK8-Fg-Mx7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="23" id="89Q-Na-WxA"/>
+                            <constraint firstAttribute="trailing" secondItem="PK8-Fg-Mx7" secondAttribute="trailing" constant="20" id="FOP-ix-z70"/>
+                            <constraint firstItem="7Wq-mm-Ywn" firstAttribute="top" secondItem="I3S-xl-k9r" secondAttribute="bottom" constant="8" id="HZZ-sc-emv"/>
+                            <constraint firstItem="PK8-Fg-Mx7" firstAttribute="leading" secondItem="I3S-xl-k9r" secondAttribute="trailing" constant="8" id="ONB-l7-k5R"/>
+                            <constraint firstItem="7Wq-mm-Ywn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="TTS-AI-5M5"/>
+                            <constraint firstItem="I3S-xl-k9r" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="hnY-E6-NJ7"/>
+                            <constraint firstAttribute="trailing" secondItem="7Wq-mm-Ywn" secondAttribute="trailing" constant="20" id="vR9-vk-PDk"/>
                         </constraints>
-                        <animations/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="uF2-Qb-lZZ" id="rDJ-JK-omu"/>
+                        <outlet property="progress" destination="PK8-Fg-Mx7" id="UPc-hz-ElH"/>
+                        <outlet property="sendButton" destination="7Wq-mm-Ywn" id="GFi-A2-lJ8"/>
+                        <outlet property="textField" destination="I3S-xl-k9r" id="Sp6-Yc-ET7"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

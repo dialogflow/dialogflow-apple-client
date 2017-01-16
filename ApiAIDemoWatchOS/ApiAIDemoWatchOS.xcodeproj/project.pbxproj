@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		128FFDE2C735E32A2B8355BE /* libPods-ApiAIDemoWatchOS WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C40090C2694858173BDAA8BC /* libPods-ApiAIDemoWatchOS WatchKit App.a */; };
+		57872E0F73DAA33305070CE0 /* libPods-ApiAIDemoWatchOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEDD61086CB3A92EA5654E9 /* libPods-ApiAIDemoWatchOS.a */; };
 		58091C041B6B708E00C8C6F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58091BFC1B6B6C7200C8C6F2 /* AudioToolbox.framework */; };
 		585C5A971B70D3C8003D311F /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585C5A961B70D3C8003D311F /* WatchConnectivity.framework */; };
 		58D6971A1B67A46C00693710 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D697191B67A46C00693710 /* main.m */; };
@@ -22,8 +24,7 @@
 		58D697421B67A46D00693710 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D697411B67A46D00693710 /* InterfaceController.m */; };
 		58D697451B67A46D00693710 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D697441B67A46D00693710 /* ExtensionDelegate.m */; };
 		58D697471B67A46D00693710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D697461B67A46D00693710 /* Assets.xcassets */; };
-		6BA4B46A503D507288E0A7F3 /* libPods-ApiAIDemoWatchOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DABCB3529D59B274FAA1ED8C /* libPods-ApiAIDemoWatchOS.a */; };
-		B8DDEEAD2C50BE8C888EF76B /* libPods-ApiAIDemoWatchOS WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B9B06B5D44D7AC81F7D0C7 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a */; };
+		7631342E3A957EA11E5B4567 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B75472B51CBAE75292BAF6 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		48C35F4CACF42C87CA3CCE0C /* Pods-ApiAIDemoWatchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		017AC5FCD377561800B01163 /* Pods-ApiAIDemoWatchOS WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit App/Pods-ApiAIDemoWatchOS WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		11AEADE43F0976D4C40C7356 /* Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		2468E1DFFF501448571B2240 /* Pods-ApiAIDemoWatchOS WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit App/Pods-ApiAIDemoWatchOS WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		445B3281623C29D5BAC26CEA /* Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		51569417C3C9755B8371D961 /* Pods-ApiAIDemoWatchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		54B75472B51CBAE75292BAF6 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemoWatchOS WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58091BFC1B6B6C7200C8C6F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		585C5A961B70D3C8003D311F /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		58D697151B67A46C00693710 /* ApiAIDemoWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiAIDemoWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,20 +99,26 @@
 		58D697441B67A46D00693710 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		58D697461B67A46D00693710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58D697481B67A46D00693710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E9A0F0035945C2E1B76C088 /* Pods-ApiAIDemoWatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS.release.xcconfig"; sourceTree = "<group>"; };
-		77B9B06B5D44D7AC81F7D0C7 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemoWatchOS WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		91C5D02AF5B14B37D75EDA36 /* Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		D22C21ACFCAC1F694D416210 /* Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		DABCB3529D59B274FAA1ED8C /* libPods-ApiAIDemoWatchOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemoWatchOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D640FAAF47A1F62965911F0 /* Pods-ApiAIDemoWatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemoWatchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS.release.xcconfig"; sourceTree = "<group>"; };
+		9FEDD61086CB3A92EA5654E9 /* libPods-ApiAIDemoWatchOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemoWatchOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40090C2694858173BDAA8BC /* libPods-ApiAIDemoWatchOS WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAIDemoWatchOS WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		08EFBC34ADFA0A59B9B946AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128FFDE2C735E32A2B8355BE /* libPods-ApiAIDemoWatchOS WatchKit App.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58D697121B67A46C00693710 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				58091C041B6B708E00C8C6F2 /* AudioToolbox.framework in Frameworks */,
-				6BA4B46A503D507288E0A7F3 /* libPods-ApiAIDemoWatchOS.a in Frameworks */,
+				57872E0F73DAA33305070CE0 /* libPods-ApiAIDemoWatchOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,13 +127,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				585C5A971B70D3C8003D311F /* WatchConnectivity.framework in Frameworks */,
-				B8DDEEAD2C50BE8C888EF76B /* libPods-ApiAIDemoWatchOS WatchKit Extension.a in Frameworks */,
+				7631342E3A957EA11E5B4567 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0879B41C38D56FD7E4F9D959 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51569417C3C9755B8371D961 /* Pods-ApiAIDemoWatchOS.debug.xcconfig */,
+				9D640FAAF47A1F62965911F0 /* Pods-ApiAIDemoWatchOS.release.xcconfig */,
+				017AC5FCD377561800B01163 /* Pods-ApiAIDemoWatchOS WatchKit App.debug.xcconfig */,
+				2468E1DFFF501448571B2240 /* Pods-ApiAIDemoWatchOS WatchKit App.release.xcconfig */,
+				445B3281623C29D5BAC26CEA /* Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig */,
+				11AEADE43F0976D4C40C7356 /* Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		58D6970C1B67A46C00693710 = {
 			isa = PBXGroup;
 			children = (
@@ -129,8 +154,8 @@
 				58D697301B67A46D00693710 /* ApiAIDemoWatchOS WatchKit App */,
 				58D6973F1B67A46D00693710 /* ApiAIDemoWatchOS WatchKit Extension */,
 				58D697161B67A46C00693710 /* Products */,
-				E743AAF8665F9A6AC5E9FADE /* Pods */,
 				A0ABF0926989F12EB256B2A2 /* Frameworks */,
+				0879B41C38D56FD7E4F9D959 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,21 +221,11 @@
 			children = (
 				585C5A961B70D3C8003D311F /* WatchConnectivity.framework */,
 				58091BFC1B6B6C7200C8C6F2 /* AudioToolbox.framework */,
-				77B9B06B5D44D7AC81F7D0C7 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a */,
-				DABCB3529D59B274FAA1ED8C /* libPods-ApiAIDemoWatchOS.a */,
+				9FEDD61086CB3A92EA5654E9 /* libPods-ApiAIDemoWatchOS.a */,
+				C40090C2694858173BDAA8BC /* libPods-ApiAIDemoWatchOS WatchKit App.a */,
+				54B75472B51CBAE75292BAF6 /* libPods-ApiAIDemoWatchOS WatchKit Extension.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E743AAF8665F9A6AC5E9FADE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D22C21ACFCAC1F694D416210 /* Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig */,
-				91C5D02AF5B14B37D75EDA36 /* Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig */,
-				48C35F4CACF42C87CA3CCE0C /* Pods-ApiAIDemoWatchOS.debug.xcconfig */,
-				5E9A0F0035945C2E1B76C088 /* Pods-ApiAIDemoWatchOS.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,13 +235,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58D697531B67A46D00693710 /* Build configuration list for PBXNativeTarget "ApiAIDemoWatchOS" */;
 			buildPhases = (
-				F6E935D788F54CA92E1199BB /* Check Pods Manifest.lock */,
+				9D138DC6D2F790F5761C6C0B /* [CP] Check Pods Manifest.lock */,
 				58D697111B67A46C00693710 /* Sources */,
 				58D697121B67A46C00693710 /* Frameworks */,
 				58D697131B67A46C00693710 /* Resources */,
 				58D697521B67A46D00693710 /* Embed Watch Content */,
-				6947B8C8EF254336A57923E3 /* Copy Pods Resources */,
-				3BDAB0B0D63A98109809FE75 /* Embed Pods Frameworks */,
+				9590EDF66B59BC0BD476F57E /* [CP] Embed Pods Frameworks */,
+				7CC79F5376BDFFCFDFAB0260 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,8 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58D6974F1B67A46D00693710 /* Build configuration list for PBXNativeTarget "ApiAIDemoWatchOS WatchKit App" */;
 			buildPhases = (
+				A7568850A48378CB5EEBBE8F /* [CP] Check Pods Manifest.lock */,
 				58D6972A1B67A46D00693710 /* Resources */,
 				58D6974E1B67A46D00693710 /* Embed App Extensions */,
+				08EFBC34ADFA0A59B9B946AD /* Frameworks */,
+				D09D76D2B5A82F4DF78DD25B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,12 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58D6974B1B67A46D00693710 /* Build configuration list for PBXNativeTarget "ApiAIDemoWatchOS WatchKit Extension" */;
 			buildPhases = (
-				925926118F60283327657F95 /* Check Pods Manifest.lock */,
+				C10B34E4A20CA1B06A78976E /* [CP] Check Pods Manifest.lock */,
 				58D697371B67A46D00693710 /* Sources */,
 				58D697381B67A46D00693710 /* Frameworks */,
 				58D697391B67A46D00693710 /* Resources */,
-				A87358770EE2A3F9D14FCFB1 /* Copy Pods Resources */,
-				9DE4A073CA250FCD13F36643 /* Embed Pods Frameworks */,
+				71A42730382A80CEEA55AB6E /* [CP] Embed Pods Frameworks */,
+				0B4DE2167D783A7622060F1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,74 +364,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3BDAB0B0D63A98109809FE75 /* Embed Pods Frameworks */ = {
+		0B4DE2167D783A7622060F1A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6947B8C8EF254336A57923E3 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		925926118F60283327657F95 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9DE4A073CA250FCD13F36643 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A87358770EE2A3F9D14FCFB1 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,19 +379,109 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6E935D788F54CA92E1199BB /* Check Pods Manifest.lock */ = {
+		71A42730382A80CEEA55AB6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit Extension/Pods-ApiAIDemoWatchOS WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CC79F5376BDFFCFDFAB0260 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9590EDF66B59BC0BD476F57E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS/Pods-ApiAIDemoWatchOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D138DC6D2F790F5761C6C0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A7568850A48378CB5EEBBE8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C10B34E4A20CA1B06A78976E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D09D76D2B5A82F4DF78DD25B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApiAIDemoWatchOS WatchKit App/Pods-ApiAIDemoWatchOS WatchKit App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -583,7 +631,7 @@
 		};
 		58D6974C1B67A46D00693710 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D22C21ACFCAC1F694D416210 /* Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig */;
+			baseConfigurationReference = 445B3281623C29D5BAC26CEA /* Pods-ApiAIDemoWatchOS WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "ApiAIDemoWatchOS WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -598,7 +646,7 @@
 		};
 		58D6974D1B67A46D00693710 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91C5D02AF5B14B37D75EDA36 /* Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = 11AEADE43F0976D4C40C7356 /* Pods-ApiAIDemoWatchOS WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "ApiAIDemoWatchOS WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -613,6 +661,7 @@
 		};
 		58D697501B67A46D00693710 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 017AC5FCD377561800B01163 /* Pods-ApiAIDemoWatchOS WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				IBSC_MODULE = ApiAIDemoWatchOS_WatchKit_Extension;
@@ -628,6 +677,7 @@
 		};
 		58D697511B67A46D00693710 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2468E1DFFF501448571B2240 /* Pods-ApiAIDemoWatchOS WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				IBSC_MODULE = ApiAIDemoWatchOS_WatchKit_Extension;
@@ -643,7 +693,7 @@
 		};
 		58D697541B67A46D00693710 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48C35F4CACF42C87CA3CCE0C /* Pods-ApiAIDemoWatchOS.debug.xcconfig */;
+			baseConfigurationReference = 51569417C3C9755B8371D961 /* Pods-ApiAIDemoWatchOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ApiAIDemoWatchOS/Info.plist;
@@ -655,7 +705,7 @@
 		};
 		58D697551B67A46D00693710 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E9A0F0035945C2E1B76C088 /* Pods-ApiAIDemoWatchOS.release.xcconfig */;
+			baseConfigurationReference = 9D640FAAF47A1F62965911F0 /* Pods-ApiAIDemoWatchOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ApiAIDemoWatchOS/Info.plist;
