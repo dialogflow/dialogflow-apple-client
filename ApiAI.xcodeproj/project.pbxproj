@@ -158,6 +158,9 @@
 		5865DD271DFA82400073D1A3 /* EventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5865DD261DFA82400073D1A3 /* EventsTests.m */; };
 		5867737D1BD0F76000E1253D /* speech_d.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5867737C1BD0F76000E1253D /* speech_d.wav */; };
 		5869BCFD1B37E56A000B99B7 /* AINullabilityDefines.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */; };
+		586D24451E2C8D1500118E7D /* AIResponseParameterConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D24441E2C8D1500118E7D /* AIResponseParameterConstants.m */; };
+		586D24461E2CDD5100118E7D /* AIResponseParameterConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D24441E2C8D1500118E7D /* AIResponseParameterConstants.m */; };
+		586D24471E2CDD5200118E7D /* AIResponseParameterConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D24441E2C8D1500118E7D /* AIResponseParameterConstants.m */; };
 		587074061CA184C900C4535B /* AIVoiceRequestButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581AB39E1A245D8300E8A190 /* AIVoiceRequestButton.xib */; };
 		587074071CA184C900C4535B /* AICubeIconImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 581AB3A01A245D8300E8A190 /* AICubeIconImage.png */; };
 		587074081CA184C900C4535B /* AICubeIconImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 581AB3A11A245D8300E8A190 /* AICubeIconImage@2x.png */; };
@@ -192,6 +195,7 @@
 		58929B101CA1473800448D81 /* AIVoiceFileRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5862E2FC1B6A103B00F6F712 /* AIVoiceFileRequest.h */; };
 		589E65771B33FFB40062D868 /* AIRequestEntry.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5801F1291B0F3E250016DE2A /* AIRequestEntry.h */; };
 		589E65781B33FFB40062D868 /* AIRequestEntity.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5801F1251B0F33790016DE2A /* AIRequestEntity.h */; };
+		58A2B18B1E2C80DE00FF0257 /* SerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2B18A1E2C80DE00FF0257 /* SerializationTests.m */; };
 		58AA07AC1B39492100A259D9 /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA07AB1B39492100A259D9 /* AudioFileReader.m */; };
 		58AA07AE1B39494900A259D9 /* AIVADTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA07AD1B39494900A259D9 /* AIVADTest.m */; };
 		58AA07B31B394A5300A259D9 /* sound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58AA07B21B394A5300A259D9 /* sound1.wav */; };
@@ -319,6 +323,8 @@
 		5865DD261DFA82400073D1A3 /* EventsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTests.m; sourceTree = "<group>"; };
 		5867737C1BD0F76000E1253D /* speech_d.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = speech_d.wav; sourceTree = "<group>"; };
 		5869BCFC1B37E505000B99B7 /* AINullabilityDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AINullabilityDefines.h; sourceTree = "<group>"; };
+		586D24431E2C8D1500118E7D /* AIResponseParameterConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseParameterConstants.h; sourceTree = "<group>"; };
+		586D24441E2C8D1500118E7D /* AIResponseParameterConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponseParameterConstants.m; sourceTree = "<group>"; };
 		588D23831AFB3C95008289F1 /* AIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponse.h; sourceTree = "<group>"; };
 		588D23841AFB3C95008289F1 /* AIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIResponse.m; sourceTree = "<group>"; };
 		588D23871AFB3C95008289F1 /* AIResponseFulfillment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIResponseFulfillment.h; sourceTree = "<group>"; };
@@ -347,6 +353,7 @@
 		5891DF4F1941E14C0043140B /* libApiAI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApiAI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5891DF521941E14C0043140B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5891DF601941E14C0043140B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		58A2B18A1E2C80DE00FF0257 /* SerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializationTests.m; sourceTree = "<group>"; };
 		58AA07AA1B39492100A259D9 /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
 		58AA07AB1B39492100A259D9 /* AudioFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileReader.m; sourceTree = "<group>"; };
 		58AA07AD1B39494900A259D9 /* AIVADTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIVADTest.m; sourceTree = "<group>"; };
@@ -578,6 +585,8 @@
 				588D23961AFB3C95008289F1 /* AIResponseStatus_Private.h */,
 				588D23B31AFB4291008289F1 /* AIResponseContext_Private.h */,
 				588D23971AFB3C95008289F1 /* Formatters */,
+				586D24431E2C8D1500118E7D /* AIResponseParameterConstants.h */,
+				586D24441E2C8D1500118E7D /* AIResponseParameterConstants.m */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -847,6 +856,7 @@
 				581409F71C86C7E30014BBE8 /* UserEntitiesTests.m */,
 				5865DD261DFA82400073D1A3 /* EventsTests.m */,
 				58F0604B1A8CB366002615DF /* Supporting Files */,
+				58A2B18A1E2C80DE00FF0257 /* SerializationTests.m */,
 			);
 			path = ApiAITests;
 			sourceTree = "<group>";
@@ -1029,7 +1039,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AI;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kuragin Dmitriy";
 				TargetAttributes = {
 					580C6A4E1CA17F0C00C55313 = {
@@ -1134,6 +1144,7 @@
 				580C6AB31CA1837A00C55313 /* AIResponseFulfillment.m in Sources */,
 				580C6AB41CA1837A00C55313 /* AIResponseMetadata.m in Sources */,
 				580C6AB51CA1837A00C55313 /* AIResponseParameter.m in Sources */,
+				586D24471E2CDD5200118E7D /* AIResponseParameterConstants.m in Sources */,
 				580C6AB61CA1837A00C55313 /* AIResponseResult.m in Sources */,
 				580C6AB71CA1837A00C55313 /* AIResponseStatus.m in Sources */,
 				580C6AB81CA1837A00C55313 /* AIRequest+AIMappedResponse.m in Sources */,
@@ -1182,6 +1193,7 @@
 				5862E2FE1B6A103B00F6F712 /* AIVoiceFileRequest.m in Sources */,
 				58D697061B679D0300693710 /* AISoundRecorder.m in Sources */,
 				58D697001B679D0300693710 /* AIAlgorithmDetector.m in Sources */,
+				586D24451E2C8D1500118E7D /* AIResponseParameterConstants.m in Sources */,
 				585BC6C91A15F9E800B2584A /* AIDefaultConfiguration.m in Sources */,
 				581AB3B21A245D8300E8A190 /* AIVoiceContainerView.m in Sources */,
 				58D6970B1B67A19200693710 /* AIResponseConstants.m in Sources */,
@@ -1224,6 +1236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A2B18B1E2C80DE00FF0257 /* SerializationTests.m in Sources */,
 				588D23AF1AFB3F24008289F1 /* AIRequest+AIMappedResponse.m in Sources */,
 				581409F81C86C7E30014BBE8 /* UserEntitiesTests.m in Sources */,
 				588D23A91AFB3CAB008289F1 /* AIDatePeriodFormatter.m in Sources */,
@@ -1234,6 +1247,7 @@
 				588D23A51AFB3CA1008289F1 /* AIResponseMetadata.m in Sources */,
 				58AA07AE1B39494900A259D9 /* AIVADTest.m in Sources */,
 				588D23A21AFB3CA1008289F1 /* AIResponse.m in Sources */,
+				586D24461E2CDD5100118E7D /* AIResponseParameterConstants.m in Sources */,
 				587CE40A1B0F42E7002C03BA /* AIRequestEntity.m in Sources */,
 				588D23A71AFB3CA1008289F1 /* AIResponseResult.m in Sources */,
 				587CE4091B0F42E7002C03BA /* AIRequestEntry.m in Sources */,
@@ -1258,7 +1272,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -1269,7 +1283,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ApiAIFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1289,7 +1303,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1301,7 +1315,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ApiAIFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1343,13 +1357,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1362,7 +1381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1381,19 +1400,24 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1401,12 +1425,11 @@
 		};
 		5891DF731941E14C0043140B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D13DD66A857D0D8D77EF8B7 /* Pods-ApiAI.debug.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ApiAI",
@@ -1423,12 +1446,11 @@
 		};
 		5891DF741941E14C0043140B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E3C2C9A39E25605C26E7EFC /* Pods-ApiAI.release.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/OpenAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApiAI/ApiAI-Prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ApiAI",

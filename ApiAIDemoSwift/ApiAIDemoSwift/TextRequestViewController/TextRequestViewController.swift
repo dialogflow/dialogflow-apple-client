@@ -25,6 +25,21 @@ class TextRequestViewController: UIViewController {
             request?.query = [""]
         }
         
+        request?.setMappedCompletionBlockSuccess({ (request, response) in
+            let response = response as! AIResponse
+            if response.result.action == "money" {
+                if let parameters = response.result.parameters as? [String: AIResponseParameter]{
+                    let amount = parameters["amout"]!.stringValue
+                    let currency = parameters["currency"]!.stringValue
+                    let date = parameters["date"]!.dateValue
+                    
+                    print("Spended \(amount) of \(currency) on \(date)")
+                }
+            }
+        }, failure: { (request, error) in
+            // TODO: handle error
+        })
+        
         request?.setCompletionBlockSuccess({[unowned self] (request, response) -> Void in
             let resultNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultNavigationController
             

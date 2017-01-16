@@ -92,12 +92,9 @@ static NSString *URLEncode(NSString *string) {
 {
     id <AIConfiguration> configuration = self.dataService.configuration;
     
-    NSString *version = self.version;
-    
     NSString *path = @"query";
     
     NSString *getQueryString = [self queryFromQueryParameters: [self getQueryParameters]];
-//    path = [path stringByAppendingFormat:@"?%@", getQueryString];
     
     NSURL *URL = [configuration.baseURL URLByAppendingPathComponent:path];
     

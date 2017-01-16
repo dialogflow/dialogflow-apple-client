@@ -20,24 +20,24 @@
  ***********************************************************************************************************************/
 
 #import "AIResponseParameter.h"
-#import "AIResponseParameter_Private.h"
-#import "AIDatePeriodFormatter.h"
+#import "AIResponseParameterConstants.h"
 
 @interface AIResponseParameter ()
 
-@property(nonatomic, copy) id object;
+@property(nonatomic, readonly) AIResponseParameterConstants *constants;
 
 @end
 
 @implementation AIResponseParameter
 
-- (instancetype)initWithObject:(id)object
+@synthesize datePeriodValue=_datePeriodValue, dateValue=_dateValue, listValue=_listValue;
+
+- (instancetype)initWithObject:(id <NSObject>)object
 {
     self = [super init];
     if (self) {
-        self.object = object;
-        
-        _stringValue = [NSString stringWithFormat:@"%@", object];
+        _constants = [AIResponseParameterConstants shared];
+        _rawValue = object;
         
         [self prepareValues];
     }
@@ -46,19 +46,31 @@
 
 - (void)prepareValues
 {
+    [self prepareStringValue];
+    [self prepareNumberValue];
     [self prepareDateValue];
     [self prepareDatePeriodValue];
+    [self prepareListValue];
+    [self prepareCompositeValue];
+}
+
+- (void)prepareStringValue
+{
+    _stringValue = [NSString stringWithFormat:@"%@", _rawValue];
+}
+
+- (void)prepareNumberValue
+{
+    if ([_rawValue isKindOfClass:[NSNumber class]]) {
+        _numberValue = (NSNumber *)_rawValue;
+    } else if ([_rawValue isKindOfClass:[NSString class]]){
+        _numberValue = [self.constants.numberFormatter numberFromString:(NSString *)_rawValue];
+    }
 }
 
 - (void)prepareDateValue
 {
-    NSArray *dateFormats = @[
-                             @"yyyy-MM-dd",
-                             @"HH:mm:ss",
-                             @"yyyy-MM-dd'T'HH:mm:ssZ",
-                             ];
-    
-    NSArray *dateFormatters = [self dateFormattersForDateFormats:dateFormats];
+    NSArray *dateFormatters = self.constants.dateFormatters;
     
     __block NSDate *date = nil;
     
@@ -76,13 +88,7 @@
 
 - (void)prepareDatePeriodValue
 {
-    NSArray *dateFormats = @[
-                             @"yyyy-MM-dd",
-                             @"HH:mm:ss",
-                             @"yyyy-MM-dd'T'HH:mm:ssZ",
-                             ];
-    
-    NSArray *datePeriodFormatters = [self datePeriodFormattersForDateFormatters:[self dateFormattersForDateFormats:dateFormats]];
+    NSArray *datePeriodFormatters = self.constants.datePeriodFormatters;
     
     __block NSArray *datePeriod = nil;
     
@@ -98,35 +104,31 @@
     _datePeriodValue = datePeriod;
 }
 
-- (NSArray *)dateFormattersForDateFormats:(NSArray *)dateFormats
+- (void)prepareListValue
 {
-    NSMutableArray *dateFormatters = [NSMutableArray arrayWithCapacity:dateFormats.count];
-    
-    [dateFormats enumerateObjectsUsingBlock:^(NSString *dateFormat, NSUInteger idx, BOOL *stop) {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
-        [dateFormatter setLocale:locale];
+    if ([_rawValue isKindOfClass:[NSArray class]]) {
+        NSArray *listObject = (NSArray *)_rawValue;
+        NSMutableArray AI_GENERICS_1(AIResponseParameter *) *list = [NSMutableArray array];
         
-        [dateFormatter setDateFormat:dateFormat];
+        [listObject enumerateObjectsUsingBlock:^(id __AI_NONNULL obj, NSUInteger idx, BOOL * __AI_NONNULL stop) {
+            [list addObject:[[AIResponseParameter alloc] initWithObject:obj]];
+        }];
         
-        [dateFormatters addObject:dateFormatter];
-    }];
-    
-    return [dateFormatters copy];
+        _listValue = [list copy];
+    }
 }
 
-- (NSArray *)datePeriodFormattersForDateFormatters:(NSArray *)dateFormatters
-{
-    NSMutableArray *datePeriodFormatters = [NSMutableArray arrayWithCapacity:dateFormatters.count];
-    
-    [dateFormatters enumerateObjectsUsingBlock:^(NSDateFormatter *dateFormatter, NSUInteger idx, BOOL *stop) {
-        AIDatePeriodFormatter *datePeriodFormatter = [[AIDatePeriodFormatter alloc] init];
-        datePeriodFormatter.fromDateFormatter = dateFormatter;
-        datePeriodFormatter.toDateFormatter = dateFormatter;
-        [datePeriodFormatters addObject:datePeriodFormatter];
-    }];
-    
-    return [datePeriodFormatters copy];
+- (void)prepareCompositeValue {
+    if ([_rawValue isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dictionaryObject = (NSDictionary *)_rawValue;
+        NSMutableDictionary AI_GENERICS_2(NSString *, AIResponseParameter *) *composite = [NSMutableDictionary dictionary];
+        
+        [dictionaryObject enumerateKeysAndObjectsUsingBlock:^(NSString * __AI_NONNULL key, id  __AI_NONNULL obj, BOOL * __AI_NONNULL stop) {
+            composite[key] = [[AIResponseParameter alloc] initWithObject:obj];
+        }];
+        
+        _compositeValue = composite;
+    }
 }
 
 @end
