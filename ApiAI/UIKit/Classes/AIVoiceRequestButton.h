@@ -21,6 +21,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AINullabilityDefines.h"
+
 @class AIVoiceRequest;
 
 typedef void(^AIVoiceRequestButtonSuccess)(id response);

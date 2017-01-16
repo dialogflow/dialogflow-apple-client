@@ -8,45 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		0299F11107D463DF66322558 /* Pods_ApiAIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB8D665B5DCBC5066038865 /* Pods_ApiAIDemo.framework */; };
-		580670861A76428800A2B54C /* VoiceButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670851A76428800A2B54C /* VoiceButtonViewController.m */; };
 		5806708A1A7642FD00A2B54C /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670891A7642FD00A2B54C /* ResultViewController.m */; };
 		5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806708C1A76437E00A2B54C /* ResultNavigarionController.m */; };
 		580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670901A76455D00A2B54C /* TextRequestViewController.m */; };
-		580670951A76470900A2B54C /* SimpleVoiceRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */; };
 		5838472A1962B5C2007A6091 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583847291962B5C2007A6091 /* AVFoundation.framework */; };
 		5862E3001B6A198100F6F712 /* ann_smith.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5862E2FF1B6A198100F6F712 /* ann_smith.wav */; };
-		5862E3041B6A19AA00F6F712 /* SendFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5862E3031B6A19AA00F6F712 /* SendFileViewController.m */; };
 		588D23B91AFB49BE008289F1 /* MappedResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588D23B81AFB49BE008289F1 /* MappedResponseViewController.m */; };
 		5891DFE81941E9210043140B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE71941E9210043140B /* Foundation.framework */; };
 		5891DFEA1941E9210043140B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFE91941E9210043140B /* CoreGraphics.framework */; };
 		5891DFEC1941E9210043140B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5891DFEB1941E9210043140B /* UIKit.framework */; };
-		58AA07F91B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA07F81B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m */; };
 		58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A86E19BEE2EB00632C2F /* AppDelegate.m */; };
 		58C2A87D19BEE2EB00632C2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A87219BEE2EB00632C2F /* InfoPlist.strings */; };
 		58C2A87E19BEE2EB00632C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A87419BEE2EB00632C2F /* Images.xcassets */; };
 		58C2A87F19BEE2EB00632C2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A87519BEE2EB00632C2F /* main.m */; };
-		58C2A88019BEE2EB00632C2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2A87719BEE2EB00632C2F /* ViewController.m */; };
 		58C2A88219BEE3D600632C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C2A86F19BEE2EB00632C2F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08AB2E96DD06EEC78C3C64C7 /* Pods-ApiAIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		1E91BA334AB48C5CAEA543C0 /* Pods-ApiAIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAIDemo/Pods-ApiAIDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		580670841A76428800A2B54C /* VoiceButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceButtonViewController.h; sourceTree = "<group>"; };
-		580670851A76428800A2B54C /* VoiceButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceButtonViewController.m; sourceTree = "<group>"; };
 		580670881A7642FD00A2B54C /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		580670891A7642FD00A2B54C /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		5806708B1A76437E00A2B54C /* ResultNavigarionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultNavigarionController.h; sourceTree = "<group>"; };
 		5806708C1A76437E00A2B54C /* ResultNavigarionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultNavigarionController.m; sourceTree = "<group>"; };
 		5806708F1A76455D00A2B54C /* TextRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRequestViewController.h; sourceTree = "<group>"; };
 		580670901A76455D00A2B54C /* TextRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRequestViewController.m; sourceTree = "<group>"; };
-		580670931A76470900A2B54C /* SimpleVoiceRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleVoiceRequestViewController.h; sourceTree = "<group>"; };
-		580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleVoiceRequestViewController.m; sourceTree = "<group>"; };
 		581AB3981A24448800E8A190 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		583847291962B5C2007A6091 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5862E2FF1B6A198100F6F712 /* ann_smith.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ann_smith.wav; sourceTree = "<group>"; };
-		5862E3021B6A19AA00F6F712 /* SendFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendFileViewController.h; sourceTree = "<group>"; };
-		5862E3031B6A19AA00F6F712 /* SendFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendFileViewController.m; sourceTree = "<group>"; };
 		5869659C1A88819E00719EC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5869659D1A8881D700719EC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5869659E1A8881D700719EC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -60,8 +49,6 @@
 		5891DFEB1941E9210043140B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5891E0061941E9210043140B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5891E01C1941EC250043140B /* libPods-OpenAPIDemo-OpenAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OpenAPIDemo-OpenAPI.a"; path = "Pods/build/Debug-iphoneos/libPods-OpenAPIDemo-OpenAPI.a"; sourceTree = "<group>"; };
-		58AA07F71B3A985200A259D9 /* VoiceButtonRequestProgrammatically.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceButtonRequestProgrammatically.h; sourceTree = "<group>"; };
-		58AA07F81B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceButtonRequestProgrammatically.m; sourceTree = "<group>"; };
 		58C2A86B19BEE2EB00632C2F /* ApiAIDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ApiAIDemo-Info.plist"; sourceTree = "<group>"; };
 		58C2A86C19BEE2EB00632C2F /* ApiAIDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ApiAIDemo-Prefix.pch"; sourceTree = "<group>"; };
 		58C2A86D19BEE2EB00632C2F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,8 +57,6 @@
 		58C2A87319BEE2EB00632C2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58C2A87419BEE2EB00632C2F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		58C2A87519BEE2EB00632C2F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		58C2A87619BEE2EB00632C2F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		58C2A87719BEE2EB00632C2F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6EB8D665B5DCBC5066038865 /* Pods_ApiAIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiAIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,15 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		580670831A76427C00A2B54C /* VoiceButtonRequest */ = {
-			isa = PBXGroup;
-			children = (
-				580670841A76428800A2B54C /* VoiceButtonViewController.h */,
-				580670851A76428800A2B54C /* VoiceButtonViewController.m */,
-			);
-			path = VoiceButtonRequest;
-			sourceTree = "<group>";
-		};
 		580670871A7642EE00A2B54C /* ResultViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,24 +94,6 @@
 				580670901A76455D00A2B54C /* TextRequestViewController.m */,
 			);
 			path = TextRequestViewController;
-			sourceTree = "<group>";
-		};
-		580670921A7646FC00A2B54C /* SimpleVoiceRequestController */ = {
-			isa = PBXGroup;
-			children = (
-				580670931A76470900A2B54C /* SimpleVoiceRequestViewController.h */,
-				580670941A76470900A2B54C /* SimpleVoiceRequestViewController.m */,
-			);
-			path = SimpleVoiceRequestController;
-			sourceTree = "<group>";
-		};
-		5862E3011B6A199B00F6F712 /* SendFileViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5862E3021B6A19AA00F6F712 /* SendFileViewController.h */,
-				5862E3031B6A19AA00F6F712 /* SendFileViewController.m */,
-			);
-			path = SendFileViewController;
 			sourceTree = "<group>";
 		};
 		588D23B61AFB499D008289F1 /* MappedResponseViewController */ = {
@@ -180,29 +138,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		58AA07F61B3A983F00A259D9 /* VoiceButtonRequestProgrammatically */ = {
-			isa = PBXGroup;
-			children = (
-				58AA07F71B3A985200A259D9 /* VoiceButtonRequestProgrammatically.h */,
-				58AA07F81B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m */,
-			);
-			path = VoiceButtonRequestProgrammatically;
-			sourceTree = "<group>";
-		};
 		58C2A86919BEE2EB00632C2F /* ApiAI */ = {
 			isa = PBXGroup;
 			children = (
-				5862E3011B6A199B00F6F712 /* SendFileViewController */,
-				58AA07F61B3A983F00A259D9 /* VoiceButtonRequestProgrammatically */,
 				588D23B61AFB499D008289F1 /* MappedResponseViewController */,
-				580670921A7646FC00A2B54C /* SimpleVoiceRequestController */,
 				5806708E1A76454E00A2B54C /* TextRequestViewController */,
 				580670871A7642EE00A2B54C /* ResultViewController */,
-				580670831A76427C00A2B54C /* VoiceButtonRequest */,
 				58C2A86D19BEE2EB00632C2F /* AppDelegate.h */,
 				58C2A86E19BEE2EB00632C2F /* AppDelegate.m */,
-				58C2A87619BEE2EB00632C2F /* ViewController.h */,
-				58C2A87719BEE2EB00632C2F /* ViewController.m */,
 				58C2A88119BEE2F100632C2F /* Supporting Files */,
 			);
 			path = ApiAI;
@@ -263,7 +206,7 @@
 		5891DFDC1941E9210043140B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kuragin Dmitriy";
 			};
 			buildConfigurationList = 5891DFDF1941E9210043140B /* Build configuration list for PBXProject "ApiAIDemo" */;
@@ -400,14 +343,9 @@
 			files = (
 				588D23B91AFB49BE008289F1 /* MappedResponseViewController.m in Sources */,
 				5806708D1A76437E00A2B54C /* ResultNavigarionController.m in Sources */,
-				5862E3041B6A19AA00F6F712 /* SendFileViewController.m in Sources */,
-				58C2A88019BEE2EB00632C2F /* ViewController.m in Sources */,
 				5806708A1A7642FD00A2B54C /* ResultViewController.m in Sources */,
-				580670861A76428800A2B54C /* VoiceButtonViewController.m in Sources */,
 				58C2A87F19BEE2EB00632C2F /* main.m in Sources */,
-				580670951A76470900A2B54C /* SimpleVoiceRequestViewController.m in Sources */,
 				580670911A76455D00A2B54C /* TextRequestViewController.m in Sources */,
-				58AA07F91B3A985200A259D9 /* VoiceButtonRequestProgrammatically.m in Sources */,
 				58C2A87A19BEE2EB00632C2F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -452,14 +391,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -472,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -482,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -491,20 +436,25 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
