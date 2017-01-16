@@ -129,8 +129,7 @@
             
             XCTAssertTrue([context[@"name"] isEqualToString:@"name_question"]);
             
-            XCTAssertTrue([context[@"parameters"] count] == 2);
-            
+            XCTAssertTrue([context[@"parameters"] count] == 4);
             
             [expectation fulfill];
         } failure:^(AIRequest *request, NSError *error) {
@@ -165,7 +164,7 @@
             
             XCTAssertTrue([context[@"name"] isEqualToString:@"name_question"]);
             
-            XCTAssertTrue([context[@"parameters"] count] == 3);
+            XCTAssertTrue([context[@"parameters"] count] == 6);
             
             [expectation fulfill];
         } failure:^(AIRequest *request, NSError *error) {

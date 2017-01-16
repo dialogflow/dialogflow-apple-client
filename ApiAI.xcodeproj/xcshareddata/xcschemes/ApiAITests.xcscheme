@@ -37,20 +37,6 @@
                BlueprintName = "ApiAITests"
                ReferencedContainer = "container:ApiAI.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "AIVADTest">
-               </Test>
-               <Test
-                  Identifier = "ApiAITests">
-               </Test>
-               <Test
-                  Identifier = "EventsTests">
-               </Test>
-               <Test
-                  Identifier = "UserEntitiesTests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
