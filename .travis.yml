@@ -13,8 +13,8 @@ script:
     - xcodebuild -workspace ApiAIDemo/ApiAIDemo.xcworkspace -scheme ApiAIDemo -sdk iphonesimulator build
     - pod install --project-directory=./ApiAIDemoSwift
     - xcodebuild -workspace ApiAIDemoSwift/ApiAIDemoSwift.xcworkspace -scheme ApiAIDemoSwift -sdk iphonesimulator build
-    - pod install --project-directory=./ApiAIDemoWatchOS
-    - xcodebuild -workspace ApiAIDemoWatchOS/ApiAIDemoWatchOS.xcworkspace -scheme ApiAIDemoWatchOS clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+    # - pod install --project-directory=./ApiAIDemoWatchOS
+    # - xcodebuild -workspace ApiAIDemoWatchOS/ApiAIDemoWatchOS.xcworkspace -scheme ApiAIDemoWatchOS clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     - pod install --project-directory=./ApiAIMacOSDemo
     - xcodebuild -workspace ApiAIMacOSDemo/ApiAIMacOSDemo.xcworkspace -scheme ApiAIMacOSDemo -sdk macosx build
 after_script: set +e
