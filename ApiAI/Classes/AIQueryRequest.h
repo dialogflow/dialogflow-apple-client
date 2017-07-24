@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "AIRequest.h"
+#import "AIOriginalRequest.h"
 
 @interface AIQueryRequestLocation : NSObject
 
@@ -106,5 +107,9 @@
  
  */
 @property(nonatomic, strong) AIQueryRequestLocation *location;
+
+/*!
+ */
+@property(nonatomic, strong) AIOriginalRequest *originalRequest;
 
 @end

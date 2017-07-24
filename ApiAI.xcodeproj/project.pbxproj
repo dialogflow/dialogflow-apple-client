@@ -232,6 +232,7 @@
 		58F0605C1A8CB3E5002615DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0605B1A8CB3E5002615DF /* SystemConfiguration.framework */; };
 		58FF3A2C1C43BD240038BD9D /* AIUserEntitiesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF3A291C43BD240038BD9D /* AIUserEntitiesRequest.m */; };
 		58FF3A2D1C43BD240038BD9D /* AIUserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF3A2B1C43BD240038BD9D /* AIUserEntity.m */; };
+		FFC0CE201F22BB8B00E81778 /* AIOriginalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC0CE1F1F22BB8B00E81778 /* AIOriginalRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -418,6 +419,9 @@
 		C6FA9A492FC4834AFAEB5D93 /* Pods-ApiAITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAITests/Pods-ApiAITests.release.xcconfig"; sourceTree = "<group>"; };
 		CA2094AC803A0620EF22CE82 /* Pods-ApiAITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiAITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiAITests/Pods-ApiAITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD80C016B73942D79FF2B0CD /* libPods-ApiAI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApiAI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC0CE1E1F22BB8B00E81778 /* AIOriginalRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOriginalRequest.h; sourceTree = "<group>"; };
+		FFC0CE1F1F22BB8B00E81778 /* AIOriginalRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIOriginalRequest.m; sourceTree = "<group>"; };
+		FFC0CE211F265D9000E81778 /* AIOriginalRequest_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOriginalRequest_Private.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -692,6 +696,8 @@
 				5862C2D51BAEABE1007C6C4F /* AIRequestContext.m */,
 				581409F31C86B8290014BBE8 /* AIQueryRequest.h */,
 				581409F41C86B8290014BBE8 /* AIQueryRequest.m */,
+				FFC0CE1E1F22BB8B00E81778 /* AIOriginalRequest.h */,
+				FFC0CE1F1F22BB8B00E81778 /* AIOriginalRequest.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				581409F01C86B1500014BBE8 /* AISessionIdentifierStorage.h */,
 				581409F11C86B1500014BBE8 /* AISessionIdentifierStorage.m */,
 				581409F61C86B9AC0014BBE8 /* AIRequest_Private.h */,
+				FFC0CE211F265D9000E81778 /* AIOriginalRequest_Private.h */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -1202,6 +1209,7 @@
 				58D696FF1B679D0300693710 /* AIVoiceRequest.m in Sources */,
 				584509B019F4EB6B00A0AE9A /* AIStreamBuffer.m in Sources */,
 				588D23A11AFB3C95008289F1 /* AIDatePeriodFormatter.m in Sources */,
+				FFC0CE201F22BB8B00E81778 /* AIOriginalRequest.m in Sources */,
 				58C2A85C19BEE0E000632C2F /* AIRequest.m in Sources */,
 				58C2A86219BEE0E000632C2F /* AIDataService.m in Sources */,
 				58FF3A2D1C43BD240038BD9D /* AIUserEntity.m in Sources */,
@@ -1498,7 +1506,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sstepashka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1513,7 +1521,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sstepashka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

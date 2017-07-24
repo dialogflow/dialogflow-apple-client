@@ -11,6 +11,7 @@
 #import "AIDataService_Private.h"
 #import "AIRequestEntity_Private.h"
 #import "AINullabilityDefines.h"
+#import "AIOriginalRequest_Private.h"
 
 static NSString *URLEncode(NSString *string) {
     return [string stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
@@ -36,6 +37,8 @@ static NSString *URLEncode(NSString *string) {
                                          @"lang": self.lang,
                                          @"timezone": timeZoneString
                                          } mutableCopy];
+    
+    parameters[@"originalRequest"] = [self.originalRequest serialized];
     
     if (self.resetContexts) {
         parameters[@"resetContexts"] = @(self.resetContexts);

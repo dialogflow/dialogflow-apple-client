@@ -13,6 +13,7 @@
 #import "AIRequestEntity_Private.h"
 #import "AIQueryRequest+Private.h"
 #import "AIRequest_Private.h"
+#import "AiOriginalRequest_Private.h"
 
 #import "AIResponseConstants.h"
 
@@ -42,6 +43,8 @@
                                          @"timezone": timeZoneString,
                                          @"lang": self.lang
                                          } mutableCopy];
+    
+    parameters[@"originalRequest"] = [self.originalRequest serialized];
     
     if (self.resetContexts) {
         parameters[@"resetContexts"] = @(YES);

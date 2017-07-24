@@ -430,4 +430,29 @@
                                  }];
 }
 
+- (void)testOriginalRequest {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Handle response"];
+    
+    AITextRequest *textRequest = [_apiai textRequest];
+    
+    textRequest.originalRequest = [[AIOriginalRequest alloc] initWithSource:@"facebook" andData:@{@"param1": @"value1"}];
+    
+    textRequest.resetContexts = NO;
+    
+    textRequest.query = @"Hello";
+    
+    [textRequest setMappedCompletionBlockSuccess:^(AIRequest *request, AIResponse *response) {
+        [expectation fulfill];
+    } failure:^(AIRequest *request, NSError *error) {
+        XCTAssert(NO, @"Can't response error");
+    }];
+    
+    [_apiai enqueue:textRequest];
+    
+    [self waitForExpectationsWithTimeout:60
+                                 handler:^(NSError *error) {
+                                     XCTAssertNil(error, @"Error");
+                                 }];
+}
+
 @end
