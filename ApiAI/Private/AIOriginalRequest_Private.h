@@ -15,12 +15,10 @@
  */
  
 
-import UIKit
-import ApiAI
+#import "AIOriginalRequest.h"
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@interface AIOriginalRequest ()
 
-    var window: UIWindow?
-}
+- (NSDictionary *)serialized;
 
+@end

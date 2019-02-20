@@ -1,24 +1,19 @@
-/***********************************************************************************************************************
+/**
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
- * API.AI iOS SDK - client-side libraries for API.AI
- * ==========================================
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Copyright (C) 2015 by Speaktoit, Inc. (https://www.speaktoit.com)
- * https://www.api.ai
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- ***********************************************************************************************************************
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
- * the License. You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
- * specific language governing permissions and limitations under the License.
- *
- ***********************************************************************************************************************/
-
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
 #import "AITextRequest.h"
 #import "AIDataService.h"
 #import "AIDataService_Private.h"
@@ -26,6 +21,7 @@
 #import "AIRequestEntity_Private.h"
 #import "AIQueryRequest+Private.h"
 #import "AIRequest_Private.h"
+#import "AiOriginalRequest_Private.h"
 
 #import "AIResponseConstants.h"
 
@@ -51,6 +47,8 @@
                                         @"timezone": timeZoneString,
                                         @"lang": self.lang
                                         } mutableCopy];
+    
+    parameters[@"originalRequest"] = [self.originalRequest serialized];
     
     if (self.resetContexts) {
         parameters[@"resetContexts"] = @(YES);
@@ -121,7 +119,6 @@
                            } else {
                                [self handleError:responseSerializeError];
                            }
-                           
                        } else {
                            NSError *responseStatusCodeError =
                            [NSError errorWithDomain:AIErrorDomain

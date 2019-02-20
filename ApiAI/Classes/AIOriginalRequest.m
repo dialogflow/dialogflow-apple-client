@@ -14,13 +14,28 @@
  * limitations under the License.
  */
  
+#import "AIOriginalRequest.h"
+#import "AIOriginalRequest_Private.h"
 
-import UIKit
-import ApiAI
+@implementation AIOriginalRequest
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+- (AI_NONNULL instancetype)initWithSource:(NSString * __AI_NULLABLE)source
+                                  andData:(NSDictionary AI_GENERICS_2(NSString *, id) * __AI_NULLABLE)data
+{
+    self = [super init];
+    if (self) {
+        _source = [source copy];
+        _data = [data copy];
+    }
+    
+    return self;
 }
 
+- (NSDictionary *)serialized {
+    return @{
+        @"source": _source,
+        @"data": _data
+    };
+}
+
+@end

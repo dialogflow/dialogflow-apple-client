@@ -1,5 +1,8 @@
-Objective-C(Cocoa) SDK for api.ai
-==============
+# DEPRECATED Objective-C(Cocoa) SDK for api.ai
+
+| Deprecated |
+|-------|
+| This Dialogflow client library and Dialogflow API V1 [have been deprecated and will be shut down on October 23th, 2019](https://blog.dialogflow.com/post/migrate-to-dialogflow-api-v2/). Please [migrate to Dialogflow API V2](https://cloud.google.com/dialogflow-enterprise/docs/migrating). |
 
 [![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
 [![Version](https://img.shields.io/cocoapods/v/ApiAI.svg?style=flat)](http://cocoapods.org/pods/ApiAI)
@@ -81,3 +84,13 @@ The API.AI Objective-C(Cocoa) SDK makes it easy to integrate speech recognition 
   [_apiAI enqueue:request];
 
   ```
+## How to make contributions?
+Please read and follow the steps in the [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+See [LICENSE](LICENSE).
+
+## Terms
+Your use of this sample is subject to, and by using or downloading the sample files you agree to comply with, the [Google APIs Terms of Service](https://developers.google.com/terms/).
+
+This is not an official Google product.
