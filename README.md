@@ -1,5 +1,8 @@
-Objective-C(Cocoa) SDK for api.ai
-==============
+# DEPRECATED Objective-C(Cocoa) SDK for api.ai
+
+| Deprecated |
+|-------|
+| This Dialogflow client library and Dialogflow API V1 [have been deprecated and will be shut down on October 23th, 2019](https://blog.dialogflow.com/post/migrate-to-dialogflow-api-v2/). Please [migrate to Dialogflow API V2](https://cloud.google.com/dialogflow-enterprise/docs/migrating). |
 
 [![Build Status](https://travis-ci.org/api-ai/api-ai-ios-sdk.svg)](https://travis-ci.org/api-ai/api-ai-ios-sdk)
 [![Version](https://img.shields.io/cocoapods/v/ApiAI.svg?style=flat)](http://cocoapods.org/pods/ApiAI)
